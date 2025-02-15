@@ -41,6 +41,7 @@ def load_posted_articles():
             try:
                 posted_data = json.load(file)
             except json.JSONDecodeError:
+                print("⚠️ Error: `posted_news.json` is corrupted. Resetting file.")
                 posted_data = []  # Reset if JSON is corrupted
 
         # Remove old articles (older than 10 days)
@@ -52,16 +53,21 @@ def load_posted_articles():
 
 # Save posted articles (ensuring correct update & GitHub push)
 def save_posted_articles(posted):
+    print("💾 Writing to posted_news.json...")
     with open(LOG_FILE, "w") as file:
         json.dump(posted, file, indent=4)
 
+    print("✅ Successfully wrote to posted_news.json!")
+
     # Ensure GitHub Actions commits & pushes changes
     if os.getenv("GITHUB_ACTIONS"):
+        print("🔄 Committing changes to GitHub...")
         os.system("git config --global user.email 'github-actions@github.com'")
         os.system("git config --global user.name 'GitHub Actions'")
         os.system("git add posted_news.json")
         os.system("git commit -m 'Update posted_news.json [Automated]' || echo 'No changes to commit'")
         os.system("git push origin main || echo 'Push failed, check GitHub Actions permissions'")
+        print("✅ Changes committed to GitHub.")
 
 # Get latest news (only from the last hour)
 def get_latest_news():
@@ -131,14 +137,19 @@ def post_tweet(tweet):
         return False
 
 if __name__ == "__main__":
+    print("🔍 Loading previously posted articles...")
     posted_articles = load_posted_articles()
     posted_links = {article["link"] for article in posted_articles}  # Track already posted links
+    print(f"📂 {len(posted_articles)} articles already posted.")
 
     latest_news = get_latest_news()
+    print(f"📰 Found {len(latest_news)} new articles.")
+
     new_tweets = False  # Track if any new tweets were posted
 
     for title, link, source, summary in latest_news:
         if link not in posted_links:  # Prevent duplicate tweets
+            print(f"🆕 New article found: {title}")
             tweet = summarize_news(title, summary, source)
             if post_tweet(tweet):
                 posted_articles.append({
@@ -148,8 +159,11 @@ if __name__ == "__main__":
                 })
                 posted_links.add(link)  # Prevent duplicate in the same run
                 new_tweets = True
+            else:
+                print("❌ Tweet failed, skipping JSON update for this article.")
 
     if new_tweets:  # Only save if new tweets were posted
+        print("💾 Saving new articles to posted_news.json...")
         save_posted_articles(posted_articles)
         print("✅ `posted_news.json` updated successfully!")
     else:
