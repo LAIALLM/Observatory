@@ -38,7 +38,10 @@ RETENTION_DAYS = 10  # Remove news older than 10 days
 def load_posted_articles():
     if os.path.exists(LOG_FILE):
         with open(LOG_FILE, "r") as file:
-            posted_data = json.load(file)
+            try:
+                posted_data = json.load(file)
+            except json.JSONDecodeError:
+                posted_data = []  # Reset if JSON is corrupted
 
         # Remove old articles (older than 10 days)
         cutoff_date = datetime.utcnow() - timedelta(days=RETENTION_DAYS)
@@ -47,18 +50,18 @@ def load_posted_articles():
         return posted_data
     return []
 
-# Save posted articles (cleaning up old ones and committing to GitHub)
+# Save posted articles (ensuring correct update & GitHub push)
 def save_posted_articles(posted):
     with open(LOG_FILE, "w") as file:
         json.dump(posted, file, indent=4)
 
-    # Commit and push changes if running inside GitHub Actions
-    if os.getenv("GITHUB_ACTIONS"):  
+    # Ensure GitHub Actions commits & pushes changes
+    if os.getenv("GITHUB_ACTIONS"):
         os.system("git config --global user.email 'github-actions@github.com'")
         os.system("git config --global user.name 'GitHub Actions'")
         os.system("git add posted_news.json")
         os.system("git commit -m 'Update posted_news.json [Automated]' || echo 'No changes to commit'")
-        os.system("git push")
+        os.system("git push origin main || echo 'Push failed, check GitHub Actions permissions'")
 
 # Get latest news (only from the last hour)
 def get_latest_news():
@@ -108,7 +111,7 @@ def summarize_news(title, summary, source):
     ai_summary = response.choices[0].message.content.strip()
     ai_summary = ai_summary.replace('"', '').replace("'", "")  # Remove all quote marks
 
-    # Construct tweet with the source
+    # Construct tweet with a blank line before the source
     tweet = f"{ai_summary}\n\nSource: {source}"
 
     return tweet[:280]  # Ensure it fits within the character limit
@@ -132,6 +135,7 @@ if __name__ == "__main__":
     posted_links = {article["link"] for article in posted_articles}  # Track already posted links
 
     latest_news = get_latest_news()
+    new_tweets = False  # Track if any new tweets were posted
 
     for title, link, source, summary in latest_news:
         if link not in posted_links:  # Prevent duplicate tweets
@@ -142,8 +146,11 @@ if __name__ == "__main__":
                     "date": datetime.utcnow().strftime("%Y-%m-%d"),
                     "tweet": tweet  # Store tweet text for reference
                 })
-                save_posted_articles(posted_articles)
-                posted_links.add(link)  # Update set to prevent duplicates in the same run
-            time.sleep(5)  # Avoid hitting rate limits
+                posted_links.add(link)  # Prevent duplicate in the same run
+                new_tweets = True
 
-    print("🚀 Finished checking for news.")
+    if new_tweets:  # Only save if new tweets were posted
+        save_posted_articles(posted_articles)
+        print("✅ `posted_news.json` updated successfully!")
+    else:
+        print("⚠️ No new tweets posted, skipping JSON update.")
