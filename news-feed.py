@@ -21,6 +21,7 @@ api = tweepy.API(auth)
 # Google News RSS Feeds
 RSS_FEEDS = [
     "https://news.google.com/rss/search?q=construction+industry&hl=en-IN&gl=IN&ceid=IN:en",
+    "https://news.google.com/rss/search?q=construction&hl=en-IN&gl=IN&ceid=IN:en",
     "https://news.google.com/rss/search?q=infrastructure&hl=en-IN&gl=IN&ceid=IN:en",
     "https://news.google.com/rss/search?q=smart+city&hl=en-IN&gl=IN&ceid=IN:en",
     "https://news.google.com/rss/search?q=new+city&hl=en-IN&gl=IN&ceid=IN:en",
@@ -43,10 +44,18 @@ def load_posted_articles():
         return posted_data
     return []
 
-# Save posted articles (cleaning up old ones)
+# Save posted articles (cleaning up old ones and committing to GitHub)
 def save_posted_articles(posted):
     with open(LOG_FILE, "w") as file:
         json.dump(posted, file, indent=4)
+
+    # Commit and push changes if running inside GitHub Actions
+    if os.getenv("GITHUB_ACTIONS"):  
+        os.system("git config --global user.email 'github-actions@github.com'")
+        os.system("git config --global user.name 'GitHub Actions'")
+        os.system("git add posted_news.json")
+        os.system("git commit -m 'Update posted_news.json [Automated]' || echo 'No changes to commit'")
+        os.system("git push")
 
 # Get latest news (only from the last hour)
 def get_latest_news():
@@ -74,7 +83,7 @@ def summarize_news(title, summary, source):
     openai.api_key = OPENAI_API_KEY
 
     # Base prompt: reinterpret title professionally
-    prompt = f"Rephrase this construction-related news title into a concise, professional tweet. Avoid excessive emojis. \n\nTitle: {title}"
+    prompt = f"Rephrase this construction-related news title into a concise, professional tweet. Avoid excessive emojis.\n\nTitle: {title}"
 
     # If additional summary is available, enrich it
     if summary:
