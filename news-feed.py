@@ -26,20 +26,27 @@ RSS_FEEDS = [
     "https://news.google.com/rss/search?q=new+city&hl=en-IN&gl=IN&ceid=IN:en",
 ]
 
-# Log file to track already posted news
+# Log file to track posted news
 LOG_FILE = "posted_news.json"
+RETENTION_DAYS = 10  # Remove news older than 10 days
 
 # Load previously posted articles
 def load_posted_articles():
     if os.path.exists(LOG_FILE):
         with open(LOG_FILE, "r") as file:
-            return json.load(file)
+            posted_data = json.load(file)
+
+        # Remove old articles (older than 10 days)
+        cutoff_date = datetime.utcnow() - timedelta(days=RETENTION_DAYS)
+        posted_data = [entry for entry in posted_data if datetime.strptime(entry["date"], "%Y-%m-%d") > cutoff_date]
+
+        return posted_data
     return []
 
-# Save posted articles
+# Save posted articles (cleaning up old ones)
 def save_posted_articles(posted):
     with open(LOG_FILE, "w") as file:
-        json.dump(posted, file)
+        json.dump(posted, file, indent=4)
 
 # Get latest news (only from the last hour)
 def get_latest_news():
@@ -98,10 +105,11 @@ if __name__ == "__main__":
     latest_news = get_latest_news()
 
     for title, link, source, summary in latest_news:
-        if link not in posted_articles:  # Avoid duplicate posting
+        if not any(article["link"] == link for article in posted_articles):  # Avoid duplicate posting
             tweet = summarize_news(title, summary, source)
             if post_tweet(tweet):
-                posted_articles.append(link)
+                # Store article with timestamp
+                posted_articles.append({"link": link, "date": datetime.utcnow().strftime("%Y-%m-%d")})
                 save_posted_articles(posted_articles)
             time.sleep(5)  # Avoid hitting rate limits
 
