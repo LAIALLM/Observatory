@@ -66,8 +66,8 @@ def get_latest_news():
 def summarize_news(title, summary, source):
     openai.api_key = OPENAI_API_KEY
 
-    # Base prompt: reinterpret title
-    prompt = f"Rephrase this construction-related news title into a more engaging tweet:\n\nTitle: {title}"
+    # Base prompt: reinterpret title professionally
+    prompt = f"Rephrase this construction-related news title into a concise, professional tweet. Avoid excessive emojis. \n\nTitle: {title}"
 
     # If additional summary is available, enrich it
     if summary:
