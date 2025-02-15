@@ -80,7 +80,7 @@ def get_latest_news():
 
 # Summarize news using OpenAI (reinterpret title, add more details if available)
 def summarize_news(title, summary, source):
-    openai.api_key = OPENAI_API_KEY
+    client = openai.OpenAI(api_key=OPENAI_API_KEY)
 
     # Base prompt: reinterpret title professionally
     prompt = f"Rephrase this construction-related news title into a concise, professional tweet. Avoid excessive emojis.\n\nTitle: {title}"
@@ -89,12 +89,12 @@ def summarize_news(title, summary, source):
     if summary:
         prompt += f"\n\nAlso, add one key point from this summary: {summary}"
 
-    response = openai.ChatCompletion.create(
+    response = client.chat.completions.create(
         model="gpt-4",
         messages=[{"role": "user", "content": prompt}]
     )
-    
-    ai_summary = response["choices"][0]["message"]["content"]
+
+    ai_summary = response.choices[0].message.content
     tweet = f"{ai_summary}\nSource: {source}"
     
     return tweet[:280]  # Ensure tweet is within character limit
