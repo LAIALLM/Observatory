@@ -109,7 +109,7 @@ def summarize_news(title, summary, source):
     ai_summary = ai_summary.replace('"', '').replace("'", "")  # Remove all quote marks
 
     # Construct tweet with the source
-    tweet = f"{ai_summary}\nSource: {source}"
+    tweet = f"{ai_summary}\n\nSource: {source}"
 
     return tweet[:280]  # Ensure it fits within the character limit
 
