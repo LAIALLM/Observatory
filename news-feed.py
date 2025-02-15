@@ -13,8 +13,8 @@ TWITTER_ACCESS_TOKEN = os.getenv("TWITTER_ACCESS_TOKEN")
 TWITTER_ACCESS_SECRET = os.getenv("TWITTER_ACCESS_SECRET")
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 
-# Authenticate Twitter API (API v2)
-client = tweepy.Client(
+# Authenticate Twitter API (Using API v2)
+twitter_client = tweepy.Client(
     consumer_key=TWITTER_API_KEY,
     consumer_secret=TWITTER_SECRET,
     access_token=TWITTER_ACCESS_TOKEN,
@@ -102,7 +102,7 @@ def summarize_news(title, summary, source):
 # Post to X (Twitter) using API v2
 def post_tweet(tweet):
     try:
-        response = client.create_tweet(text=tweet)
+        response = twitter_client.create_tweet(text=tweet)
         print(f"✅ Tweet posted successfully: {response.data}")
         return True
     except tweepy.errors.Forbidden as e:
@@ -115,14 +115,21 @@ def post_tweet(tweet):
 
 if __name__ == "__main__":
     posted_articles = load_posted_articles()
+    posted_links = {article["link"] for article in posted_articles}  # Track already posted links
+
     latest_news = get_latest_news()
 
     for title, link, source, summary in latest_news:
-        if not any(article["link"] == link for article in posted_articles):  # Avoid duplicate posting
+        if link not in posted_links:  # Prevent duplicate tweets
             tweet = summarize_news(title, summary, source)
             if post_tweet(tweet):
-                posted_articles.append({"link": link, "date": datetime.utcnow().strftime("%Y-%m-%d")})
+                posted_articles.append({
+                    "link": link,
+                    "date": datetime.utcnow().strftime("%Y-%m-%d"),
+                    "tweet": tweet  # Store tweet text for reference
+                })
                 save_posted_articles(posted_articles)
-            time.sleep(5)
+                posted_links.add(link)  # Update set to prevent duplicates in the same run
+            time.sleep(5)  # Avoid hitting rate limits
 
     print("🚀 Finished checking for news.")
