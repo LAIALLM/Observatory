@@ -85,19 +85,33 @@ def get_latest_news():
 def summarize_news(title, summary, source):
     client = openai.OpenAI(api_key=OPENAI_API_KEY)
 
-    prompt = f"Rephrase this construction-related news title into a concise, professional tweet. Avoid excessive emojis.\n\nTitle: {title}"
+    # Base prompt: No quotes, no hashtags
+    prompt = f"""
+    Rewrite this construction-related news title into a concise, professional tweet.
+    - Do NOT include quotes.
+    - Do NOT use hashtags.
+    - Keep it engaging and natural.
+
+    Title: {title}
+    """
+
+    # If summary exists, add more context
     if summary:
-        prompt += f"\n\nAlso, add one key point from this summary: {summary}"
+        prompt += f"\n\nAlso, integrate one key point from this summary: {summary}"
 
     response = client.chat.completions.create(
         model="gpt-4",
         messages=[{"role": "user", "content": prompt}]
     )
 
-    ai_summary = response.choices[0].message.content
+    # Remove accidental quotes from AI response
+    ai_summary = response.choices[0].message.content.strip()
+    ai_summary = ai_summary.replace('"', '').replace("'", "")  # Remove all quote marks
+
+    # Construct tweet with the source
     tweet = f"{ai_summary}\nSource: {source}"
-    
-    return tweet[:280]  # Ensure tweet is within character limit
+
+    return tweet[:280]  # Ensure it fits within the character limit
 
 # Post to X (Twitter) using API v2
 def post_tweet(tweet):
