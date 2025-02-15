@@ -21,13 +21,12 @@ twitter_client = tweepy.Client(
     access_token_secret=TWITTER_ACCESS_SECRET
 )
 
-# Google News RSS Feeds
+# Google News RSS Feeds - Improved Queries
 RSS_FEEDS = [
-    "https://news.google.com/rss/search?q=construction+industry&hl=en-IN&gl=IN&ceid=IN:en",
-    "https://news.google.com/rss/search?q=construction&hl=en-IN&gl=IN&ceid=IN:en",
-    "https://news.google.com/rss/search?q=infrastructure&hl=en-IN&gl=IN&ceid=IN:en",
-    "https://news.google.com/rss/search?q=smart+city&hl=en-IN&gl=IN&ceid=IN:en",
-    "https://news.google.com/rss/search?q=new+city&hl=en-IN&gl=IN&ceid=IN:en",
+    "https://news.google.com/rss/search?q=construction+AND+industry+-football+-match+-soccer+-sports&hl=en-IN&gl=IN&ceid=IN:en",
+    "https://news.google.com/rss/search?q=infrastructure+AND+development+-football+-match+-sports&hl=en-IN&gl=IN&ceid=IN:en",
+    "https://news.google.com/rss/search?q=smart+city+AND+urban+-football+-match+-sports&hl=en-IN&gl=IN&ceid=IN:en",
+    "https://news.google.com/rss/search?q=new+city+AND+urban+development+-football+-match+-sports&hl=en-IN&gl=IN&ceid=IN:en",
 ]
 
 # Log file to track posted news
