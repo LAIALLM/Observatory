@@ -13,10 +13,13 @@ TWITTER_ACCESS_TOKEN = os.getenv("TWITTER_ACCESS_TOKEN")
 TWITTER_ACCESS_SECRET = os.getenv("TWITTER_ACCESS_SECRET")
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 
-# Authenticate Twitter API
-auth = tweepy.OAuthHandler(TWITTER_API_KEY, TWITTER_SECRET)
-auth.set_access_token(TWITTER_ACCESS_TOKEN, TWITTER_ACCESS_SECRET)
-api = tweepy.API(auth)
+# Authenticate Twitter API (API v2)
+client = tweepy.Client(
+    consumer_key=TWITTER_API_KEY,
+    consumer_secret=TWITTER_SECRET,
+    access_token=TWITTER_ACCESS_TOKEN,
+    access_token_secret=TWITTER_ACCESS_SECRET
+)
 
 # Google News RSS Feeds
 RSS_FEEDS = [
@@ -78,14 +81,11 @@ def get_latest_news():
 
     return news_list
 
-# Summarize news using OpenAI (reinterpret title, add more details if available)
+# Summarize news using OpenAI
 def summarize_news(title, summary, source):
     client = openai.OpenAI(api_key=OPENAI_API_KEY)
 
-    # Base prompt: reinterpret title professionally
     prompt = f"Rephrase this construction-related news title into a concise, professional tweet. Avoid excessive emojis.\n\nTitle: {title}"
-
-    # If additional summary is available, enrich it
     if summary:
         prompt += f"\n\nAlso, add one key point from this summary: {summary}"
 
@@ -99,14 +99,18 @@ def summarize_news(title, summary, source):
     
     return tweet[:280]  # Ensure tweet is within character limit
 
-# Post to X (Twitter)
+# Post to X (Twitter) using API v2
 def post_tweet(tweet):
     try:
-        api.update_status(tweet)
-        print(f"✅ Posted: {tweet}")
+        response = client.create_tweet(text=tweet)
+        print(f"✅ Tweet posted successfully: {response.data}")
         return True
-    except tweepy.TweepError as e:
-        print(f"❌ Error posting: {e}")
+    except tweepy.errors.Forbidden as e:
+        print(f"❌ Twitter API error: {e}")
+        print("⚠️ Check your API access level: https://developer.x.com/en/portal/dashboard")
+        return False
+    except tweepy.errors.TweepyException as e:
+        print(f"❌ Other Tweepy error: {e}")
         return False
 
 if __name__ == "__main__":
@@ -117,9 +121,8 @@ if __name__ == "__main__":
         if not any(article["link"] == link for article in posted_articles):  # Avoid duplicate posting
             tweet = summarize_news(title, summary, source)
             if post_tweet(tweet):
-                # Store article with timestamp
                 posted_articles.append({"link": link, "date": datetime.utcnow().strftime("%Y-%m-%d")})
                 save_posted_articles(posted_articles)
-            time.sleep(5)  # Avoid hitting rate limits
+            time.sleep(5)
 
     print("🚀 Finished checking for news.")
