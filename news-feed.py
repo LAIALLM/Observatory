@@ -21,12 +21,24 @@ twitter_client = tweepy.Client(
     access_token_secret=TWITTER_ACCESS_SECRET
 )
 
-# Google News RSS Feeds - Improved Queries
+# Google News + Industry-Specific RSS Feeds
 RSS_FEEDS = [
-    "https://news.google.com/rss/search?q=construction+AND+industry+-football+-match+-soccer+-sports&hl=en-IN&gl=IN&ceid=IN:en",
-    "https://news.google.com/rss/search?q=infrastructure+AND+development+-football+-match+-sports&hl=en-IN&gl=IN&ceid=IN:en",
-    "https://news.google.com/rss/search?q=smart+city+AND+urban+-football+-match+-sports&hl=en-IN&gl=IN&ceid=IN:en",
-    "https://news.google.com/rss/search?q=new+city+AND+urban+development+-football+-match+-sports&hl=en-IN&gl=IN&ceid=IN:en",
+    
+    # Google News Feeds
+    "https://news.google.com/rss/search?q=construction+industry&hl=en-IN&gl=IN&ceid=IN:en",
+    "https://news.google.com/rss/search?q=infrastructure&hl=en-IN&gl=IN&ceid=IN:en",
+    "https://news.google.com/rss/search?q=urban+development&hl=en-IN&gl=IN&ceid=IN:en",
+    "https://news.google.com/rss/search?q=smart+city&hl=en-IN&gl=IN&ceid=IN:en",
+    "https://news.google.com/rss/search?q=new+city+urban+development&hl=en-IN&gl=IN&ceid=IN:en",
+
+    # Industry-Specific Construction & Infrastructure News Feeds
+    "https://www.constructiondive.com/feeds/news/",  # Construction Dive
+    "https://www.enr.com/rss/articles",  # Engineering News-Record (ENR)
+    "https://www.archdaily.com/rss",  # ArchDaily (Architecture & Urbanism)
+    "https://nextcity.org/feeds/features",  # Next City (Urban Planning & Development)
+    "https://www.smartcitiesdive.com/feeds/news/",  # Smart Cities World (Tech & Development)
+    "https://www.urbantransportnews.com/feed",  # Urban Transport News
+    "https://infrastructuremagazine.com.au/feed/",  # Infrastructure Intelligence
 ]
 
 # Log file to track posted news
@@ -89,21 +101,48 @@ def get_latest_news():
 
     return news_list
 
+# Use GPT-4 to check if news is relevant
+def is_relevant_news(title, summary):
+    client = openai.OpenAI(api_key=OPENAI_API_KEY)
+
+    prompt = f"""
+    The following news headline and summary have been found in an RSS feed. 
+    Decide whether this article is relevant to the construction industry, infrastructure, smart cities, or urban development. 
+    If it's relevant, reply with 'YES'. If it's unrelated (e.g., about sports, entertainment, or politics), reply with 'NO'.
+
+    Title: {title}
+
+    Summary: {summary}
+    """
+
+    response = client.chat.completions.create(
+        model="gpt-4",
+        messages=[{"role": "user", "content": prompt}]
+    )
+
+    decision = response.choices[0].message.content.strip().upper
+
+    # Ensure valid response (default to NO if unexpected output)
+    if decision not in ["YES", "NO"]:
+        print(f"⚠️ Unexpected GPT-4 response: {decision}. Defaulting to NO.")
+        return False
+        
+    return decision == "YES"
+
 # Summarize news using OpenAI
 def summarize_news(title, summary, source):
     client = openai.OpenAI(api_key=OPENAI_API_KEY)
 
-    # Base prompt: No quotes, no hashtags
     prompt = f"""
     Rewrite this construction-related news title into a concise, professional tweet.
     - Do NOT include quotes.
     - Do NOT use hashtags.
     - Keep it engaging and natural.
+    - DO NOT include the source or website name.
 
     Title: {title}
     """
 
-    # If summary exists, add more context
     if summary:
         prompt += f"\n\nAlso, integrate one key point from this summary: {summary}"
 
@@ -112,14 +151,11 @@ def summarize_news(title, summary, source):
         messages=[{"role": "user", "content": prompt}]
     )
 
-    # Remove accidental quotes from AI response
     ai_summary = response.choices[0].message.content.strip()
-    ai_summary = ai_summary.replace('"', '').replace("'", "")  # Remove all quote marks
+    ai_summary = ai_summary.replace('"', '').replace("'", "")
 
-    # Construct tweet with a blank line before the source
-    tweet = f"{ai_summary}\n\nSource: {source}"
-
-    return tweet[:280]  # Ensure it fits within the character limit
+    tweet = f"{ai_summary}" # \n\nSource: {source}
+    return tweet[:280]
 
 # Post to X (Twitter) using API v2
 def post_tweet(tweet):
