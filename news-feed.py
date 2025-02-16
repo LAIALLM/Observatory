@@ -118,11 +118,23 @@ def is_relevant_news(title, summary):
 
     prompt = f"""
     The following news headline and summary have been found in an RSS feed. 
-    Decide whether this article is relevant to the construction industry, infrastructure, smart cities, or urban development. 
-    If it's relevant, reply with 'YES'. If it's unrelated (e.g., about sports, entertainment, or politics), reply with 'NO'.
+    Decide whether this article is relevant to the construction industry, infrastructure, smart cities, or urban development.
 
+    Include articles related to:
+    - Government policies and decisions affecting construction, smart cities, or infrastructure.
+    - Large-scale urban planning projects, even if initiated by political figures.
+    - Development of new sports stadiums, entertainment venues, or other major infrastructure projects.
+    - Public-private partnerships for city development.
+
+    Exclude articles that are:
+    - Only about sports events, matches, or results.
+    - Focused solely on entertainment (e.g., concerts, movies, celebrity real estate).
+    - Political debates that do not involve infrastructure or urban development.
+
+    If the article is relevant, reply with 'YES'. If it is not relevant, reply with 'NO'.
+    
     Title: {title}
-
+    
     Summary: {summary}
     """
 
