@@ -80,24 +80,35 @@ def save_posted_articles(posted):
         os.system("git push origin main || echo 'Push failed, check GitHub Actions permissions'")
         print("✅ Changes committed to GitHub.")
 
-# Get latest news (only from the last hour)
+# Get latest news (only from the last hour) with error handling
 def get_latest_news():
     news_list = []
     now = datetime.utcnow()
 
     for feed_url in RSS_FEEDS:
-        feed = feedparser.parse(feed_url)
+        try:
+            print(f"🔄 Fetching news from: {feed_url}")
+            feed = feedparser.parse(feed_url)
 
-        for entry in feed.entries:
-            title = entry.title
-            link = entry.link
-            published_time = datetime(*entry.published_parsed[:6]) if "published_parsed" in entry else now
-            source = entry.source.title if hasattr(entry, 'source') else "Unknown Source"
-            summary = entry.summary if hasattr(entry, 'summary') else None
+            # Check if the feed is empty or has an error
+            if not feed.entries:
+                print(f"⚠️ Warning: No news found in {feed_url}. It may be down.")
+                continue  # Skip this feed and move to the next
 
-            # Only get news from the last 1 hour
-            if now - published_time < timedelta(hours=1):
-                news_list.append((title, link, source, summary))
+            for entry in feed.entries:
+                title = entry.title
+                link = entry.link
+                published_time = datetime(*entry.published_parsed[:6]) if "published_parsed" in entry else now
+                source = entry.source.title if hasattr(entry, 'source') else "Unknown Source"
+                summary = entry.summary if hasattr(entry, 'summary') else None
+
+                # Only get news from the last 1 hour
+                if now - published_time < timedelta(hours=1):
+                    news_list.append((title, link, source, summary))
+
+        except Exception as e:
+            print(f"❌ Error fetching feed {feed_url}: {e}")
+            continue  # Skip this feed and try the next one
 
     return news_list
 
