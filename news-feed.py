@@ -46,6 +46,22 @@ LOG_FILE = "posted_news.json"
 RETENTION_DAYS = 10  # Remove news older than 10 days
 
 # Load previously processed articles
+def load_posted_articles():
+    if os.path.exists(LOG_FILE):
+        with open(LOG_FILE, "r") as file:
+            try:
+                posted_data = json.load(file)
+            except json.JSONDecodeError:
+                print("⚠️ Error: `posted_news.json` is corrupted. Resetting file.")
+                posted_data = []  # Reset if JSON is corrupted
+
+        # Remove old articles (older than retention period)
+        cutoff_date = datetime.utcnow() - timedelta(days=RETENTION_DAYS)
+        return [entry for entry in posted_data if datetime.strptime(entry["date"], "%Y-%m-%d") > cutoff_date]
+    
+    return []
+
+# Save posted articles (ensuring correct update & GitHub push)
 def save_posted_articles(posted):
     print("💾 Writing to posted_news.json...")
     try:
@@ -298,3 +314,4 @@ if __name__ == "__main__":
         print("✅ `posted_news.json` updated successfully!")
     else:
         print("⚠️ No new relevant news. Skipping JSON update.")
+
