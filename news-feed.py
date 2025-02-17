@@ -62,9 +62,13 @@ def load_posted_articles():
 # Save posted and filtered articles (ensuring correct update & GitHub push)
 def save_posted_articles(posted):
     print("💾 Writing to posted_news.json...")
-    with open(LOG_FILE, "w") as file:
-        json.dump(posted, file, indent=4)
-    print("✅ Successfully wrote to posted_news.json!")
+    try:
+        with open(LOG_FILE, "w") as file:
+            json.dump(posted, file, indent=4)
+        print("✅ Successfully wrote to posted_news.json!")
+    except Exception as e:
+        print(f"❌ Error writing to JSON: {e}")
+
     # Ensure GitHub Actions commits & pushes changes
     if os.getenv("GITHUB_ACTIONS"):
         print("🔄 Committing changes to GitHub...")
@@ -73,7 +77,17 @@ def save_posted_articles(posted):
         os.system("git add posted_news.json")
         os.system("git commit -m 'Update posted_news.json [Automated]' || echo 'No changes to commit'")
         os.system("git push origin main || echo 'Push failed, check GitHub Actions permissions'")
-        print("✅ Changes committed to GitHub.")
+        commit_result = os.system("git commit -m 'Update posted_news.json [Automated]'")
+        
+        if commit_result != 0:
+            print("⚠️ No changes to commit. Skipping push.")
+            return
+
+        push_result = os.system("git push origin main")
+        if push_result != 0:
+            print("❌ Push failed, check GitHub Actions permissions.")
+        else:
+            print("✅ Changes committed to GitHub.")
 
 # Get latest news (only from the last hour) with error handling
 def get_latest_news():
@@ -145,7 +159,7 @@ def is_relevant_news(title, summary):
         messages=[{"role": "user", "content": prompt}]
     )
 
-    decision = response.choices[0].message.content.strip().upper
+    decision = response.choices[0].message.content.strip().upper()
 
     # Ensure valid response (default to NO if unexpected output)
     if decision not in ["YES", "NO"]:
@@ -268,24 +282,29 @@ if __name__ == "__main__":
             print(f"🆕 Relevant article found: {title}")
             tweet = summarize_news(title, summary, source)
             if post_tweet(tweet):
-                posted_articles.append({
+                new_entry = {
                     "link": link,
                     "date": datetime.utcnow().strftime("%Y-%m-%d"),
                     "tweet": tweet,
                     "status": status
-                })
+                }
+                posted_articles.append(new_entry)
                 posted_links.add(link)
+                new_entries.append(new_entry)  # ✅ Track new posted tweets
                 new_tweets = True
             else:
                 print("❌ Tweet failed, skipping JSON update for this article.")
         else:
             print(f"🚫 Article filtered: {title}")
-            posted_articles.append({
+            new_entry = {
                 "link": link,
                 "date": datetime.utcnow().strftime("%Y-%m-%d"),
                 "status": status
-            })
+            }
+            posted_articles.append(new_entry)
+            new_entries.append(new_entry)  # ✅ Track new filtered articles
 
+    # ✅ Now properly updating the JSON with new articles
     if new_tweets or new_entries:
         print("💾 Saving updated articles to posted_news.json...")
         save_posted_articles(posted_articles)
