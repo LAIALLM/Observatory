@@ -61,10 +61,18 @@ def load_filtered_articles():
     
     return []
 
-# Save processed articles (ensuring correct update & GitHub push)
+# Save processed articles incrementally to prevent overwriting the entire file
 def save_processed_articles(processed):
     print("💾 Writing to filtered_news.json...")
     try:
+        # Check if the file exists
+        if os.path.exists(LOG_FILE):
+            with open(LOG_FILE, "r") as file:
+                current_data = json.load(file)
+            # Append new entries to the current data
+            current_data.extend(processed)
+            processed = current_data
+        
         with open(LOG_FILE, "w") as file:
             json.dump(processed, file, indent=4)
         print("✅ Successfully wrote to filtered_news.json!")
@@ -119,35 +127,27 @@ def get_latest_news():
     return news_list
 
 # Use GPT-4 to check if news is relevant
-def is_relevant_news(title, summary):
+def get_news_relevance_score(title, summary):
     client = openai.OpenAI(api_key=OPENAI_API_KEY)
 
     prompt = f"""
-    The following news headline and summary have been found in an RSS feed. 
-    Decide whether this article is relevant to the construction industry, infrastructure, smart cities, or urban development.
+    You are ranking news articles for a construction industry Twitter feed.
+    Assign a **relevance score (0-10)** based on its impact, factual data, importance, and timeliness.
 
-    **Prioritize articles that contain:**
-    - **Concrete data** such as investment amounts, budgets, project costs, area size, completion timelines, or workforce numbers.
-    - **Government policies or financial decisions** that specify funding amounts or regulatory changes impacting infrastructure or smart cities.
-    - **Industry trends with measurable insights**, such as reports on market growth, sustainability metrics, or technological advancements with evidence.
-    - **Confirmed urban development projects**, rather than speculative or proposed ideas without action.
+    **Scoring Criteria:**
+    - **9-10:** Major infrastructure projects, large-scale investments, confirmed government policies, or high-impact urban development. 
+    - **7-8:** Medium-scale developments, emerging industry trends, detailed industry reports, corporate deals, or major tech innovations in construction.
+    - **5-6:** Minor but relevant construction updates, small investments, or less significant projects.
+    - **1-4:** Articles with vague, speculative, or unverified information.
+    - **0:** DO NOT SCORE articles about:
+      - Entertainment (sports events, matches, concerts, movies, celebrity real estate).
+      - Political debates without specific infrastructure or urban development plans.
+      - Speculative reports or opinions without confirmed policies, contracts, or investments.
 
-    **Include valuable articles even if they lack numerical data, IF they:**
-    - Provide **detailed descriptions of new construction, city planning, or infrastructure projects**.
-    - Discuss **key policies, regulations, or contracts signed** that will directly impact urban development.
-    - Offer **expert insights from reputable industry leaders, analysts, or research institutions**.
+    **Reply only with a single integer between 0-10.**
 
-    **Exclude articles that are:**
-    - Overly vague with no specific details or measurable impact.
-    - Only about sports events, matches, or results.
-    - Focused solely on entertainment (e.g., concerts, movies, celebrity real estate).
-    - Political debates that do not involve specific infrastructure or urban development plans.
-    - Speculative reports or opinions that have no confirmed policy or investment.
-
-    **If the article is valuable and industry-relevant, reply with 'YES'. If it is not relevant, reply with 'NO'.**
-    
+    **Article:**
     Title: {title}
-    
     Summary: {summary}
     """
 
@@ -156,17 +156,19 @@ def is_relevant_news(title, summary):
         messages=[{"role": "user", "content": prompt}]
     )
 
-    decision = response.choices[0].message.content.strip().upper()
+    score_text = response.choices[0].message.content.strip()
 
-    # 🔍 Debugging: Print the GPT-4 response
-    print(f"🧠 GPT-4 Decision: {decision} for article: {title}")
+    try:
+        score = int(score_text)
+        return score if 0 <= score <= 10 else 0  # Ensure valid range
+    except ValueError:
+        return 0  # Default to 0 if unexpected response
 
-    # Ensure valid response (default to NO if unexpected output)
-    if decision not in ["YES", "NO"]:
-        print(f"⚠️ Unexpected GPT-4 response: {decision}. Defaulting to NO.")
-        return False
-        
-    return decision == "YES"
+
+ except openai.OpenAIError as e:
+     print(f"❌ OpenAI API Error: {e}")
+     return 0  # Default to 0 if API call fails
+
 
 # Extract company name dynamically using GPT-4
 def extract_company_name(title, summary):
@@ -253,7 +255,7 @@ def post_tweet(tweet):
 
         # Introduce a 3-minute delay **after** posting each tweet
         print("⏳ Waiting 3 minutes before posting the next tweet...")
-        time.sleep(60)  # 60 seconds (1 minutes)
+        time.sleep(90)  # 90 seconds (1.5 minutes)
 
         return True
     except tweepy.errors.Forbidden as e:
@@ -277,34 +279,43 @@ if __name__ == "__main__":
 
     new_entries = []
 
+    scored_news = []
+
     for title, link, source, summary in latest_news:
-        if link in filtered_links:  # ✅ Skip articles already processed
+        if link in filtered_links:
             print(f"⏩ Skipping already processed article: {title}")
             continue
 
-        is_relevant = is_relevant_news(title, summary)
-        status = "posted" if is_relevant else "filtered"
+        score = get_news_relevance_score(title, summary)
 
-        new_entry = {
-            "link": link,
-            "date": datetime.utcnow().strftime("%Y-%m-%d"),
-            "status": status
-        }
+        if score > 7:  # ✅ Ignore irrelevant articles (scored 7)
+            scored_news.append((score, title, link, source, summary))
 
-        if is_relevant:
-            tweet = summarize_news(title, summary, source)  # ✅ Generate tweet
-            if post_tweet(tweet):  # ✅ Post to Twitter
-                new_entry["tweet"] = tweet  # ✅ Save tweet to JSON
+    # 🔹 Sort articles by highest relevance score
+    scored_news.sort(reverse=True, key=lambda x: x[0])  
 
-        processed_articles.append(new_entry)
-        new_entries.append(new_entry)
+    top_articles = scored_news[:3]  # 🔹 Pick top 3 highest-ranked news articles
 
-    # ✅ Save all processed articles after the loop
+    new_entries = []
+
+    for score, title, link, source, summary in top_articles:
+        tweet = summarize_news(title, summary, source)
+
+        if post_tweet(tweet):  # ✅ Only tweet top-ranked articles
+            new_entry = {
+                "link": link,
+                "date": datetime.utcnow().strftime("%Y-%m-%d"),
+                "status": "posted",
+                "score": score,
+                "tweet": tweet
+            }
+            processed_articles.append(new_entry)
+            new_entries.append(new_entry)
+
     if new_entries:
-        print("💾 Saving updated articles to filtered_news.json...")
         save_processed_articles(processed_articles)
         print("✅ `filtered_news.json` updated successfully!")
     else:
-        print("⚠️ No new relevant news. Skipping JSON update.")
+        print("⚠️ No highly relevant news. Skipping JSON update.")
 
 
