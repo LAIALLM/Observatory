@@ -41,11 +41,11 @@ RSS_FEEDS = [
     "https://infrastructuremagazine.com.au/feed/",  # Infrastructure Intelligence
 ]
 
-# Log file to track posted news
+# Log file to track posted and filtered news
 LOG_FILE = "posted_news.json"
 RETENTION_DAYS = 10  # Remove news older than 10 days
 
-# Load previously posted articles
+# Load previously processed articles
 def load_posted_articles():
     if os.path.exists(LOG_FILE):
         with open(LOG_FILE, "r") as file:
@@ -54,22 +54,17 @@ def load_posted_articles():
             except json.JSONDecodeError:
                 print("⚠️ Error: `posted_news.json` is corrupted. Resetting file.")
                 posted_data = []  # Reset if JSON is corrupted
-
-        # Remove old articles (older than 10 days)
+        # Remove old articles (older than retention period)
         cutoff_date = datetime.utcnow() - timedelta(days=RETENTION_DAYS)
-        posted_data = [entry for entry in posted_data if datetime.strptime(entry["date"], "%Y-%m-%d") > cutoff_date]
-
-        return posted_data
+        return [entry for entry in posted_data if datetime.strptime(entry["date"], "%Y-%m-%d") > cutoff_date]
     return []
 
-# Save posted articles (ensuring correct update & GitHub push)
+# Save posted and filtered articles (ensuring correct update & GitHub push)
 def save_posted_articles(posted):
     print("💾 Writing to posted_news.json...")
     with open(LOG_FILE, "w") as file:
         json.dump(posted, file, indent=4)
-
     print("✅ Successfully wrote to posted_news.json!")
-
     # Ensure GitHub Actions commits & pushes changes
     if os.getenv("GITHUB_ACTIONS"):
         print("🔄 Committing changes to GitHub...")
@@ -253,32 +248,48 @@ if __name__ == "__main__":
     print("🔍 Loading previously posted articles...")
     posted_articles = load_posted_articles()
     posted_links = {article["link"] for article in posted_articles}  # Track already posted links
-    print(f"📂 {len(posted_articles)} articles already posted.")
+    print(f"📂 {len(posted_articles)} articles already posted or filtered.")
 
     latest_news = get_latest_news()
     print(f"📰 Found {len(latest_news)} new articles.")
 
+    new_entries = []
     new_tweets = False  # Track if any new tweets were posted
 
     for title, link, source, summary in latest_news:
-        if link not in posted_links:  # Prevent duplicate tweets
-            print(f"🆕 New article found: {title}")
+        if link in posted_links:  # Prevent duplicate processing
+            print(f"⏩ Skipping already processed article: {title}")
+            continue
+
+        is_relevant = is_relevant_news(title, summary)
+        status = "posted" if is_relevant else "filtered"
+
+        if is_relevant:
+            print(f"🆕 Relevant article found: {title}")
             tweet = summarize_news(title, summary, source)
             if post_tweet(tweet):
                 posted_articles.append({
                     "link": link,
                     "date": datetime.utcnow().strftime("%Y-%m-%d"),
-                    "tweet": tweet  # Store tweet text for reference
+                    "tweet": tweet,
+                    "status": status
                 })
-                posted_links.add(link)  # Prevent duplicate in the same run
+                posted_links.add(link)
                 new_tweets = True
             else:
                 print("❌ Tweet failed, skipping JSON update for this article.")
+        else:
+            print(f"🚫 Article filtered: {title}")
+            posted_articles.append({
+                "link": link,
+                "date": datetime.utcnow().strftime("%Y-%m-%d"),
+                "status": status
+            })
 
-    if new_tweets:  # Only save if new tweets were posted
-        print("💾 Saving new articles to posted_news.json...")
+    if new_tweets or new_entries:
+        print("💾 Saving updated articles to posted_news.json...")
         save_posted_articles(posted_articles)
         print("✅ `posted_news.json` updated successfully!")
     else:
-        print("⚠️ No new tweets posted, skipping JSON update.")
+        print("⚠️ No new relevant news. Skipping JSON update.")
 
