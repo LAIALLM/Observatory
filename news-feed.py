@@ -46,20 +46,6 @@ LOG_FILE = "posted_news.json"
 RETENTION_DAYS = 10  # Remove news older than 10 days
 
 # Load previously processed articles
-def load_posted_articles():
-    if os.path.exists(LOG_FILE):
-        with open(LOG_FILE, "r") as file:
-            try:
-                posted_data = json.load(file)
-            except json.JSONDecodeError:
-                print("⚠️ Error: `posted_news.json` is corrupted. Resetting file.")
-                posted_data = []  # Reset if JSON is corrupted
-        # Remove old articles (older than retention period)
-        cutoff_date = datetime.utcnow() - timedelta(days=RETENTION_DAYS)
-        return [entry for entry in posted_data if datetime.strptime(entry["date"], "%Y-%m-%d") > cutoff_date]
-    return []
-
-# Save posted and filtered articles (ensuring correct update & GitHub push)
 def save_posted_articles(posted):
     print("💾 Writing to posted_news.json...")
     try:
@@ -68,6 +54,7 @@ def save_posted_articles(posted):
         print("✅ Successfully wrote to posted_news.json!")
     except Exception as e:
         print(f"❌ Error writing to JSON: {e}")
+        return  # Stop execution if writing fails
 
     # Ensure GitHub Actions commits & pushes changes
     if os.getenv("GITHUB_ACTIONS"):
@@ -75,8 +62,6 @@ def save_posted_articles(posted):
         os.system("git config --global user.email 'github-actions@github.com'")
         os.system("git config --global user.name 'GitHub Actions'")
         os.system("git add posted_news.json")
-        os.system("git commit -m 'Update posted_news.json [Automated]' || echo 'No changes to commit'")
-        os.system("git push origin main || echo 'Push failed, check GitHub Actions permissions'")
         commit_result = os.system("git commit -m 'Update posted_news.json [Automated]'")
         
         if commit_result != 0:
@@ -88,6 +73,7 @@ def save_posted_articles(posted):
             print("❌ Push failed, check GitHub Actions permissions.")
         else:
             print("✅ Changes committed to GitHub.")
+
 
 # Get latest news (only from the last hour) with error handling
 def get_latest_news():
@@ -160,6 +146,7 @@ def is_relevant_news(title, summary):
     )
 
     decision = response.choices[0].message.content.strip().upper()
+
 
     # Ensure valid response (default to NO if unexpected output)
     if decision not in ["YES", "NO"]:
@@ -311,4 +298,3 @@ if __name__ == "__main__":
         print("✅ `posted_news.json` updated successfully!")
     else:
         print("⚠️ No new relevant news. Skipping JSON update.")
-
