@@ -45,40 +45,27 @@ RSS_FEEDS = [
 LOG_FILE = "posted_news.json"
 RETENTION_DAYS = 10  # Remove news older than 10 days
 
-# Load previously posted articles
-def load_posted_articles():
+# Load previously processed articles
+def load_news_log():
     if os.path.exists(LOG_FILE):
         with open(LOG_FILE, "r") as file:
             try:
-                posted_data = json.load(file)
+                data = json.load(file)
             except json.JSONDecodeError:
-                print("⚠️ Error: `posted_news.json` is corrupted. Resetting file.")
-                posted_data = []  # Reset if JSON is corrupted
-
-        # Remove old articles (older than 10 days)
+                print("⚠️ Error: Corrupted JSON file. Resetting.")
+                data = []
         cutoff_date = datetime.utcnow() - timedelta(days=RETENTION_DAYS)
-        posted_data = [entry for entry in posted_data if datetime.strptime(entry["date"], "%Y-%m-%d") > cutoff_date]
-
-        return posted_data
+        return [entry for entry in data if datetime.strptime(entry["date"], "%Y-%m-%d") > cutoff_date]
     return []
 
-# Save posted articles (ensuring correct update & GitHub push)
-def save_posted_articles(posted):
-    print("💾 Writing to posted_news.json...")
+# Save news log
+def save_news_log(data):
     with open(LOG_FILE, "w") as file:
-        json.dump(posted, file, indent=4)
-
-    print("✅ Successfully wrote to posted_news.json!")
-
-    # Ensure GitHub Actions commits & pushes changes
+        json.dump(data, file, indent=4)
     if os.getenv("GITHUB_ACTIONS"):
-        print("🔄 Committing changes to GitHub...")
-        os.system("git config --global user.email 'github-actions@github.com'")
-        os.system("git config --global user.name 'GitHub Actions'")
         os.system("git add posted_news.json")
         os.system("git commit -m 'Update posted_news.json [Automated]' || echo 'No changes to commit'")
         os.system("git push origin main || echo 'Push failed, check GitHub Actions permissions'")
-        print("✅ Changes committed to GitHub.")
 
 # Get latest news (only from the last hour) with error handling
 def get_latest_news():
@@ -250,34 +237,26 @@ def post_tweet(tweet):
         return False
 
 if __name__ == "__main__":
-    print("🔍 Loading previously posted articles...")
-    posted_articles = load_posted_articles()
-    posted_links = {article["link"] for article in posted_articles}  # Track already posted links
-    print(f"📂 {len(posted_articles)} articles already posted.")
-
+    print("🔍 Loading news log...")
+    news_log = load_news_log()
+    posted_links = {item["link"] for item in news_log}
+    print(f"📂 {len(news_log)} articles logged (posted + filtered).")
     latest_news = get_latest_news()
-    print(f"📰 Found {len(latest_news)} new articles.")
-
-    new_tweets = False  # Track if any new tweets were posted
-
-    for title, link, source, summary in latest_news:
-        if link not in posted_links:  # Prevent duplicate tweets
-            print(f"🆕 New article found: {title}")
-            tweet = summarize_news(title, summary, source)
+    print(f"📰 {len(latest_news)} new articles found.")
+    new_entries = []
+    for article in latest_news:
+        title, link, summary = article["title"], article["link"], article["summary"]
+        if link in posted_links:
+            print(f"⏩ Skipping already logged news: {title}")
+            continue
+        relevant = is_relevant_news(title, summary)
+        status = "posted" if relevant else "filtered"
+        if relevant:
+            tweet = summarize_news(title, summary)
             if post_tweet(tweet):
-                posted_articles.append({
-                    "link": link,
-                    "date": datetime.utcnow().strftime("%Y-%m-%d"),
-                    "tweet": tweet  # Store tweet text for reference
-                })
-                posted_links.add(link)  # Prevent duplicate in the same run
-                new_tweets = True
-            else:
-                print("❌ Tweet failed, skipping JSON update for this article.")
+                new_entries.append({"title": title, "link": link, "summary": summary, "date": datetime.utcnow().strftime("%Y-%m-%d"), "status": status, "tweet": tweet})
+        else:
+            new_entries.append({"title": title, "link": link, "summary": summary, "date": datetime.utcnow().strftime("%Y-%m-%d"), "status": status})
+    if new_entries:
+        save_news_log(news_log + new_entries)
 
-    if new_tweets:  # Only save if new tweets were posted
-        print("💾 Saving new articles to posted_news.json...")
-        save_posted_articles(posted_articles)
-        print("✅ `posted_news.json` updated successfully!")
-    else:
-        print("⚠️ No new tweets posted, skipping JSON update.")
