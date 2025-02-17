@@ -227,6 +227,7 @@ def summarize_news(title, summary, source):
     - Do NOT use hashtags.
     - Keep it engaging and natural.
     - If a country is mentioned, add its correct flag emoji at the start.
+    - Do NOT use a globe emoji or flag for global terms like "world" or "global.
     - DO NOT include the source or website name.
 
     Title: {title}
