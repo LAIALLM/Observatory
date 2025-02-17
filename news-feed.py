@@ -56,7 +56,7 @@ def load_filtered_articles():
                 processed_data = []  # Reset if JSON is corrupted
 
         print(f"Loaded processed articles: {processed_data}")  # Add this line for debugging
-        
+
         # Check if the structure is correct (list of dictionaries)
         if not all(isinstance(entry, dict) and "link" in entry for entry in processed_data):
             print("⚠️ Warning: `filtered_news.json` has an unexpected structure. Resetting file.")
@@ -67,11 +67,10 @@ def load_filtered_articles():
         processed_data = [entry for entry in processed_data if datetime.strptime(entry["date"], "%Y-%m-%d") > cutoff_date]
         
         # Track links of processed articles to avoid duplication
-        processed_links = {entry["link"] for entry in processed_data}
+        processed_links = {entry["link"] for entry in processed_data} if processed_data else set()
         return processed_data, processed_links
     
     return [], set()
-
 
 
 # Save processed articles incrementally to prevent overwriting the entire file
@@ -287,7 +286,8 @@ def post_tweet(tweet):
 if __name__ == "__main__":
     print("🔍 Loading previously processed articles...")
     processed_articles = load_filtered_articles()
-    filtered_links = {article["link"] for article in processed_articles}  # ✅ Track both posted & filtered links
+    # Handle empty processed_articles case
+    filtered_links = {article["link"] for article in processed_articles} if processed_articles else set()
     print(f"📂 {len(processed_articles)} articles already processed.")
 
     latest_news = get_latest_news()
