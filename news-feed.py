@@ -159,7 +159,54 @@ def is_relevant_news(title, summary):
         
     return decision == "YES"
 
-# Summarize news using OpenAI
+# Extract company name dynamically using GPT-4
+def extract_company_name(title, summary):
+    client = openai.OpenAI(api_key=OPENAI_API_KEY)
+    prompt = f"""
+    Identify the primary company mentioned in the following news.
+    If no company is mentioned, reply exactly with 'None'.
+
+    Title: {title}
+    Summary: {summary}
+    """
+    response = client.chat.completions.create(
+        model="gpt-4",
+        messages=[{"role": "user", "content": prompt}]
+    )
+    
+    company_name = response.choices[0].message.content.strip()
+
+    # Ensure consistent checking for "None" in various cases
+    return None if company_name.lower() == "none" else company_name
+
+
+# Extract stock ticker symbol using GPT-4
+def get_stock_ticker(company_name):
+    if not company_name:
+        return None  # Skip API call if no company is detected
+    
+    client = openai.OpenAI(api_key=OPENAI_API_KEY)
+
+    # Define the prompt as a raw string (to prevent formatting issues)
+    prompt = (
+        f"Identify if the company '{company_name}' is publicly traded and provide its stock ticker.\n"
+        "- Use '$' for all stock symbols for Twitter compatibility.\n"
+        "- If the company is private or does not have a stock ticker, reply exactly with 'None'.\n\n"
+        f"Company: {company_name}"
+    )
+
+    response = client.chat.completions.create(
+        model="gpt-4",
+        messages=[{"role": "user", "content": prompt}]
+    )
+
+    stock_ticker = response.choices[0].message.content.strip()
+
+    # Ensure consistent checking for "None"
+    return None if stock_ticker.lower() == "none" else stock_ticker
+
+
+# Summarize news and format tweet
 def summarize_news(title, summary, source):
     client = openai.OpenAI(api_key=OPENAI_API_KEY)
 
