@@ -266,10 +266,10 @@ def post_tweet(tweet):
         print(f"❌ Other Tweepy error: {e}")
         return False
 
+# Main execution starts here
 if __name__ == "__main__":
     print("🔍 Loading previously processed articles...")
     processed_articles = load_filtered_articles()
-    # Handle empty processed_articles case
     filtered_links = {article["link"] for article in processed_articles} if len(processed_articles) > 0 else set()
     print(f"📂 {len(processed_articles)} articles already processed.")
 
@@ -285,34 +285,33 @@ if __name__ == "__main__":
 
         score = get_news_relevance_score(title, summary)
 
-        if score > 7:  # ✅ Ignore irrelevant articles (scored 7)
-            scored_news.append((score, title, link, source, summary))
+        # Store all news, regardless of score
+        scored_news.append((score, title, link, source, summary))
 
-    # 🔹 Sort articles by highest relevance score
-    scored_news.sort(reverse=True, key=lambda x: x[0])  
+    # Sort articles by highest relevance score
+    scored_news.sort(reverse=True, key=lambda x: x[0])
 
-    top_articles = scored_news[:3]  # 🔹 Pick top 3 highest-ranked news articles
+    top_articles = scored_news[:3]  # Pick top 3 highest-ranked news articles
 
     new_entries = []
 
     for score, title, link, source, summary in top_articles:
         tweet = summarize_news(title, summary, source)
 
-        if post_tweet(tweet):  # ✅ Only tweet top-ranked articles
-            new_entry = {
-                "link": link,
-                "date": datetime.utcnow().strftime("%Y-%m-%d"),
-                "status": "posted",
-                "score": score,
-                "tweet": tweet
-            }
-            processed_articles.append(new_entry)
-            new_entries.append(new_entry)
+        if score >= 7:  # Only tweet if score is 7 or above
+            if post_tweet(tweet):  # Only tweet top-ranked articles
+                new_entry = {
+                    "link": link,
+                    "date": datetime.utcnow().strftime("%Y-%m-%d"),
+                    "status": "posted",
+                    "score": score,
+                    "tweet": tweet
+                }
+                processed_articles.append(new_entry)
+                new_entries.append(new_entry)
 
     if new_entries:
         save_processed_articles(processed_articles)
         print("✅ `filtered_news.json` updated successfully!")
     else:
         print("⚠️ No highly relevant news. Skipping JSON update.")
-
-
