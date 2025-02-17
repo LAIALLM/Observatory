@@ -286,6 +286,15 @@ if __name__ == "__main__":
         score = get_news_relevance_score(title, summary)
 
         # Store all news, regardless of score
+        article_entry = {
+            "link": link,
+            "date": datetime.utcnow().strftime("%Y-%m-%d"),
+            "status": "processed",  # Mark article as processed
+            "score": score,
+            "tweet": summarize_news(title, summary, source)
+        }
+        processed_articles.append(article_entry)  # Add article to the processed list
+
         scored_news.append((score, title, link, source, summary))
 
     # Sort articles by highest relevance score
@@ -310,8 +319,7 @@ if __name__ == "__main__":
                 processed_articles.append(new_entry)
                 new_entries.append(new_entry)
 
-    if new_entries:
-        save_processed_articles(processed_articles)
-        print("✅ `filtered_news.json` updated successfully!")
-    else:
-        print("⚠️ No highly relevant news. Skipping JSON update.")
+    # Save all processed articles to JSON
+    save_processed_articles(processed_articles)
+    print("✅ `filtered_news.json` updated successfully!")
+
