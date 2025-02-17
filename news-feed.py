@@ -262,10 +262,10 @@ def post_tweet(tweet):
         return False
 
 if __name__ == "__main__":
-    print("🔍 Loading previously posted articles...")
-    posted_articles = load_posted_articles()
-    posted_links = {article["link"] for article in posted_articles}  # Track already posted links
-    print(f"📂 {len(posted_articles)} articles already posted or filtered.")
+    print("🔍 Loading previously processed articles...")
+    processed_articles = load_filtered_articles()  # ✅ Load all processed articles
+    filtered_links = {article["link"] for article in processed_articles}  # ✅ Define filtered_links properly
+    print(f"📂 {len(processed_articles)} articles already processed.")
 
     latest_news = get_latest_news()
     print(f"📰 Found {len(latest_news)} new articles.")
@@ -274,7 +274,7 @@ if __name__ == "__main__":
     new_tweets = False  # Track if any new tweets were posted
 
     for title, link, source, summary in latest_news:
-        if link in filtered_links:  # Prevent duplicate processing
+        if link in filtered_links:  # ✅ Prevent duplicate processing (includes both posted & filtered)
             print(f"⏩ Skipping already processed article: {title}")
             continue
 
