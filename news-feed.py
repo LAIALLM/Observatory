@@ -250,11 +250,6 @@ def post_tweet(tweet):
     try:
         response = twitter_client.create_tweet(text=tweet)
         print(f"✅ Tweet posted successfully: {response.data}")
-
-        # 🔄 Introduce a delay before the next tweet
-        print("⏳ Waiting 3 minutes before next tweet...")
-        time.sleep(180)  # 180 seconds (3 minutes)
-
         return True
     except tweepy.errors.Forbidden as e:
         if "Status is a duplicate" in str(e):
@@ -294,6 +289,11 @@ if __name__ == "__main__":
             tweet = summarize_news(title, summary, source)  # ✅ Generate tweet
             if post_tweet(tweet):  # ✅ Post to Twitter
                 new_entry["tweet"] = tweet  # ✅ Save tweet to JSON
+                tweet_count += 1  # Increase counter after a successful tweet
+                
+                if tweet_count % 5 == 0:  # ⏳ Wait only after 5 tweets to match Twitter's free-tier limit
+                    print("⏳ Waiting 3 minutes before posting more tweets...")
+                    time.sleep(180)  # 180 seconds (3 minutes)
 
         processed_articles.append(new_entry)
         new_entries.append(new_entry)
