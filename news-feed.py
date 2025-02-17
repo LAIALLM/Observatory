@@ -297,6 +297,9 @@ if __name__ == "__main__":
 
         scored_news.append((score, title, link, source, summary))
 
+        # Only generate tweet if score is 7 or above
+        tweet = summarize_news(title, summary, source) if score >= 7 else None
+
     # Sort articles by highest relevance score
     scored_news.sort(reverse=True, key=lambda x: x[0])
 
