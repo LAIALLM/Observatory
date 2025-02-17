@@ -168,6 +168,7 @@ def summarize_news(title, summary, source):
     - Do NOT include quotes.
     - Do NOT use hashtags.
     - Keep it engaging and natural.
+    - If a country is mentioned, add its correct flag emoji at the start.
     - DO NOT include the source or website name.
 
     Title: {title}
