@@ -57,12 +57,16 @@ def load_filtered_articles():
 
         # Remove old articles (older than retention period)
         cutoff_date = datetime.utcnow() - timedelta(days=RETENTION_DAYS)
-        return [entry for entry in processed_data if datetime.strptime(entry["date"], "%Y-%m-%d") > cutoff_date]
+        processed_data = [entry for entry in processed_data if datetime.strptime(entry["date"], "%Y-%m-%d") > cutoff_date]
+        
+        # Track links of processed articles to avoid duplication
+        processed_links = {entry["link"] for entry in processed_data}
+        return processed_data, processed_links
     
-    return []
+    return [], set()
 
 # Save processed articles incrementally to prevent overwriting the entire file
-def save_processed_articles(processed):
+def save_processed_articles(processed, new_entries):
     print("💾 Writing to filtered_news.json...")
     try:
         # Check if the file exists
@@ -70,7 +74,7 @@ def save_processed_articles(processed):
             with open(LOG_FILE, "r") as file:
                 current_data = json.load(file)
             # Append new entries to the current data
-            current_data.extend(processed)
+            current_data.extend(new_entries)
             processed = current_data
         
         with open(LOG_FILE, "w") as file:
@@ -79,7 +83,7 @@ def save_processed_articles(processed):
     except Exception as e:
         print(f"❌ Error writing to JSON: {e}")
         return  # Stop execution if writing fails
-
+        
     # Ensure GitHub Actions commits & pushes changes
     if os.getenv("GITHUB_ACTIONS"):
         print("🔄 Committing changes to GitHub...")
