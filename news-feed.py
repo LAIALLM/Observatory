@@ -291,7 +291,7 @@ if __name__ == "__main__":
             "date": datetime.utcnow().strftime("%Y-%m-%d"),
             "status": "processed",  # Mark article as processed
             "score": score,
-            "tweet": summarize_news(title, summary, source)
+            "tweet": summarize_news(title, summary, source) if score >= 7 else None  # ✅ Only generate a tweet if score >= 7
         }
         processed_articles.append(article_entry)  # Add article to the processed list
 
