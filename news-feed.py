@@ -274,7 +274,7 @@ if __name__ == "__main__":
     new_tweets = False  # Track if any new tweets were posted
 
     for title, link, source, summary in latest_news:
-        if link in posted_links:  # Prevent duplicate processing
+        if link in filtered_links:  # Prevent duplicate processing
             print(f"⏩ Skipping already processed article: {title}")
             continue
 
