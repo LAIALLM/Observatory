@@ -244,13 +244,16 @@ def summarize_news(title, summary, source):
 
 # Post to X (Twitter) using API v2
 def post_tweet(tweet):
+    print(f"🚀 Attempting to tweet: {tweet}")  # Debugging line
     try:
         response = twitter_client.create_tweet(text=tweet)
         print(f"✅ Tweet posted successfully: {response.data}")
         return True
     except tweepy.errors.Forbidden as e:
-        print(f"❌ Twitter API error: {e}")
-        print("⚠️ Check your API access level: https://developer.x.com/en/portal/dashboard")
+        if "Status is a duplicate" in str(e):
+            print("⚠️ Duplicate Tweet detected. Skipping.")
+        else:
+            print(f"❌ Twitter API error: {e}")
         return False
     except tweepy.errors.TweepyException as e:
         print(f"❌ Other Tweepy error: {e}")
