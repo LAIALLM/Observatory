@@ -158,6 +158,8 @@ def is_relevant_news(title, summary):
 
     decision = response.choices[0].message.content.strip().upper()
 
+    # 🔍 Debugging: Print the GPT-4 response
+    print(f"🧠 GPT-4 Decision: {decision} for article: {title}")
 
     # Ensure valid response (default to NO if unexpected output)
     if decision not in ["YES", "NO"]:
@@ -242,12 +244,17 @@ def summarize_news(title, summary, source):
     tweet = f"{ai_summary}" # \n\nSource: {source}
     return tweet[:280]
 
-# Post to X (Twitter) using API v2
+# Post to X (Twitter) using API v2 with a delay
 def post_tweet(tweet):
     print(f"🚀 Attempting to tweet: {tweet}")  # Debugging line
     try:
         response = twitter_client.create_tweet(text=tweet)
         print(f"✅ Tweet posted successfully: {response.data}")
+
+        # 🔄 Introduce a delay before the next tweet
+        print("⏳ Waiting 3 minutes before next tweet...")
+        time.sleep(180)  # 180 seconds (3 minutes)
+
         return True
     except tweepy.errors.Forbidden as e:
         if "Status is a duplicate" in str(e):
@@ -258,7 +265,7 @@ def post_tweet(tweet):
     except tweepy.errors.TweepyException as e:
         print(f"❌ Other Tweepy error: {e}")
         return False
-
+        
 if __name__ == "__main__":
     print("🔍 Loading previously processed articles...")
     processed_articles = load_filtered_articles()
