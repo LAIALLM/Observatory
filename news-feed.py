@@ -277,8 +277,6 @@ if __name__ == "__main__":
     latest_news = get_latest_news()
     print(f"📰 Found {len(latest_news)} new articles.")
 
-    new_entries = []
-
     scored_news = []
 
     for title, link, source, summary in latest_news:
