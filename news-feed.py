@@ -133,7 +133,7 @@ def get_news_relevance_score(title, summary):
     prompt = f"""
     You are ranking news articles for a construction industry Twitter feed.
     Assign a **relevance score (0-10)** based on its impact, factual data, importance, and timeliness.
-
+    
     **Scoring Criteria:**
     - **9-10:** Major infrastructure projects, large-scale investments, confirmed government policies, or high-impact urban development. 
     - **7-8:** Medium-scale developments, emerging industry trends, detailed industry reports, corporate deals, or major tech innovations in construction.
@@ -143,9 +143,11 @@ def get_news_relevance_score(title, summary):
       - Entertainment (sports events, matches, concerts, movies, celebrity real estate).
       - Political debates without specific infrastructure or urban development plans.
       - Speculative reports or opinions without confirmed policies, contracts, or investments.
-
+    
+    - **Deduct 1 point** for articles that do not contain **concrete data** or **confirmed urban development projects**.
+    
     **Reply only with a single integer between 0-10.**
-
+    
     **Article:**
     Title: {title}
     Summary: {summary}
