@@ -42,7 +42,7 @@ RSS_FEEDS = [
 ]
 
 # Log file to track posted and filtered news
-LOG_FILE = "filtered_news.json"
+LOG_FILE = "posted_news.json"
 RETENTION_DAYS = 10  # Remove news older than 10 days
 
 # Load previously processed articles
@@ -52,7 +52,7 @@ def load_posted_articles():
             try:
                 posted_data = json.load(file)
             except json.JSONDecodeError:
-                print("⚠️ Error: `filtered_news.json` is corrupted. Resetting file.")
+                print("⚠️ Error: `posted_news.json` is corrupted. Resetting file.")
                 posted_data = []  # Reset if JSON is corrupted
 
         # Remove old articles (older than retention period)
@@ -63,11 +63,11 @@ def load_posted_articles():
 
 # Save posted articles (ensuring correct update & GitHub push)
 def save_posted_articles(posted):
-    print("💾 Writing to filtered_news.json...")
+    print("💾 Writing to posted_news.json...")
     try:
         with open(LOG_FILE, "w") as file:
             json.dump(posted, file, indent=4)
-        print("✅ Successfully wrote to filtered_news.json!")
+        print("✅ Successfully wrote to posted_news.json!")
     except Exception as e:
         print(f"❌ Error writing to JSON: {e}")
         return  # Stop execution if writing fails
@@ -77,8 +77,8 @@ def save_posted_articles(posted):
         print("🔄 Committing changes to GitHub...")
         os.system("git config --global user.email 'github-actions@github.com'")
         os.system("git config --global user.name 'GitHub Actions'")
-        os.system("git add filtered_news.json")
-        commit_result = os.system("git commit -m 'Update filtered_news.json [Automated]'")
+        os.system("git add posted_news.json")
+        commit_result = os.system("git commit -m 'Update posted_news.json [Automated]'")
         
         if commit_result != 0:
             print("⚠️ No changes to commit. Skipping push.")
@@ -309,9 +309,9 @@ if __name__ == "__main__":
 
     # ✅ Now properly updating the JSON with new articles
     if new_tweets or new_entries:
-        print("💾 Saving updated articles to filtered_news.json...")
+        print("💾 Saving updated articles to posted_news.json...")
         save_posted_articles(posted_articles)
-        print("✅ `filtered_news.json` updated successfully!")
+        print("✅ `posted_news.json` updated successfully!")
     else:
         print("⚠️ No new relevant news. Skipping JSON update.")
 
