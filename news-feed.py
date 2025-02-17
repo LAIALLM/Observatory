@@ -45,19 +45,19 @@ RSS_FEEDS = [
 LOG_FILE = "filtered_news.json"
 RETENTION_DAYS = 10  # Remove news older than 10 days
 
-# Load previously processed articles
-def load_posted_articles():
+# Load previously processed articles (both tweeted & filtered)
+def load_filtered_articles():
     if os.path.exists(LOG_FILE):
         with open(LOG_FILE, "r") as file:
             try:
-                posted_data = json.load(file)
+                processed_data = json.load(file)
             except json.JSONDecodeError:
                 print("⚠️ Error: `filtered_news.json` is corrupted. Resetting file.")
-                posted_data = []  # Reset if JSON is corrupted
+                processed_data = []  # Reset if JSON is corrupted
 
         # Remove old articles (older than retention period)
         cutoff_date = datetime.utcnow() - timedelta(days=RETENTION_DAYS)
-        return [entry for entry in posted_data if datetime.strptime(entry["date"], "%Y-%m-%d") > cutoff_date]
+        return [entry for entry in processed_data if datetime.strptime(entry["date"], "%Y-%m-%d") > cutoff_date]
     
     return []
 
