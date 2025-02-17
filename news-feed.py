@@ -250,6 +250,11 @@ def post_tweet(tweet):
     try:
         response = twitter_client.create_tweet(text=tweet)
         print(f"✅ Tweet posted successfully: {response.data}")
+
+        # Introduce a 3-minute delay **after** posting each tweet
+        print("⏳ Waiting 3 minutes before posting the next tweet...")
+        time.sleep(180)  # 180 seconds (3 minutes)
+
         return True
     except tweepy.errors.Forbidden as e:
         if "Status is a duplicate" in str(e):
@@ -260,7 +265,7 @@ def post_tweet(tweet):
     except tweepy.errors.TweepyException as e:
         print(f"❌ Other Tweepy error: {e}")
         return False
-        
+
 if __name__ == "__main__":
     print("🔍 Loading previously processed articles...")
     processed_articles = load_filtered_articles()
@@ -271,7 +276,6 @@ if __name__ == "__main__":
     print(f"📰 Found {len(latest_news)} new articles.")
 
     new_entries = []
-    tweet_count = 0  # ✅ Initialize counter before loop
 
     for title, link, source, summary in latest_news:
         if link in filtered_links:  # ✅ Skip articles already processed
@@ -291,11 +295,6 @@ if __name__ == "__main__":
             tweet = summarize_news(title, summary, source)  # ✅ Generate tweet
             if post_tweet(tweet):  # ✅ Post to Twitter
                 new_entry["tweet"] = tweet  # ✅ Save tweet to JSON
-                tweet_count += 1  # ✅ Now correctly defined
-
-                if tweet_count % 5 == 0:  # ⏳ Wait only after every 5 tweets
-                    print("⏳ Waiting 3 minutes before posting more tweets...")
-                    time.sleep(180)  # 180 seconds (3 minutes)
 
         processed_articles.append(new_entry)
         new_entries.append(new_entry)
@@ -307,6 +306,5 @@ if __name__ == "__main__":
         print("✅ `filtered_news.json` updated successfully!")
     else:
         print("⚠️ No new relevant news. Skipping JSON update.")
-
 
 
