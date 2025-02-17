@@ -62,7 +62,7 @@ def load_filtered_articles():
     return []
 
 # Save posted articles (ensuring correct update & GitHub push)
-def save_posted_articles(posted):
+def save_processed_articles(posted):
     print("💾 Writing to filtered_news.json...")
     try:
         with open(LOG_FILE, "w") as file:
@@ -291,7 +291,7 @@ if __name__ == "__main__":
                     "tweet": tweet,
                     "status": status
                 }
-                posted_articles.append(new_entry)
+                processed_articles.append(new_entry)
                 posted_links.add(link)
                 new_entries.append(new_entry)  # ✅ Track new posted tweets
                 new_tweets = True
@@ -304,13 +304,13 @@ if __name__ == "__main__":
                 "date": datetime.utcnow().strftime("%Y-%m-%d"),
                 "status": status
             }
-            posted_articles.append(new_entry)
+            processed_articles.append(new_entry)
             new_entries.append(new_entry)  # ✅ Track new filtered articles
 
     # ✅ Now properly updating the JSON with new articles
     if new_tweets or new_entries:
         print("💾 Saving updated articles to filtered_news.json...")
-        save_posted_articles(posted_articles)
+        save_processed_articles(processed_articles)
         print("✅ `filtered_news.json` updated successfully!")
     else:
         print("⚠️ No new relevant news. Skipping JSON update.")
