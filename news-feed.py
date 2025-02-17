@@ -55,6 +55,8 @@ def load_filtered_articles():
                 print("⚠️ Error: `filtered_news.json` is corrupted. Resetting file.")
                 processed_data = []  # Reset if JSON is corrupted
 
+        print(f"Loaded processed articles: {processed_data}")  # Add this line for debugging
+        
         # Check if the structure is correct (list of dictionaries)
         if not all(isinstance(entry, dict) and "link" in entry for entry in processed_data):
             print("⚠️ Warning: `filtered_news.json` has an unexpected structure. Resetting file.")
@@ -69,6 +71,7 @@ def load_filtered_articles():
         return processed_data, processed_links
     
     return [], set()
+
 
 
 # Save processed articles incrementally to prevent overwriting the entire file
