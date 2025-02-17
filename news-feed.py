@@ -61,12 +61,12 @@ def load_filtered_articles():
     
     return []
 
-# Save posted articles (ensuring correct update & GitHub push)
-def save_processed_articles(posted):
+# Save processed articles (ensuring correct update & GitHub push)
+def save_processed_articles(processed):
     print("💾 Writing to filtered_news.json...")
     try:
         with open(LOG_FILE, "w") as file:
-            json.dump(posted, file, indent=4)
+            json.dump(processed, file, indent=4)
         print("✅ Successfully wrote to filtered_news.json!")
     except Exception as e:
         print(f"❌ Error writing to JSON: {e}")
@@ -90,7 +90,6 @@ def save_processed_articles(posted):
         else:
             print("✅ Changes committed to GitHub.")
 
-
 # Get latest news (only from the last hour) with error handling
 def get_latest_news():
     news_list = []
@@ -101,10 +100,9 @@ def get_latest_news():
             print(f"🔄 Fetching news from: {feed_url}")
             feed = feedparser.parse(feed_url)
 
-            # Check if the feed is empty or has an error
             if not feed.entries:
                 print(f"⚠️ Warning: No news found in {feed_url}. It may be down.")
-                continue  # Skip this feed and move to the next
+                continue
 
             for entry in feed.entries:
                 title = entry.title
@@ -113,14 +111,11 @@ def get_latest_news():
                 source = entry.source.title if hasattr(entry, 'source') else "Unknown Source"
                 summary = entry.summary if hasattr(entry, 'summary') else None
 
-                # Only get news from the last 1 hour
                 if now - published_time < timedelta(hours=1):
                     news_list.append((title, link, source, summary))
-
         except Exception as e:
             print(f"❌ Error fetching feed {feed_url}: {e}")
-            continue  # Skip this feed and try the next one
-
+            continue
     return news_list
 
 # Use GPT-4 to check if news is relevant
@@ -263,55 +258,42 @@ def post_tweet(tweet):
 
 if __name__ == "__main__":
     print("🔍 Loading previously processed articles...")
-    processed_articles = load_filtered_articles()  # ✅ Load all processed articles
-    filtered_links = {article["link"] for article in processed_articles}  # ✅ Define filtered_links properly
+    processed_articles = load_filtered_articles()
+    filtered_links = {article["link"] for article in processed_articles}  # ✅ Track both posted & filtered links
     print(f"📂 {len(processed_articles)} articles already processed.")
 
     latest_news = get_latest_news()
     print(f"📰 Found {len(latest_news)} new articles.")
 
     new_entries = []
-    new_tweets = False  # Track if any new tweets were posted
+for title, link, source, summary in latest_news:
+    if link in filtered_links:  # ✅ Skip articles already processed
+        print(f"⏩ Skipping already processed article: {title}")
+        continue
 
-    for title, link, source, summary in latest_news:
-        if link in filtered_links:  # ✅ Prevent duplicate processing (includes both posted & filtered)
-            print(f"⏩ Skipping already processed article: {title}")
-            continue
+    is_relevant = is_relevant_news(title, summary)
+    status = "posted" if is_relevant else "filtered"
 
-        is_relevant = is_relevant_news(title, summary)
-        status = "posted" if is_relevant else "filtered"
+    new_entry = {
+        "link": link,
+        "date": datetime.utcnow().strftime("%Y-%m-%d"),
+        "status": status
+    }
 
-        if is_relevant:
-            print(f"🆕 Relevant article found: {title}")
-            tweet = summarize_news(title, summary, source)
-            if post_tweet(tweet):
-                new_entry = {
-                    "link": link,
-                    "date": datetime.utcnow().strftime("%Y-%m-%d"),
-                    "tweet": tweet,
-                    "status": status
-                }
-                processed_articles.append(new_entry)
-                posted_links.add(link)
-                new_entries.append(new_entry)  # ✅ Track new posted tweets
-                new_tweets = True
-            else:
-                print("❌ Tweet failed, skipping JSON update for this article.")
-        else:
-            print(f"🚫 Article filtered: {title}")
-            new_entry = {
-                "link": link,
-                "date": datetime.utcnow().strftime("%Y-%m-%d"),
-                "status": status
-            }
-            processed_articles.append(new_entry)
-            new_entries.append(new_entry)  # ✅ Track new filtered articles
+    if is_relevant:
+        tweet = summarize_news(title, summary, source)  # ✅ Generate tweet
+        if post_tweet(tweet):  # ✅ Post to Twitter
+            new_entry["tweet"] = tweet  # ✅ Save tweet to JSON
 
-    # ✅ Now properly updating the JSON with new articles
-    if new_tweets or new_entries:
+    processed_articles.append(new_entry)
+    new_entries.append(new_entry)
+
+
+    if new_entries:
         print("💾 Saving updated articles to filtered_news.json...")
         save_processed_articles(processed_articles)
         print("✅ `filtered_news.json` updated successfully!")
     else:
         print("⚠️ No new relevant news. Skipping JSON update.")
+
 
