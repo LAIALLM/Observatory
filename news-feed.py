@@ -266,6 +266,9 @@ def post_tweet(tweet):
         print(f"❌ Other Tweepy error: {e}")
         return False
 
+# Define score threshold for tweets
+TWEET_THRESHOLD = 7
+
 # Main execution starts here
 if __name__ == "__main__":
     print("🔍 Loading previously processed articles...")
@@ -285,20 +288,17 @@ if __name__ == "__main__":
 
         score = get_news_relevance_score(title, summary)
 
-        # Store all news, regardless of score
+        # Store all news, but only generate a tweet if score meets threshold
         article_entry = {
             "link": link,
             "date": datetime.utcnow().strftime("%Y-%m-%d"),
-            "status": "processed",  # Mark article as processed
+            "status": "processed",
             "score": score,
-            "tweet": summarize_news(title, summary, source) if score >= 7 else None  # ✅ Only generate a tweet if score >= 7
+            "tweet": summarize_news(title, summary, source) if score >= TWEET_THRESHOLD else None  # ✅ Uses global variable
         }
-        processed_articles.append(article_entry)  # Add article to the processed list
+        processed_articles.append(article_entry)
 
         scored_news.append((score, title, link, source, summary))
-
-        # Only generate tweet if score is 7 or above
-        tweet = summarize_news(title, summary, source) if score >= 7 else None
 
     # Sort articles by highest relevance score
     scored_news.sort(reverse=True, key=lambda x: x[0])
@@ -308,10 +308,10 @@ if __name__ == "__main__":
     new_entries = []
 
     for score, title, link, source, summary in top_articles:
-        tweet = summarize_news(title, summary, source)
+        if score >= TWEET_THRESHOLD:  # ✅ Uses global variable
+            tweet = summarize_news(title, summary, source)
 
-        if score >= 7:  # Only tweet if score is 7 or above
-            if post_tweet(tweet):  # Only tweet top-ranked articles
+            if post_tweet(tweet):
                 new_entry = {
                     "link": link,
                     "date": datetime.utcnow().strftime("%Y-%m-%d"),
