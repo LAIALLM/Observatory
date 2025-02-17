@@ -165,9 +165,9 @@ def get_news_relevance_score(title, summary):
         return 0  # Default to 0 if unexpected response
 
 
- except openai.OpenAIError as e:
-     print(f"❌ OpenAI API Error: {e}")
-     return 0  # Default to 0 if API call fails
+    except openai.OpenAIError as e:
+        print(f"❌ OpenAI API Error: {e}")
+        return 0  # Default to 0 if API call fails
 
 
 # Extract company name dynamically using GPT-4
