@@ -67,10 +67,11 @@ def load_filtered_articles():
         processed_data = [entry for entry in processed_data if datetime.strptime(entry["date"], "%Y-%m-%d") > cutoff_date]
         
         # Track links of processed articles to avoid duplication
-        processed_links = {entry["link"] for entry in processed_data} if processed_data else set()
+        processed_links = {entry["link"] for entry in processed_data} if len(processed_data) > 0 else set()
         return processed_data, processed_links
     
     return [], set()
+
 
 
 # Save processed articles incrementally to prevent overwriting the entire file
@@ -287,7 +288,7 @@ if __name__ == "__main__":
     print("🔍 Loading previously processed articles...")
     processed_articles = load_filtered_articles()
     # Handle empty processed_articles case
-    filtered_links = {article["link"] for article in processed_articles} if processed_articles else set()
+    filtered_links = {article["link"] for article in processed_articles} if len(processed_articles) > 0 else set()
     print(f"📂 {len(processed_articles)} articles already processed.")
 
     latest_news = get_latest_news()
