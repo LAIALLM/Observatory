@@ -266,34 +266,35 @@ if __name__ == "__main__":
     print(f"📰 Found {len(latest_news)} new articles.")
 
     new_entries = []
-for title, link, source, summary in latest_news:
-    if link in filtered_links:  # ✅ Skip articles already processed
-        print(f"⏩ Skipping already processed article: {title}")
-        continue
+    for title, link, source, summary in latest_news:
+        if link in filtered_links:  # ✅ Skip articles already processed
+            print(f"⏩ Skipping already processed article: {title}")
+            continue
 
-    is_relevant = is_relevant_news(title, summary)
-    status = "posted" if is_relevant else "filtered"
+        is_relevant = is_relevant_news(title, summary)
+        status = "posted" if is_relevant else "filtered"
 
-    new_entry = {
-        "link": link,
-        "date": datetime.utcnow().strftime("%Y-%m-%d"),
-        "status": status
-    }
+        new_entry = {
+            "link": link,
+            "date": datetime.utcnow().strftime("%Y-%m-%d"),
+            "status": status
+        }
 
-    if is_relevant:
-        tweet = summarize_news(title, summary, source)  # ✅ Generate tweet
-        if post_tweet(tweet):  # ✅ Post to Twitter
-            new_entry["tweet"] = tweet  # ✅ Save tweet to JSON
+        if is_relevant:
+            tweet = summarize_news(title, summary, source)  # ✅ Generate tweet
+            if post_tweet(tweet):  # ✅ Post to Twitter
+                new_entry["tweet"] = tweet  # ✅ Save tweet to JSON
 
-    processed_articles.append(new_entry)
-    new_entries.append(new_entry)
+        processed_articles.append(new_entry)
+        new_entries.append(new_entry)
 
-
+    # ✅ Save all processed articles after the loop
     if new_entries:
         print("💾 Saving updated articles to filtered_news.json...")
         save_processed_articles(processed_articles)
         print("✅ `filtered_news.json` updated successfully!")
     else:
         print("⚠️ No new relevant news. Skipping JSON update.")
+
 
 
