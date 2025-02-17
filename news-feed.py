@@ -48,51 +48,33 @@ RETENTION_DAYS = 10  # Remove news older than 10 days
 # Load previously processed articles (both tweeted & filtered)
 def load_filtered_articles():
     if os.path.exists(LOG_FILE):
-        with open(LOG_FILE, "r") as file:
-            try:
+        try:
+            with open(LOG_FILE, "r") as file:
+                # Try loading the existing JSON data
                 processed_data = json.load(file)
-            except json.JSONDecodeError:
-                print("⚠️ Error: `filtered_news.json` is corrupted. Resetting file.")
-                processed_data = []  # Reset if JSON is corrupted
-
-        print(f"Loaded processed articles: {processed_data}")  # Add this line for debugging
-
-        # Check if the structure is correct (list of dictionaries)
-        if not all(isinstance(entry, dict) and "link" in entry for entry in processed_data):
-            print("⚠️ Warning: `filtered_news.json` has an unexpected structure. Resetting file.")
-            processed_data = []  # Reset if structure is not as expected
-        
-        # Remove old articles (older than retention period)
-        cutoff_date = datetime.utcnow() - timedelta(days=RETENTION_DAYS)
-        processed_data = [entry for entry in processed_data if datetime.strptime(entry["date"], "%Y-%m-%d") > cutoff_date]
-        
-        # Track links of processed articles to avoid duplication
-        processed_links = {entry["link"] for entry in processed_data} if len(processed_data) > 0 else set()
-        return processed_data, processed_links
+                print(f"Loaded {len(processed_data)} previously processed articles.")
+        except json.JSONDecodeError:
+            # Handle corrupted JSON file gracefully by clearing it
+            print("⚠️ Corrupted JSON file. Resetting to an empty list.")
+            processed_data = []
+    else:
+        processed_data = []
     
-    return [], set()
+    # Return the entire list of previously processed articles
+    return processed_data
 
-
-
-# Save processed articles incrementally to prevent overwriting the entire file
-def save_processed_articles(processed, new_entries):
+# Save processed articles (ensuring correct update & GitHub push)
+def save_processed_articles(processed):
     print("💾 Writing to filtered_news.json...")
     try:
-        # Check if the file exists
-        if os.path.exists(LOG_FILE):
-            with open(LOG_FILE, "r") as file:
-                current_data = json.load(file)
-            # Append new entries to the current data
-            current_data.extend(new_entries)
-            processed = current_data
-        
+        # Always write the entire list, including both new and previously processed entries
         with open(LOG_FILE, "w") as file:
             json.dump(processed, file, indent=4)
         print("✅ Successfully wrote to filtered_news.json!")
     except Exception as e:
         print(f"❌ Error writing to JSON: {e}")
         return  # Stop execution if writing fails
-        
+
     # Ensure GitHub Actions commits & pushes changes
     if os.getenv("GITHUB_ACTIONS"):
         print("🔄 Committing changes to GitHub...")
