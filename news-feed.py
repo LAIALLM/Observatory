@@ -220,7 +220,7 @@ def post_tweet(tweet):
         return False
 
 # Define score threshold for tweets
-TWEET_THRESHOLD = 9
+TWEET_THRESHOLD = 10
 
 # Main execution starts here
 if __name__ == "__main__":
