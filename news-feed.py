@@ -203,7 +203,7 @@ def post_tweet(tweet):
 
         # Introduce a 3-minute delay **after** posting each tweet
         print("⏳ Waiting 3 minutes before posting the next tweet...")
-        time.sleep(90)  # 90 seconds (1.5 minutes)
+        time.sleep(120)  # 120 seconds 
 
         return True
     except tweepy.errors.Forbidden as e:
