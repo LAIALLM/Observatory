@@ -172,13 +172,10 @@ def summarize_news(title, summary, source):
 
     prompt = f"""
     Rewrite this construction-related news title into a concise, professional tweet.
-    - Do NOT include quotes.
-    - Do NOT use hashtags.
     - Keep it engaging and natural.
-    - If a country is mentioned, add its correct flag emoji at the start.
-    - Do NOT use a globe emoji or flag for global terms like "world" or "global.
-    - DO NOT include the source or website name.
-    - If a publicly traded company is mentioned, append its stock ticker (prefixed with '$').
+    - No quotes, hashtags, sources, or websites.
+    - Add a flag emoji at the start **only if** a country, city, or company is explicitly mentioned.
+    - Append a stock ticker $TICKER **only if** a publicly traded company is directly named in the article.
 
     Title: {title}
     """
