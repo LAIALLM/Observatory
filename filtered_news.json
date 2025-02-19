@@ -2175,5 +2175,12 @@
         "status": "processed",
         "score": 2,
         "tweet": null
+    },
+    {
+        "link": "https://www.enr.com/articles/60316-mta-sues-usdot-as-trump-administration-moves-to-end-nyc-congestion-pricing",
+        "date": "2025-02-19",
+        "status": "processed",
+        "score": 9,
+        "tweet": null
     }
 ]
