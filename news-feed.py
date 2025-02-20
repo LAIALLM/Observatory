@@ -1,6 +1,7 @@
 import os
 import tweepy
 import feedparser
+import re
 import openai
 import json
 import time
@@ -44,6 +45,40 @@ RSS_FEEDS = [
 # Log file to track posted and filtered news
 LOG_FILE = "filtered_news.json"
 RETENTION_DAYS = 10  # Remove news older than 10 days
+
+# Define common words to ignore (stopwords)
+STOPWORDS = set([
+    "the", "and", "is", "in", "on", "at", "to", "of", "for", "with", "a", "an",
+    "this", "that", "from", "by", "as", "it", "its", "was", "were", "are", "be", "new", "latest"
+])
+
+# Function to extract important words & numbers
+def extract_key_terms(text):
+    text = text.lower()
+    words = re.findall(r'\b\w+\b', text)  # Extract words
+    numbers = re.findall(r'\d+', text)  # Extract numbers
+    keywords = [word for word in words if word not in STOPWORDS] + numbers
+    return set(keywords)
+
+def is_similar_news(new_title, new_summary, processed_articles, threshold=0.5, limit=30): # threshold 0 is easy, threshold 1 is strict
+ 
+    new_keywords = extract_key_terms(new_title) | extract_key_terms(new_summary)
+
+    # ✅ Filter only the last limit articles that have a high score (≥ TWEET_THRESHOLD)
+    recent_articles = [article for article in processed_articles if article.get("score", 0) >= TWEET_THRESHOLD][-limit:]
+
+    for article in recent_articles:
+        # Extract previous article's title and summary (instead of just the tweet)
+        old_keywords = extract_key_terms(article.get("tweet", "")) | extract_key_terms(article.get("title", "")) | extract_key_terms(article.get("summary", ""))
+
+        if old_keywords:
+            # Compute Jaccard similarity (shared words / total words)
+            similarity = len(new_keywords & old_keywords) / len(new_keywords | old_keywords)
+            if similarity >= threshold:
+                print(f"⚠️ Skipping similar news: {new_title} (Similarity: {similarity:.2f})")
+                return True  # Found a similar article
+
+    return False  # No duplicates found
 
 # Load previously processed articles (both tweeted & filtered)
 def load_filtered_articles():
@@ -112,7 +147,7 @@ def get_latest_news():
                 link = entry.link
                 published_time = datetime(*entry.published_parsed[:6]) if "published_parsed" in entry else now
                 source = entry.source.title if hasattr(entry, 'source') else "Unknown Source"
-                summary = entry.summary if hasattr(entry, 'summary') else None
+                summary = entry.summary if hasattr(entry, 'summary') and entry.summary else ""
 
                 if now - published_time < timedelta(hours=1):
                     news_list.append((title, link, source, summary))
@@ -236,12 +271,18 @@ if __name__ == "__main__":
             print(f"⏩ Skipping already processed article: {title}")
             continue
 
+        if is_similar_news(title, summary, processed_articles, threshold=0.5, limit=30):
+            print(f"⚠️ Skipping duplicate article: {title}")
+            continue      
+
         score = get_news_relevance_score(title, summary)
 
         # Store all news, but only generate a tweet if score meets threshold
         article_entry = {
             "link": link,
             "date": datetime.utcnow().strftime("%Y-%m-%d"),
+            "title": title,  # Now storing title for future similarity checks
+            "summary": summary,  # Now storing summary
             "status": "processed",
             "score": score,
             "tweet": summarize_news(title, summary, source) if score >= TWEET_THRESHOLD else None  # ✅ Uses global variable
@@ -265,6 +306,8 @@ if __name__ == "__main__":
                 new_entry = {
                     "link": link,
                     "date": datetime.utcnow().strftime("%Y-%m-%d"),
+                    "title": title,    # ✅ Storing title for consistency
+                    "summary": summary, # ✅ Storing summary for consistency
                     "status": "posted",
                     "score": score,
                     "tweet": tweet
@@ -274,5 +317,4 @@ if __name__ == "__main__":
 
     # Save all processed articles to JSON
     save_processed_articles(processed_articles)
-    print("✅ `filtered_news.json` updated successfully!")
-
+    print("✅ filtered_news.json updated successfully!")
