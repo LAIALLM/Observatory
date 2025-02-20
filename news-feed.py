@@ -269,18 +269,23 @@ def generate_statistical_tweet(processed_articles):
 
     prompt = """
     Generate a concise and engaging tweet about statistical facts related to infrastructure, population, urban development, and cities worldwide.
-
-    - **Do not use quotes.**
-    - **Each fact should be on a new line** for better readability.
+    
+    Choose **one** of the following tweet formats:
+    - **A single striking statistic or future projection.**
+    - **A direct comparison between two cities, countries, projects, or companies.** 
+    - **A ranked list of the top 10 cities, countries, projects, or companies based on a notable statistical fact.** 
+    
+    The tweet should:
+    - **NEVER use quotes, hashtags, or generic emojis.** 
+    - **Keep the tweet strictly under 280 characters.**
+    - **Use proper line breaks for readability.**
+    - **Always include relevant country or city flags before the name.**
+    - **Avoid unnecessary filler words.** Keep it factual and straight to the point.
     - If presenting a ranked list, format it as:
     
       1. City/Country
       2. City/Country
       3. City/Country
-    
-    - **Keep the tweet strictly under 280 characters.**
-    - **Always** include relevant country or city flags before the name.
-    - **Avoid unnecessary filler words.** Keep it factual.
     """
 
     for _ in range(3):  # Try up to 3 times to avoid duplicates
