@@ -175,7 +175,7 @@ def get_news_relevance_score(title, summary):
       - Political debates without specific infrastructure or urban development plans.
       - Speculative reports or opinions without confirmed policies, contracts, or investments.
     
-    - **Deduct 1 point** for articles that do not contain **concrete data** or **confirmed urban development projects**.
+    - **Substract 1 point** for articles that do not contain **concrete data** or **confirmed urban development projects**.
     
     **Reply only with a single integer between 0-10.**
     
