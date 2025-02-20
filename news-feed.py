@@ -45,6 +45,7 @@ RSS_FEEDS = [
 # Log file to track posted and filtered news
 LOG_FILE = "filtered_news.json"
 RETENTION_DAYS = 10  # Remove news older than 10 days
+TWEET_THRESHOLD = 10 # Define score threshold for tweets
 
 # Define common words to ignore (stopwords)
 STOPWORDS = set([
@@ -251,9 +252,6 @@ def post_tweet(tweet):
         print(f"❌ Other Tweepy error: {e}")
         return False
 
-# Define score threshold for tweets
-TWEET_THRESHOLD = 10
-
 # Main execution starts here
 if __name__ == "__main__":
     print("🔍 Loading previously processed articles...")
@@ -271,43 +269,65 @@ if __name__ == "__main__":
             print(f"⏩ Skipping already processed article: {title}")
             continue
 
-        if is_similar_news(title, summary, processed_articles, threshold=0.5, limit=30):
-            print(f"⚠️ Skipping duplicate article: {title}")
-            continue      
+        # ✅ Check for similarity first
+        similar = is_similar_news(title, summary, processed_articles, threshold=0.5, limit=30)
 
+        # ✅ If similar, store and skip further processing
+        if similar:
+            article_entry = {
+                "link": link,
+                "date": datetime.utcnow().strftime("%Y-%m-%d"),
+                "title": title,
+                "summary": summary,
+                "similarity_excluded": "Yes",
+                "score": None,  # ✅ No GPT-4 scoring for similar articles
+                "status": "skipped",
+                "tweet": None
+            }
+            processed_articles.append(article_entry)
+            continue  # 🚨 Skip scoring and tweet generation
+
+        # ✅ If NOT similar, continue processing
         score = get_news_relevance_score(title, summary)
 
-        # Store all news, but only generate a tweet if score meets threshold
+        # ✅ Always store the article
         article_entry = {
             "link": link,
             "date": datetime.utcnow().strftime("%Y-%m-%d"),
-            "title": title,  # Now storing title for future similarity checks
-            "summary": summary,  # Now storing summary
+            "title": title,
+            "summary": summary,
+            "similarity_excluded": "No",
+            "score": score,  # ✅ Storing score ONLY if not similar
             "status": "processed",
-            "score": score,
-            "tweet": summarize_news(title, summary, source) if score >= TWEET_THRESHOLD else None  # ✅ Uses global variable
+            "tweet": None
         }
-        processed_articles.append(article_entry)
 
+        # ✅ Generate tweet only if score meets threshold
+        if score >= TWEET_THRESHOLD:
+            article_entry["tweet"] = summarize_news(title, summary, source)
+
+        processed_articles.append(article_entry)
         scored_news.append((score, title, link, source, summary))
 
-    # Sort articles by highest relevance score
+    # ✅ Sort articles by highest relevance score
     scored_news.sort(reverse=True, key=lambda x: x[0])
 
-    top_articles = scored_news[:3]  # Pick top 3 highest-ranked news articles
+    # ✅ Pick top 3 highest-ranked news articles
+    top_articles = scored_news[:3]
 
     new_entries = []
 
     for score, title, link, source, summary in top_articles:
-        if score >= TWEET_THRESHOLD:  # ✅ Uses global variable
+        if score >= TWEET_THRESHOLD:
             tweet = summarize_news(title, summary, source)
 
             if post_tweet(tweet):
                 new_entry = {
                     "link": link,
                     "date": datetime.utcnow().strftime("%Y-%m-%d"),
-                    "title": title,    # ✅ Storing title for consistency
-                    "summary": summary, # ✅ Storing summary for consistency
+                    "title": title,
+                    "summary": summary,
+                    "similarity_excluded": "No",  # ✅ Now included for consistency
                     "status": "posted",
                     "score": score,
                     "tweet": tweet
@@ -315,6 +335,8 @@ if __name__ == "__main__":
                 processed_articles.append(new_entry)
                 new_entries.append(new_entry)
 
-    # Save all processed articles to JSON
+    # ✅ Save all processed articles to JSON
     save_processed_articles(processed_articles)
     print("✅ filtered_news.json updated successfully!")
+
+
