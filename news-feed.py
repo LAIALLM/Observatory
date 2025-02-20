@@ -47,6 +47,10 @@ LOG_FILE = "filtered_news.json"
 RETENTION_DAYS = 10  # Remove news older than 10 days
 TWEET_THRESHOLD = 10 # Define score threshold for tweets
 
+# Measures for statistical tweets
+STAT_TWEETS_LIMIT = 3  # Max statistical tweets per day
+FAILED_RUNS_THRESHOLD = 3  # Trigger if 3 runs fail to post news
+
 # Define common words to ignore (stopwords)
 STOPWORDS = set([
     "the", "and", "is", "in", "on", "at", "to", "of", "for", "with", "a", "an",
@@ -99,6 +103,11 @@ def load_filtered_articles():
     # Return the entire list of previously processed articles
     return processed_data
 
+# Remove articles older than RETENTION_DAYS to prevent JSON file growth.
+def cleanup_old_articles(processed_articles):
+    cutoff_date = datetime.utcnow() - timedelta(days=RETENTION_DAYS)
+    return [article for article in processed_articles if datetime.strptime(article["date"], "%Y-%m-%d") >= cutoff_date]
+
 # Save processed articles (ensuring correct update & GitHub push)
 def save_processed_articles(processed):
     print("💾 Writing to filtered_news.json...")
@@ -128,6 +137,15 @@ def save_processed_articles(processed):
             print("❌ Push failed, check GitHub Actions permissions.")
         else:
             print("✅ Changes committed to GitHub.")
+
+# Count consecutive runs that didn't post any tweets."
+def count_failed_runs(processed_articles):
+    failed_runs = 0
+    for article in reversed(processed_articles[-FAILED_RUNS_THRESHOLD:]):
+        if article.get("status") == "posted":
+            return 0  # Reset counter if any tweet was posted
+        failed_runs += 1
+    return failed_runs
 
 # Get latest news (only from the last hour) with error handling
 def get_latest_news():
@@ -232,6 +250,33 @@ def summarize_news(title, summary, source):
     tweet = f"{ai_summary}" # \n\nSource: {source}
     return tweet[:280]
 
+# Generate statistical tweet
+
+def generate_statistical_tweet(processed_articles):
+    client = openai.OpenAI(api_key=OPENAI_API_KEY)
+
+    # ✅ Use already loaded processed_articles instead of reloading JSON
+    past_tweets = {article["tweet"] for article in processed_articles if article.get("type") == "statistical"}
+
+    prompt = """
+    Provide a compelling tweet about statistical facts regarding infrastructure projects, population, urban developments, and cities around the world.
+    When possible, make a rank of the top 10 countries or cities as a numbered list and add their respective flags before mentioning each country or city.
+    Keep the tweet under 280 characters.
+    """
+
+    for _ in range(3):  # Try up to 3 times to avoid duplicates
+        response = client.chat.completions.create(
+            model="gpt-4",
+            messages=[{"role": "user", "content": prompt}]
+        )
+        tweet = response.choices[0].message.content.strip()
+
+        if tweet not in past_tweets:
+            return tweet
+
+    return None  # If all 3 attempts return repeated content
+
+
 # Post to X (Twitter) using API v2 with a delay
 def post_tweet(tweet):
     print(f"🚀 Attempting to tweet: {tweet}")  # Debugging line
@@ -254,7 +299,8 @@ def post_tweet(tweet):
         print(f"❌ Other Tweepy error: {e}")
         return False
 
-# Main execution starts here
+
+############## Main execution starts here ##############
 if __name__ == "__main__":
     print("🔍 Loading previously processed articles...")
     processed_articles = load_filtered_articles()
@@ -336,9 +382,29 @@ if __name__ == "__main__":
                 }
                 processed_articles.append(new_entry)
                 new_entries.append(new_entry)
+    
+    # Check if statistical tweets are needed
+
+    # ✅ Count script executions where no tweets were posted
+    failed_runs = count_failed_runs(processed_articles)
+
+    # ✅ Count today's statistical tweets
+    today = datetime.utcnow().strftime("%Y-%m-%d")
+    today_stat_count = sum(1 for article in processed_articles if article.get("date") == today and article.get("type") == "statistical")
+    
+    if failed_runs >= 3 and today_stat_count < 3:
+        print(f"📊 Posting a statistical tweet. Today's count: {today_stat_count}")
+        tweet = generate_statistical_tweet()
+        if post_tweet(tweet):
+            processed_articles.append({
+                "date": today,
+                "type": "statistical",
+                "status": "posted",
+                "tweet": tweet
+            })
 
     # ✅ Save all processed articles to JSON
-    save_processed_articles(processed_articles)
+    processed_articles = cleanup_old_articles(processed_articles)  # ✅ Remove old entries
+    save_processed_articles(processed_articles)  # ✅ Save cleaned data
+
     print("✅ filtered_news.json updated successfully!")
-
-
