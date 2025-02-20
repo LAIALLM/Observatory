@@ -279,7 +279,7 @@ def generate_statistical_tweet(processed_articles):
     - **NEVER use quotes, hashtags, or generic emojis.**
     - **Keep it strictly under 280 characters.**
     - **NEVER use generic phrases and unnecessary filler words.** Keep it sharp and data-driven.
-    - **Always place country or city flags before a location name.**
+    - **Always place country flags before a location name.**
     - **Use proper line breaks for readability.**
     - If presenting a ranked list, format it as:
     
