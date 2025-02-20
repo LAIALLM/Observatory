@@ -401,7 +401,7 @@ if __name__ == "__main__":
     
     if failed_runs >= 3 and today_stat_count < 3:
         print(f"📊 Posting a statistical tweet. Today's count: {today_stat_count}")
-        tweet = generate_statistical_tweet()
+        tweet = generate_statistical_tweet(processed_articles)  # Pass 'processed_articles' argument
         if post_tweet(tweet):
             processed_articles.append({
                 "date": today,
