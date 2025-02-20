@@ -211,7 +211,9 @@ def summarize_news(title, summary, source):
     - Keep it engaging and natural.
     - No quotes, hashtags, sources, or websites.
     - Add a flag emoji at the start **only if** a country, city, or company is explicitly mentioned.
-    - Append a stock ticker $TICKER **only if** a publicly traded company is directly named in the article.
+    - **Only add a stock ticker $TICKER if:**
+      1. The company is **publicly traded**.
+      2. The **correct** ticker symbol is available.
 
     Title: {title}
     """
