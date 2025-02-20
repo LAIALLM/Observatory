@@ -383,8 +383,8 @@ if __name__ == "__main__":
                     "title": title,
                     "summary": summary,
                     "similarity_excluded": "No",  # ✅ Now included for consistency
-                    "status": "posted",
                     "score": score,
+                    "status": "posted",
                     "tweet": tweet
                 }
                 processed_articles.append(new_entry)
