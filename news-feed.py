@@ -65,25 +65,32 @@ def extract_key_terms(text):
     keywords = [word for word in words if word not in STOPWORDS] + numbers
     return set(keywords)
 
-def is_similar_news(new_title, new_summary, processed_articles, threshold=0.5, limit=30): # threshold 0 is easy, threshold 1 is strict
- 
+def is_similar_news(new_title, new_summary, processed_articles, threshold=0.5, limit=30):  
+    """Check if a new article is similar to previously processed high-scoring articles."""
+    
     new_keywords = extract_key_terms(new_title) | extract_key_terms(new_summary)
 
-    # ✅ Filter only the last limit articles that have a high score (≥ TWEET_THRESHOLD)
-    recent_articles = [article for article in processed_articles if article.get("score", 0) >= TWEET_THRESHOLD][-limit:]
+    # Debugging: Identify any invalid scores in JSON
+    for article in processed_articles:
+        if not isinstance(article.get("score", 0), (int, float)):
+            print(f"⚠️ Warning: Invalid score detected in article - {article}")
+
+    # ✅ Fix: Ensure scores are valid numbers before filtering
+    recent_articles = [article for article in processed_articles 
+                       if isinstance(article.get("score", 0), (int, float)) 
+                       and article.get("score", 0) >= TWEET_THRESHOLD][-limit:]
 
     for article in recent_articles:
-        # Extract previous article's title and summary (instead of just the tweet)
         old_keywords = extract_key_terms(article.get("tweet", "")) | extract_key_terms(article.get("title", "")) | extract_key_terms(article.get("summary", ""))
-
+        
         if old_keywords:
-            # Compute Jaccard similarity (shared words / total words)
             similarity = len(new_keywords & old_keywords) / len(new_keywords | old_keywords)
             if similarity >= threshold:
                 print(f"⚠️ Skipping similar news: {new_title} (Similarity: {similarity:.2f})")
                 return True  # Found a similar article
 
     return False  # No duplicates found
+
 
 # Load previously processed articles (both tweeted & filtered)
 def load_filtered_articles():
