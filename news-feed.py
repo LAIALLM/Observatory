@@ -91,24 +91,26 @@ def is_similar_news(new_title, new_summary, processed_articles, threshold=0.5, l
 
     return False  # No duplicates found
 
-
 # Load previously processed articles (both tweeted & filtered)
 def load_filtered_articles():
     if os.path.exists(LOG_FILE):
         try:
             with open(LOG_FILE, "r") as file:
-                # Try loading the existing JSON data
                 processed_data = json.load(file)
                 print(f"Loaded {len(processed_data)} previously processed articles.")
+
+                # ✅ Fix: Ensure all entries have 'link' key before returning
+                valid_articles = [article for article in processed_data if isinstance(article, dict) and "link" in article]
+
+                if len(valid_articles) < len(processed_data):
+                    print(f"⚠️ Warning: {len(processed_data) - len(valid_articles)} malformed entries found and ignored.")
+
+                return valid_articles
+
         except json.JSONDecodeError:
-            # Handle corrupted JSON file gracefully by clearing it
             print("⚠️ Corrupted JSON file. Resetting to an empty list.")
-            processed_data = []
-    else:
-        processed_data = []
-    
-    # Return the entire list of previously processed articles
-    return processed_data
+            return []
+    return []
 
 # Remove articles older than RETENTION_DAYS to prevent JSON file growth.
 def cleanup_old_articles(processed_articles):
@@ -311,7 +313,7 @@ def post_tweet(tweet):
 if __name__ == "__main__":
     print("🔍 Loading previously processed articles...")
     processed_articles = load_filtered_articles()
-    filtered_links = {article["link"] for article in processed_articles} if len(processed_articles) > 0 else set()
+    filtered_links = {article["link"] for article in processed_articles if "link" in article} if processed_articles else set()
     print(f"📂 {len(processed_articles)} articles already processed.")
 
     latest_news = get_latest_news()
