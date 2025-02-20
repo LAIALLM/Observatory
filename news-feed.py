@@ -268,7 +268,7 @@ def generate_statistical_tweet(processed_articles):
     past_tweets = {article["tweet"] for article in processed_articles if article.get("type") == "statistical"}
 
     prompt = """
-    Generate a concise, direct, factual, and impactful tweet about statistical facts related to infrastructure, population, urban development, and cities worldwide.
+    Generate a concise, direct, factual, and impactful tweet about statistical facts related to infrastructure, population, urban development, or cities worldwide.
     
     Choose **one** of the following formats:
     - **A single striking statistic or future projection.**
