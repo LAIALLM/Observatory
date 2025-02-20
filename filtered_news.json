@@ -2238,5 +2238,19 @@
         "status": "processed",
         "score": 7,
         "tweet": null
+    },
+    {
+        "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxPTVRrSjcyNzR6ZEJpVFJZUHMyZXpsNzNscVBtTERVNWZmdHc1b2ZmWmY1eHB0cjN2NTUycWxscW50N3haUjhQZEZldG5BZ1B0YmNwdUF2Y3pIOFg3T013Uk90ZzFoelhJZFB0RUFwb1FXaHh4cVdSWkFkQUhEa2FKNEZDZkNKSjdnWG1Hc2g4RXl5OTlkMDctYTZBTlFieDExNk9pTGJjZVZrY2ZSMDBzNXdwVlMtTVgyck1qb3ExQlVaQWRLUFJF?oc=5",
+        "date": "2025-02-20",
+        "status": "processed",
+        "score": 0,
+        "tweet": null
+    },
+    {
+        "link": "https://news.google.com/rss/articles/CBMiSkFVX3lxTE1lMGt0QThQZmMtSl9EVTF1eUpZSW9paFNRSU03ZGNGSk9KZFZiN2cwajE4Tlh1RVI1d1VxWXowbGxnQUlxUkdDWXVB?oc=5",
+        "date": "2025-02-20",
+        "status": "processed",
+        "score": 9,
+        "tweet": null
     }
 ]
