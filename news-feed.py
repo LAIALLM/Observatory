@@ -318,8 +318,15 @@ if __name__ == "__main__":
     print(f"📰 Found {len(latest_news)} new articles.")
 
     scored_news = []
+    seen_links = set()  # ✅ Prevent processing duplicate links in the same workflow run
 
     for title, link, source, summary in latest_news:
+        
+        if link in seen_links:
+            print(f"⏩ Skipping duplicate article from multiple RSS feeds: {title}")
+            continue
+        seen_links.add(link) 
+
         if link in filtered_links:
             print(f"⏩ Skipping already processed article: {title}")
             continue
