@@ -376,7 +376,7 @@ if __name__ == "__main__":
                     "title": title,
                     "summary": summary,
                     "similarity_excluded": "Yes",
-                    "score": None,  # ✅ No GPT-4 scoring for similar articles
+                    "score": 0,  # ✅ No GPT-4 scoring for similar articles
                     "status": "skipped",
                     "tweet": None
                 }
