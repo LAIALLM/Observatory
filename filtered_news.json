@@ -540,9 +540,13 @@
         "tweet": null
     },
     {
+        "link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxNUVZka2NvV3N6MS1xelZPRVk2UUtDdElHUV9LSHlvc1kxcU02LXVwMnR4NGJqeUNLUldSM3lWU1A4b2RqUGpMUjBZYWZocC1qVUR6WkJNWXZwdlh1aEZnSWdPYU5UNXN2b3NIUUxIWUtXaERHRGd6M0x2dnRHTkEyWm5CZUVya1AwWk10MmFkR1VTa1N5OUhoRExDUmIzdzFBSVFkVGJZeVJQUW80Z2UteGU1amxPR00yNzRWSnhNR3dxeU5QRWZLRTNoM3I?oc=5",
         "date": "2025-02-21",
-        "type": "statistical",
-        "status": "posted",
-        "tweet": "\"\ud83c\udf0d Future projections estimate that by 2050, 68% of the world's population will reside in urban areas. Ramp up for a densely packed future cityscape!\""
+        "title": "V.L. Infraprojects Limited Wins INR 41.92 Cr Water Infrastructure Project in Gujarat - ANI News",
+        "summary": "<a href=\"https://news.google.com/rss/articles/CBMizAFBVV95cUxNUVZka2NvV3N6MS1xelZPRVk2UUtDdElHUV9LSHlvc1kxcU02LXVwMnR4NGJqeUNLUldSM3lWU1A4b2RqUGpMUjBZYWZocC1qVUR6WkJNWXZwdlh1aEZnSWdPYU5UNXN2b3NIUUxIWUtXaERHRGd6M0x2dnRHTkEyWm5CZUVya1AwWk10MmFkR1VTa1N5OUhoRExDUmIzdzFBSVFkVGJZeVJQUW80Z2UteGU1amxPR00yNzRWSnhNR3dxeU5QRWZLRTNoM3I?oc=5\" target=\"_blank\">V.L. Infraprojects Limited Wins INR 41.92 Cr Water Infrastructure Project in Gujarat</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">ANI News</font>",
+        "similarity_excluded": "No",
+        "score": 8,
+        "status": "processed",
+        "tweet": null
     }
 ]
