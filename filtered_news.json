@@ -1628,5 +1628,15 @@
         "score": 7,
         "status": "processed",
         "tweet": null
+    },
+    {
+        "link": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxOdUtzdDFhMV9TTXpjc093Q1Jtcy1sN3E1WFJjTDQtZGJlUWpqOFRwRDlBY2lCRWxBcklURFY3d1JkeVg3bzFtNnhRTlFMYXJCcVhwNE10NXdsUG5ta0szSkdBVzZicTk4cEtaN0M5QVVHdk9fZjlseUMzaHM0cTZUemo0aGRJYk1tWFhpVDVEbWFDNDBmeUUxWjh2Wm1Fb0Q3QThtbzdtOFN1UFZ3YkhGMmtxa0Zyc0xCRl9IVE9XT01nc3U5ejNuUWdkWkNja1hRZGxfbg?oc=5",
+        "date": "2025-02-21",
+        "title": "Federal government reportedly plans to shut down its EV charging infrastructure - Engadget",
+        "summary": "<a href=\"https://news.google.com/rss/articles/CBMi1AFBVV95cUxOdUtzdDFhMV9TTXpjc093Q1Jtcy1sN3E1WFJjTDQtZGJlUWpqOFRwRDlBY2lCRWxBcklURFY3d1JkeVg3bzFtNnhRTlFMYXJCcVhwNE10NXdsUG5ta0szSkdBVzZicTk4cEtaN0M5QVVHdk9fZjlseUMzaHM0cTZUemo0aGRJYk1tWFhpVDVEbWFDNDBmeUUxWjh2Wm1Fb0Q3QThtbzdtOFN1UFZ3YkhGMmtxa0Zyc0xCRl9IVE9XT01nc3U5ejNuUWdkWkNja1hRZGxfbg?oc=5\" target=\"_blank\">Federal government reportedly plans to shut down its EV charging infrastructure</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Engadget</font>",
+        "similarity_excluded": "No",
+        "score": 4,
+        "status": "processed",
+        "tweet": null
     }
 ]
