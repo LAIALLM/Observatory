@@ -1638,5 +1638,15 @@
         "score": 4,
         "status": "processed",
         "tweet": null
+    },
+    {
+        "link": "https://www.enr.com/articles/60323-congressional-lawmakers-begin-to-talk-permitting-reform-again",
+        "date": "2025-02-21",
+        "title": "Congressional Lawmakers Begin to Talk Permitting Reform, Again",
+        "summary": "<p>Industry and labor union leaders join lawmakers in calling for permitting reforms at Public Works committee hearing.&nbsp;</p>",
+        "similarity_excluded": "No",
+        "score": 4,
+        "status": "processed",
+        "tweet": null
     }
 ]
