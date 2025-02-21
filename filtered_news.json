@@ -1648,5 +1648,11 @@
         "score": 4,
         "status": "processed",
         "tweet": null
+    },
+    {
+        "date": "2025-02-21",
+        "type": "statistical",
+        "status": "posted",
+        "tweet": "\ud83c\uddfa\ud83c\uddf8 New York City's metro system serves 4.3 million passengers per day, dwarfing \ud83c\udde8\ud83c\udde6 Toronto's system which serves just 1.69 million. Makes you question: how can urban transit systems more efficiently support a city's growth?"
     }
 ]
