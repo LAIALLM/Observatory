@@ -147,9 +147,8 @@ def save_processed_articles(processed):
         else:
             print("✅ Changes committed to GitHub.")
 
-# Count consecutive runs that didn't post any tweets."
+# Count consecutive workflow runs where no news tweets were posted.
 def count_failed_runs(processed_articles):
-    """Count the number of consecutive workflow runs where no news tweets were posted."""
     failed_runs = 0
     for article in reversed(processed_articles):
         if article.get("status") == "posted" and article.get("type") != "statistical":
@@ -160,8 +159,8 @@ def count_failed_runs(processed_articles):
             break
     return failed_runs
 
+# Count how many statistical tweets were posted today.
 def count_stat_tweets_today(processed_articles):
-    """Count how many statistical tweets were posted today."""
     today = datetime.utcnow().strftime("%Y-%m-%d")
     return sum(1 for article in processed_articles if article.get("date") == today and article.get("type") == "statistical")
 
