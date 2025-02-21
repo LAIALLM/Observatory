@@ -149,12 +149,21 @@ def save_processed_articles(processed):
 
 # Count consecutive runs that didn't post any tweets."
 def count_failed_runs(processed_articles):
+    """Count the number of consecutive workflow runs where no news tweets were posted."""
     failed_runs = 0
-    for article in reversed(processed_articles[-FAILED_RUNS_THRESHOLD:]):
-        if article.get("status") == "posted":
-            return 0  # Reset counter if any tweet was posted
-        failed_runs += 1
+    for article in reversed(processed_articles):
+        if article.get("status") == "posted" and article.get("type") != "statistical":
+            return 0  # Reset counter if a news tweet was posted
+        if article.get("status") == "skipped" or article.get("type") == "statistical":
+            failed_runs += 1
+        if failed_runs >= FAILED_RUNS_THRESHOLD:
+            break
     return failed_runs
+
+def count_stat_tweets_today(processed_articles):
+    """Count how many statistical tweets were posted today."""
+    today = datetime.utcnow().strftime("%Y-%m-%d")
+    return sum(1 for article in processed_articles if article.get("date") == today and article.get("type") == "statistical")
 
 # Get latest news (only from the last hour) with error handling
 def get_latest_news():
@@ -325,6 +334,29 @@ def post_tweet(tweet):
         print(f"❌ Other Tweepy error: {e}")
         return False
 
+def main():
+    LOG_FILE = "filtered_news.json"
+    processed_articles = []
+    if os.path.exists(LOG_FILE):
+        with open(LOG_FILE, "r") as file:
+            processed_articles = json.load(file)
+
+    failed_runs = count_failed_runs(processed_articles)
+    stat_tweet_count = count_stat_tweets_today(processed_articles)
+    
+    if failed_runs >= FAILED_RUNS_THRESHOLD and stat_tweet_count < STAT_TWEETS_LIMIT:
+        print(f"📊 Posting a statistical tweet. Today's count: {stat_tweet_count}")
+        tweet = generate_statistical_tweet()
+        if post_tweet(tweet):
+            processed_articles.append({
+                "date": datetime.utcnow().strftime("%Y-%m-%d"),
+                "type": "statistical",
+                "status": "posted",
+                "tweet": tweet
+            })
+    
+    with open(LOG_FILE, "w") as file:
+        json.dump(processed_articles, file, indent=4)
 
 ############## Main execution starts here ##############
 if __name__ == "__main__":
