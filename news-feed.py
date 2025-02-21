@@ -345,14 +345,19 @@ def main():
     
     if failed_runs >= FAILED_RUNS_THRESHOLD and stat_tweet_count < STAT_TWEETS_LIMIT:
         print(f"📊 Posting a statistical tweet. Today's count: {stat_tweet_count}")
-        tweet = generate_statistical_tweet()
-        if post_tweet(tweet):
-            processed_articles.append({
-                "date": datetime.utcnow().strftime("%Y-%m-%d"),
-                "type": "statistical",
-                "status": "posted",
-                "tweet": tweet
-            })
+        tweet = generate_statistical_tweet()  # Generate a new tweet dynamically
+        if tweet:  # Ensure tweet is valid
+            try:
+                response = twitter_client.create_tweet(text=tweet)
+                print(f"✅ Tweet posted successfully: {response.data}")
+                processed_articles.append({
+                    "date": datetime.utcnow().strftime("%Y-%m-%d"),
+                    "type": "statistical",
+                    "status": "posted",
+                    "tweet": tweet
+                })
+            except tweepy.TweepyException as e:
+                print(f"❌ Twitter API error: {e}")
     
     with open(LOG_FILE, "w") as file:
         json.dump(processed_articles, file, indent=4)
