@@ -347,10 +347,14 @@ if __name__ == "__main__":
 
     # Randomly select type of tweet to post
     tweet_type = random.choices(["news", "statistical", "none"], [0.5, 0.3, 0.2])[0]
+    print(f"🔀 Selected tweet type: {tweet_type}")  # ✅ Debugging
     
-    if tweet_type == "news" and today_news_count < NEWS_TWEETS_LIMIT:
-        latest_news = get_latest_news()
-        print(f"📰 Found {len(latest_news)} new articles.")
+    if tweet_type == "news":
+        if today_news_count >= NEWS_TWEETS_LIMIT:
+            print(f"🚫 Reached daily news tweet limit ({NEWS_TWEETS_LIMIT}). Skipping news tweets.")
+        else:
+            latest_news = get_latest_news()
+            print(f"📰 Found {len(latest_news)} new articles.")
 
         scored_news = []
         seen_links = set()  # ✅ Prevent processing duplicate links in the same workflow run
@@ -430,18 +434,32 @@ if __name__ == "__main__":
                     }
                     processed_articles.append(new_entry)
                     new_entries.append(new_entry)
+            else:
+                print("🚫 No high-scoring news found to post.")
     
     elif tweet_type == "statistical" and today_stat_count < STAT_TWEETS_LIMIT:
         tweet = generate_statistical_tweet()
         if post_tweet(tweet):
             processed_articles.append({"date": today, "type": "statistical", "status": "posted", "tweet": tweet})
     
+    elif tweet_type == "statistical":
+        if today_stat_count >= STAT_TWEETS_LIMIT:
+            print(f"🚫 Reached daily statistical tweet limit ({STAT_TWEETS_LIMIT}). Skipping statistical tweets.")
+        else:
+            tweet = generate_statistical_tweet()
+            if post_tweet(tweet):
+                processed_articles.append({
+                    "date": today,
+                    "type": "statistical",
+                    "status": "posted",
+                    "tweet": tweet
+                })
+
     else:
         print("🤖 No tweet posted in this run to simulate human-like activity.")
-    
 
     # ✅ Save all processed articles to JSON
-    processed_articles = cleanup_old_articles(processed_articles)  # ✅ Remove old entries
-    save_processed_articles(processed_articles)  # ✅ Save cleaned data
+    processed_articles = cleanup_old_articles(processed_articles)
+    save_processed_articles(processed_articles)
 
     print("✅ filtered_news.json updated successfully!")
