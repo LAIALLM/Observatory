@@ -242,14 +242,16 @@ def summarize_news(title, summary, source):
     client = openai.OpenAI(api_key=OPENAI_API_KEY)
 
     prompt = f"""
-    Rewrite this construction-related news title into a concise, professional tweet.
-    - Keep it engaging and natural.
-    - No quotes, hashtags, sources, or websites.
-    - Add a flag emoji at the start **only if** a country, city, or company is explicitly mentioned.
+    Rewrite this construction-related news title into a concise, natural tweet.
+    
+    - **DO NOT use** quotes, hashtags, sources, or websites.
+    - **DO NOT use any emojis except country flags.**
+    - **Always place a country flag emoji at the START** if a country, city, or company is explicitly mentioned.
+    - **Format:** (Flag) Main content
     - **Only add a stock ticker $TICKER if:**
       1. The company is **publicly traded**.
       2. The **correct** ticker symbol is available.
-
+    
     Title: {title}
     """
 
