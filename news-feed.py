@@ -5,6 +5,7 @@ import re
 import openai
 import json
 import time
+import random
 from datetime import datetime, timedelta
 
 # Load API keys from GitHub Secrets
@@ -47,9 +48,10 @@ LOG_FILE = "filtered_news.json"
 RETENTION_DAYS = 10  # Remove news older than 10 days
 TWEET_THRESHOLD = 10 # Define score threshold for tweets
 
-# Measures for statistical tweets
-STAT_TWEETS_LIMIT = 3  # Max statistical tweets per day
-FAILED_RUNS_THRESHOLD = 2  # Trigger if 3 runs fail to post news
+# Daily tweet limits
+NEWS_TWEETS_LIMIT = 3  # Max news tweets per day
+STAT_TWEETS_LIMIT = 2  # Max statistical tweets per day
+
 
 # Define common words to ignore (stopwords)
 STOPWORDS = set([
@@ -65,9 +67,8 @@ def extract_key_terms(text):
     keywords = [word for word in words if word not in STOPWORDS] + numbers
     return set(keywords)
 
-def is_similar_news(new_title, new_summary, processed_articles, threshold=0.5, limit=30):  
-    """Check if a new article is similar to previously processed high-scoring articles."""
-    
+# Check if a new article is similar to previously processed high-scoring articles."""
+def is_similar_news(new_title, new_summary, processed_articles, threshold=0.5, limit=30):    
     new_keywords = extract_key_terms(new_title) | extract_key_terms(new_summary)
 
     # Debugging: Identify any invalid scores in JSON
@@ -147,17 +148,20 @@ def save_processed_articles(processed):
         else:
             print("✅ Changes committed to GitHub.")
 
-# Count consecutive workflow runs where no news tweets were posted.
-def count_failed_runs(processed_articles):
-    failed_runs = 0
-    for article in reversed(processed_articles):
-        if article.get("status") == "posted" and article.get("type") != "statistical":
-            return 0  # Reset counter if a news tweet was posted
-        if article.get("status") == "skipped" or article.get("type") == "statistical":
-            failed_runs += 1
-        if failed_runs >= FAILED_RUNS_THRESHOLD:
-            break
-    return failed_runs
+# RANDOMNESS FOR POST TYPE
+def should_post_news():
+    return random.random() < 0.50
+
+def should_post_statistical():
+    return random.random() < 0.30
+
+def should_do_nothing():
+    return random.random() < 0.20
+
+# Count how many news tweets were posted today.
+def count_news_tweets_today(processed_articles):
+    today = datetime.utcnow().strftime("%Y-%m-%d")
+    return sum(1 for article in processed_articles if article.get("date") == today and article.get("type") == "news")
 
 # Count how many statistical tweets were posted today.
 def count_stat_tweets_today(processed_articles):
@@ -337,108 +341,104 @@ if __name__ == "__main__":
     filtered_links = {article["link"] for article in processed_articles if "link" in article} if processed_articles else set()
     print(f"📂 {len(processed_articles)} articles already processed.")
 
-    latest_news = get_latest_news()
-    print(f"📰 Found {len(latest_news)} new articles.")
+    today = datetime.utcnow().strftime("%Y-%m-%d")
+    today_news_count = count_news_tweets_today(processed_articles)
+    today_stat_count = count_stat_tweets_today(processed_articles)
 
-    scored_news = []
-    seen_links = set()  # ✅ Prevent processing duplicate links in the same workflow run
+    # Randomly select type of tweet to post
+    tweet_type = random.choices(["news", "statistical", "none"], [0.5, 0.3, 0.2])[0]
+    
+    if tweet_type == "news" and today_news_count < NEWS_TWEETS_LIMIT:
+        latest_news = get_latest_news()
+        print(f"📰 Found {len(latest_news)} new articles.")
 
-    for title, link, source, summary in latest_news:
-        
-        if link in seen_links:
-            print(f"⏩ Skipping duplicate article from multiple RSS feeds: {title}")
-            continue
-        seen_links.add(link) 
+        scored_news = []
+        seen_links = set()  # ✅ Prevent processing duplicate links in the same workflow run
 
-        if link in filtered_links:
-            print(f"⏩ Skipping already processed article: {title}")
-            continue
+        for title, link, source, summary in latest_news:        
+            if link in seen_links or link in filtered_links:
+                print(f"⏩ Skipping duplicate article from multiple RSS feeds: {title}")
+                continue
+            seen_links.add(link) 
 
-        # ✅ Check for similarity first
-        similar = is_similar_news(title, summary, processed_articles, threshold=0.5, limit=30)
+            if link in filtered_links:
+                print(f"⏩ Skipping already processed article: {title}")
+                continue
 
-        # ✅ If similar, store and skip further processing
-        if similar:
+            # ✅ Check for similarity first
+            similar = is_similar_news(title, summary, processed_articles, threshold=0.5, limit=30)
+
+            # ✅ If similar, store and skip further processing
+            if similar:
+                article_entry = {
+                    "link": link,
+                    "date": datetime.utcnow().strftime("%Y-%m-%d"),
+                    "title": title,
+                    "summary": summary,
+                    "similarity_excluded": "Yes",
+                    "score": None,  # ✅ No GPT-4 scoring for similar articles
+                    "status": "skipped",
+                    "tweet": None
+                }
+                processed_articles.append(article_entry)
+                continue  # 🚨 Skip scoring and tweet generation
+
+            # ✅ If NOT similar, continue processing
+            score = get_news_relevance_score(title, summary)
+
+            # ✅ Always store the article
             article_entry = {
                 "link": link,
                 "date": datetime.utcnow().strftime("%Y-%m-%d"),
                 "title": title,
                 "summary": summary,
-                "similarity_excluded": "Yes",
-                "score": None,  # ✅ No GPT-4 scoring for similar articles
-                "status": "skipped",
+                "similarity_excluded": "No",
+                "score": score,  # ✅ Storing score ONLY if not similar
+                "status": "processed",
                 "tweet": None
             }
+
+            # ✅ Generate tweet only if score meets threshold
+            if score >= TWEET_THRESHOLD:
+                article_entry["tweet"] = summarize_news(title, summary, source)
+
             processed_articles.append(article_entry)
-            continue  # 🚨 Skip scoring and tweet generation
+            scored_news.append((score, title, link, source, summary))
 
-        # ✅ If NOT similar, continue processing
-        score = get_news_relevance_score(title, summary)
+        # ✅ Sort articles by highest relevance score
+        scored_news.sort(reverse=True, key=lambda x: x[0])
 
-        # ✅ Always store the article
-        article_entry = {
-            "link": link,
-            "date": datetime.utcnow().strftime("%Y-%m-%d"),
-            "title": title,
-            "summary": summary,
-            "similarity_excluded": "No",
-            "score": score,  # ✅ Storing score ONLY if not similar
-            "status": "processed",
-            "tweet": None
-        }
+        # ✅ Pick top 3 highest-ranked news articles
+        top_articles = scored_news[:3]
 
-        # ✅ Generate tweet only if score meets threshold
-        if score >= TWEET_THRESHOLD:
-            article_entry["tweet"] = summarize_news(title, summary, source)
+        new_entries = []
 
-        processed_articles.append(article_entry)
-        scored_news.append((score, title, link, source, summary))
+        for score, title, link, source, summary in top_articles:
+            if score >= TWEET_THRESHOLD:
+                tweet = summarize_news(title, summary, source)
 
-    # ✅ Sort articles by highest relevance score
-    scored_news.sort(reverse=True, key=lambda x: x[0])
-
-    # ✅ Pick top 3 highest-ranked news articles
-    top_articles = scored_news[:3]
-
-    new_entries = []
-
-    for score, title, link, source, summary in top_articles:
-        if score >= TWEET_THRESHOLD:
-            tweet = summarize_news(title, summary, source)
-
-            if post_tweet(tweet):
-                new_entry = {
-                    "link": link,
-                    "date": datetime.utcnow().strftime("%Y-%m-%d"),
-                    "title": title,
-                    "summary": summary,
-                    "similarity_excluded": "No",  # ✅ Now included for consistency
-                    "score": score,
-                    "status": "posted",
-                    "tweet": tweet
-                }
-                processed_articles.append(new_entry)
-                new_entries.append(new_entry)
+                if post_tweet(tweet):
+                    new_entry = {
+                        "link": link,
+                        "date": datetime.utcnow().strftime("%Y-%m-%d"),
+                        "title": title,
+                        "summary": summary,
+                        "similarity_excluded": "No",  # ✅ Now included for consistency
+                        "score": score,
+                        "status": "posted",
+                        "tweet": tweet
+                    }
+                    processed_articles.append(new_entry)
+                    new_entries.append(new_entry)
     
-    # Check if statistical tweets are needed
-
-    # ✅ Count script executions where no tweets were posted
-    failed_runs = count_failed_runs(processed_articles)
-
-    # ✅ Count today's statistical tweets
-    today = datetime.utcnow().strftime("%Y-%m-%d")
-    today_stat_count = sum(1 for article in processed_articles if article.get("date") == today and article.get("type") == "statistical")
-    
-    if failed_runs >= 3 and today_stat_count < 3:
-        print(f"📊 Posting a statistical tweet. Today's count: {today_stat_count}")
-        tweet = generate_statistical_tweet(processed_articles)  # Pass 'processed_articles' argument
+    elif tweet_type == "statistical" and today_stat_count < STAT_TWEETS_LIMIT:
+        tweet = generate_statistical_tweet()
         if post_tweet(tweet):
-            processed_articles.append({
-                "date": today,
-                "type": "statistical",
-                "status": "posted",
-                "tweet": tweet
-            })
+            processed_articles.append({"date": today, "type": "statistical", "status": "posted", "tweet": tweet})
+    
+    else:
+        print("🤖 No tweet posted in this run to simulate human-like activity.")
+    
 
     # ✅ Save all processed articles to JSON
     processed_articles = cleanup_old_articles(processed_articles)  # ✅ Remove old entries
