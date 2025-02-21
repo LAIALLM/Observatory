@@ -269,47 +269,42 @@ def summarize_news(title, summary, source):
 
 # Generate statistical tweet
 
-def generate_statistical_tweet(processed_articles):
-    client = openai.OpenAI(api_key=OPENAI_API_KEY)
-
-    # ✅ Use already loaded processed_articles instead of reloading JSON
-    past_tweets = {article["tweet"] for article in processed_articles if article.get("type") == "statistical"}
-
-    prompt = """
-    Generate a concise, direct, factual, and impactful tweet about statistical facts related to infrastructure, population, urban development, or cities worldwide.
+def generate_statistical_tweet():
+    """Generate a statistical tweet dynamically using GPT-4."""
+    tweet_formats = {
+        1: "A single striking statistic or future projection about infrastructure, population, urban development, or cities worldwide.",
+        2: "A direct comparison between two countries, cities, projects, or companies regarding infrastructure, population growth, or urban planning.",
+        3: """A ranked list of the top 10 countries, cities, projects, or companies based on a notable statistical fact.
+        
+Format:
+1. City/Country
+2. City/Country
+3. City/Country
+"""
+    }
     
-    Choose **one** of the following formats:
-    - **A single striking statistic or future projection.**
-    - **A direct comparison between two countries, cities, projects, or companies.** 
-    - **A ranked list of the top 10 countries, cities, projects, or companies based on a notable statistical fact.** 
+    selected_format_key = random.choice(list(tweet_formats.keys()))
+    selected_format = tweet_formats[selected_format_key]
     
+    prompt = f"""
+    Generate a concise, direct, factual, and impactful tweet.
+
+    {selected_format}
+
     The tweet should:
     - **NEVER use quotes, hashtags, or generic emojis.**
     - **Keep it strictly under 280 characters.**
     - **NEVER use generic phrases and unnecessary filler words.** Keep it sharp and data-driven.
     - **Always place country flags before a location name.**
     - **Use proper line breaks for readability.**
-    - If presenting a ranked list, format it as:
-    
-      Notable statistical fact to rank:
-    
-      1. City/Country
-      2. City/Country
-      3. City/Country
     """
 
-    for _ in range(3):  # Try up to 3 times to avoid duplicates
-        response = client.chat.completions.create(
-            model="gpt-4",
-            messages=[{"role": "user", "content": prompt}]
-        )
-        tweet = response.choices[0].message.content.strip()
-
-        if tweet not in past_tweets:
-            return tweet
-
-    return None  # If all 3 attempts return repeated content
-
+    client = openai.OpenAI(api_key=OPENAI_API_KEY)
+    response = client.chat.completions.create(
+        model="gpt-4",
+        messages=[{"role": "user", "content": prompt}]
+    )
+    return response.choices[0].message.content.strip()
 
 # Post to X (Twitter) using API v2 with a delay
 def post_tweet(tweet):
@@ -332,35 +327,6 @@ def post_tweet(tweet):
     except tweepy.errors.TweepyException as e:
         print(f"❌ Other Tweepy error: {e}")
         return False
-
-def main():
-    LOG_FILE = "filtered_news.json"
-    processed_articles = []
-    if os.path.exists(LOG_FILE):
-        with open(LOG_FILE, "r") as file:
-            processed_articles = json.load(file)
-
-    failed_runs = count_failed_runs(processed_articles)
-    stat_tweet_count = count_stat_tweets_today(processed_articles)
-    
-    if failed_runs >= FAILED_RUNS_THRESHOLD and stat_tweet_count < STAT_TWEETS_LIMIT:
-        print(f"📊 Posting a statistical tweet. Today's count: {stat_tweet_count}")
-        tweet = generate_statistical_tweet()  # Generate a new tweet dynamically
-        if tweet:  # Ensure tweet is valid
-            try:
-                response = twitter_client.create_tweet(text=tweet)
-                print(f"✅ Tweet posted successfully: {response.data}")
-                processed_articles.append({
-                    "date": datetime.utcnow().strftime("%Y-%m-%d"),
-                    "type": "statistical",
-                    "status": "posted",
-                    "tweet": tweet
-                })
-            except tweepy.TweepyException as e:
-                print(f"❌ Twitter API error: {e}")
-    
-    with open(LOG_FILE, "w") as file:
-        json.dump(processed_articles, file, indent=4)
 
 ############## Main execution starts here ##############
 if __name__ == "__main__":
