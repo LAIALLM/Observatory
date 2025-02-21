@@ -49,7 +49,7 @@ TWEET_THRESHOLD = 10 # Define score threshold for tweets
 
 # Measures for statistical tweets
 STAT_TWEETS_LIMIT = 3  # Max statistical tweets per day
-FAILED_RUNS_THRESHOLD = 3  # Trigger if 3 runs fail to post news
+FAILED_RUNS_THRESHOLD = 2  # Trigger if 3 runs fail to post news
 
 # Define common words to ignore (stopwords)
 STOPWORDS = set([
