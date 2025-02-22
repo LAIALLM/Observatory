@@ -52,7 +52,6 @@ TWEET_THRESHOLD = 10 # Define score threshold for tweets
 NEWS_TWEETS_LIMIT = 3  # Max news tweets per day
 STAT_TWEETS_LIMIT = 2  # Max statistical tweets per day
 
-
 # Define common words to ignore (stopwords)
 STOPWORDS = set([
     "the", "and", "is", "in", "on", "at", "to", "of", "for", "with", "a", "an",
@@ -93,7 +92,7 @@ def is_similar_news(new_title, new_summary, processed_articles, threshold=0.5, l
     return False  # No duplicates found
 
 # Load previously processed articles (both tweeted & filtered)
-def load_filtered_articles():
+def load_processed_articles():
     if os.path.exists(LOG_FILE):
         try:
             with open(LOG_FILE, "r") as file:
@@ -337,7 +336,7 @@ def post_tweet(tweet):
 ############## Main execution starts here ##############
 if __name__ == "__main__":
     print("🔍 Loading previously processed articles...")
-    processed_articles = load_filtered_articles()
+    processed_articles = load_processed_articles()
     filtered_links = {article["link"] for article in processed_articles if "link" in article} if processed_articles else set()
     print(f"📂 {len(processed_articles)} articles already processed.")
 
@@ -359,7 +358,11 @@ if __name__ == "__main__":
         scored_news = []
         seen_links = set()  # ✅ Prevent processing duplicate links in the same workflow run
 
-        for title, link, source, summary in latest_news:        
+        for title, link, source, summary in latest_news:     
+            if today_news_count >= NEWS_TWEETS_LIMIT:
+                print(f"🚫 Stopping news tweets early: {today_news_count} tweets reached.")
+                break  # 💡 STOP posting news if limit is reached      
+
             if link in seen_links or link in filtered_links:
                 print(f"⏩ Skipping duplicate article from multiple RSS feeds: {title}")
                 continue
@@ -422,6 +425,7 @@ if __name__ == "__main__":
                 tweet = summarize_news(title, summary, source)
 
                 if post_tweet(tweet):
+                    today_news_count += 1  # ✅ Update count after posting
                     new_entry = {
                         "link": link,
                         "date": datetime.utcnow().strftime("%Y-%m-%d"),
@@ -446,8 +450,14 @@ if __name__ == "__main__":
         if today_stat_count >= STAT_TWEETS_LIMIT:
             print(f"🚫 Reached daily statistical tweet limit ({STAT_TWEETS_LIMIT}). Skipping statistical tweets.")
         else:
+            for _ in range(STAT_TWEETS_LIMIT - today_stat_count):  # Post only up to the remaining limit
+                if today_stat_count >= STAT_TWEETS_LIMIT:
+                    print(f"🚫 Stopping statistical tweets early: {today_stat_count} tweets reached.")
+                    break  # 💡 Stop posting stats if limit is reached         
+
             tweet = generate_statistical_tweet()
             if post_tweet(tweet):
+                today_stat_count += 1  # ✅ Update count after posting
                 processed_articles.append({
                     "date": today,
                     "type": "statistical",
