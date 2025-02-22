@@ -1738,5 +1738,11 @@
         "score": 8,
         "status": "processed",
         "tweet": null
+    },
+    {
+        "date": "2025-02-22",
+        "type": "statistical",
+        "status": "posted",
+        "tweet": "\ud83c\udf0d By 2050, it's predicted that 68% of the world's population will be urban dwellers. \n\ud83c\uddee\ud83c\uddf3 India alone is expected to add 416 million urban inhabitants. \nCities and infrastructures must rapidly evolve to accommodate this growth."
     }
 ]
