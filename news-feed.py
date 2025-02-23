@@ -48,6 +48,11 @@ LOG_FILE = "filtered_news.json"
 RETENTION_DAYS = 10  # Remove news older than 10 days
 TWEET_THRESHOLD = 10 # Define score threshold for tweets
 
+# Random tweets probabilities
+RANDOM_NEWS = 0.3
+RANDOM_STATISTIC = 0.2
+RANDOM_NONE = 0.5
+
 # Daily tweet limits
 NEWS_TWEETS_LIMIT = 3  # Max news tweets per day
 STAT_TWEETS_LIMIT = 2  # Max statistical tweets per day
@@ -147,15 +152,9 @@ def save_processed_articles(processed):
         else:
             print("✅ Changes committed to GitHub.")
 
-# RANDOMNESS FOR POST TYPE
-def should_post_news():
-    return random.random() < 0.50
-
-def should_post_statistical():
-    return random.random() < 0.30
-
-def should_do_nothing():
-    return random.random() < 0.20
+# Consolidated randomness function for post type
+def select_tweet_type():
+    return random.choices(["news", "statistical", "none"], [RANDOM_NEWS, RANDOM_STATISTIC, RANDOM_NONE])[0]
 
 # Count how many news tweets were posted today.
 def count_news_tweets_today(processed_articles):
@@ -319,7 +318,7 @@ def post_tweet(tweet):
         print(f"✅ Tweet posted successfully: {response.data}")
 
         # Introduce a 3-minute delay **after** posting each tweet
-        print("⏳ Waiting 3 minutes before posting the next tweet...")
+        print("⏳ Waiting 2 minutes before posting the next tweet...")
         time.sleep(120)  # 120 seconds 
 
         return True
@@ -344,13 +343,14 @@ if __name__ == "__main__":
     today_news_count = count_news_tweets_today(processed_articles)
     today_stat_count = count_stat_tweets_today(processed_articles)
 
-    # Randomly select type of tweet to post
-    tweet_type = random.choices(["news", "statistical", "none"], [0.5, 0.3, 0.2])[0]
-    print(f"🔀 Selected tweet type: {tweet_type}")  # ✅ Debugging
+    # Consolidated random selection for type of tweet
+    tweet_type = select_tweet_type()
+    print(f"🔀 Selected tweet type: {tweet_type}")
     
     if tweet_type == "news":
         if today_news_count >= NEWS_TWEETS_LIMIT:
             print(f"🚫 Reached daily news tweet limit ({NEWS_TWEETS_LIMIT}). Skipping news tweets.")
+            latest_news = []  # Prevent further processing by using an empty list
         else:
             latest_news = get_latest_news()
             print(f"📰 Found {len(latest_news)} new articles.")
@@ -434,42 +434,32 @@ if __name__ == "__main__":
                         "similarity_excluded": "No",  # ✅ Now included for consistency
                         "score": score,
                         "status": "posted",
-                        "tweet": tweet
+                        "tweet": tweet,
+                        "type": "news"  # <-- Include this line to mark the tweet type
                     }
                     processed_articles.append(new_entry)
                     new_entries.append(new_entry)
             else:
                 print("🚫 No high-scoring news found to post.")
     
-    elif tweet_type == "statistical" and today_stat_count < STAT_TWEETS_LIMIT:
-        tweet = generate_statistical_tweet()
-        if post_tweet(tweet):
-            processed_articles.append({"date": today, "type": "statistical", "status": "posted", "tweet": tweet})
     
     elif tweet_type == "statistical":
         if today_stat_count >= STAT_TWEETS_LIMIT:
             print(f"🚫 Reached daily statistical tweet limit ({STAT_TWEETS_LIMIT}). Skipping statistical tweets.")
         else:
-            for _ in range(STAT_TWEETS_LIMIT - today_stat_count):  # Post only up to the remaining limit
-                if today_stat_count >= STAT_TWEETS_LIMIT:
-                    print(f"🚫 Stopping statistical tweets early: {today_stat_count} tweets reached.")
-                    break  # 💡 Stop posting stats if limit is reached         
-
             tweet = generate_statistical_tweet()
             if post_tweet(tweet):
-                today_stat_count += 1  # ✅ Update count after posting
+                today_stat_count += 1
                 processed_articles.append({
                     "date": today,
-                    "type": "statistical",
                     "status": "posted",
-                    "tweet": tweet
+                    "tweet": tweet,
+                    "type": "statistical"
                 })
-
     else:
         print("🤖 No tweet posted in this run to simulate human-like activity.")
 
     # ✅ Save all processed articles to JSON
     processed_articles = cleanup_old_articles(processed_articles)
     save_processed_articles(processed_articles)
-
     print("✅ filtered_news.json updated successfully!")
