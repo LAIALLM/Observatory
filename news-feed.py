@@ -245,11 +245,12 @@ def summarize_news(title, summary, source):
 
     prompt = f"""
     Rewrite this construction-related news title into a concise, natural tweet.
-    
+
+    - **Always place a country flag emoji at the START** if a country, city, or company is explicitly mentioned.
+    - **Format:** (Flag) NEWS: Main content
     - **DO NOT use** quotes, hashtags, sources, or websites.
     - **DO NOT use any emojis except country flags.**
-    - **Always place a country flag emoji at the START** if a country, city, or company is explicitly mentioned.
-    - **Format:** (Flag) Main content
+
     - **Only add a stock ticker $TICKER if:**
       1. The company is **publicly traded**.
       2. The **correct** ticker symbol is available.
@@ -272,26 +273,45 @@ def summarize_news(title, summary, source):
     return tweet[:280]
 
 # Generate statistical tweet
+# Global list of statistical tweet categories in a preferred order
+STATISTICAL_CATEGORIES = [
+    "infrastructure",
+    "energy",
+    "transportation"
+    "population",
+    "urban development",
+    "urban planning",
+    "smart cities",
+    "countries",
+    "cities",
+    "construction projects",
+    "engineering projects",
+    "infrastructural projects",
+    "construction companies",
+    "infrastructure companies",
+    "urban development firms"
+]
 
-def generate_statistical_tweet():
+
+def generate_statistical_tweet(selected_category):
     """Generate a statistical tweet dynamically using GPT-4."""
     tweet_formats = {
-        1: "A single striking statistic or future projection about infrastructure, population, urban development, or cities worldwide.",
-        2: "A direct comparison between two countries, cities, projects, or companies regarding infrastructure, population growth, or urban planning.",
-        3: """A ranked list of the top 10 countries, cities, projects, or companies based on a notable statistical fact.
-        
+        1: "A single striking statistic or future projection",
+        2: "A direct comparison between two statistical facts",
+        3: """A ranked list of the top 10 based on a notable statistical fact.
+    
 Format:
 1. City/Country
 2. City/Country
 3. City/Country
 """
-    }
+}
     
     selected_format_key = random.choice(list(tweet_formats.keys()))
     selected_format = tweet_formats[selected_format_key]
     
     prompt = f"""
-    Generate a concise, direct, factual, and impactful tweet.
+    Generate a concise, direct, factual, and impactful statistical tweet about {selected_category}.
 
     {selected_format}
 
@@ -309,6 +329,8 @@ Format:
         messages=[{"role": "user", "content": prompt}]
     )
     return response.choices[0].message.content.strip()
+
+
 
 # Post to X (Twitter) using API v2 with a delay
 def post_tweet(tweet):
@@ -447,14 +469,18 @@ if __name__ == "__main__":
         if today_stat_count >= STAT_TWEETS_LIMIT:
             print(f"🚫 Reached daily statistical tweet limit ({STAT_TWEETS_LIMIT}). Skipping statistical tweets.")
         else:
-            tweet = generate_statistical_tweet()
+            # Select a category from your predefined global list.
+            selected_category = random.choice(STATISTICAL_CATEGORIES)
+            # Generate a tweet specific to that category.
+            tweet = generate_statistical_tweet(selected_category)
             if post_tweet(tweet):
                 today_stat_count += 1
                 processed_articles.append({
                     "date": today,
                     "status": "posted",
                     "tweet": tweet,
-                    "type": "statistical"
+                    "type": "statistical",
+                    "category": selected_category
                 })
     else:
         print("🤖 No tweet posted in this run to simulate human-like activity.")
