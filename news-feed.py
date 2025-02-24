@@ -50,8 +50,8 @@ TWEET_THRESHOLD = 10 # Define score threshold for tweets
 
 # Random tweets probabilities
 RANDOM_NEWS = 0.3
-RANDOM_STATISTIC = 0.2
-RANDOM_NONE = 0.5
+RANDOM_STATISTIC = 0.4
+RANDOM_NONE = 0.3
 
 # Daily tweet limits
 NEWS_TWEETS_LIMIT = 3  # Max news tweets per day
