@@ -320,7 +320,7 @@ Format:
     - **Keep it strictly under 280 characters.**
     - **NEVER use generic phrases and unnecessary filler words.** Keep it sharp and data-driven.
     - **Always place country flags before a location name.**
-    - **Use proper line breaks for readability.**
+    - **Use proper line breaks for readability.** If the tweet contains multiple paragraphs, insert a blank line between them.
     """
 
     client = openai.OpenAI(api_key=OPENAI_API_KEY)
