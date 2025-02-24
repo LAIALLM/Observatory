@@ -349,7 +349,11 @@ def generate_infrastructure_tweet():
     - **Keep it strictly under 280 characters.**
     - **NEVER use generic phrases and unnecessary filler words.** Keep it sharp and data-driven.
     - **Always place country flags before a location name.**
-    - **Use proper line breaks for readability.** If the tweet contains multiple paragraphs, insert a blank line between them.
+    - **Use proper line breaks for readability.** If the tweet contains multiple paragraphs, insert a blank line between     
+    
+    - **Only add a stock ticker $TICKER if:**
+      1. The company is **publicly traded**.
+      2. The **correct** ticker symbol is available.  
     """
 
     response = client.chat.completions.create(
