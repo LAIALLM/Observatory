@@ -311,7 +311,7 @@ Format:
     selected_format = tweet_formats[selected_format_key]
     
     prompt = f"""
-    Generate a concise, direct, factual, and impactful statistical tweet about {selected_category}.
+    Assume the current year is 2025. Generate a concise, direct, factual, and impactful statistical tweet about {selected_category} that uses current data or realistic projections for 2025 and beyond. Avoid using outdated statistics from before 2023.
 
     {selected_format}
 
