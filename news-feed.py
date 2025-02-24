@@ -277,7 +277,7 @@ def summarize_news(title, summary, source):
 STATISTICAL_CATEGORIES = [
     "infrastructure",
     "energy",
-    "transportation"
+    "transportation",
     "population",
     "urban development",
     "urban planning",
@@ -368,14 +368,18 @@ if __name__ == "__main__":
     # Consolidated random selection for type of tweet
     tweet_type = select_tweet_type()
     print(f"🔀 Selected tweet type: {tweet_type}")
-    
+
+    # Early exit if daily tweet limit for the selected type is reached
+    if tweet_type == "news" and today_news_count >= NEWS_TWEETS_LIMIT:
+        print(f"🚫 Reached daily news tweet limit ({NEWS_TWEETS_LIMIT}). Exiting to save resources.")
+        exit(0)
+    elif tweet_type == "statistical" and today_stat_count >= STAT_TWEETS_LIMIT:
+        print(f"🚫 Reached daily statistical tweet limit ({STAT_TWEETS_LIMIT}). Exiting to save resources.")
+        exit(0)
+        
     if tweet_type == "news":
-        if today_news_count >= NEWS_TWEETS_LIMIT:
-            print(f"🚫 Reached daily news tweet limit ({NEWS_TWEETS_LIMIT}). Skipping news tweets.")
-            latest_news = []  # Prevent further processing by using an empty list
-        else:
-            latest_news = get_latest_news()
-            print(f"📰 Found {len(latest_news)} new articles.")
+        latest_news = get_latest_news()
+        print(f"📰 Found {len(latest_news)} new articles.")
 
         scored_news = []
         seen_links = set()  # ✅ Prevent processing duplicate links in the same workflow run
