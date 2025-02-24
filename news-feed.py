@@ -298,7 +298,7 @@ def generate_statistical_tweet(selected_category):
     tweet_formats = {
         1: "A single striking statistic or future projection",
         2: "A direct comparison between two statistical facts",
-        3: """A ranked list of the top 10 based on a notable statistical fact.
+        3: """Generate a ranked list of the top 5 or, if space permits, top 10, ensuring the tweet is under 280 characters.
     
 Format:
 1. City/Country
