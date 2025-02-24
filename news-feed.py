@@ -476,6 +476,7 @@ if __name__ == "__main__":
             if post_tweet(tweet):
                 today_stat_count += 1
                 processed_articles.append({
+                    "link": None,  
                     "date": today,
                     "status": "posted",
                     "tweet": tweet,
