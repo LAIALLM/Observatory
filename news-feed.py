@@ -49,13 +49,15 @@ RETENTION_DAYS = 10  # Remove news older than 10 days
 TWEET_THRESHOLD = 10 # Define score threshold for tweets
 
 # Random tweets probabilities
-RANDOM_NEWS = 0.3
-RANDOM_STATISTIC = 0.4
+RANDOM_NEWS = 0.2
+RANDOM_STATISTIC = 0.3
+RANDOM_INFRASTRUCTURE = 0.2
 RANDOM_NONE = 0.3
 
 # Daily tweet limits
 NEWS_TWEETS_LIMIT = 3  # Max news tweets per day
 STAT_TWEETS_LIMIT = 2  # Max statistical tweets per day
+INFRA_TWEETS_LIMIT= 1
 
 # Define common words to ignore (stopwords)
 STOPWORDS = set([
@@ -154,7 +156,7 @@ def save_processed_articles(processed):
 
 # Consolidated randomness function for post type
 def select_tweet_type():
-    return random.choices(["news", "statistical", "none"], [RANDOM_NEWS, RANDOM_STATISTIC, RANDOM_NONE])[0]
+    return random.choices(["news", "statistical", "infrastructure", "none"], [RANDOM_NEWS, RANDOM_STATISTIC, RANDOM_INFRASTRUCTURE, RANDOM_NONE])[0]
 
 # Count how many news tweets were posted today.
 def count_news_tweets_today(processed_articles):
@@ -165,6 +167,11 @@ def count_news_tweets_today(processed_articles):
 def count_stat_tweets_today(processed_articles):
     today = datetime.utcnow().strftime("%Y-%m-%d")
     return sum(1 for article in processed_articles if article.get("date") == today and article.get("type") == "statistical")
+
+# Count how many infrastructural tweets were posted today.
+def count_infra_tweets_today(processed_articles):
+    today = datetime.utcnow().strftime("%Y-%m-%d")
+    return sum(1 for article in processed_articles if article.get("date") == today and article.get("type") == "infrastructure")
 
 # Get latest news (only from the last hour) with error handling
 def get_latest_news():
@@ -331,6 +338,26 @@ Format:
     return response.choices[0].message.content.strip()
 
 
+# Generate an infrastructure tweet using your provided prompt.
+def generate_infrastructure_tweet():
+    client = openai.OpenAI(api_key=OPENAI_API_KEY)
+    prompt = """
+    Write a concise social media post from an external perspective about a tech company that highlights key quantitative infrastructure metrics. Include details such as daily data volumes, production figures, energy consumption, or efficiency ratings, and reference relevant statistics with numbers. The tone should be factual and insightful, not representing the company itself.
+
+    The tweet should:
+    - **NEVER use quotes, hashtags, or generic emojis.**
+    - **Keep it strictly under 280 characters.**
+    - **NEVER use generic phrases and unnecessary filler words.** Keep it sharp and data-driven.
+    - **Always place country flags before a location name.**
+    - **Use proper line breaks for readability.** If the tweet contains multiple paragraphs, insert a blank line between them.
+    """
+
+    response = client.chat.completions.create(
+        model="gpt-4",
+        messages=[{"role": "user", "content": prompt}]
+    )
+    tweet = response.choices[0].message.content.strip()
+    return tweet
 
 # Post to X (Twitter) using API v2 with a delay
 def post_tweet(tweet):
@@ -364,6 +391,7 @@ if __name__ == "__main__":
     today = datetime.utcnow().strftime("%Y-%m-%d")
     today_news_count = count_news_tweets_today(processed_articles)
     today_stat_count = count_stat_tweets_today(processed_articles)
+    today_infra_count = count_infra_tweets_today(processed_articles)
 
     # Consolidated random selection for type of tweet
     tweet_type = select_tweet_type()
@@ -376,7 +404,10 @@ if __name__ == "__main__":
     elif tweet_type == "statistical" and today_stat_count >= STAT_TWEETS_LIMIT:
         print(f"🚫 Reached daily statistical tweet limit ({STAT_TWEETS_LIMIT}). Exiting to save resources.")
         exit(0)
-        
+    elif tweet_type == "infrastructure" and today_infra_count >= INFRA_TWEETS_LIMIT:
+        print(f"🚫 Reached daily infrastructure tweet limit ({INFRA_TWEETS_LIMIT}). Exiting to save resources.")
+        exit(0)
+
     if tweet_type == "news":
         latest_news = get_latest_news()
         print(f"📰 Found {len(latest_news)} new articles.")
@@ -487,6 +518,22 @@ if __name__ == "__main__":
                     "type": "statistical",
                     "category": selected_category
                 })
+
+    elif tweet_type == "infrastructure":
+        if today_infra_count >= INFRA_TWEETS_LIMIT:
+            print(f"🚫 Reached daily infrastructure tweet limit ({INFRA_TWEETS_LIMIT}). Skipping infrastructure tweets.")
+        else:
+            tweet = generate_infrastructure_tweet()
+            if post_tweet(tweet):
+                processed_articles.append({
+                    "link": None,
+                    "date": today,
+                    "status": "posted",
+                    "tweet": tweet,
+                    "type": "infrastructure"
+                })
+
+
     else:
         print("🤖 No tweet posted in this run to simulate human-like activity.")
 
