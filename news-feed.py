@@ -342,7 +342,7 @@ Format:
 def generate_infrastructure_tweet():
     client = openai.OpenAI(api_key=OPENAI_API_KEY)
     prompt = """
-    Write a concise social media post from an external perspective about a tech company that highlights key quantitative infrastructure metrics. Include details such as daily data volumes, production figures, energy consumption, or efficiency ratings, and reference relevant statistics with numbers. The tone should be factual and insightful, not representing the company itself.
+    Write a concise social media post from an external perspective about a tech company that highlights a single key quantitative infrastructure metric. Examples are daily data volumes, production figures, energy consumption, or efficiency ratings, and reference relevant statistics with numbers. The tone should be factual and insightful, not representing the company itself.
 
     The tweet should:
     - **NEVER use quotes, hashtags, or generic emojis.**
