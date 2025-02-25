@@ -1214,5 +1214,13 @@
         "score": 8,
         "status": "processed",
         "tweet": null
+    },
+    {
+        "link": null,
+        "date": "2025-02-25",
+        "status": "posted",
+        "tweet": "\ud83c\uddfa\ud83c\uddf3 UN projects by 2050, 68% of the world's population will be urban. That's 2.5 billion more people living in cities than 2025!\n\nHousing affordability crises will deepen, especially in emerging economies. Swift, sustainable urban planning is an urgent global priority.",
+        "type": "statistical",
+        "category": "urban planning"
     }
 ]
