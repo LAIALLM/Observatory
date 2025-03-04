@@ -201,9 +201,12 @@ def get_latest_news():
             continue
     return news_list
 
-# Use GPT-4 to check if news is relevant
+# Use GROK-2-1212 to check if news is relevant
 def get_news_relevance_score(title, summary):
-    client = openai.OpenAI(api_key=OPENAI_API_KEY)
+    client = openai.OpenAI(
+        api_key=XAI_API_KEY,  # Use xAI API key
+        base_url="https://api.x.ai/v1"  # xAI endpoint
+    )
 
     prompt = f"""
     You are ranking news articles for a construction industry Twitter feed.
@@ -229,26 +232,26 @@ def get_news_relevance_score(title, summary):
     """
 
     response = client.chat.completions.create(
-        model="gpt-4",
+        model="grok-2-1212",  # Changed to Grok-2-1212
         messages=[{"role": "user", "content": prompt}]
     )
 
     score_text = response.choices[0].message.content.strip()
-
     try:
         score = int(score_text)
-        return score if 0 <= score <= 10 else 0  # Ensure valid range
+        return score if 0 <= score <= 10 else 0
     except ValueError:
-        return 0  # Default to 0 if unexpected response
-
-
+        return 0
     except openai.OpenAIError as e:
-        print(f"❌ OpenAI API Error: {e}")
-        return 0  # Default to 0 if API call fails
+        print(f"❌ xAI API Error: {e}")
+        return 0
 
 # Summarize news and format tweet
 def summarize_news(title, summary, source):
-    client = openai.OpenAI(api_key=OPENAI_API_KEY)
+    client = openai.OpenAI(
+        api_key=XAI_API_KEY,  # Use xAI API key
+        base_url="https://api.x.ai/v1"  # xAI endpoint
+    )
 
     prompt = f"""
     Rewrite this construction-related news title into a concise, natural tweet.
@@ -269,14 +272,13 @@ def summarize_news(title, summary, source):
         prompt += f"\n\nAlso, integrate one key point from this summary: {summary}"
 
     response = client.chat.completions.create(
-        model="gpt-4",
+        model="grok-2-1212",  # Changed to Grok-2-1212
         messages=[{"role": "user", "content": prompt}]
     )
 
     ai_summary = response.choices[0].message.content.strip()
     ai_summary = ai_summary.replace('"', '').replace("'", "")
-
-    tweet = f"{ai_summary}" # \n\nSource: {source}
+    tweet = f"{ai_summary}"
     return tweet[:280]
 
 # Generate statistical tweet
@@ -301,7 +303,10 @@ STATISTICAL_CATEGORIES = [
 
 
 def generate_statistical_tweet(selected_category):
-    """Generate a statistical tweet dynamically using GPT-4."""
+    client = openai.OpenAI(
+        api_key=XAI_API_KEY,  # Use xAI API key
+        base_url="https://api.x.ai/v1"  # xAI endpoint
+    )
     tweet_formats = {
         1: "A single striking statistic or future projection",
         2: "A direct comparison between two statistical facts",
@@ -314,7 +319,7 @@ Summary: <One sentence overview of the ranking outcome>
 2. City/Country
 3. City/Country
 """
-}
+    }
     
     selected_format_key = random.choice(list(tweet_formats.keys()))
     selected_format = tweet_formats[selected_format_key]
@@ -333,9 +338,8 @@ Summary: <One sentence overview of the ranking outcome>
     - **Use proper line breaks for readability.** If the tweet contains multiple paragraphs, insert a blank line between them.
     """
 
-    client = openai.OpenAI(api_key=OPENAI_API_KEY)
     response = client.chat.completions.create(
-        model="gpt-4",
+        model="grok-2-1212",  # Changed to Grok-2-1212
         messages=[{"role": "user", "content": prompt}]
     )
     return response.choices[0].message.content.strip()
@@ -343,7 +347,10 @@ Summary: <One sentence overview of the ranking outcome>
 
 # Generate an infrastructure tweet using your provided prompt.
 def generate_infrastructure_tweet():
-    client = openai.OpenAI(api_key=OPENAI_API_KEY)
+    client = openai.OpenAI(
+        api_key=XAI_API_KEY,  # Use xAI API key
+        base_url="https://api.x.ai/v1"  # xAI endpoint
+    )
     prompt = """
     Write a concise social media post from an external perspective about a tech company that highlights a single key quantitative infrastructure metric. Focus strictly on presenting data with minimal wording.
 
@@ -361,7 +368,7 @@ def generate_infrastructure_tweet():
     """
 
     response = client.chat.completions.create(
-        model="gpt-4",
+        model="grok-2-1212",  # Changed to Grok-2-1212
         messages=[{"role": "user", "content": prompt}]
     )
     tweet = response.choices[0].message.content.strip()
