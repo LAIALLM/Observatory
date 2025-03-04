@@ -13,7 +13,7 @@ TWITTER_API_KEY = os.getenv("TWITTER_API_KEY")
 TWITTER_SECRET = os.getenv("TWITTER_SECRET")
 TWITTER_ACCESS_TOKEN = os.getenv("TWITTER_ACCESS_TOKEN")
 TWITTER_ACCESS_SECRET = os.getenv("TWITTER_ACCESS_SECRET")
-OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
+XAI_API_KEY = os.getenv("XAI_API_KEY")
 
 # Authenticate Twitter API (Using API v2)
 twitter_client = tweepy.Client(
