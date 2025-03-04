@@ -1,4 +1,4 @@
-name: Auto-Post Construction News
+name: Auto-Post Construction News GROK
 
 on:
   schedule:
