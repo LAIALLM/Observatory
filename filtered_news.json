@@ -3839,5 +3839,13 @@
         "status": "posted",
         "tweet": "TechCorp's data centers processed 10 petabytes of data daily in 2022.\n\n\ud83c\uddfa\ud83c\uddf8 United States data centers: 6 petabytes\n\ud83c\udde9\ud83c\uddea Germany data centers: 3 petabytes\n\ud83c\uddef\ud83c\uddf5 Japan data centers: 1 petabyte\n\n$TECH",
         "type": "infrastructure"
+    },
+    {
+        "link": null,
+        "date": "2025-03-05",
+        "status": "posted",
+        "tweet": "By 2025, \ud83c\uddfa\ud83c\uddf8 United States plans to invest $1.2 trillion in infrastructure, aiming to repair 20,000 miles of roads and replace 10,000 bridges, enhancing national connectivity and safety.",
+        "type": "statistical",
+        "category": "infrastructure"
     }
 ]
