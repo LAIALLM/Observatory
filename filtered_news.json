@@ -3877,5 +3877,13 @@
         "score": 8,
         "status": "processed",
         "tweet": null
+    },
+    {
+        "link": null,
+        "date": "2025-03-05",
+        "status": "posted",
+        "tweet": "Summary: Top urban development firms in 2025, based on projected project values:\n\n\ud83c\udde8\ud83c\uddf3 China: $1.2T\n\ud83c\uddfa\ud83c\uddf8 USA: $800B\n\ud83c\uddee\ud83c\uddf3 India: $650B\n\ud83c\uddec\ud83c\udde7 UK: $400B\n\ud83c\uddef\ud83c\uddf5 Japan: $350B",
+        "type": "statistical",
+        "category": "urban development firms"
     }
 ]
