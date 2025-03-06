@@ -3476,5 +3476,13 @@
         "tweet": "In 2025, electric vehicles are projected to constitute 15% of global car sales, up from 10% in 2023.\n\nBy 2030, \ud83c\udde8\ud83c\uddf3 China aims for 40% of new car sales to be electric, compared to \ud83c\uddfa\ud83c\uddf8 USA's target of 50%.",
         "type": "statistical",
         "category": "transportation"
+    },
+    {
+        "link": null,
+        "date": "2025-03-06",
+        "status": "posted",
+        "tweet": "Summary: Top 5 cities by projected construction project value in 2025\n\n\ud83c\udde8\ud83c\uddf3 Shanghai: $150B\n\ud83c\uddfa\ud83c\uddf8 New York: $120B\n\ud83c\uddee\ud83c\uddf3 Mumbai: $100B\n\ud83c\uddf8\ud83c\udde6 Riyadh: $90B\n\ud83c\udde6\ud83c\uddea Dubai: $80B",
+        "type": "statistical",
+        "category": "construction projects"
     }
 ]
