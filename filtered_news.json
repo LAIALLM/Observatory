@@ -3468,5 +3468,13 @@
         "score": 7,
         "status": "processed",
         "tweet": null
+    },
+    {
+        "link": null,
+        "date": "2025-03-06",
+        "status": "posted",
+        "tweet": "In 2025, electric vehicles are projected to constitute 15% of global car sales, up from 10% in 2023.\n\nBy 2030, \ud83c\udde8\ud83c\uddf3 China aims for 40% of new car sales to be electric, compared to \ud83c\uddfa\ud83c\uddf8 USA's target of 50%.",
+        "type": "statistical",
+        "category": "transportation"
     }
 ]
