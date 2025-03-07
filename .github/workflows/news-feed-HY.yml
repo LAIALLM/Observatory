@@ -36,7 +36,7 @@ jobs:
           TWITTER_ACCESS_SECRET: ${{ secrets.TWITTER_ACCESS_SECRET }}
           XAI_API_KEY: ${{ secrets.XAI_API_KEY }}
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-        run: python news-feed-xai.py  # Runs your bot script
+        run: python news-feed-hy.py  # Runs your bot script
 
       - name: 🔄 Commit and Push Updates (filtered_news.json)
         run: |
