@@ -3575,5 +3575,13 @@
         "score": 8,
         "status": "processed",
         "tweet": null
+    },
+    {
+        "link": null,
+        "date": "2025-03-07",
+        "status": "posted",
+        "tweet": "By 2030, \ud83c\uddee\ud83c\uddf3 India's urban population is projected to reach 600 million, surpassing the entire population of \ud83c\uddea\ud83c\uddfa the European Union today. \n\nThis growth demands sustainable urban planning to manage resources and infrastructure effectively.",
+        "type": "statistical",
+        "category": "urban development"
     }
 ]
