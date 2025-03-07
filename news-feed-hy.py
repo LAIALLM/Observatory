@@ -75,7 +75,7 @@ def extract_key_terms(text):
     return set(keywords)
 
 # Check if a new article is similar to previously processed high-scoring articles."""
-def is_similar_news(new_title, new_summary, processed_articles, threshold=0.5, limit=30):    
+def is_similar_news(new_title, new_summary, processed_articles, threshold=0.6, limit=30):    
     new_keywords = extract_key_terms(new_title) | extract_key_terms(new_summary)
 
     # Debugging: Identify any invalid scores in JSON
