@@ -14,6 +14,7 @@ TWITTER_SECRET = os.getenv("TWITTER_SECRET")
 TWITTER_ACCESS_TOKEN = os.getenv("TWITTER_ACCESS_TOKEN")
 TWITTER_ACCESS_SECRET = os.getenv("TWITTER_ACCESS_SECRET")
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
+XAI_API_KEY = os.getenv("XAI_API_KEY")
 
 # Authenticate Twitter API (Using API v2)
 twitter_client = tweepy.Client(
@@ -46,13 +47,13 @@ RSS_FEEDS = [
 # Log file to track posted and filtered news
 LOG_FILE = "filtered_news.json"
 RETENTION_DAYS = 10  # Remove news older than 10 days
-TWEET_THRESHOLD = 10 # Define score threshold for tweets
+TWEET_THRESHOLD = 9 # Define score threshold for tweets
 
 # Random tweets probabilities
-RANDOM_NEWS = 0.2
+RANDOM_NEWS = 0.3
 RANDOM_STATISTIC = 0.2
 RANDOM_INFRASTRUCTURE = 0.2
-RANDOM_NONE = 0.4
+RANDOM_NONE = 0.2
 
 # Daily tweet limits
 NEWS_TWEETS_LIMIT = 3  # Max news tweets per day
