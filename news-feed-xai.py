@@ -46,7 +46,7 @@ RSS_FEEDS = [
 # Log file to track posted and filtered news
 LOG_FILE = "filtered_news.json"
 RETENTION_DAYS = 10  # Remove news older than 10 days
-TWEET_THRESHOLD = 10 # Define score threshold for tweets
+TWEET_THRESHOLD = 9 # Define score threshold for tweets
 
 # Random tweets probabilities
 RANDOM_NEWS = 0.2
