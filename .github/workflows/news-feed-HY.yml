@@ -1,4 +1,4 @@
-name: Auto-Post Construction News GROK
+name: Auto-Post Construction News HYBRID
 
 on:
   schedule:
