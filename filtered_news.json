@@ -3680,5 +3680,13 @@
         "score": 0,
         "status": "processed",
         "tweet": null
+    },
+    {
+        "link": null,
+        "date": "2025-03-07",
+        "status": "posted",
+        "tweet": "\ud83c\udde8\ud83c\uddf3 Shanghai's projected population in 2025: 24.87 million.\n\n\ud83c\uddee\ud83c\uddf3 Delhi's projected population in 2025: 30.29 million.\n\nDelhi is set to surpass Shanghai as the world's most populous city by 2025.",
+        "type": "statistical",
+        "category": "cities"
     }
 ]
