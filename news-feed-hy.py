@@ -202,9 +202,12 @@ def get_latest_news():
             continue
     return news_list
 
-# Use GPT-4 to check if news is relevant
+# Use GROK-2-1212 to check if news is relevant
 def get_news_relevance_score(title, summary):
-    client = openai.OpenAI(api_key=OPENAI_API_KEY)
+    client = openai.OpenAI(
+        api_key=XAI_API_KEY,  # Use xAI API key
+        base_url="https://api.x.ai/v1"  # xAI endpoint
+    )
 
     prompt = f"""
     You are ranking news articles for a construction industry Twitter feed.
@@ -230,26 +233,26 @@ def get_news_relevance_score(title, summary):
     """
 
     response = client.chat.completions.create(
-        model="gpt-4",
+        model="grok-2-1212",  # Changed to Grok-2-1212
         messages=[{"role": "user", "content": prompt}]
     )
 
     score_text = response.choices[0].message.content.strip()
-
     try:
         score = int(score_text)
-        return score if 0 <= score <= 10 else 0  # Ensure valid range
+        return score if 0 <= score <= 10 else 0
     except ValueError:
-        return 0  # Default to 0 if unexpected response
-
-
+        return 0
     except openai.OpenAIError as e:
-        print(f"❌ OpenAI API Error: {e}")
-        return 0  # Default to 0 if API call fails
+        print(f"❌ xAI API Error: {e}")
+        return 0
 
 # Summarize news and format tweet
 def summarize_news(title, summary, source):
-    client = openai.OpenAI(api_key=OPENAI_API_KEY)
+    client = openai.OpenAI(
+        api_key=XAI_API_KEY,  # Use xAI API key
+        base_url="https://api.x.ai/v1"  # xAI endpoint
+    )
 
     prompt = f"""
     Rewrite this construction-related news title into a concise, natural tweet.
@@ -270,14 +273,13 @@ def summarize_news(title, summary, source):
         prompt += f"\n\nAlso, integrate one key point from this summary: {summary}"
 
     response = client.chat.completions.create(
-        model="gpt-4",
+        model="grok-2-1212",  # Changed to Grok-2-1212
         messages=[{"role": "user", "content": prompt}]
     )
 
     ai_summary = response.choices[0].message.content.strip()
     ai_summary = ai_summary.replace('"', '').replace("'", "")
-
-    tweet = f"{ai_summary}" # \n\nSource: {source}
+    tweet = f"{ai_summary}"
     return tweet[:280]
 
 # Generate statistical tweet
