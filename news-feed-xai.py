@@ -49,10 +49,10 @@ RETENTION_DAYS = 10  # Remove news older than 10 days
 TWEET_THRESHOLD = 9 # Define score threshold for tweets
 
 # Random tweets probabilities
-RANDOM_NEWS = 0.2
+RANDOM_NEWS = 0.5
 RANDOM_STATISTIC = 0.2
 RANDOM_INFRASTRUCTURE = 0.2
-RANDOM_NONE = 0.4
+RANDOM_NONE = 0.1
 
 # Daily tweet limits
 NEWS_TWEETS_LIMIT = 3  # Max news tweets per day
