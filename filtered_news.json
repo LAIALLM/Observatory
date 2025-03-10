@@ -597,5 +597,12 @@
         "status": "posted",
         "tweet": "\ud83c\uddee\ud83c\uddf3 NEWS: Karnataka approves sewage treatment project for 110 BBMP villages, aiming to improve sanitation.",
         "type": "news"
+    },
+    {
+        "link": null,
+        "date": "2025-03-10",
+        "status": "posted",
+        "tweet": "\ud83d\ude80 SpaceX Falcon 9: \n\n98% reusability rate \ud83d\udfe2\n\n75 successful landings \ud83d\udccd\n\n1.5 million lbs of cargo to International Space Station \ud83d\udef0\ufe0f\n\n\ud83c\udf0e USA \ud83c\uddfa\ud83c\uddf8 $SPCE",
+        "type": "infrastructure"
     }
 ]
