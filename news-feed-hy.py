@@ -52,13 +52,15 @@ TWEET_THRESHOLD = 9 # Define score threshold for tweets
 # Random tweets probabilities
 RANDOM_NEWS = 0.3
 RANDOM_STATISTIC = 0.2
-RANDOM_INFRASTRUCTURE = 0.2
+RANDOM_INFRASTRUCTURE = 0.1
+RANDOM_CRYPTO = 0.1
 RANDOM_NONE = 0.2
 
 # Daily tweet limits
-NEWS_TWEETS_LIMIT = 3  # Max news tweets per day
+NEWS_TWEETS_LIMIT = 2  # Max news tweets per day
 STAT_TWEETS_LIMIT = 2  # Max statistical tweets per day
 INFRA_TWEETS_LIMIT= 1
+CRYPTO_TWEETS_LIMIT= 1
 
 # Define common words to ignore (stopwords)
 STOPWORDS = set([
@@ -157,7 +159,7 @@ def save_processed_articles(processed):
 
 # Consolidated randomness function for post type
 def select_tweet_type():
-    return random.choices(["news", "statistical", "infrastructure", "none"], [RANDOM_NEWS, RANDOM_STATISTIC, RANDOM_INFRASTRUCTURE, RANDOM_NONE])[0]
+    return random.choices(["news", "statistical", "infrastructure", "crypto", "none"], [RANDOM_NEWS, RANDOM_STATISTIC, RANDOM_INFRASTRUCTURE, RANDOM_CRYPTO, RANDOM_NONE])[0]
 
 # Count how many news tweets were posted today.
 def count_news_tweets_today(processed_articles):
@@ -173,6 +175,11 @@ def count_stat_tweets_today(processed_articles):
 def count_infra_tweets_today(processed_articles):
     today = datetime.utcnow().strftime("%Y-%m-%d")
     return sum(1 for article in processed_articles if article.get("date") == today and article.get("type") == "infrastructure")
+
+# Count how many crypto tweets were posted today.
+def count_crypto_tweets_today(processed_articles):
+    today = datetime.utcnow().strftime("%Y-%m-%d")
+    return sum(1 for article in processed_articles if article.get("date") == today and article.get("type") == "crypto")
 
 # Get latest news (only from the last hour) with error handling
 def get_latest_news():
@@ -370,6 +377,49 @@ def generate_infrastructure_tweet():
     tweet = response.choices[0].message.content.strip()
     return tweet
 
+# Generate a Crypto tweet using Grok-2-1212
+def generate_crypto_tweet():
+    client = openai.OpenAI(
+        api_key=XAI_API_KEY,  # Using xAI API key
+        base_url="https://api.x.ai/v1"  # xAI endpoint
+    )
+
+    prompt = """
+    The current year is 2025. Generate a concise, direct, factual, and impactful statistical tweet about the infrastructural costs of running Bitcoin, Ethereum, or Solana. Use comparisons and real-world data.
+
+    Example angles:
+    1. Electricity Consumption.
+    2. Hardware Costs.
+    3. Node Distribution.
+    4. Cloud & Data Center Usage.
+    5. Geographic Mining Concentration.
+    6. Carbon Footprint.
+    7. Network Scalability Costs.
+    8. Maintenance & Security Cost.
+    9. Transaction Throughput vs. Cost.
+
+    The tweet should:
+    - Present only clear, factual data
+    - **NEVER use quotes, hashtags, or generic emojis.**
+    - **Keep it strictly under 280 characters.**
+    - **NEVER use generic phrases and unnecessary filler words.** Keep it sharp and data-driven.
+    - **Always place country flags before a location name.**
+    - **Use proper line breaks for readability.** If the tweet contains multiple paragraphs, insert a blank line between them.
+    
+    - **Only add a stock ticker $TICKER if:**
+      1. The company is **publicly traded**.
+      2. The **correct** ticker symbol is available. 
+    """
+
+    response = client.chat.completions.create(
+        model="grok-2-1212",  # Using Grok-2-1212
+        messages=[{"role": "user", "content": prompt}]
+    )
+
+    tweet = response.choices[0].message.content.strip()
+    return tweet[:280]  # Ensure it's within the character limit
+
+
 # Post to X (Twitter) using API v2 with a delay
 def post_tweet(tweet):
     print(f"🚀 Attempting to tweet: {tweet}")  # Debugging line
@@ -403,6 +453,7 @@ if __name__ == "__main__":
     today_news_count = count_news_tweets_today(processed_articles)
     today_stat_count = count_stat_tweets_today(processed_articles)
     today_infra_count = count_infra_tweets_today(processed_articles)
+    today_crypto_count = count_crypto_tweets_today(processed_articles)
 
     # Consolidated random selection for type of tweet
     tweet_type = select_tweet_type()
@@ -417,6 +468,9 @@ if __name__ == "__main__":
         exit(0)
     elif tweet_type == "infrastructure" and today_infra_count >= INFRA_TWEETS_LIMIT:
         print(f"🚫 Reached daily infrastructure tweet limit ({INFRA_TWEETS_LIMIT}). Exiting to save resources.")
+        exit(0)
+    elif tweet_type == "crypto" and today_crypto_count >= CRYPTO_TWEETS_LIMIT:
+        print(f"🚫 Reached daily infrastructure tweet limit ({CRYPTO_TWEETS_LIMIT}). Exiting to save resources.")
         exit(0)
 
     if tweet_type == "news":
@@ -544,6 +598,20 @@ if __name__ == "__main__":
                     "type": "infrastructure"
                 })
 
+    elif tweet_type == "crypto":
+        if today_crypto_count >= CRYPTO_TWEETS_LIMIT:
+            print(f"🚫 Reached daily crypto tweet limit ({CRYPTO_TWEETS_LIMIT}). Skipping crypto tweets.")
+        else:
+            tweet = generate_crypto_tweet()
+            if post_tweet(tweet):
+                processed_articles.append({
+                    "link": None,
+                    "date": today,
+                    "status": "posted",
+                    "tweet": tweet,
+                    "type": "crypto"
+                })
+            
 
     else:
         print("🤖 No tweet posted in this run to simulate human-like activity.")
