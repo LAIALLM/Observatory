@@ -377,6 +377,41 @@ def generate_infrastructure_tweet():
     tweet = response.choices[0].message.content.strip()
     return tweet
 
+# Generate crypto tweet
+# Global list of crypto infrastructure categories
+CRYPTO_INFRA_CATEGORIES = [
+    "electricity consumption",
+    "hardware costs",
+    "node distribution",
+    "cloud & data center usage",
+    "geographic mining concentration",
+    "carbon footprint",
+    "network scalability costs",
+    "maintenance & security costs",
+    "transaction throughput vs. cost",
+    "staking vs. mining costs",
+    "validator decentralization",
+    "historical cost trends of running blockchain networks",
+    "government regulations & impact on infrastructure",
+]
+
+
+# Crypto tweet formats to bring variation
+CRYPTO_TWEET_FORMATS = {
+    1: "A single striking statistic or future projection.",
+    2: "A direct comparison between two blockchain networks.",
+    3: """Generate a ranked list ensuring the tweet is under 280 characters.
+    
+Format:
+Summary: <One sentence overview of the ranking outcome>
+
+1. Item
+2. Item
+3. Item
+""",
+}
+
+
 # Generate a Crypto tweet using Grok-2-1212
 def generate_crypto_tweet():
     client = openai.OpenAI(
@@ -384,19 +419,16 @@ def generate_crypto_tweet():
         base_url="https://api.x.ai/v1"  # xAI endpoint
     )
 
-    prompt = """
-    The current year is 2025. Generate a concise, direct, factual, and impactful statistical tweet about the infrastructural costs of running Bitcoin, Ethereum, or Solana. Use comparisons and real-world data.
+    # Randomly select a category and tweet format
+    selected_category = random.choice(CRYPTO_INFRA_CATEGORIES)
+    selected_format_key = random.choice(list(CRYPTO_TWEET_FORMATS.keys()))
+    selected_format = CRYPTO_TWEET_FORMATS[selected_format_key]  # Get actual format text
 
-    Example angles:
-    1. Electricity Consumption.
-    2. Hardware Costs.
-    3. Node Distribution.
-    4. Cloud & Data Center Usage.
-    5. Geographic Mining Concentration.
-    6. Carbon Footprint.
-    7. Network Scalability Costs.
-    8. Maintenance & Security Cost.
-    9. Transaction Throughput vs. Cost.
+    # Construct the dynamic prompt
+    prompt = f"""
+    The current year is 2025. Generate a concise, direct, factual, and impactful statistical tweet about the infrastructural costs of running Bitcoin, Ethereum, or Solana. Focus specifically on: **{selected_category}**.
+
+    {selected_format}
 
     The tweet should:
     - Present only clear, factual data
@@ -418,6 +450,7 @@ def generate_crypto_tweet():
 
     tweet = response.choices[0].message.content.strip()
     return tweet[:280]  # Ensure it's within the character limit
+
 
 
 # Post to X (Twitter) using API v2 with a delay
@@ -470,7 +503,7 @@ if __name__ == "__main__":
         print(f"🚫 Reached daily infrastructure tweet limit ({INFRA_TWEETS_LIMIT}). Exiting to save resources.")
         exit(0)
     elif tweet_type == "crypto" and today_crypto_count >= CRYPTO_TWEETS_LIMIT:
-        print(f"🚫 Reached daily infrastructure tweet limit ({CRYPTO_TWEETS_LIMIT}). Exiting to save resources.")
+        print(f"🚫 Reached daily crypto tweet limit ({CRYPTO_TWEETS_LIMIT}). Exiting to save resources.")
         exit(0)
 
     if tweet_type == "news":
@@ -610,8 +643,7 @@ if __name__ == "__main__":
                     "status": "posted",
                     "tweet": tweet,
                     "type": "crypto"
-                })
-            
+                })    
 
     else:
         print("🤖 No tweet posted in this run to simulate human-like activity.")
