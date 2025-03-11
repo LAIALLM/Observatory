@@ -948,5 +948,13 @@
         "status": "posted",
         "tweet": "\ud83c\uddfa\ud83c\uddf8 NEWS: OpenAI invests $12B in CoreWeave to expand AI infrastructure, focusing on enhancing computing capabilities.",
         "type": "news"
+    },
+    {
+        "link": null,
+        "date": "2025-03-11",
+        "status": "posted",
+        "tweet": "\ud83c\udf10 Global spending on infrastructural projects is projected to reach $9 trillion by 2025, a 7% increase from 2023.\n\n\ud83c\uddfa\ud83c\uddf8 In the United States, infrastructural funding has surged to $1.2 trillion - an astonishing 20% of the global total.",
+        "type": "statistical",
+        "category": "infrastructural projects"
     }
 ]
