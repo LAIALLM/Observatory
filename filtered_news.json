@@ -1239,5 +1239,13 @@
         "status": "posted",
         "tweet": "Summary: Bitcoin has the highest network scalability costs, followed by Ethereum and Solana.\n\n1. Bitcoin: $500M/year\n2. Ethereum: $200M/year\n3. Solana: $50M/year",
         "type": "crypto"
+    },
+    {
+        "link": null,
+        "date": "2025-03-12",
+        "status": "posted",
+        "tweet": "\ud83c\udde8\ud83c\uddf3 By end of 2025, China's economy is set to surpass the United States' becoming the world's largest economy; represents about 20% of global GDP.\n\n\ud83c\uddee\ud83c\uddf3 Meanwhile, India, currently at 5th, is projected to jump to third place by 2030. Economic repositioning is in full swing.",
+        "type": "statistical",
+        "category": "countries"
     }
 ]
