@@ -1337,5 +1337,13 @@
         "score": 8,
         "status": "processed",
         "tweet": null
+    },
+    {
+        "link": null,
+        "date": "2025-03-12",
+        "status": "posted",
+        "tweet": "\ud83c\udf10 Global construction output is projected to hit $15.5 trillion by 2030, a whopping 85% increase from 2025. \ud83c\udde8\ud83c\uddf3 China alone will be accounting for a third of this, with projected output peaking at $4.8 trillion. Key drivers: urbanization & infrastructure investment.",
+        "type": "statistical",
+        "category": "construction projects"
     }
 ]
