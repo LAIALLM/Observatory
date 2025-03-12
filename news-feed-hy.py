@@ -58,9 +58,9 @@ RANDOM_NONE = 0.2
 
 # Daily tweet limits
 NEWS_TWEETS_LIMIT = 2  # Max news tweets per day
-STAT_TWEETS_LIMIT = 2  # Max statistical tweets per day
+STAT_TWEETS_LIMIT = 1  # Max statistical tweets per day
 INFRA_TWEETS_LIMIT= 1
-CRYPTO_TWEETS_LIMIT= 2
+CRYPTO_TWEETS_LIMIT= 1
 
 # Define common words to ignore (stopwords)
 STOPWORDS = set([
