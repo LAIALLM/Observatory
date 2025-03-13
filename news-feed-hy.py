@@ -57,7 +57,7 @@ RANDOM_CRYPTO = 0.3
 RANDOM_NONE = 0.2
 
 # Daily tweet limits
-NEWS_TWEETS_LIMIT = 2  # Max news tweets per day
+NEWS_TWEETS_LIMIT = 3  # Max news tweets per day
 STAT_TWEETS_LIMIT = 1  # Max statistical tweets per day
 INFRA_TWEETS_LIMIT= 1
 CRYPTO_TWEETS_LIMIT= 1
