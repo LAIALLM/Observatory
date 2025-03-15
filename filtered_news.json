@@ -2222,5 +2222,12 @@
         "status": "posted",
         "tweet": "Bitcoin's annual cloud and data center usage in 2025 is projected to consume 15.4 TWh of electricity, equivalent to the annual power consumption of \ud83c\uddf8\ud83c\uddea Sweden.",
         "type": "crypto"
+    },
+    {
+        "link": null,
+        "date": "2025-03-15",
+        "status": "posted",
+        "tweet": "\ud83c\uddfa\ud83c\uddf8 Apple Inc. produced and shipped 217 million iPhones globally in 2018. Source: Statista. $AAPL",
+        "type": "infrastructure"
     }
 ]
