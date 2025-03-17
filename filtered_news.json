@@ -2531,5 +2531,25 @@
         "status": "posted",
         "tweet": "\ud83c\uddea\ud83c\uddf8 NEWS: EIB invests \u20ac430m to modernize Madrids water infrastructure.",
         "type": "news"
+    },
+    {
+        "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNMlNRRjRNdDVUT1k5dEtiVXpZU2hQLWRVWWNkM2ZuQjhNMkdCVEFPTUswdWlVWWhGdnlqRG02RTZpMG5DM0QyUm5ZQmVkS2NYY2MyT3Zpc3lEdTVYRWYyTVotVl9aaFFYTTRaaWxKdGN6Y09jdlIyMFJuaUM1aDRiZWlJWmRRcnNvZ0llSGdTNzNWS3ZBZS1Sc0VjLUhRN294VTlaX21GdWdFMFBkdmMzdEV5b2c0dw?oc=5",
+        "date": "2025-03-17",
+        "title": "Infrastructure's Momentum Remains Strong In Uncertain World \u2013 BCG - Wealth Briefing",
+        "summary": "<a href=\"https://news.google.com/rss/articles/CBMitgFBVV95cUxNMlNRRjRNdDVUT1k5dEtiVXpZU2hQLWRVWWNkM2ZuQjhNMkdCVEFPTUswdWlVWWhGdnlqRG02RTZpMG5DM0QyUm5ZQmVkS2NYY2MyT3Zpc3lEdTVYRWYyTVotVl9aaFFYTTRaaWxKdGN6Y09jdlIyMFJuaUM1aDRiZWlJWmRRcnNvZ0llSGdTNzNWS3ZBZS1Sc0VjLUhRN294VTlaX21GdWdFMFBkdmMzdEV5b2c0dw?oc=5\" target=\"_blank\">Infrastructure's Momentum Remains Strong In Uncertain World \u2013 BCG</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Wealth Briefing</font>",
+        "similarity_excluded": "Yes",
+        "score": 0,
+        "status": "skipped",
+        "tweet": null
+    },
+    {
+        "link": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxQUzhiLWFLTy1YakFXYmVIbkk1bEc2UG5WZ195ZWhzN0V3M0VsNEhsTGkxbXdjTmVZSWpyTWxrWkFNLTNsT0JnYjRuemZvU2tBNTN4V0ljT3M5c25WREo0dlJ6NGNTZmhHcjlOd1Boai1CUWxTcGI2WXhpTU8tWEoxRlFvMjdYZjRPVWFycEJnaGI5NHlxaEZKdndTVFhYMzVKRTVsaS1hY0Ixck50LXByZWlKbVY2Z0lHalBZWWZhTFBTS3BqWTM1RzNKMTU5bTBtbWtsLVVLM25OLWs?oc=5",
+        "date": "2025-03-17",
+        "title": "Upgradation of health Institutions depend on population, infrastructure, distance from nearby hospitals: Govt - Kashmir Vision",
+        "summary": "<a href=\"https://news.google.com/rss/articles/CBMi2wFBVV95cUxQUzhiLWFLTy1YakFXYmVIbkk1bEc2UG5WZ195ZWhzN0V3M0VsNEhsTGkxbXdjTmVZSWpyTWxrWkFNLTNsT0JnYjRuemZvU2tBNTN4V0ljT3M5c25WREo0dlJ6NGNTZmhHcjlOd1Boai1CUWxTcGI2WXhpTU8tWEoxRlFvMjdYZjRPVWFycEJnaGI5NHlxaEZKdndTVFhYMzVKRTVsaS1hY0Ixck50LXByZWlKbVY2Z0lHalBZWWZhTFBTS3BqWTM1RzNKMTU5bTBtbWtsLVVLM25OLWs?oc=5\" target=\"_blank\">Upgradation of health Institutions depend on population, infrastructure, distance from nearby hospitals: Govt</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Kashmir Vision</font>",
+        "similarity_excluded": "No",
+        "score": 0,
+        "status": "processed",
+        "tweet": null
     }
 ]
