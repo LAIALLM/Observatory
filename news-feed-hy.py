@@ -59,10 +59,10 @@ REPLY_LOG_FILE = "replied_tweets.json"
 
 # Random tweets probabilities
 RANDOM_NEWS = 0.2
-RANDOM_STATISTIC = 0.2
+RANDOM_STATISTIC = 0.1
 RANDOM_INFRASTRUCTURE = 0.1
 RANDOM_CRYPTO = 0.2
-RANDOM_REPLY = 0.1 
+RANDOM_REPLY = 0.2 
 RANDOM_NONE = 0.2 
 
 # Daily tweet limits
