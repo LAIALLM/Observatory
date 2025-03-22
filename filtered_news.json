@@ -2646,5 +2646,56 @@
         "score": 7,
         "status": "processed",
         "tweet": null
+    },
+    {
+        "link": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxPeS1remlUQUoxWkpkakQzZWFieUVwRlNHeGY4UkJpLVhHQVFIRjUxSV9DdGtRSVdpOWg3b19GTlBjSGE3Mm1fWFhwSkpESGs4eEJ4aDlKSlE4NHl5M0VWY1ZrcXF1NUdwZE1FZEpnWDVTYTJwa0hRZ2h3QzFnSk9oemlEbUx0MXRRR1kyUU56YnpJTXZvaURab2NNRmRoTllkbDkxc0V0T0RjaWRmdk5YMnU4dzFxNkZkcVhBdkxMR2ZIb1Y1bFRfeDEwNnl6Tmk1Z2o3SVRR?oc=5",
+        "date": "2025-03-22",
+        "title": "'This isn\u2019t real infrastructure': Finfluencer slams what cities are becoming - Business Today",
+        "summary": "<a href=\"https://news.google.com/rss/articles/CBMi1gFBVV95cUxPeS1remlUQUoxWkpkakQzZWFieUVwRlNHeGY4UkJpLVhHQVFIRjUxSV9DdGtRSVdpOWg3b19GTlBjSGE3Mm1fWFhwSkpESGs4eEJ4aDlKSlE4NHl5M0VWY1ZrcXF1NUdwZE1FZEpnWDVTYTJwa0hRZ2h3QzFnSk9oemlEbUx0MXRRR1kyUU56YnpJTXZvaURab2NNRmRoTllkbDkxc0V0T0RjaWRmdk5YMnU4dzFxNkZkcVhBdkxMR2ZIb1Y1bFRfeDEwNnl6Tmk1Z2o3SVRR?oc=5\" target=\"_blank\">'This isn\u2019t real infrastructure': Finfluencer slams what cities are becoming</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Business Today</font>",
+        "similarity_excluded": "Yes",
+        "score": 0,
+        "status": "skipped",
+        "tweet": null
+    },
+    {
+        "link": "https://news.google.com/rss/articles/CBMifEFVX3lxTE5Ma2JPQnFNTUtuWVZCV25QWW5GWWZwc0pLZFZiRmJ6VFpDSjEtX1RiUlpuUUpLaGtrOWRPQWVxeEJxNlIyMGZickxtODZ0MVBXSDNQLWtKU2xrMXoxQ0F2WFNBRkNWdW5QZzdKeEFYZzJDNHZQQjNSRFd4Rjk?oc=5",
+        "date": "2025-03-22",
+        "title": "India's EV surge is driving job creation, infrastructure growth, and economic expansion. - Manufacturing Today India",
+        "summary": "<a href=\"https://news.google.com/rss/articles/CBMifEFVX3lxTE5Ma2JPQnFNTUtuWVZCV25QWW5GWWZwc0pLZFZiRmJ6VFpDSjEtX1RiUlpuUUpLaGtrOWRPQWVxeEJxNlIyMGZickxtODZ0MVBXSDNQLWtKU2xrMXoxQ0F2WFNBRkNWdW5QZzdKeEFYZzJDNHZQQjNSRFd4Rjk?oc=5\" target=\"_blank\">India's EV surge is driving job creation, infrastructure growth, and economic expansion.</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Manufacturing Today India</font>",
+        "similarity_excluded": "No",
+        "score": 8,
+        "status": "processed",
+        "tweet": null
+    },
+    {
+        "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQWlFTVnZYak1CT01RdmVPaHZ1a1NRTkx2djFNd1BIa01QTFY1NkEwaDZwdUtySjNHbHFTbXNGR1V2Z29CMDJwRnhjTTF1X3dMdl9Sb0M0WXVDZ241NFZpQTJodjZ5LVNDX0N3aXBmQmowT1FTWE8xU3VGeUF5MnhVUUVQaU9oa3lJT2VaQUNSTkI4U2RWOFZGdXRqRG9mcWdobWNMczc5MkNkVmE5VjFYbEQyMXdNRU0tQ0E?oc=5",
+        "date": "2025-03-22",
+        "title": "Arunachal Pradesh Seeks Central Support For Urban Infrastructure Development - NorthEast Today",
+        "summary": "<a href=\"https://news.google.com/rss/articles/CBMiugFBVV95cUxQWlFTVnZYak1CT01RdmVPaHZ1a1NRTkx2djFNd1BIa01QTFY1NkEwaDZwdUtySjNHbHFTbXNGR1V2Z29CMDJwRnhjTTF1X3dMdl9Sb0M0WXVDZ241NFZpQTJodjZ5LVNDX0N3aXBmQmowT1FTWE8xU3VGeUF5MnhVUUVQaU9oa3lJT2VaQUNSTkI4U2RWOFZGdXRqRG9mcWdobWNMczc5MkNkVmE5VjFYbEQyMXdNRU0tQ0E?oc=5\" target=\"_blank\">Arunachal Pradesh Seeks Central Support For Urban Infrastructure Development</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">NorthEast Today</font>",
+        "similarity_excluded": "Yes",
+        "score": 0,
+        "status": "skipped",
+        "tweet": null
+    },
+    {
+        "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQbTZ2QjU1a3hNVTluS1NPcWJmQ0hlZF85Tlh3dHRzVTZzM0tITnVCTEZvdlQ3MmNoVlJlQzN5bG9iT0Q0VFU5WXpmLWVzaTR2WDdlM1UzTVRFdm1lcFVqTGVBT1JpdUxkcWszXzd6SURDU0E5WVVlNFRDR2NyVVFMakw3emdVNWNWaHNnSUhKY0c4XzNHUnJyUG13UVBSemZGY2NLZg?oc=5",
+        "date": "2025-03-22",
+        "title": "NVIDIA And XAI Partner To Mobilize $100 Billion For AI Infrastructure - Evrim A\u011fac\u0131",
+        "summary": "<a href=\"https://news.google.com/rss/articles/CBMipAFBVV95cUxQbTZ2QjU1a3hNVTluS1NPcWJmQ0hlZF85Tlh3dHRzVTZzM0tITnVCTEZvdlQ3MmNoVlJlQzN5bG9iT0Q0VFU5WXpmLWVzaTR2WDdlM1UzTVRFdm1lcFVqTGVBT1JpdUxkcWszXzd6SURDU0E5WVVlNFRDR2NyVVFMakw3emdVNWNWaHNnSUhKY0c4XzNHUnJyUG13UVBSemZGY2NLZg?oc=5\" target=\"_blank\">NVIDIA And XAI Partner To Mobilize $100 Billion For AI Infrastructure</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Evrim A\u011fac\u0131</font>",
+        "similarity_excluded": "No",
+        "score": 9,
+        "status": "processed",
+        "tweet": "\ud83c\uddfa\ud83c\uddf8 NEWS: NVIDIA and XAI partner to mobilize $100 billion for AI infrastructure development"
+    },
+    {
+        "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQbTZ2QjU1a3hNVTluS1NPcWJmQ0hlZF85Tlh3dHRzVTZzM0tITnVCTEZvdlQ3MmNoVlJlQzN5bG9iT0Q0VFU5WXpmLWVzaTR2WDdlM1UzTVRFdm1lcFVqTGVBT1JpdUxkcWszXzd6SURDU0E5WVVlNFRDR2NyVVFMakw3emdVNWNWaHNnSUhKY0c4XzNHUnJyUG13UVBSemZGY2NLZg?oc=5",
+        "date": "2025-03-22",
+        "title": "NVIDIA And XAI Partner To Mobilize $100 Billion For AI Infrastructure - Evrim A\u011fac\u0131",
+        "summary": "<a href=\"https://news.google.com/rss/articles/CBMipAFBVV95cUxQbTZ2QjU1a3hNVTluS1NPcWJmQ0hlZF85Tlh3dHRzVTZzM0tITnVCTEZvdlQ3MmNoVlJlQzN5bG9iT0Q0VFU5WXpmLWVzaTR2WDdlM1UzTVRFdm1lcFVqTGVBT1JpdUxkcWszXzd6SURDU0E5WVVlNFRDR2NyVVFMakw3emdVNWNWaHNnSUhKY0c4XzNHUnJyUG13UVBSemZGY2NLZg?oc=5\" target=\"_blank\">NVIDIA And XAI Partner To Mobilize $100 Billion For AI Infrastructure</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Evrim A\u011fac\u0131</font>",
+        "similarity_excluded": "No",
+        "score": 9,
+        "status": "posted",
+        "tweet": "\ud83c\uddfa\ud83c\uddf8 NEWS: NVIDIA and XAI partner to mobilize $100 billion for AI infrastructure development.",
+        "type": "news"
     }
 ]
