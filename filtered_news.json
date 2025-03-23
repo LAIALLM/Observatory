@@ -2662,5 +2662,12 @@
         "status": "posted",
         "tweet": "\ud83c\uddee\ud83c\uddf3 NEWS: T.N. government allocates \u20b91,087 crore to enhance infrastructure in over 2,300 village panchayats.",
         "type": "news"
+    },
+    {
+        "link": null,
+        "date": "2025-03-23",
+        "status": "posted",
+        "tweet": "\ud83c\uddfa\ud83c\uddf8 Apple Inc.\n$AAPL\nQ2 2021 results:\n - Revenue: $89.6B, up 54% YoY\n - Product sales: $72.6B, up 62% YoY\n - Services: $16.9B, up 27% YoY\n\nEfficiency rating: 99.6%\nEnergy consumption: 590k MWh, down 3% YoY.",
+        "type": "infrastructure"
     }
 ]
