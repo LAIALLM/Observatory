@@ -2824,5 +2824,12 @@
         "status": "posted",
         "tweet": "\ud83c\udde6\ud83c\uddfa NEWS: Federal government invests $32.5 million to map rail corridors, protecting the South West Sydney Rail extension.",
         "type": "news"
+    },
+    {
+        "link": null,
+        "date": "2025-03-24",
+        "status": "posted",
+        "tweet": "Summary: Bitcoin's annual electricity consumption exceeds that of Ethereum and Solana combined.\n\n1. Bitcoin: 121 TWh/year, surpassing \ud83c\uddfa\ud83c\udde6 Ukraine's total\n2. Ethereum: 23 TWh/year, similar to \ud83c\uddf1\ud83c\uddf0 Sri Lanka's\n3. Solana: 0.5 TWh/year, comparable to \ud83c\uddec\ud83c\udde9 Grenada's",
+        "type": "crypto"
     }
 ]
