@@ -2628,5 +2628,12 @@
         "score": 7,
         "status": "processed",
         "tweet": null
+    },
+    {
+        "link": null,
+        "date": "2025-03-26",
+        "status": "posted",
+        "tweet": "Bitcoin's annual maintenance and security costs are projected to reach $10 billion by 2030, driven by increasing network complexity and security demands.\n\nEthereum's yearly maintenance and security expenses are estimated at $500 million in 2025, reflecting the costs of ongoing de",
+        "type": "crypto"
     }
 ]
