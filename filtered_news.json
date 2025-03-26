@@ -2580,5 +2580,13 @@
         "score": 0,
         "status": "skipped",
         "tweet": null
+    },
+    {
+        "link": null,
+        "date": "2025-03-26",
+        "status": "posted",
+        "tweet": "\ud83c\udde9\ud83c\uddeaGermany is expected to have the most robust elderly population in 2025, with 23.1% of its population above 65. \n\nIn stark contrast, \ud83c\udde6\ud83c\uddeaUAE is set to remain youthful, with just 1.1% of its population predicted to be above 65.",
+        "type": "statistical",
+        "category": "countries"
     }
 ]
