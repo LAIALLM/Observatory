@@ -1996,5 +1996,12 @@
         "status": "posted",
         "tweet": "\ud83c\uddee\ud83c\uddf3 NEWS: 95% of Agartala Smart City Project completed, announced by Chief Minister in Assembly.",
         "type": "news"
+    },
+    {
+        "link": null,
+        "date": "2025-04-02",
+        "status": "posted",
+        "tweet": "\ud83c\uddfa\ud83c\uddf8 Apple Inc. ($AAPL)\n - Daily data volume: 12 PB\n - Data center energy use: 100% renewable\n - Efficiency rating: 1.1 PUE  \nSuperior tech infrastructure, confirmed.",
+        "type": "infrastructure"
     }
 ]
