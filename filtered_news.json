@@ -2518,5 +2518,12 @@
         "status": "posted",
         "tweet": "\ud83c\uddee\ud83c\uddf3 NEWS: Raghavpur Project in MP receives environmental clearance, paving the way for construction to begin.",
         "type": "news"
+    },
+    {
+        "link": null,
+        "date": "2025-04-04",
+        "status": "posted",
+        "tweet": "Bitcoin's annual electricity consumption in 2025: 120 TWh, surpassing \ud83c\uddf3\ud83c\uddf4 Norway's total.\n\nEthereum's annual electricity use: 25 TWh, less than \ud83c\udde8\ud83c\udded Switzerland's.\n\nBitcoin consumes nearly 5 times more electricity than Ethereum.",
+        "type": "crypto"
     }
 ]
