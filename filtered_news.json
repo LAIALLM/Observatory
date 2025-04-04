@@ -2439,5 +2439,12 @@
         "tweet": "\ud83c\uddfa\ud83c\uddf3 Urbanization projection: By 2025, 68% of the world's population will live in urban areas. \n\nThat's an increase of nearly 6% from 2020.\n\nAnd by 2050, we're looking at a stunning 70%. Urban development must keep pace.",
         "type": "statistical",
         "category": "urban development"
+    },
+    {
+        "link": null,
+        "date": "2025-04-04",
+        "status": "posted",
+        "tweet": "\ud83c\uddfa\ud83c\uddf8 Apple Inc. \nEnergy consumption Q2 2021: 75.8M kWh. \nDown 4% from Q1 2021. \n$AAPL",
+        "type": "infrastructure"
     }
 ]
