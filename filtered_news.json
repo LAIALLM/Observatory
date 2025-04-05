@@ -2553,5 +2553,12 @@
         "score": 0,
         "status": "skipped",
         "tweet": null
+    },
+    {
+        "link": null,
+        "date": "2025-04-05",
+        "status": "posted",
+        "tweet": "Bitcoin's annual electricity consumption for mining reached 120 TWh in 2023, up from 78 TWh in 2020, surpassing the energy use of countries like \ud83c\udde6\ud83c\uddf7 Argentina.\n\nEthereum's shift to proof-of-stake in 2022 reduced its energy consumption by 99.95%, dropping from 78 TWh to 0.01 TWh an",
+        "type": "crypto"
     }
 ]
