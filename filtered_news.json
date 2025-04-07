@@ -2434,5 +2434,12 @@
         "status": "posted",
         "tweet": "\ud83c\udde6\ud83c\uddea NEWS: Abu Dhabi completed $1.1bln in road infrastructure projects in 2024.",
         "type": "news"
+    },
+    {
+        "link": null,
+        "date": "2025-04-07",
+        "status": "posted",
+        "tweet": "\ud83c\uddfa\ud83c\uddf8 Apple Inc.\nData Center | Reno, NV \n\nSolar Power Capacity: 70MW \nAnnual Energy Output: 151m kWh \n\n$AAPL",
+        "type": "infrastructure"
     }
 ]
