@@ -2583,5 +2583,12 @@
         "tweet": "\ud83c\udf0d Global smart city tech market is projected to reach $263.9 billion by 2028, lauding an impressive 19.5% Compound Annual Growth Rate from 2025 onwards. This swift growth showcases our necessary pivot toward sustainable, tech-driven urban landscapes for the future.",
         "type": "statistical",
         "category": "smart cities"
+    },
+    {
+        "link": null,
+        "date": "2025-04-08",
+        "status": "posted",
+        "tweet": "By 2025, Ethereum's shift to proof-of-stake is projected to reduce its annual energy consumption to 99.95% less than Bitcoin's proof-of-work, saving costs equivalent to \ud83c\uddfa\ud83c\uddf8 USA's annual electricity use for 2 million households.",
+        "type": "crypto"
     }
 ]
