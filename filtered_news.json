@@ -3162,5 +3162,12 @@
         "score": 7,
         "status": "processed",
         "tweet": null
+    },
+    {
+        "link": null,
+        "date": "2025-04-09",
+        "status": "posted",
+        "tweet": "Summary: Solana has the lowest infrastructural costs, followed by Ethereum, with Bitcoin being the most expensive due to mining.\n\n1. Solana: Staking costs $100M/year\n2. Ethereum: Staking costs $500M/year\n3. Bitcoin: Mining costs $15B/year",
+        "type": "crypto"
     }
 ]
