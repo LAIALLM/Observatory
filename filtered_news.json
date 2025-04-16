@@ -3289,5 +3289,13 @@
         "status": "posted",
         "tweet": "\ud83c\uddee\ud83c\uddf3 NEWS: Kolkata Skywalk improves access to Kalighat Temple, enhancing pedestrian safety.",
         "type": "news"
+    },
+    {
+        "link": null,
+        "date": "2025-04-16",
+        "status": "posted",
+        "tweet": "\ud83c\uddfa\ud83c\uddf3 By 2025, 68% of the world's population is set to live in urban areas, widening the urban-rural divide. \ud83c\udf06\n\nAddressing urban sprawl and infrastructure development is critical for sustainable growth. \ud83c\udfd7\ufe0f\ud83c\udf0d",
+        "type": "statistical",
+        "category": "urban development"
     }
 ]
