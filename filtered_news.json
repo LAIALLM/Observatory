@@ -3071,5 +3071,12 @@
         "status": "posted",
         "tweet": "Summary: Bitcoin has the highest annual hardware costs, followed by Ethereum and Solana.\n\n1. Bitcoin: $1.8B\n2. Ethereum: $500M\n3. Solana: $100M",
         "type": "crypto"
+    },
+    {
+        "link": null,
+        "date": "2025-04-17",
+        "status": "posted",
+        "tweet": "\ud83c\uddfa\ud83c\uddf8 Silicon Valley\nTech giant Google's data centers used 10 million MWh of electricity in 2019, equivalent to the annual consumption of San Francisco. \nCarbon footprint: neutral (since 2017).\nStock: $GOOG",
+        "type": "infrastructure"
     }
 ]
