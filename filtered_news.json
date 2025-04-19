@@ -2750,5 +2750,13 @@
         "score": 7,
         "status": "processed",
         "tweet": null
+    },
+    {
+        "link": null,
+        "date": "2025-04-19",
+        "status": "posted",
+        "tweet": "\ud83c\uddee\ud83c\uddf3 India is set to surpass China as the most populous country in 2025. \n\nAlso, Africa \ud83c\udf0d will hold 26 of the 50 fastest growing economies worldwide by 2025. \n\nInvest strategically. Be informed.",
+        "type": "statistical",
+        "category": "countries"
     }
 ]
