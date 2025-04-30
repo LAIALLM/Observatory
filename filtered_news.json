@@ -2346,5 +2346,65 @@
         "status": "posted",
         "tweet": "\ud83c\uddee\ud83c\uddf9 NEWS: Southern Italys infrastructure development outpaces the North, enhancing regional connectivity and economic growth.",
         "type": "news"
+    },
+    {
+        "link": "https://news.google.com/rss/articles/CBMilAFBVV95cUxNNnJSbWZwUmtMZkJRSEpIdWw4MU8xY1EzbzY0TEIyUU1vV2NBbS14eDNUMjNhRzFTeHBCTi1GeHpLZWJ3UDlQdjFtNlJuQk90eTFLWjJXTHhFZEZFT3lTdW5VdnpJaTllR3Y4RUh0RWNiR21zMWJLT2E3ejRQMGpDNGJjQ1g0cGhGaVhiUVhYdFFVNkVo?oc=5",
+        "date": "2025-04-30",
+        "title": "Let\u2019s address construction\u2019s evolving skills challenge - Construction Management Magazine",
+        "summary": "<a href=\"https://news.google.com/rss/articles/CBMilAFBVV95cUxNNnJSbWZwUmtMZkJRSEpIdWw4MU8xY1EzbzY0TEIyUU1vV2NBbS14eDNUMjNhRzFTeHBCTi1GeHpLZWJ3UDlQdjFtNlJuQk90eTFLWjJXTHhFZEZFT3lTdW5VdnpJaTllR3Y4RUh0RWNiR21zMWJLT2E3ejRQMGpDNGJjQ1g0cGhGaVhiUVhYdFFVNkVo?oc=5\" target=\"_blank\">Let\u2019s address construction\u2019s evolving skills challenge</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Construction Management Magazine</font>",
+        "similarity_excluded": "No",
+        "score": 6,
+        "status": "processed",
+        "tweet": null
+    },
+    {
+        "link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxQMWRPZ2hWekRzazUtTXRZeGRaOVZmUEJVX0FhSmtuQ3hQRXhxbFlMV1dFZUFkR083WG92ZXF4WHRZWnd2MEVTWWlVdUdtVWNDNEZ3S0gxOUNfVXk1Q3FFbTFxUlhKWnMxdkQxb1F5YV8xYUtROVJGeFhodERtakFodlIxWW9mNWpiOUkxZjBFNUtLQQ?oc=5",
+        "date": "2025-04-30",
+        "title": "UK infrastructure group buys Uruguayan power assets from CDPQ - Latin Lawyer",
+        "summary": "<a href=\"https://news.google.com/rss/articles/CBMikgFBVV95cUxQMWRPZ2hWekRzazUtTXRZeGRaOVZmUEJVX0FhSmtuQ3hQRXhxbFlMV1dFZUFkR083WG92ZXF4WHRZWnd2MEVTWWlVdUdtVWNDNEZ3S0gxOUNfVXk1Q3FFbTFxUlhKWnMxdkQxb1F5YV8xYUtROVJGeFhodERtakFodlIxWW9mNWpiOUkxZjBFNUtLQQ?oc=5\" target=\"_blank\">UK infrastructure group buys Uruguayan power assets from CDPQ</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Latin Lawyer</font>",
+        "similarity_excluded": "No",
+        "score": 7,
+        "status": "processed",
+        "tweet": null
+    },
+    {
+        "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxOMFRPZlBuMHM0YzNfZ0NaZWpIem9Xd2UwTjl3Y0Q1Z0NERy15SUk3Y2JNWm9pYnAyQmZQTS1BZ3VWQUVlR3Q5QUVkcmJ2amc3ekMtMnVXVHpkOVdzenBDc0lZR0tNUWw0T09tWWNIYWdtTlNIWG5PYXRzYVpYY3I0enBjZWI1cWwyemlYNGg0ZXRzOWxwTzJzeHc2Wmg5LVZXelFDWUdEY2lyM25qcEJz?oc=5",
+        "date": "2025-04-30",
+        "title": "Data Center REITs: A Guide to Investing in Digital Infrastructure - Data Center Knowledge",
+        "summary": "<a href=\"https://news.google.com/rss/articles/CBMirwFBVV95cUxOMFRPZlBuMHM0YzNfZ0NaZWpIem9Xd2UwTjl3Y0Q1Z0NERy15SUk3Y2JNWm9pYnAyQmZQTS1BZ3VWQUVlR3Q5QUVkcmJ2amc3ekMtMnVXVHpkOVdzenBDc0lZR0tNUWw0T09tWWNIYWdtTlNIWG5PYXRzYVpYY3I0enBjZWI1cWwyemlYNGg0ZXRzOWxwTzJzeHc2Wmg5LVZXelFDWUdEY2lyM25qcEJz?oc=5\" target=\"_blank\">Data Center REITs: A Guide to Investing in Digital Infrastructure</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Data Center Knowledge</font>",
+        "similarity_excluded": "Yes",
+        "score": 0,
+        "status": "skipped",
+        "tweet": null
+    },
+    {
+        "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxPRkdma3RUT1ByNEJDNjJ4VUxrdVNTVzZXMUxGMTg3UTlIQzVGUUtDLXVFSVE2a0k4TEc4NGFULXduSVV4VzE4dGxFaDJHRUZic3NPQ3NHTDZHWlRxZWcwY2RVMWVBcjQ4aGR0UW92VWVtQ2lXd1k2dXk3OGdacWFqd1hIenR4MEJHLXRR0gGQAUFVX3lxTE9NODBSWmpQZ1FlWHUtNy1LVUVqZTBia3dKb1RiMEE5QVBpZ3JWMXNKQUR0S0VYT2NsdXY5blYwSXB5VXVTWm5aSl9rSzdLZWcyc2c0ZGktaGRpV0NSMWEySTNZeWlpNGRnXzBEY3Y1eEl3b1dveUxJbVk3XzVZVXFUS3VJTmtQWGg1SVFkLWN6RQ?oc=5",
+        "date": "2025-04-30",
+        "title": "China-Linked Hackers Targeting Organizational Infrastructure and High-Value Clients - GBHackers News",
+        "summary": "<a href=\"https://news.google.com/rss/articles/CBMiiwFBVV95cUxPRkdma3RUT1ByNEJDNjJ4VUxrdVNTVzZXMUxGMTg3UTlIQzVGUUtDLXVFSVE2a0k4TEc4NGFULXduSVV4VzE4dGxFaDJHRUZic3NPQ3NHTDZHWlRxZWcwY2RVMWVBcjQ4aGR0UW92VWVtQ2lXd1k2dXk3OGdacWFqd1hIenR4MEJHLXRR0gGQAUFVX3lxTE9NODBSWmpQZ1FlWHUtNy1LVUVqZTBia3dKb1RiMEE5QVBpZ3JWMXNKQUR0S0VYT2NsdXY5blYwSXB5VXVTWm5aSl9rSzdLZWcyc2c0ZGktaGRpV0NSMWEySTNZeWlpNGRnXzBEY3Y1eEl3b1dveUxJbVk3XzVZVXFUS3VJTmtQWGg1SVFkLWN6RQ?oc=5\" target=\"_blank\">China-Linked Hackers Targeting Organizational Infrastructure and High-Value Clients</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">GBHackers News</font>",
+        "similarity_excluded": "Yes",
+        "score": 0,
+        "status": "skipped",
+        "tweet": null
+    },
+    {
+        "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxPVEM0RG5iS0RWeWQzVWljNll4ZXp1YU9venFodmJlNlBXcGN1TFJKaF9QZ3RBRGJya3dNNEoweFR3YXo2ZTdLblRxZ1hPNGNIOUM2cG5xdVRGNmxCcGVGWUdzYVU3ekNtUzFKRVFubWVGRkdQUDluZGZRV2JoRzJLN25memEwYXkzV2JLcjRlTHd3aDd4Q21zQ2RHa2toN09lLTBRX3lZcEVzQlpPcFZ6V1Noc2R2bEVVMG11dURuc2tMTElvWTBz?oc=5",
+        "date": "2025-04-30",
+        "title": "Built to Withstand the Surge: Why Market Infrastructure Matters More Than Ever - Traders Magazine",
+        "summary": "<a href=\"https://news.google.com/rss/articles/CBMixwFBVV95cUxPVEM0RG5iS0RWeWQzVWljNll4ZXp1YU9venFodmJlNlBXcGN1TFJKaF9QZ3RBRGJya3dNNEoweFR3YXo2ZTdLblRxZ1hPNGNIOUM2cG5xdVRGNmxCcGVGWUdzYVU3ekNtUzFKRVFubWVGRkdQUDluZGZRV2JoRzJLN25memEwYXkzV2JLcjRlTHd3aDd4Q21zQ2RHa2toN09lLTBRX3lZcEVzQlpPcFZ6V1Noc2R2bEVVMG11dURuc2tMTElvWTBz?oc=5\" target=\"_blank\">Built to Withstand the Surge: Why Market Infrastructure Matters More Than Ever</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Traders Magazine</font>",
+        "similarity_excluded": "No",
+        "score": 0,
+        "status": "processed",
+        "tweet": null
+    },
+    {
+        "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxNczJYSTFOY3lWQ24zeGN3ckhZQmZmSmZvQ2VuQW5wR3hMM01EcV9TQV8zTmxBRDJock1xTHJQVWhKYUtVOWFLSkJRNk9GLW8wS3ZZZkRQQ0sybHdrZ1hLZnpVazBRbVo5SGhYeTNNSmhCbU9KU3JnUTA0b3lOdGhhMg?oc=5",
+        "date": "2025-04-30",
+        "title": "SWITCH Mobility Flags Off 100 SWITCH IeV3 for Waste Management to Indore, boosting city's sustainability efforts - Yahoo Finance",
+        "summary": "<a href=\"https://news.google.com/rss/articles/CBMigAFBVV95cUxNczJYSTFOY3lWQ24zeGN3ckhZQmZmSmZvQ2VuQW5wR3hMM01EcV9TQV8zTmxBRDJock1xTHJQVWhKYUtVOWFLSkJRNk9GLW8wS3ZZZkRQQ0sybHdrZ1hLZnpVazBRbVo5SGhYeTNNSmhCbU9KU3JnUTA0b3lOdGhhMg?oc=5\" target=\"_blank\">SWITCH Mobility Flags Off 100 SWITCH IeV3 for Waste Management to Indore, boosting city's sustainability efforts</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Yahoo Finance</font>",
+        "similarity_excluded": "No",
+        "score": 7,
+        "status": "processed",
+        "tweet": null
     }
 ]
