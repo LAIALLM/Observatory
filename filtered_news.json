@@ -2512,5 +2512,13 @@
         "score": 7,
         "status": "processed",
         "tweet": null
+    },
+    {
+        "link": null,
+        "date": "2025-05-03",
+        "status": "posted",
+        "tweet": "\ud83c\udf0d World Bank 2025 data: 1.5 billion people globally still lack basic road access. Investment in transport infrastructure could cut this by 40% by 2030.",
+        "type": "statistical",
+        "category": "infrastructure"
     }
 ]
