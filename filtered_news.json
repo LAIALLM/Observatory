@@ -2500,5 +2500,13 @@
         "score": 8,
         "status": "processed",
         "tweet": null
+    },
+    {
+        "link": null,
+        "date": "2025-05-04",
+        "status": "posted",
+        "tweet": "\ud83c\udf0d By 2025, 88% of all cities globally are projected to become 'smart' with integrated IoT-based solutions. \n\ud83c\uddfa\ud83c\uddf8\ud83c\udde8\ud83c\uddf3 The U.S. and China lead the world with 550 and 400 smart cities, respectively.\n\ud83d\udcca This will result in an estimated $1.7 Trillion economic benefit worldwide.",
+        "type": "statistical",
+        "category": "smart cities"
     }
 ]
