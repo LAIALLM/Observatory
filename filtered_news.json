@@ -3487,5 +3487,13 @@
         "score": 0,
         "status": "skipped",
         "tweet": null
+    },
+    {
+        "link": null,
+        "date": "2025-05-07",
+        "status": "posted",
+        "tweet": "Summary: Top 5 countries with the most infrastructural projects in 2025\n\n1. \ud83c\udde8\ud83c\uddf3 China \n2. \ud83c\uddfa\ud83c\uddf2 USA\n3. \ud83c\uddee\ud83c\uddf3 India\n4. \ud83c\uddee\ud83c\udde9 Indonesia\n5. \ud83c\udde7\ud83c\uddf7 Brazil\n\nFact: Global construction output is expected to reach $15.5 trillion by 2030, with China, US, and India leading the charge.",
+        "type": "statistical",
+        "category": "infrastructure companies"
     }
 ]
