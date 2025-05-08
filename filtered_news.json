@@ -3533,5 +3533,25 @@
         "status": "posted",
         "tweet": "\ud83c\uddee\ud83c\uddf3 NEWS: Northeast India emerges as a hub for strategic infrastructure and multimodal logistics, enhancing regional connectivity.",
         "type": "news"
+    },
+    {
+        "link": "https://news.google.com/rss/articles/CBMi9AFBVV95cUxQSzBmR0NvWVJsb01VY21TNjZfcFRlbU5oR1NhaDFQbHowekE5U08xOVFiNUhza3hYOXVsa0Y2R2ZrNmxla0N1LThpLTA5RUxRd1NZam5HRlFRbFE5VVlWWk9VRDA3SW1vYUZ3V3ZZZ21VNzhWWFNleTRKTEo3OTFhMURCaTFKLXc2NGs1eklaTnFwSko4T1FtMWNyeThHbnJrLXM2TGdXS2tfa2ZUZl93MXJJRWQtakEzaERGZktBQzFlWWtaaFdtTUNUanpyRUZBczZEdzVOdU9RRkdBVW0tZ0Y2MGZQMWhna2ctOF92UGFuN1NY?oc=5",
+        "date": "2025-05-08",
+        "title": "Russia has damaged, destroyed over 2,300 medical infrastructure facilities since beginning of full-scale invasion, health ministry says - The Kyiv Independent",
+        "summary": "<a href=\"https://news.google.com/rss/articles/CBMi9AFBVV95cUxQSzBmR0NvWVJsb01VY21TNjZfcFRlbU5oR1NhaDFQbHowekE5U08xOVFiNUhza3hYOXVsa0Y2R2ZrNmxla0N1LThpLTA5RUxRd1NZam5HRlFRbFE5VVlWWk9VRDA3SW1vYUZ3V3ZZZ21VNzhWWFNleTRKTEo3OTFhMURCaTFKLXc2NGs1eklaTnFwSko4T1FtMWNyeThHbnJrLXM2TGdXS2tfa2ZUZl93MXJJRWQtakEzaERGZktBQzFlWWtaaFdtTUNUanpyRUZBczZEdzVOdU9RRkdBVW0tZ0Y2MGZQMWhna2ctOF92UGFuN1NY?oc=5\" target=\"_blank\">Russia has damaged, destroyed over 2,300 medical infrastructure facilities since beginning of full-scale invasion, health ministry says</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">The Kyiv Independent</font>",
+        "similarity_excluded": "No",
+        "score": 0,
+        "status": "processed",
+        "tweet": null
+    },
+    {
+        "link": "https://news.google.com/rss/articles/CBMieEFVX3lxTFBNTDY5SFZLSnhvcHRwTDVhMEdyVG55RHd4YzhOOEVGS0ZkYzFDTEdGZ1FRbkVkNWhEVlktWC11Z2JNbFFvSEk2TjlOQ0NmRVBTTmNteTZDcTZlNFZFX2pseWswYUtnSFltUkFqUHBrTkd0M2tpMVhEVA?oc=5",
+        "date": "2025-05-08",
+        "title": "Anambra\u2019s AMC crowned Nigeria\u2019s Best New City - The Guardian Nigeria News",
+        "summary": "<a href=\"https://news.google.com/rss/articles/CBMieEFVX3lxTFBNTDY5SFZLSnhvcHRwTDVhMEdyVG55RHd4YzhOOEVGS0ZkYzFDTEdGZ1FRbkVkNWhEVlktWC11Z2JNbFFvSEk2TjlOQ0NmRVBTTmNteTZDcTZlNFZFX2pseWswYUtnSFltUkFqUHBrTkd0M2tpMVhEVA?oc=5\" target=\"_blank\">Anambra\u2019s AMC crowned Nigeria\u2019s Best New City</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">The Guardian Nigeria News</font>",
+        "similarity_excluded": "Yes",
+        "score": 0,
+        "status": "skipped",
+        "tweet": null
     }
 ]
