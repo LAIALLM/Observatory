@@ -3844,5 +3844,25 @@
         "score": 7,
         "status": "processed",
         "tweet": null
+    },
+    {
+        "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxQVkk2ZG9UWXlsczZkbHlVX0tpY3ZIeDcyRlZaSi12bjk0VmZOb2U5MjRnTEhtNDEwbkh2aThlel9zVlhRd2hGU2VPVkJlZ0owZ1BQN3VqblRqS01YZWxTSVRwNWE0SzMyT2h1cUY1dDdDUWlPbTRyQjU5cXA0d0ptYS05Y0d4VW5JWmpJ?oc=5",
+        "date": "2025-05-12",
+        "title": "Supreme Builders brings quality and vision to construction - djcoregon.com",
+        "summary": "<a href=\"https://news.google.com/rss/articles/CBMiiwFBVV95cUxQVkk2ZG9UWXlsczZkbHlVX0tpY3ZIeDcyRlZaSi12bjk0VmZOb2U5MjRnTEhtNDEwbkh2aThlel9zVlhRd2hGU2VPVkJlZ0owZ1BQN3VqblRqS01YZWxTSVRwNWE0SzMyT2h1cUY1dDdDUWlPbTRyQjU5cXA0d0ptYS05Y0d4VW5JWmpJ?oc=5\" target=\"_blank\">Supreme Builders brings quality and vision to construction</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">djcoregon.com</font>",
+        "similarity_excluded": "Yes",
+        "score": 0,
+        "status": "skipped",
+        "tweet": null
+    },
+    {
+        "link": "https://news.google.com/rss/articles/CBMiakFVX3lxTE0xS1FBVDJqejlKNDN6Z3U5RkFrNVJrQ2ZBXzhzZEstSWpZZkVLWHpETW1rSE1lSEpFREg0RkhUdmgtY0tIc2FVSm96Mnp0T0VobWVBeDQ1NkFkSk52RGVIWDg1cFVWSjE0eVE?oc=5",
+        "date": "2025-05-12",
+        "title": "Former firefighter launches Sky NW Construction business - djcoregon.com",
+        "summary": "<a href=\"https://news.google.com/rss/articles/CBMiakFVX3lxTE0xS1FBVDJqejlKNDN6Z3U5RkFrNVJrQ2ZBXzhzZEstSWpZZkVLWHpETW1rSE1lSEpFREg0RkhUdmgtY0tIc2FVSm96Mnp0T0VobWVBeDQ1NkFkSk52RGVIWDg1cFVWSjE0eVE?oc=5\" target=\"_blank\">Former firefighter launches Sky NW Construction business</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">djcoregon.com</font>",
+        "similarity_excluded": "No",
+        "score": 5,
+        "status": "processed",
+        "tweet": null
     }
 ]
