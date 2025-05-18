@@ -2991,5 +2991,15 @@
         "score": 8,
         "status": "processed",
         "tweet": null
+    },
+    {
+        "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPNG9qNjg1UkFhQXdXRW80MTVlby1FS1ZHTEcxU1BGVnhPRHVyU3JUU3Z4LTRxT0FIRmZubmtWUzVvbktVNDBzUXJ0YVNhREV6cHZBNnZxYXhnc3p6UmJWU0x2bkIzakM1UTVVV19kdjN1RHVmV3ROc2ZDUTZZTTVXUFBPWUpaajByMENJRkNXZ2RQd2MxSHcxTkR2UGhNcWw5cjhiX2tydjg0a1Nz?oc=5",
+        "date": "2025-05-18",
+        "title": "Development, Beautification on Cards: Smart City CEO inspects Sites - tripuratimes.com",
+        "summary": "<a href=\"https://news.google.com/rss/articles/CBMirAFBVV95cUxPNG9qNjg1UkFhQXdXRW80MTVlby1FS1ZHTEcxU1BGVnhPRHVyU3JUU3Z4LTRxT0FIRmZubmtWUzVvbktVNDBzUXJ0YVNhREV6cHZBNnZxYXhnc3p6UmJWU0x2bkIzakM1UTVVV19kdjN1RHVmV3ROc2ZDUTZZTTVXUFBPWUpaajByMENJRkNXZ2RQd2MxSHcxTkR2UGhNcWw5cjhiX2tydjg0a1Nz?oc=5\" target=\"_blank\">Development, Beautification on Cards: Smart City CEO inspects Sites</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">tripuratimes.com</font>",
+        "similarity_excluded": "Yes",
+        "score": 0,
+        "status": "skipped",
+        "tweet": null
     }
 ]
