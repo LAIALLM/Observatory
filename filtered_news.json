@@ -2412,5 +2412,46 @@
         "score": 8,
         "status": "processed",
         "tweet": null
+    },
+    {
+        "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPWmRnalE3ZjR2Y0FoUzBPd3FoV3Y3YlR3d3BDdUZ5TzhsUHh2YkJRRy1IYjVLSWtHdUZXM0ZHcjlocWhIU3l6UnNVWldnRHJ4bWVZUThPWC1PUnBQNzJSZDAwcXNUZFB0MTZ0NFhyV3ZBdG41YWJLdkxNSEt0Tk5fU3JjWWlDbHBoX3Y0Y1ZhZUF1N0cwWjR1MTRkRTdFc3YyMUJrNHRUclB1OUQxQzhqbVJhaWpXWE5ZcUE?oc=5",
+        "date": "2025-05-26",
+        "title": "Students get a taste of construction industry with 21st annual Project Heavy Duty - Energeticcity",
+        "summary": "<a href=\"https://news.google.com/rss/articles/CBMiugFBVV95cUxPWmRnalE3ZjR2Y0FoUzBPd3FoV3Y3YlR3d3BDdUZ5TzhsUHh2YkJRRy1IYjVLSWtHdUZXM0ZHcjlocWhIU3l6UnNVWldnRHJ4bWVZUThPWC1PUnBQNzJSZDAwcXNUZFB0MTZ0NFhyV3ZBdG41YWJLdkxNSEt0Tk5fU3JjWWlDbHBoX3Y0Y1ZhZUF1N0cwWjR1MTRkRTdFc3YyMUJrNHRUclB1OUQxQzhqbVJhaWpXWE5ZcUE?oc=5\" target=\"_blank\">Students get a taste of construction industry with 21st annual Project Heavy Duty</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Energeticcity</font>",
+        "similarity_excluded": "No",
+        "score": 5,
+        "status": "processed",
+        "tweet": null
+    },
+    {
+        "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxNNWJfaEVSWmgxWDNDZnlyZVlUS05OX3A1dVZORmlINXRKNXVIMlhMbU1MTF8tVWlRaEc2QS1KY1A3bkpwUHFYY0J2RU01OGNVREQ3NlFkQlRDUjNFVTljU2E1LUdPX2h1SHRrQzBTVFkzOWx6a0lhVkxCV055WTJXQzdkRjRXc1k?oc=5",
+        "date": "2025-05-26",
+        "title": "US$1.7bn to boost California highway infrastructure - Global Highways",
+        "summary": "<a href=\"https://news.google.com/rss/articles/CBMihwFBVV95cUxNNWJfaEVSWmgxWDNDZnlyZVlUS05OX3A1dVZORmlINXRKNXVIMlhMbU1MTF8tVWlRaEc2QS1KY1A3bkpwUHFYY0J2RU01OGNVREQ3NlFkQlRDUjNFVTljU2E1LUdPX2h1SHRrQzBTVFkzOWx6a0lhVkxCV055WTJXQzdkRjRXc1k?oc=5\" target=\"_blank\">US$1.7bn to boost California highway infrastructure</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Global Highways</font>",
+        "similarity_excluded": "No",
+        "score": 9,
+        "status": "processed",
+        "tweet": "\ud83c\uddfa\ud83c\uddf8 NEWS: US$1.7bn to boost California highway infrastructure, focusing on the repair and replacement of aging bridges."
+    },
+    {
+        "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQQmVjQWppaUxzd2JlVkhuR3AwMmswRUt2OHZUemVzWm5iYVk0M0FSUS1FTlA3aTBaLUhqVVdTY2hfTTREaEhreTMwckpvQTZsM0R6cTQyczUxRkkyVXctZHl6OTZKQklVUVF6SEZqQ0tXcmQ5S21XTkNaY2NINW1jV2pQVmpQRjRBY0tCUm5wR3dDSnh2dnFCczJLTnF5Y2NFekdzcWdzNHE3OE1EdWU4U1RtSi1sa1dQam9nWG9QMA?oc=5",
+        "date": "2025-05-26",
+        "title": "Dahod: PM Modi Inaugurates development projects under the Smart City Mission #Gallery - Social News XYZ",
+        "summary": "<a href=\"https://news.google.com/rss/articles/CBMivwFBVV95cUxQQmVjQWppaUxzd2JlVkhuR3AwMmswRUt2OHZUemVzWm5iYVk0M0FSUS1FTlA3aTBaLUhqVVdTY2hfTTREaEhreTMwckpvQTZsM0R6cTQyczUxRkkyVXctZHl6OTZKQklVUVF6SEZqQ0tXcmQ5S21XTkNaY2NINW1jV2pQVmpQRjRBY0tCUm5wR3dDSnh2dnFCczJLTnF5Y2NFekdzcWdzNHE3OE1EdWU4U1RtSi1sa1dQam9nWG9QMA?oc=5\" target=\"_blank\">Dahod: PM Modi Inaugurates development projects under the Smart City Mission #Gallery</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Social News XYZ</font>",
+        "similarity_excluded": "Yes",
+        "score": 0,
+        "status": "skipped",
+        "tweet": null
+    },
+    {
+        "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxNNWJfaEVSWmgxWDNDZnlyZVlUS05OX3A1dVZORmlINXRKNXVIMlhMbU1MTF8tVWlRaEc2QS1KY1A3bkpwUHFYY0J2RU01OGNVREQ3NlFkQlRDUjNFVTljU2E1LUdPX2h1SHRrQzBTVFkzOWx6a0lhVkxCV055WTJXQzdkRjRXc1k?oc=5",
+        "date": "2025-05-26",
+        "title": "US$1.7bn to boost California highway infrastructure - Global Highways",
+        "summary": "<a href=\"https://news.google.com/rss/articles/CBMihwFBVV95cUxNNWJfaEVSWmgxWDNDZnlyZVlUS05OX3A1dVZORmlINXRKNXVIMlhMbU1MTF8tVWlRaEc2QS1KY1A3bkpwUHFYY0J2RU01OGNVREQ3NlFkQlRDUjNFVTljU2E1LUdPX2h1SHRrQzBTVFkzOWx6a0lhVkxCV055WTJXQzdkRjRXc1k?oc=5\" target=\"_blank\">US$1.7bn to boost California highway infrastructure</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Global Highways</font>",
+        "similarity_excluded": "No",
+        "score": 9,
+        "status": "posted",
+        "tweet": "\ud83c\uddfa\ud83c\uddf8 NEWS: US$1.7bn to boost California highway infrastructure, focusing on expanding and repairing key routes.",
+        "type": "news"
     }
 ]
