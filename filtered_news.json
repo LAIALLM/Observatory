@@ -2434,5 +2434,13 @@
         "status": "posted",
         "tweet": "\ud83c\uddf8\ud83c\udde6 NEWS: OSUS launches $533mn OSUS EYE project in Riyadh",
         "type": "news"
+    },
+    {
+        "link": null,
+        "date": "2025-05-27",
+        "status": "posted",
+        "tweet": "\ud83c\udf0d Global: By 2025, 68% of the world population live in urban areas. \n\nRapid urbanization stresses infrastructure and strains services. Prioritized urban planning is an imminent need.",
+        "type": "statistical",
+        "category": "urban planning"
     }
 ]
