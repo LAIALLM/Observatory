@@ -2355,5 +2355,12 @@
         "status": "posted",
         "tweet": "Summary: Solana has the lowest maintenance & security costs among Bitcoin, Ethereum, and Solana in 2025.\n\n1. Solana: $10M/year\n2. Ethereum: $50M/year\n3. Bitcoin: $100M/year",
         "type": "crypto"
+    },
+    {
+        "link": null,
+        "date": "2025-05-31",
+        "status": "posted",
+        "tweet": "\ud83c\uddfa\ud83c\uddf8 Apple Inc. \n- 1.4 billion active devices worldwide. \n- Q1 2020 revenue: $91.8 billion, a 9% increase YoY. \n$AAPL",
+        "type": "infrastructure"
     }
 ]
