@@ -2349,5 +2349,12 @@
         "score": 0,
         "status": "skipped",
         "tweet": null
+    },
+    {
+        "link": null,
+        "date": "2025-06-01",
+        "status": "posted",
+        "tweet": "By 2025, over 60% of Bitcoin nodes are expected to be concentrated in \n\n\ud83c\uddfa\ud83c\uddf8 USA and \n\n\ud83c\udde9\ud83c\uddea Germany,\n\nhighlighting potential centralization risks in the network's infrastructure.",
+        "type": "crypto"
     }
 ]
