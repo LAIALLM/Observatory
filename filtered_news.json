@@ -2625,5 +2625,13 @@
         "score": 0,
         "status": "processed",
         "tweet": null
+    },
+    {
+        "link": null,
+        "date": "2025-06-03",
+        "status": "posted",
+        "tweet": "\ud83c\udf0dWorld Bank estimates that the annual global infrastructure gap will reach $5.5 trillion by 2030. \n\ud83c\uddfa\ud83c\uddf8In the U.S. alone, over $2 trillion is needed by 2025 to repair decaying bridges, roads, and dams.",
+        "type": "statistical",
+        "category": "infrastructure"
     }
 ]
