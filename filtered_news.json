@@ -3261,5 +3261,12 @@
         "score": 7,
         "status": "processed",
         "tweet": null
+    },
+    {
+        "link": null,
+        "date": "2025-06-05",
+        "status": "posted",
+        "tweet": "In 2025, Bitcoin's energy consumption led to regulatory scrutiny in \ud83c\uddfa\ud83c\uddf8 USA and \ud83c\uddea\ud83c\uddfa EU, costing an estimated $1.5B in infrastructure upgrades.\n\nEthereum's shift to proof-of-stake reduced its footprint, with regulatory costs at $300M, a 80% decrease compared to Bitcoin.",
+        "type": "crypto"
     }
 ]
