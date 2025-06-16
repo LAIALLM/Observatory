@@ -3136,5 +3136,12 @@
         "score": 0,
         "status": "processed",
         "tweet": null
+    },
+    {
+        "link": null,
+        "date": "2025-06-16",
+        "status": "posted",
+        "tweet": "\ud83c\uddfa\ud83c\uddf8 Apple Inc.\n\nQ3 Revenue: $81.4 billion. \nUp 36% YoY.\n\nProducts Sales: $73.5 billion. \nServices Revenue: $17.5 billion.\n\nQuarterly EPS: $1.30, up 100%.\n\n$AAPL",
+        "type": "infrastructure"
     }
 ]
