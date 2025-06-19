@@ -3368,5 +3368,15 @@
         "score": 0,
         "status": "processed",
         "tweet": null
+    },
+    {
+        "link": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxNYVR5UVZ3amJtOXJHR3ZOVEZFZW44VlpBbTk3N1YyNDg5N0U0QnIwd3FpYmswaVJjeE5UNktZVVBOUGpLWHQwMnRITEgyMkJ4QnB2VkVCcG45Z2pTMjlETkNJU3RhMFQ0aV9sQkprenBwQWlRUmxsQW9DQU1BV0tBcDhxaFhGWC05c2Jxc3BUdnQwQkZ3REpYZ2NocW1XTXc0cks5VDJVYjFVSEZ5TEZkUXgtQm5melFLeWFiYWZBNjZFUXdIVFlXQVRGSWRrRkZWY2pIVmszakxlQmVOc0hfa2R3bng?oc=5",
+        "date": "2025-06-19",
+        "title": "Labour must not overlook London when it comes to infrastructure spending - MSN",
+        "summary": "<a href=\"https://news.google.com/rss/articles/CBMi5AFBVV95cUxNYVR5UVZ3amJtOXJHR3ZOVEZFZW44VlpBbTk3N1YyNDg5N0U0QnIwd3FpYmswaVJjeE5UNktZVVBOUGpLWHQwMnRITEgyMkJ4QnB2VkVCcG45Z2pTMjlETkNJU3RhMFQ0aV9sQkprenBwQWlRUmxsQW9DQU1BV0tBcDhxaFhGWC05c2Jxc3BUdnQwQkZ3REpYZ2NocW1XTXc0cks5VDJVYjFVSEZ5TEZkUXgtQm5melFLeWFiYWZBNjZFUXdIVFlXQVRGSWRrRkZWY2pIVmszakxlQmVOc0hfa2R3bng?oc=5\" target=\"_blank\">Labour must not overlook London when it comes to infrastructure spending</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">MSN</font>",
+        "similarity_excluded": "Yes",
+        "score": 0,
+        "status": "skipped",
+        "tweet": null
     }
 ]
