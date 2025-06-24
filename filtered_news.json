@@ -3786,5 +3786,12 @@
         "status": "posted",
         "tweet": "\ud83c\uddee\ud83c\uddf3 NEWS: UP ranks first among states for highest investment in development and infrastructure, with a focus on enhancing road and rail networks.",
         "type": "news"
+    },
+    {
+        "link": null,
+        "date": "2025-06-24",
+        "status": "posted",
+        "tweet": "In 2025, Bitcoin's annual maintenance and security costs are projected to reach $1.5 billion, surpassing the combined budgets of \ud83c\uddfa\ud83c\uddf8 New York and \ud83c\uddfa\ud83c\uddf8 California's cybersecurity allocations for the same year.",
+        "type": "crypto"
     }
 ]
