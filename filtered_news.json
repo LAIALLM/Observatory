@@ -2823,5 +2823,12 @@
         "score": 7,
         "status": "processed",
         "tweet": null
+    },
+    {
+        "link": null,
+        "date": "2025-06-30",
+        "status": "posted",
+        "tweet": "\ud83c\uddfa\ud83c\uddf8 Apple Inc. \n\nEnergy consumption for Q1 2022: 2.4 million megawatt-hours.\n\nRenewable energy usage: 85%.\n\nEnergy usage reduction in data centers: 15%.\n\nData center efficiency rating: A+.\n\n$AAPL",
+        "type": "infrastructure"
     }
 ]
