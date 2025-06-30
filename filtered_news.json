@@ -3350,5 +3350,45 @@
         "score": 7,
         "status": "processed",
         "tweet": null
+    },
+    {
+        "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxPQUctaTlLNXdFT19xQXVOY25Kd0hVN1FJb1pEWVhLTFRxTXIwWUpsUHJZTm1fM3FmOTFaTTdGME5TNzgwelNxOVo0cGwyVG9vcEY1bTNIbXpteEllRF9aUHdRb09NTjRtZ2dmQlF1TGxQYVl5a0drVjgyU0llVVJxWQ?oc=5",
+        "date": "2025-06-30",
+        "title": "RALLY for ROADS - For Construction Pros",
+        "summary": "<a href=\"https://news.google.com/rss/articles/CBMigAFBVV95cUxPQUctaTlLNXdFT19xQXVOY25Kd0hVN1FJb1pEWVhLTFRxTXIwWUpsUHJZTm1fM3FmOTFaTTdGME5TNzgwelNxOVo0cGwyVG9vcEY1bTNIbXpteEllRF9aUHdRb09NTjRtZ2dmQlF1TGxQYVl5a0drVjgyU0llVVJxWQ?oc=5\" target=\"_blank\">RALLY for ROADS</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">For Construction Pros</font>",
+        "similarity_excluded": "Yes",
+        "score": 0,
+        "status": "skipped",
+        "tweet": null
+    },
+    {
+        "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNeWtxZU9INVF0M0lhQjZiWi1zMFJiQktiWG9hWm4ybllveEFLdmpGVHBIRVliTHNMd1BGV0tMaVN6NmszdVBQZXdLajctSHFQay1KTVhtVTZFdXpYWlhjUmRyNDVQa0U0M1VILWJDT0hSUmQ1MDRxMVNVQ0Y3dmxBNXlPbTFleVZhdUwxVUtUSXpQOU00QkVFMWN5N2xFQnprd3JSTXNZSnB4Ylh5?oc=5",
+        "date": "2025-06-30",
+        "title": "Contractor marks 15 years by growing talent scheme - TheBusinessDesk.com",
+        "summary": "<a href=\"https://news.google.com/rss/articles/CBMirAFBVV95cUxNeWtxZU9INVF0M0lhQjZiWi1zMFJiQktiWG9hWm4ybllveEFLdmpGVHBIRVliTHNMd1BGV0tMaVN6NmszdVBQZXdLajctSHFQay1KTVhtVTZFdXpYWlhjUmRyNDVQa0U0M1VILWJDT0hSUmQ1MDRxMVNVQ0Y3dmxBNXlPbTFleVZhdUwxVUtUSXpQOU00QkVFMWN5N2xFQnprd3JSTXNZSnB4Ylh5?oc=5\" target=\"_blank\">Contractor marks 15 years by growing talent scheme</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">TheBusinessDesk.com</font>",
+        "similarity_excluded": "Yes",
+        "score": 0,
+        "status": "skipped",
+        "tweet": null
+    },
+    {
+        "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPRTNlX3MwX3lHOVJucGpRTUZEUVFFRWtMV3R6dFFpTUE4V0xicEN5Qjc2cEYzbjBSQ1NYaTA4V1RqLXVIRTU4V0RWVGxVVkVBeVlPMkdmS2hJc283SkZya1RJMXlrdGRCaWZHNWh5NUVVNmh0THZ4b2JvcUNTczFkemlvTzl0UHZhbGxNREg5X3ZrcDk3MEZscTBMdUlTbEhPN09yWkxjUFNTanlJZjBvS3ZIVnpkc3BaeHpWOWZ3?oc=5",
+        "date": "2025-06-30",
+        "title": "Juniper Networks Dominates Enterprise WLAN Market with AI-Native Platform, Reports 40% Growth - Stock Titan",
+        "summary": "<a href=\"https://news.google.com/rss/articles/CBMivgFBVV95cUxPRTNlX3MwX3lHOVJucGpRTUZEUVFFRWtMV3R6dFFpTUE4V0xicEN5Qjc2cEYzbjBSQ1NYaTA4V1RqLXVIRTU4V0RWVGxVVkVBeVlPMkdmS2hJc283SkZya1RJMXlrdGRCaWZHNWh5NUVVNmh0THZ4b2JvcUNTczFkemlvTzl0UHZhbGxNREg5X3ZrcDk3MEZscTBMdUlTbEhPN09yWkxjUFNTanlJZjBvS3ZIVnpkc3BaeHpWOWZ3?oc=5\" target=\"_blank\">Juniper Networks Dominates Enterprise WLAN Market with AI-Native Platform, Reports 40% Growth</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Stock Titan</font>",
+        "similarity_excluded": "No",
+        "score": 0,
+        "status": "processed",
+        "tweet": null
+    },
+    {
+        "link": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxNRXl4SG5UQ2I4c1RFVG9IU3ZzUGcxV3BNYnRLbnR4cG0xSjdJZ2hLUUJHUTVHSWI5c1E2V21keGdKUTllZkZZWFh6VWdSZFpybGwyS2RRUk1rRkwzcE9hdDIxYVp5UU5tUUVTM19tay1QNFUwNjlYMTItQXlNVGxsQWF2MGNPM2JITHVmcElKaHJVZWpxSWlqcTdCaThqVnJUWWI3emNhU0RVVUZoZDE5T0t3OFpPZ3I5UGxSUXJOb3dmbENEVDVjeWVaRThYX1pPLVdUSUpiY2JHVmF1TXfSAeMBQVVfeXFMTURqeHhKZjh4WjF6U0VXTTRDdkRLNFdoMmkyUzBRZ1k1SmNKcDNlNi1HYWpROHBKR2hMWGpSTlk2NEt2bXRUY241OVVZUHIzNXpwSVVhb0tvaGU3TFZvMjI5NjAxU0ZiN3FIXzlETGc3ckRrZDkwVFBNWWtNQ3IyY0hLcHl1TTFqaVZVQXJJTXV1WlI4WkJkOWJkLTktSUR4bDY1NWllbFVVUGliVW95QVJDQlhBX3V5NXhuMVAxOG4wWWZFemc2R3dPOXNfVGlPb25OZzlONGFKekV3anhjQWk4cGc?oc=5",
+        "date": "2025-06-30",
+        "title": "UP News: 82 Low-Enrolment Schools Merged In Lucknow; Teachers Raise Alarm Over Infrastructure, Equity Concerns - Free Press Journal",
+        "summary": "<a href=\"https://news.google.com/rss/articles/CBMi3gFBVV95cUxNRXl4SG5UQ2I4c1RFVG9IU3ZzUGcxV3BNYnRLbnR4cG0xSjdJZ2hLUUJHUTVHSWI5c1E2V21keGdKUTllZkZZWFh6VWdSZFpybGwyS2RRUk1rRkwzcE9hdDIxYVp5UU5tUUVTM19tay1QNFUwNjlYMTItQXlNVGxsQWF2MGNPM2JITHVmcElKaHJVZWpxSWlqcTdCaThqVnJUWWI3emNhU0RVVUZoZDE5T0t3OFpPZ3I5UGxSUXJOb3dmbENEVDVjeWVaRThYX1pPLVdUSUpiY2JHVmF1TXfSAeMBQVVfeXFMTURqeHhKZjh4WjF6U0VXTTRDdkRLNFdoMmkyUzBRZ1k1SmNKcDNlNi1HYWpROHBKR2hMWGpSTlk2NEt2bXRUY241OVVZUHIzNXpwSVVhb0tvaGU3TFZvMjI5NjAxU0ZiN3FIXzlETGc3ckRrZDkwVFBNWWtNQ3IyY0hLcHl1TTFqaVZVQXJJTXV1WlI4WkJkOWJkLTktSUR4bDY1NWllbFVVUGliVW95QVJDQlhBX3V5NXhuMVAxOG4wWWZFemc2R3dPOXNfVGlPb25OZzlONGFKekV3anhjQWk4cGc?oc=5\" target=\"_blank\">UP News: 82 Low-Enrolment Schools Merged In Lucknow; Teachers Raise Alarm Over Infrastructure, Equity Concerns</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Free Press Journal</font>",
+        "similarity_excluded": "No",
+        "score": 5,
+        "status": "processed",
+        "tweet": null
     }
 ]
