@@ -3251,5 +3251,13 @@
         "score": 6,
         "status": "processed",
         "tweet": null
+    },
+    {
+        "link": null,
+        "date": "2025-06-30",
+        "status": "posted",
+        "tweet": "\ud83c\udde8\ud83c\uddf3 China's GDP is projected to reach $24.7 trillion in 2025, thus overtaking \ud83c\uddfa\ud83c\uddf8 USA's projected $23.2 trillion GDP.\n\nConversely, \ud83c\uddf3\ud83c\uddec Nigeria has the highest projected population growth, expected to surpass \ud83c\uddfa\ud83c\uddf8 USA's total populace by 2050.",
+        "type": "statistical",
+        "category": "countries"
     }
 ]
