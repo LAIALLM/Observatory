@@ -3536,5 +3536,12 @@
         "status": "posted",
         "tweet": "\ud83c\uddf0\ud83c\uddea NEWS: Kenya implements landmark National Building Code 2024 to modernize construction standards and enhance safety.",
         "type": "news"
+    },
+    {
+        "link": null,
+        "date": "2025-07-01",
+        "status": "posted",
+        "tweet": "\ud83c\uddfa\ud83c\uddf8Google's data centers used 5.2 TWh of electricity in 2020, equivalent to powering nearly 500,000 US homes for one year. This marks a 12% increase from 2019.\n\n$GOOGL",
+        "type": "infrastructure"
     }
 ]
