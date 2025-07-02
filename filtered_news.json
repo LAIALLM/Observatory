@@ -3437,5 +3437,35 @@
         "status": "posted",
         "tweet": "\ud83c\uddff\ud83c\udde6 NEWS: AfDB provides $474.6 million to support South Africas infrastructure reforms.",
         "type": "news"
+    },
+    {
+        "link": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE9fMnBhaGk3amxhQ1hFeFBXUjNSQzlqRUFya0tzcTVhRXdBeHNtSC1aYWhhcjB2ZFZ6ZDhaVnB3ek1raUdDQjBjbm9SZVJrcU9UNEpHY3ln?oc=5",
+        "date": "2025-07-02",
+        "title": "Noise at construction sites does not seem to be easily extinguished. This is due to a series of deat.. - \ub9e4\uc77c\uacbd\uc81c",
+        "summary": "<a href=\"https://news.google.com/rss/articles/CBMiVkFVX3lxTE9fMnBhaGk3amxhQ1hFeFBXUjNSQzlqRUFya0tzcTVhRXdBeHNtSC1aYWhhcjB2ZFZ6ZDhaVnB3ek1raUdDQjBjbm9SZVJrcU9UNEpHY3ln?oc=5\" target=\"_blank\">Noise at construction sites does not seem to be easily extinguished. This is due to a series of deat..</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">\ub9e4\uc77c\uacbd\uc81c</font>",
+        "similarity_excluded": "No",
+        "score": 0,
+        "status": "processed",
+        "tweet": null
+    },
+    {
+        "link": "https://news.google.com/rss/articles/CBMijwFBVV95cUxPUllmc25YeTJDYWFhdDZFYmh1UVBscTNGS2RLQVZlNC1TMFo3ZGthRVVGdFdrbzFHRXUwSEdaYjg4RTVtdlRqTlR3cFVZRjNDMko4X0ZpVGdUOGJWSTNjY21RRWo0THFOc0kyTnRmb2xReHB3WmZKUFpGV3BKR2JzdjFxbDk0Z196dGwxWXQ5SQ?oc=5",
+        "date": "2025-07-02",
+        "title": "DCPC Focuses on Import Reduction, Infrastructure and Business Ease - Chemical Industry Digest",
+        "summary": "<a href=\"https://news.google.com/rss/articles/CBMijwFBVV95cUxPUllmc25YeTJDYWFhdDZFYmh1UVBscTNGS2RLQVZlNC1TMFo3ZGthRVVGdFdrbzFHRXUwSEdaYjg4RTVtdlRqTlR3cFVZRjNDMko4X0ZpVGdUOGJWSTNjY21RRWo0THFOc0kyTnRmb2xReHB3WmZKUFpGV3BKR2JzdjFxbDk0Z196dGwxWXQ5SQ?oc=5\" target=\"_blank\">DCPC Focuses on Import Reduction, Infrastructure and Business Ease</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Chemical Industry Digest</font>",
+        "similarity_excluded": "No",
+        "score": 0,
+        "status": "processed",
+        "tweet": null
+    },
+    {
+        "link": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxOeTVZVE1aVTBrSWJjZWdrLVlwY3ZKMFVEdDdMOUlVUExvMVJNQ2NWSVg2cHNsOTEzXzAzLVY5bFBPS3VyejdtMmJPbDVzQnBaQkFTLTJleEZFOG9XZVhILTJtYnF5TTNsREZISVJ5OUtrVXJRaWFCa0NPbVp6TU5MXzNHVzZxMXdCclcyVVQwNUxDOFVRS3pGZjlUQ0FQREh0SkFBQ3A0bVZBSndqV05QeVRmeE1naTEzUFJTWmJnVzJoc0VkUkhhdkxhWUNRRV9Ic1JjU05n?oc=5",
+        "date": "2025-07-02",
+        "title": "eThekwini municipality strengthens international ties for smart urban development in Abu Dhabi - IOL",
+        "summary": "<a href=\"https://news.google.com/rss/articles/CBMi1gFBVV95cUxOeTVZVE1aVTBrSWJjZWdrLVlwY3ZKMFVEdDdMOUlVUExvMVJNQ2NWSVg2cHNsOTEzXzAzLVY5bFBPS3VyejdtMmJPbDVzQnBaQkFTLTJleEZFOG9XZVhILTJtYnF5TTNsREZISVJ5OUtrVXJRaWFCa0NPbVp6TU5MXzNHVzZxMXdCclcyVVQwNUxDOFVRS3pGZjlUQ0FQREh0SkFBQ3A0bVZBSndqV05QeVRmeE1naTEzUFJTWmJnVzJoc0VkUkhhdkxhWUNRRV9Ic1JjU05n?oc=5\" target=\"_blank\">eThekwini municipality strengthens international ties for smart urban development in Abu Dhabi</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">IOL</font>",
+        "similarity_excluded": "Yes",
+        "score": 0,
+        "status": "skipped",
+        "tweet": null
     }
 ]
