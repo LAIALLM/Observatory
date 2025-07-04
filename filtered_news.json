@@ -2880,5 +2880,12 @@
         "score": 7,
         "status": "processed",
         "tweet": null
+    },
+    {
+        "link": null,
+        "date": "2025-07-04",
+        "status": "posted",
+        "tweet": "\ud83c\uddfa\ud83c\uddf8 Apple Inc.\nData centers' energy consumption: 83% hydropower, 11% wind, 4% solar.\n100% renewable energy power since 2014.\nCurrent share price: $134.32\nStock ticker: $AAPL",
+        "type": "infrastructure"
     }
 ]
