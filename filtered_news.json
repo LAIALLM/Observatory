@@ -3010,5 +3010,12 @@
         "score": 0,
         "status": "skipped",
         "tweet": null
+    },
+    {
+        "link": null,
+        "date": "2025-07-05",
+        "status": "posted",
+        "tweet": "In 2025, over 65% of Bitcoin's mining hash rate is concentrated in:\n\n\ud83c\udde8\ud83c\uddf3 China\n\ud83c\uddfa\ud83c\uddf8 United States\n\nThis geographic concentration poses significant risks to the network's decentralization and security.",
+        "type": "crypto"
     }
 ]
