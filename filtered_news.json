@@ -3345,5 +3345,12 @@
         "score": 7,
         "status": "processed",
         "tweet": null
+    },
+    {
+        "link": null,
+        "date": "2025-07-07",
+        "status": "posted",
+        "tweet": "\ud83c\uddfa\ud83c\uddf8 Apple Inc. \n\nQ1 2021 results: \n- $111.4 billion in revenue. \n- $1.68 earnings per share. \n- $28.7 billion services revenue. \n\nStock ticker: $AAPL",
+        "type": "infrastructure"
     }
 ]
