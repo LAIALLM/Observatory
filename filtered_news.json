@@ -3353,5 +3353,12 @@
         "status": "posted",
         "tweet": "Summary: Bitcoin, Ethereum, and Solana ranked by annual cloud & data center costs in 2025.\n\n1. Bitcoin: $1.5 billion\n2. Ethereum: $800 million\n3. Solana: $300 million",
         "type": "crypto"
+    },
+    {
+        "link": null,
+        "date": "2025-07-10",
+        "status": "posted",
+        "tweet": "\ud83c\uddfa\ud83c\uddf8 Apple Inc. \n\nQ3 2021 Performance Metrics:\n\n- Revenue: +36%, reaching $81.4 billion \n- iPhone sales: +50%, $39.6 billion \n- Service sector growth: +33%, $17.5 billion\n\n$AAPL shares up 1.2% in after-hours trading.",
+        "type": "infrastructure"
     }
 ]
