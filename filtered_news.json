@@ -3661,5 +3661,13 @@
         "score": 7,
         "status": "processed",
         "tweet": null
+    },
+    {
+        "link": null,
+        "date": "2025-07-12",
+        "status": "posted",
+        "tweet": "Summary: Countries with the highest projected GDP in 2025 (in $trillions)\n\n1. \ud83c\uddfa\ud83c\uddf8 USA - $26.3\n2. \ud83c\udde8\ud83c\uddf3 China - $24.3\n3. \ud83c\uddef\ud83c\uddf5 Japan - $6.5\n4. \ud83c\udde9\ud83c\uddea Germany - $4.9\n5. \ud83c\uddee\ud83c\uddf3 India - $4.8\n\nStay informed on global economics. \ud83d\udcbc\ud83c\udf0e\ud83d\udcb9",
+        "type": "statistical",
+        "category": "countries"
     }
 ]
