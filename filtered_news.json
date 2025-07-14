@@ -2999,5 +2999,12 @@
         "score": 7,
         "status": "processed",
         "tweet": null
+    },
+    {
+        "link": null,
+        "date": "2025-07-14",
+        "status": "posted",
+        "tweet": "Summary: Bitcoin has the most decentralized node distribution among the three.\n\n1. \ud83c\uddfa\ud83c\uddf8 USA: Bitcoin - 2,345 nodes, Ethereum - 1,200 nodes, Solana - 500 nodes\n2. \ud83c\udde9\ud83c\uddea Germany: Bitcoin - 1,100 nodes, Ethereum - 600 nodes, Solana - 250 nodes\n3. \ud83c\uddf3\ud83c\uddf1 Netherlands: Bitcoin - 800 nodes, Ethe",
+        "type": "crypto"
     }
 ]
