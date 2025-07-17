@@ -3405,5 +3405,15 @@
         "score": 0,
         "status": "skipped",
         "tweet": null
+    },
+    {
+        "link": "https://www.constructiondive.com/news/women-ppe-construction-safety-gear/753356/",
+        "date": "2025-07-17",
+        "title": "Why a women-owned firm developed PPE for women",
+        "summary": "<p>ARX&rsquo;s leaders say they leaned on their own experiences and researched how women wear and use gear to create better products.</p>",
+        "similarity_excluded": "No",
+        "score": 0,
+        "status": "processed",
+        "tweet": null
     }
 ]
