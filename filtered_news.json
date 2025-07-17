@@ -3505,5 +3505,25 @@
         "score": 7,
         "status": "processed",
         "tweet": null
+    },
+    {
+        "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxOZ1dxQTdQcXYyV2lrSDRPNTFERHhDaFBiS2dYZWhGaTh6Qzhvd3h4V090UlJZMDYxWWNOQXE4blByUXhEN0NJZ0NmRTlEc3Z4WjFYYks0SG1sTkttbS1lbGg3bXhhSV9tQkxkNVBWdS1XaXhUcXNqOUtrLUZtYm1qMmlibWhmWXBDeGdtb090MUdGUDFDRG9aNEZ6VDN0VWhDR3dySTFNVnRSdFBSb3NtdERzWlRmM2FFVU1ZVXhfdi1xdUFyM1Jn?oc=5",
+        "date": "2025-07-17",
+        "title": "Celebrating a 50-yr legacy in construction, built on quality and performance - Engineering News",
+        "summary": "<a href=\"https://news.google.com/rss/articles/CBMixwFBVV95cUxOZ1dxQTdQcXYyV2lrSDRPNTFERHhDaFBiS2dYZWhGaTh6Qzhvd3h4V090UlJZMDYxWWNOQXE4blByUXhEN0NJZ0NmRTlEc3Z4WjFYYks0SG1sTkttbS1lbGg3bXhhSV9tQkxkNVBWdS1XaXhUcXNqOUtrLUZtYm1qMmlibWhmWXBDeGdtb090MUdGUDFDRG9aNEZ6VDN0VWhDR3dySTFNVnRSdFBSb3NtdERzWlRmM2FFVU1ZVXhfdi1xdUFyM1Jn?oc=5\" target=\"_blank\">Celebrating a 50-yr legacy in construction, built on quality and performance</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Engineering News</font>",
+        "similarity_excluded": "Yes",
+        "score": 0,
+        "status": "skipped",
+        "tweet": null
+    },
+    {
+        "link": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxObTlEc3NkLTYxRmVzb05YR1lUNXRicjFQaGNKNjBnQ1hMUEZEbVFtdHpoaF9weWpSYnZLcmVkblJKb1FMejU4SXhRMm1hbVFXRnQ4NDg3cXo0cnNMX2xlMFFOcnYxOW85Q1d2ZzE4TFk0cjl0ZWQxWTN2VEUxdFhNWTkwOXIySy1vQVBmcHdrd1BSOFRiZ2pzcnRXWWdsOHF1R0p1ZTk3eDlseWYtS0l6YVBjUm9HWWVLSkN1V240Q0Z6cVZLMGY0NnF2VElrTldmcnVJ?oc=5",
+        "date": "2025-07-17",
+        "title": "Republicans Move Forward with Transportation, Housing and Urban Development Bill that Raises the Cost of Living - House.gov",
+        "summary": "<a href=\"https://news.google.com/rss/articles/CBMi0wFBVV95cUxObTlEc3NkLTYxRmVzb05YR1lUNXRicjFQaGNKNjBnQ1hMUEZEbVFtdHpoaF9weWpSYnZLcmVkblJKb1FMejU4SXhRMm1hbVFXRnQ4NDg3cXo0cnNMX2xlMFFOcnYxOW85Q1d2ZzE4TFk0cjl0ZWQxWTN2VEUxdFhNWTkwOXIySy1vQVBmcHdrd1BSOFRiZ2pzcnRXWWdsOHF1R0p1ZTk3eDlseWYtS0l6YVBjUm9HWWVLSkN1V240Q0Z6cVZLMGY0NnF2VElrTldmcnVJ?oc=5\" target=\"_blank\">Republicans Move Forward with Transportation, Housing and Urban Development Bill that Raises the Cost of Living</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">House.gov</font>",
+        "similarity_excluded": "No",
+        "score": 0,
+        "status": "processed",
+        "tweet": null
     }
 ]
