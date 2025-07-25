@@ -6297,5 +6297,12 @@
         "score": 0,
         "status": "skipped",
         "tweet": null
+    },
+    {
+        "link": null,
+        "date": "2025-07-25",
+        "status": "posted",
+        "tweet": "\ud83c\uddfa\ud83c\uddf8 Google:\nLast quarter, data usage surged by 18% while energy consumption dropped 6%.  \nEfficiency up! \ud83d\udc4f \n$GOOGL",
+        "type": "infrastructure"
     }
 ]
