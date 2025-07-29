@@ -4387,5 +4387,12 @@
         "score": 4,
         "status": "processed",
         "tweet": null
+    },
+    {
+        "link": null,
+        "date": "2025-07-29",
+        "status": "posted",
+        "tweet": "\ud83c\uddfa\ud83c\uddf8 Apple Inc.\nQ1 2021 report shows:\n- Revenue: $111.4 billion, up 21% YoY.\n- Products revenue: $95.6 billion, up 20% YoY.\n- Services revenue: $15.7 billion, up 24% YoY.\n$AAPL trading at $136.87.",
+        "type": "infrastructure"
     }
 ]
