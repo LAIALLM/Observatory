@@ -4101,5 +4101,13 @@
         "status": "posted",
         "tweet": "\ud83c\uddee\ud83c\uddf3 NEWS: PMRDA approves four town planning schemes in Pune, following government approval.",
         "type": "news"
+    },
+    {
+        "link": null,
+        "date": "2025-08-01",
+        "status": "posted",
+        "tweet": "Summary: Ranking engineering projects' total investments in 2025.\n\n1. \ud83c\uddfa\ud83c\uddf8United States\n2. \ud83c\udde8\ud83c\uddf3China\n3. \ud83c\udde6\ud83c\uddeaUAE\n4. \ud83c\uddee\ud83c\uddf3India\n5. \ud83c\uddef\ud83c\uddf5Japan\n\nIn 2025, US leads the world in engineering projects with $500B of investments, followed by China $450B, UAE $400B, India $350B, and Japan $300B.",
+        "type": "statistical",
+        "category": "engineering projects"
     }
 ]
