@@ -3873,5 +3873,12 @@
         "status": "posted",
         "tweet": "\ud83c\uddfa\ud83c\uddf8 Microsoft: In Q2 2021, the company's cloud-services platform Azure recorded a 50% YoY growth.\nEfficiency rating: 99.995% uptime.\n\n$MSFT",
         "type": "infrastructure"
+    },
+    {
+        "link": null,
+        "date": "2025-08-02",
+        "status": "posted",
+        "tweet": "\ud83c\uddfa\ud83c\uddf8 Apple Inc. | $AAPL\n2019 Q4 report shows a 60% increase in renewable energy use for data centers since Q1.\n\nIt now powers 100% of its operations in 44 countries with renewable energy.",
+        "type": "infrastructure"
     }
 ]
