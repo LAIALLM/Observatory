@@ -3555,5 +3555,13 @@
         "status": "posted",
         "tweet": "\ud83c\uddfa\ud83c\uddf8 NEWS: Ameren Illinois gets green light for $1.6B, 380-mile transmission build, with construction starting later this year and phased energization through 2029. $AEE",
         "type": "news"
+    },
+    {
+        "link": null,
+        "date": "2025-08-07",
+        "status": "posted",
+        "tweet": "\ud83c\udf0d Global infrastructure investment is projected to reach $94.4 trillion by 2040. In 2025, China \ud83c\udde8\ud83c\uddf3 leads with $28 trillion, followed by the U.S. \ud83c\uddfa\ud83c\uddf8 at $8.5 trillion, and India \ud83c\uddee\ud83c\uddf3 with $4.5 trillion. These investments are driving unprecedented growth in infrastructure companies.",
+        "type": "statistical",
+        "category": "infrastructure companies"
     }
 ]
