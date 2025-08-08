@@ -3192,5 +3192,12 @@
         "score": 7,
         "status": "processed",
         "tweet": null
+    },
+    {
+        "link": null,
+        "date": "2025-08-08",
+        "status": "posted",
+        "tweet": "\ud83c\uddfa\ud83c\uddf8 Apple Inc. ($AAPL)\nUpgraded 200MW of data center operations to renewable energy, reducing CO2 footprint by 8%. \n100% renewable powering 12/12 US facilities.",
+        "type": "infrastructure"
     }
 ]
