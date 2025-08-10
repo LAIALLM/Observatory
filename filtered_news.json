@@ -2725,5 +2725,15 @@
         "score": 7,
         "status": "processed",
         "tweet": null
+    },
+    {
+        "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPT3VqVEJfTzhqMzNuc29zbGRKUzRDdnFUWjZiRHpYd0RCQV9YUVBTUkdXaHBHLXlBeHpFWVJkSjBpSDZVVnJ2Y29lMlJiS2dUYVF0WllFUVdXMjFJRVNZOGVJYUVoZzdvRlBSQ19YdUJUNEFRdGJ2WXJpTHN1RWg3WC1sZXNYa2MzUUZuYnZROGxxWm9uVWItaVl6U19ZSEFVQVhUM2g4UmNpc0sz?oc=5",
+        "date": "2025-08-10",
+        "title": "Optimism in construction sector: survey - RNZ",
+        "summary": "<a href=\"https://news.google.com/rss/articles/CBMirAFBVV95cUxPT3VqVEJfTzhqMzNuc29zbGRKUzRDdnFUWjZiRHpYd0RCQV9YUVBTUkdXaHBHLXlBeHpFWVJkSjBpSDZVVnJ2Y29lMlJiS2dUYVF0WllFUVdXMjFJRVNZOGVJYUVoZzdvRlBSQ19YdUJUNEFRdGJ2WXJpTHN1RWg3WC1sZXNYa2MzUUZuYnZROGxxWm9uVWItaVl6U19ZSEFVQVhUM2g4UmNpc0sz?oc=5\" target=\"_blank\">Optimism in construction sector: survey</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">RNZ</font>",
+        "similarity_excluded": "Yes",
+        "score": 0,
+        "status": "skipped",
+        "tweet": null
     }
 ]
