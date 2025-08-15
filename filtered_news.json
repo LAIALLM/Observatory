@@ -3154,5 +3154,13 @@
         "score": 8,
         "status": "processed",
         "tweet": null
+    },
+    {
+        "link": null,
+        "date": "2025-08-15",
+        "status": "posted",
+        "tweet": "\ud83c\udde8\ud83c\uddf3China is set to complete 35 new metro systems by 2025, totaling 11,000 kilometers of urban rail coverage. \nMeanwhile, \ud83c\uddfa\ud83c\uddf8United States plans to invest $1 trillion in infrastructure over the next decade, with only $115 billion dedicated to roads, bridges, and major projects.",
+        "type": "statistical",
+        "category": "infrastructural projects"
     }
 ]
