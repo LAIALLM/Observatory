@@ -2855,5 +2855,12 @@
         "score": 0,
         "status": "processed",
         "tweet": null
+    },
+    {
+        "link": null,
+        "date": "2025-08-17",
+        "status": "posted",
+        "tweet": "Bitcoin processes 7 transactions per second at an estimated cost of $177,000 per hour.\n\nEthereum handles 30 transactions per second, costing around $40,000 hourly.\n\nData as of 2025.",
+        "type": "crypto"
     }
 ]
