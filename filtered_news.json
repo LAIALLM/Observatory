@@ -3054,5 +3054,13 @@
         "status": "posted",
         "tweet": "Summary: Bitcoin has the highest cloud & data center costs, followed by Ethereum and Solana.\n\n1. Bitcoin: $1.4B/year\n2. Ethereum: $600M/year\n3. Solana: $100M/year\n\nData reflects estimated annual costs for 2025.",
         "type": "crypto"
+    },
+    {
+        "link": null,
+        "date": "2025-08-19",
+        "status": "posted",
+        "tweet": "\ud83c\udf0d By 2025, 80% of European cities will be 'smart', using sensor-based tech to manage resources more efficiently. \ud83d\udcc8\n   \n\ud83c\udde8\ud83c\uddf3 China is also rapidly advancing, aiming for 70% of its cities to be smart by 2030.\ud83d\udca1\n\nDigitally-driven cities are our future. \ud83c\udf06",
+        "type": "statistical",
+        "category": "smart cities"
     }
 ]
