@@ -3303,5 +3303,25 @@
         "score": 6,
         "status": "processed",
         "tweet": null
+    },
+    {
+        "link": "https://news.google.com/rss/articles/CBMic0FVX3lxTE1lSHJOOHdiMGprbXRMRU81bWtFRVEwdVNaWGNTb2xYeHp6dFpkMWRvNTN2eGlCS2tJVGtGbkdxZmtlUUg0c09pejRfbkF1eTJCWWVPMVhWZWgtVFdPOGg5dUZJOFNLSWVrX0ZHb0hxZndRVXc?oc=5",
+        "date": "2025-08-19",
+        "title": "Navigating the Building Safety Act - Local Authority Building & Maintenance",
+        "summary": "<a href=\"https://news.google.com/rss/articles/CBMic0FVX3lxTE1lSHJOOHdiMGprbXRMRU81bWtFRVEwdVNaWGNTb2xYeHp6dFpkMWRvNTN2eGlCS2tJVGtGbkdxZmtlUUg0c09pejRfbkF1eTJCWWVPMVhWZWgtVFdPOGg5dUZJOFNLSWVrX0ZHb0hxZndRVXc?oc=5\" target=\"_blank\">Navigating the Building Safety Act</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Local Authority Building & Maintenance</font>",
+        "similarity_excluded": "No",
+        "score": 7,
+        "status": "processed",
+        "tweet": null
+    },
+    {
+        "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNTFgtMmdIajBWa1JZVWU3VVMxVFNINnpsNlQxemU4OXd2cWNYUUtXRTc4dGlrRE1jWUhScGVta01SaF9zZkFWZ1ZCakZBbDYtSk8xS2I1ZXlCTGlCQU1odU5JaTYzZ0NVbjROLU1wTEs1VG1WUUZFa2JLQUN4SE9peDM3Qnpyc0RsS3FoWE9rTDJVZ2FLUnpJNDJwQzh3aVRJ?oc=5",
+        "date": "2025-08-19",
+        "title": "Airtel, Vodacom Sign Network Infrastructure Agreement To Drive Digital Inclusion - Africa.com",
+        "summary": "<a href=\"https://news.google.com/rss/articles/CBMioAFBVV95cUxNTFgtMmdIajBWa1JZVWU3VVMxVFNINnpsNlQxemU4OXd2cWNYUUtXRTc4dGlrRE1jWUhScGVta01SaF9zZkFWZ1ZCakZBbDYtSk8xS2I1ZXlCTGlCQU1odU5JaTYzZ0NVbjROLU1wTEs1VG1WUUZFa2JLQUN4SE9peDM3Qnpyc0RsS3FoWE9rTDJVZ2FLUnpJNDJwQzh3aVRJ?oc=5\" target=\"_blank\">Airtel, Vodacom Sign Network Infrastructure Agreement To Drive Digital Inclusion</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Africa.com</font>",
+        "similarity_excluded": "Yes",
+        "score": 0,
+        "status": "skipped",
+        "tweet": null
     }
 ]
