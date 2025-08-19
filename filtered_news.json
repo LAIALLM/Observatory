@@ -3413,5 +3413,35 @@
         "score": 0,
         "status": "skipped",
         "tweet": null
+    },
+    {
+        "link": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPaDVJVmFFZ2VUNzFCZlFfcEdzS2lGeV9pSzZnQXFEdFdVN05xcVlyRExSZzlRMUV3VGkyemJBTFVheHpBakg2aWRFd1hyeDcwWVBWSkVxRmNjQUVuTkpHRlFMVERETUswdnd0RU1EdWItVkVUOHBFbFhmenI1V3dtQ2djUGNSekZW?oc=5",
+        "date": "2025-08-19",
+        "title": "Community-Driven DeFi: The Future of Financial Infrastructure - OneSafe",
+        "summary": "<a href=\"https://news.google.com/rss/articles/CBMiiAFBVV95cUxPaDVJVmFFZ2VUNzFCZlFfcEdzS2lGeV9pSzZnQXFEdFdVN05xcVlyRExSZzlRMUV3VGkyemJBTFVheHpBakg2aWRFd1hyeDcwWVBWSkVxRmNjQUVuTkpHRlFMVERETUswdnd0RU1EdWItVkVUOHBFbFhmenI1V3dtQ2djUGNSekZW?oc=5\" target=\"_blank\">Community-Driven DeFi: The Future of Financial Infrastructure</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">OneSafe</font>",
+        "similarity_excluded": "Yes",
+        "score": 0,
+        "status": "skipped",
+        "tweet": null
+    },
+    {
+        "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxQMjJJT0FEZ0N6ZTZNRHk4MFVkTUVSZ3Qwb0VDLVJ4ZGVTelh6N2VQZ3VBaUZ1d284R3JxcmpBaDhicjhkNW1wWUF2NHBNdnM5NXp1OWVLb2ZyejRhT0pFMG5yVERzTmc1NXlUajBRZlJ4WkNFSGhVaU9wQ092eGNDeE9YMVJGc25WN2dya0YxaDBxUHdYTWZNNDdRXzZiUkUzWk5admp0SGtMR2F0Y3oybXZTczhYdTBsN0FRT2VWVFFhNFlkNXc?oc=5",
+        "date": "2025-08-19",
+        "title": "R0AR Announces Node Sale: Democratizing Layer 2 Infrastructure While Rewarding Community Participation - Bitcoin.com News",
+        "summary": "<a href=\"https://news.google.com/rss/articles/CBMixgFBVV95cUxQMjJJT0FEZ0N6ZTZNRHk4MFVkTUVSZ3Qwb0VDLVJ4ZGVTelh6N2VQZ3VBaUZ1d284R3JxcmpBaDhicjhkNW1wWUF2NHBNdnM5NXp1OWVLb2ZyejRhT0pFMG5yVERzTmc1NXlUajBRZlJ4WkNFSGhVaU9wQ092eGNDeE9YMVJGc25WN2dya0YxaDBxUHdYTWZNNDdRXzZiUkUzWk5admp0SGtMR2F0Y3oybXZTczhYdTBsN0FRT2VWVFFhNFlkNXc?oc=5\" target=\"_blank\">R0AR Announces Node Sale: Democratizing Layer 2 Infrastructure While Rewarding Community Participation</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Bitcoin.com News</font>",
+        "similarity_excluded": "No",
+        "score": 0,
+        "status": "processed",
+        "tweet": null
+    },
+    {
+        "link": "https://news.google.com/rss/articles/CBMiggFBVV95cUxNdHFWcVVvamR5TGlVQS1RQURHSmpKd21ITExuUWJQQWxqeGdQV1NWa2lVWnlrWThIcndHdW90NmZqTlhVbnBvdHh3dExqaDNqRVFUMkVKUFhOUjRlRTFvS2dWZVZ5Y1NyVVZSRjAyOTVHOGFjZkkyNVBOYThxeGVIS0pR?oc=5",
+        "date": "2025-08-19",
+        "title": "Product Council Outlook for Industrial Development - Urban Land Magazine",
+        "summary": "<a href=\"https://news.google.com/rss/articles/CBMiggFBVV95cUxNdHFWcVVvamR5TGlVQS1RQURHSmpKd21ITExuUWJQQWxqeGdQV1NWa2lVWnlrWThIcndHdW90NmZqTlhVbnBvdHh3dExqaDNqRVFUMkVKUFhOUjRlRTFvS2dWZVZ5Y1NyVVZSRjAyOTVHOGFjZkkyNVBOYThxeGVIS0pR?oc=5\" target=\"_blank\">Product Council Outlook for Industrial Development</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Urban Land Magazine</font>",
+        "similarity_excluded": "No",
+        "score": 7,
+        "status": "processed",
+        "tweet": null
     }
 ]
