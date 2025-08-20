@@ -3273,5 +3273,13 @@
         "status": "posted",
         "tweet": "\ud83c\udde6\ud83c\uddfa NEWS: New $100M program funds 22 rural road upgrades for safer journeys and better connectivity in Queensland.",
         "type": "news"
+    },
+    {
+        "link": null,
+        "date": "2025-08-20",
+        "status": "posted",
+        "tweet": "\ud83c\udf0dGlobal construction industry forecasted to hit $10.5 trillion by 2025, with a CAGR of 4.2% from 2021.  \n\ud83c\udde8\ud83c\uddf3China remains the largest market, accounting for 20% of the total.  \n\ud83c\uddee\ud83c\uddf3In India, construction output is anticipated to increase by 6.5% annually.",
+        "type": "statistical",
+        "category": "construction projects"
     }
 ]
