@@ -2882,5 +2882,12 @@
         "score": 0,
         "status": "skipped",
         "tweet": null
+    },
+    {
+        "link": null,
+        "date": "2025-08-23",
+        "status": "posted",
+        "tweet": "\ud83c\uddfa\ud83c\uddf8 Apple Inc. \nQ2 2021 Results: \n\nData Center Energy Consumption: \nReduced by 6% to 416.2 MWh. \n\nAnnual Carbon Footprint: \nDown 22% to 22.6 million metric tons. \n\n$AAPL",
+        "type": "infrastructure"
     }
 ]
