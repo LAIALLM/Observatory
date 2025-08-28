@@ -2771,5 +2771,12 @@
         "status": "posted",
         "tweet": "In 2025, Bitcoin's annual maintenance and security costs reach $1.2 billion, while Ethereum's are at $800 million. \n\nBitcoin's costs are 50% higher, reflecting its larger network and higher security requirements.",
         "type": "crypto"
+    },
+    {
+        "link": null,
+        "date": "2025-08-28",
+        "status": "posted",
+        "tweet": "\ud83c\uddfa\ud83c\uddf8 Apple Inc. \n\nEnergy efficiency rating of office spaces: 98%\n\nAnnual energy saved: 62 million kWh \n\nSolar energy capacity: 485 MW \n\n$AAPL",
+        "type": "infrastructure"
     }
 ]
