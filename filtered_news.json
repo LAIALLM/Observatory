@@ -2759,5 +2759,25 @@
         "score": 0,
         "status": "processed",
         "tweet": null
+    },
+    {
+        "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxONFRobzdnQjQySnFJMkxuODI4RUl5MmZDOTg3QmRybFZGeWxXcUg5aDlqMzJEMWRENHBVa3RQOU9yVXUwdFRwbDZxOHpWMWJEUHNnTFRVa1RwVHVvVXpEbDRMOEJWQk5IOTc5NWVUX2gwN3ZIcGY3bklpekhRSDVIcjZiUGlUd1NDOEc4MERMbFZibGZRem9WbFBkWXJoQXVSTUNRMmFmak0?oc=5",
+        "date": "2025-08-31",
+        "title": "Infrastructure Stocks To Keep An Eye On - August 30th - MarketBeat",
+        "summary": "<a href=\"https://news.google.com/rss/articles/CBMiqAFBVV95cUxONFRobzdnQjQySnFJMkxuODI4RUl5MmZDOTg3QmRybFZGeWxXcUg5aDlqMzJEMWRENHBVa3RQOU9yVXUwdFRwbDZxOHpWMWJEUHNnTFRVa1RwVHVvVXpEbDRMOEJWQk5IOTc5NWVUX2gwN3ZIcGY3bklpekhRSDVIcjZiUGlUd1NDOEc4MERMbFZibGZRem9WbFBkWXJoQXVSTUNRMmFmak0?oc=5\" target=\"_blank\">Infrastructure Stocks To Keep An Eye On - August 30th</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">MarketBeat</font>",
+        "similarity_excluded": "Yes",
+        "score": 0,
+        "status": "skipped",
+        "tweet": null
+    },
+    {
+        "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxPaG1VMGxPU2swRk5EZWsxdzQ1emd5ZmNpcUJBWmJRYm1MV2JDOTFBM0ZzNjZYdjFySVNLblY2MWw4UHNvMmI3Z183aGpwVjhKalYzcnVVNklZQVpKYTJSeWp3YXVrbC01VUFnS1J5R2FMb0lNaXdsZUlNX0xRd0FsMkZPMklLTGdEQUo4M3c5SWZCR29UbEpv?oc=5",
+        "date": "2025-08-31",
+        "title": "What MACD and RSI say about Mobile Infrastructure Corporation - 2025 Volatility Report & Growth Focused Entry Point Reports - Newser",
+        "summary": "<a href=\"https://news.google.com/rss/articles/CBMilwFBVV95cUxPaG1VMGxPU2swRk5EZWsxdzQ1emd5ZmNpcUJBWmJRYm1MV2JDOTFBM0ZzNjZYdjFySVNLblY2MWw4UHNvMmI3Z183aGpwVjhKalYzcnVVNklZQVpKYTJSeWp3YXVrbC01VUFnS1J5R2FMb0lNaXdsZUlNX0xRd0FsMkZPMklLTGdEQUo4M3c5SWZCR29UbEpv?oc=5\" target=\"_blank\">What MACD and RSI say about Mobile Infrastructure Corporation - 2025 Volatility Report & Growth Focused Entry Point Reports</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Newser</font>",
+        "similarity_excluded": "No",
+        "score": 0,
+        "status": "processed",
+        "tweet": null
     }
 ]
