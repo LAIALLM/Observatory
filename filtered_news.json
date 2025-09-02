@@ -2784,5 +2784,12 @@
         "score": 0,
         "status": "processed",
         "tweet": null
+    },
+    {
+        "link": null,
+        "date": "2025-09-02",
+        "status": "posted",
+        "tweet": "Bitcoin's validator decentralization: 10,000+ nodes across 98 countries, with significant presence in \ud83c\uddfa\ud83c\uddf8 USA, \ud83c\udde9\ud83c\uddea Germany, and \ud83c\udde8\ud83c\uddf3 China.\n\nEthereum's validator decentralization: 500,000+ validators across 70 countries, with major concentrations in \ud83c\uddfa\ud83c\uddf8 USA, \ud83c\udde8\ud83c\uddf3 China, and \ud83c\uddec\ud83c\udde7 UK.",
+        "type": "crypto"
     }
 ]
