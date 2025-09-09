@@ -3528,5 +3528,12 @@
         "status": "posted",
         "tweet": "Summary: Bitcoin's infrastructure costs have risen most sharply since 2017, followed by Ethereum and Solana.\n\n1. Bitcoin: Costs up 400% from 2017 to 2025\n2. Ethereum: Costs up 250% from 2017 to 2025\n3. Solana: Costs up 150% from 2017 to 2025",
         "type": "crypto"
+    },
+    {
+        "link": null,
+        "date": "2025-09-09",
+        "status": "posted",
+        "tweet": "\ud83c\uddfa\ud83c\uddf8 Apple Inc.  \nData center energy consumption in 2020: Approximately 791,000 MWh.  \nDecrease of 6.2% from 2019 levels.  \n\ud83d\udcbb $AAPL.",
+        "type": "infrastructure"
     }
 ]
