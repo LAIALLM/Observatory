@@ -3472,5 +3472,12 @@
         "score": 7,
         "status": "processed",
         "tweet": null
+    },
+    {
+        "link": null,
+        "date": "2025-09-10",
+        "status": "posted",
+        "tweet": "\ud83c\uddfa\ud83c\uddf8 Apple Inc. \n\nData Centers electricity use: 834,100 MWh in 2020. \n\nFully renewable energy sources since 2018. \n\n$AAPL",
+        "type": "infrastructure"
     }
 ]
