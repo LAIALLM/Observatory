@@ -4239,5 +4239,12 @@
         "status": "posted",
         "tweet": "\ud83c\udde8\ud83c\uddf3 China accounts for over 65% of Bitcoin's global mining hash rate in 2025, highlighting the significant geographic concentration of its energy-intensive infrastructure.",
         "type": "crypto"
+    },
+    {
+        "link": null,
+        "date": "2025-09-22",
+        "status": "posted",
+        "tweet": "\ud83c\uddfa\ud83c\uddf8 Apple Inc. $AAPL - \nData update: Q2 2021 iPhone sales tally 43.8 million devices, up 17% YoY. Quarterly revenue peaks at $72.6B, a staggering 63.2% YoY increase. iOS market share stands at 15.8% globally.",
+        "type": "infrastructure"
     }
 ]
