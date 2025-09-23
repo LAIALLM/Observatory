@@ -4454,5 +4454,12 @@
         "status": "posted",
         "tweet": "\ud83c\uddee\ud83c\uddf3 NEWS: ADB and Centre sign Rs. 1,103 Cr loan deal to enhance Assams urban resilience.",
         "type": "news"
+    },
+    {
+        "link": null,
+        "date": "2025-09-23",
+        "status": "posted",
+        "tweet": "Summary: Bitcoin consumes more electricity annually than Ethereum and Solana combined.\n\n1. Bitcoin: 121.37 TWh/year\n2. Ethereum: 21.05 TWh/year\n3. Solana: 0.13 TWh/year",
+        "type": "crypto"
     }
 ]
