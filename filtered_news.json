@@ -4478,5 +4478,12 @@
         "score": 0,
         "status": "skipped",
         "tweet": null
+    },
+    {
+        "link": null,
+        "date": "2025-09-24",
+        "status": "posted",
+        "tweet": "\ud83c\uddfa\ud83c\uddf8 Apple Inc. - Monthly active users for Siri hit a new high: Over 500 million in January 2022. Energy consumption per user down 2% quarter-on-quarter. $AAPL",
+        "type": "infrastructure"
     }
 ]
