@@ -4089,5 +4089,15 @@
         "score": 0,
         "status": "processed",
         "tweet": null
+    },
+    {
+        "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQVFpBbENQQWQxRE5odkhWUEIyQzJEVG9pMlhMQWdxcFZEaS0xMGhXcjNnUTZHeG0zanM2R3hFUWNuS3FQdVk3X2tqakJMZ2tSS3RMVy1jNlktQjE5TnAwcXV1T3lqbTJORHJmY1l4VS1XR3U4bkdiQ284YW1FYjRlQ3IwR1Q3ZTZKdlZzU1hkZHpId0ZieVFfUm1sOA?oc=5",
+        "date": "2025-09-28",
+        "title": "The billion-dollar infrastructure deals powering the AI boom - TechCrunch",
+        "summary": "<a href=\"https://news.google.com/rss/articles/CBMimwFBVV95cUxQVFpBbENQQWQxRE5odkhWUEIyQzJEVG9pMlhMQWdxcFZEaS0xMGhXcjNnUTZHeG0zanM2R3hFUWNuS3FQdVk3X2tqakJMZ2tSS3RMVy1jNlktQjE5TnAwcXV1T3lqbTJORHJmY1l4VS1XR3U4bkdiQ284YW1FYjRlQ3IwR1Q3ZTZKdlZzU1hkZHpId0ZieVFfUm1sOA?oc=5\" target=\"_blank\">The billion-dollar infrastructure deals powering the AI boom</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">TechCrunch</font>",
+        "similarity_excluded": "Yes",
+        "score": 0,
+        "status": "skipped",
+        "tweet": null
     }
 ]
