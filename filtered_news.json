@@ -4692,5 +4692,15 @@
         "score": 0,
         "status": "skipped",
         "tweet": null
+    },
+    {
+        "link": "https://news.google.com/rss/articles/CBMifkFVX3lxTFBLeXg0MlF0VXowUFlzSkw4dWFSUUVwS3d4Q3hVYm04NEQtZTBFNmpJR1hOTi16YzZPanctZmpCU21UUUZuUlpKRUJ6eXVjcHd6NFlka0t5ZHBvZUgwMG8xWEhPNGMzbUxKUWxXYURxZDJSa2Zfdjh6dWtWLU56dw?oc=5",
+        "date": "2025-10-11",
+        "title": "Germany calls for stronger EU digital infrastructure, not full U.S. tech break - Cryptopolitan",
+        "summary": "<a href=\"https://news.google.com/rss/articles/CBMifkFVX3lxTFBLeXg0MlF0VXowUFlzSkw4dWFSUUVwS3d4Q3hVYm04NEQtZTBFNmpJR1hOTi16YzZPanctZmpCU21UUUZuUlpKRUJ6eXVjcHd6NFlka0t5ZHBvZUgwMG8xWEhPNGMzbUxKUWxXYURxZDJSa2Zfdjh6dWtWLU56dw?oc=5\" target=\"_blank\">Germany calls for stronger EU digital infrastructure, not full U.S. tech break</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Cryptopolitan</font>",
+        "similarity_excluded": "No",
+        "score": 0,
+        "status": "processed",
+        "tweet": null
     }
 ]
