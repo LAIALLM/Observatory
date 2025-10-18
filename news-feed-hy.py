@@ -16,6 +16,10 @@ TWITTER_ACCESS_SECRET = os.getenv("TWITTER_ACCESS_SECRET")
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 XAI_API_KEY = os.getenv("XAI_API_KEY")
 
+# --- Updated model definitions (October 2025) ---
+OPENAI_MODEL = "gpt-5"                     # Replaces GPT-4
+XAI_MODEL = "grok-4-fast-reasoning"        # Replaces Grok-2-1212
+
 # Authenticate Twitter API (Using API v2)
 twitter_client = tweepy.Client(
     consumer_key=TWITTER_API_KEY,
@@ -250,7 +254,7 @@ def get_news_relevance_score(title, summary):
     """
 
     response = client.chat.completions.create(
-        model="grok-2-1212",  # Changed to Grok-2-1212
+        model=XAI_MODEL,  # Changed to Grok-2-1212
         messages=[{"role": "user", "content": prompt}]
     )
 
@@ -290,7 +294,7 @@ def summarize_news(title, summary, source):
         prompt += f"\n\nAlso, integrate one key point from this summary: {summary}"
 
     response = client.chat.completions.create(
-        model="grok-2-1212",  # Changed to Grok-2-1212
+        model=XAI_MODEL,  # Changed to Grok-2-1212
         messages=[{"role": "user", "content": prompt}]
     )
 
@@ -355,7 +359,7 @@ Summary: <One sentence overview of the ranking outcome>
 
     client = openai.OpenAI(api_key=OPENAI_API_KEY)
     response = client.chat.completions.create(
-        model="gpt-4",
+        model=OPENAI_MODEL,
         messages=[{"role": "user", "content": prompt}]
     )
     return response.choices[0].message.content.strip()
@@ -381,7 +385,7 @@ def generate_infrastructure_tweet():
     """
 
     response = client.chat.completions.create(
-        model="gpt-4",
+        model=OPENAI_MODEL,
         messages=[{"role": "user", "content": prompt}]
     )
     tweet = response.choices[0].message.content.strip()
@@ -454,7 +458,7 @@ def generate_crypto_tweet():
     """
 
     response = client.chat.completions.create(
-        model="grok-2-1212",  # Using Grok-2-1212
+        model=XAI_MODEL,  # Using Grok-2-1212
         messages=[{"role": "user", "content": prompt}]
     )
 
@@ -521,7 +525,7 @@ def generate_grok_reply(tweet_text, username):
     )
 
     response = client.chat.completions.create(
-        model="grok-2-1212",
+        model=XAI_MODEL,
         messages=[{"role": "user", "content": prompt}]
     )
 
