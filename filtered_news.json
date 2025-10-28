@@ -2660,5 +2660,12 @@
         "status": "posted",
         "tweet": "\ud83c\uddfa\ud83c\uddf8 NEWS: Google ($GOOGL) plans to restart a U.S. nuclear plant to power its AI data centers",
         "type": "news"
+    },
+    {
+        "link": null,
+        "date": "2025-10-28",
+        "status": "posted",
+        "tweet": "Google data centers (global)\n2023 average PUE 1.10\n$GOOGL",
+        "type": "infrastructure"
     }
 ]
