@@ -389,7 +389,7 @@ def generate_infrastructure_tweet():
     """
 
     response = client.chat.completions.create(
-        model=OPENAI_MODEL,
+        model=XAI_MODEL,
         messages=[{"role": "user", "content": prompt}]
     )
     tweet = response.choices[0].message.content.strip()
