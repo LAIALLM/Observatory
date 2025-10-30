@@ -367,7 +367,11 @@ Summary: <One sentence overview of the ranking outcome>
 
 # Generate an infrastructure tweet using your provided prompt.
 def generate_infrastructure_tweet():
-    client = openai.OpenAI(api_key=OPENAI_API_KEY)
+    client = openai.OpenAI(
+        api_key=XAI_API_KEY,  # Use xAI API key
+        base_url="https://api.x.ai/v1"  # xAI endpoint
+    )
+    
     prompt = """
     Write a concise social media post from an external perspective about a tech company that highlights a single key quantitative infrastructure metric. Focus strictly on presenting data with minimal wording.
 
