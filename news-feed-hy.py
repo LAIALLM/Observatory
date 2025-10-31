@@ -333,7 +333,7 @@ def summarize_news(title, summary, source):
 
 
 # =========================================================
-#      AI: INFRASTRUCTURE TWEET GENERATORS
+#      AI: STATISTICAL TWEET GENERATORS
 # =========================================================
 
 # Generate statistical post #
@@ -400,6 +400,9 @@ Summary: <One sentence overview of the ranking outcome>
     )
     return response.choices[0].message.content.strip()
 
+# =========================================================
+#      AI: STATISTICAL TWEET GENERATORS
+# =========================================================
 
 # Generate an infrastructure tweet using your provided prompt.
 def generate_infrastructure_tweet():
