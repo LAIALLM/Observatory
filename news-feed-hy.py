@@ -509,6 +509,9 @@ def generate_crypto_tweet():
     tweet = response.choices[0].message.content.strip()
     return tweet[:280]  # Ensure it's within the character limit
 
+# =========================================================
+#                       REPLIES
+# =========================================================
 
 def load_reply_log():
     """ Load previously replied tweets to avoid duplicates. """
@@ -628,7 +631,9 @@ def reply_to_random_tweet():
     except tweepy.errors.TweepyException as e:
         print(f"❌ Error posting reply: {e}")
 
-
+# =========================================================
+#                      POSTING
+# =========================================================
 
 # Post to X (Twitter) using API v2 with a delay
 def post_tweet(tweet):
@@ -651,6 +656,10 @@ def post_tweet(tweet):
     except tweepy.errors.TweepyException as e:
         print(f"❌ Other Tweepy error: {e}")
         return False
+        
+# =========================================================
+#                        MAIN
+# =========================================================
 
 ############## Main execution starts here ##############
 if __name__ == "__main__":
