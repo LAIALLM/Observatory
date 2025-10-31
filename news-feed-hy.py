@@ -8,6 +8,10 @@ import time
 import random
 from datetime import datetime, timedelta
 
+# =========================================================
+#              ENV + CONSTANTS + BOOT GUARDS
+# =========================================================
+
 # Load API keys from GitHub Secrets
 TWITTER_API_KEY = os.getenv("TWITTER_API_KEY")
 TWITTER_SECRET = os.getenv("TWITTER_SECRET")
@@ -20,6 +24,10 @@ XAI_API_KEY = os.getenv("XAI_API_KEY")
 OPENAI_MODEL = "gpt-5"                     # Replaces GPT-4
 XAI_MODEL = "grok-4-fast-reasoning"        # Replaces Grok-2-1212
 
+# =========================================================
+#                        TWITTER
+# =========================================================
+
 # Authenticate Twitter API (Using API v2)
 twitter_client = tweepy.Client(
     consumer_key=TWITTER_API_KEY,
@@ -29,11 +37,15 @@ twitter_client = tweepy.Client(
 )
 
 # **Accounts to Follow**
-TARGET_ACCOUNTS = {
-    "sama": "1605",        # Replace with actual user IDs
-    "elonmusk": "44196397",    # Replace with actual user IDs
-    "stats_feed": "1335132884278108161"   # Replace with actual user IDs
-}
+# TARGET_ACCOUNTS = {
+#    "sama": "1605",        # Replace with actual user IDs
+#    "elonmusk": "44196397",    # Replace with actual user IDs
+#    "stats_feed": "1335132884278108161"   # Replace with actual user IDs
+#}
+
+# =========================================================
+#                         RSS
+# =========================================================
 
 # Google News + Industry-Specific RSS Feeds
 RSS_FEEDS = [
@@ -55,6 +67,10 @@ RSS_FEEDS = [
     "https://infrastructuremagazine.com.au/feed/",  # Infrastructure Intelligence
 ]
 
+# =========================================================
+#                     STORAGE + LIMITS
+# =========================================================
+
 # Log file to track posted and filtered news
 LOG_FILE = "filtered_news.json"
 RETENTION_DAYS = 10  # Remove news older than 10 days
@@ -75,6 +91,10 @@ STAT_TWEETS_LIMIT = 1  # Max statistical tweets per day
 INFRA_TWEETS_LIMIT= 1
 CRYPTO_TWEETS_LIMIT= 1
 REPLY_TWEETS_LIMIT = 1
+
+# =========================================================
+#                        HELPERS
+# =========================================================
 
 # Define common words to ignore (stopwords)
 STOPWORDS = set([
@@ -195,6 +215,10 @@ def count_crypto_tweets_today(processed_articles):
     today = datetime.utcnow().strftime("%Y-%m-%d")
     return sum(1 for article in processed_articles if article.get("date") == today and article.get("type") == "crypto")
 
+# =========================================================
+#                   NEWS FETCH + SCORING
+# =========================================================
+
 # Get latest news (only from the last hour) with error handling
 def get_latest_news():
     news_list = []
@@ -222,6 +246,10 @@ def get_latest_news():
             print(f"❌ Error fetching feed {feed_url}: {e}")
             continue
     return news_list
+
+# =========================================================
+#               AI: SCORING + SUMMARIZATION
+# =========================================================
 
 # Use GROK-2-1212 to check if news is relevant
 def get_news_relevance_score(title, summary):
@@ -303,8 +331,14 @@ def summarize_news(title, summary, source):
     tweet = f"{ai_summary}"
     return tweet[:280]
 
-# Generate statistical tweet
+
+# =========================================================
+#      AI: INFRASTRUCTURE TWEET GENERATORS
+# =========================================================
+
+# Generate statistical post #
 # Global list of statistical tweet categories in a preferred order
+
 STATISTICAL_CATEGORIES = [
     "infrastructure",
     "energy",
@@ -337,6 +371,8 @@ Summary: <One sentence overview of the ranking outcome>
 1. City/Country
 2. City/Country
 3. City/Country
+4. City/Country
+5. City/Country
 """
 }
     
@@ -395,8 +431,12 @@ def generate_infrastructure_tweet():
     tweet = response.choices[0].message.content.strip()
     return tweet
 
-# Generate crypto tweet
+# =========================================================
+#         AI: CRYPTO TWEET GENERATORS
+# =========================================================
+
 # Global list of crypto infrastructure categories
+
 CRYPTO_INFRA_CATEGORIES = [
     "electricity consumption",
     "hardware costs",
