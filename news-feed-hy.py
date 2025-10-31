@@ -401,7 +401,7 @@ Summary: <One sentence overview of the ranking outcome>
     return response.choices[0].message.content.strip()
 
 # =========================================================
-#      AI: STATISTICAL TWEET GENERATORS
+#      AI: INFRASTRUCTURE TWEET GENERATORS
 # =========================================================
 
 # Generate an infrastructure tweet using your provided prompt.
