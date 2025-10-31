@@ -412,7 +412,7 @@ def generate_infrastructure_tweet():
     )
     
     prompt = """
-    Write a concise social media post from an external perspective about a tech company that highlights a single key quantitative infrastructure metric. Focus strictly on presenting data with minimal wording.
+    Assume the current year is 2025. Write a concise social media post from an external perspective about a tech company that highlights a single key quantitative infrastructure metric. Focus strictly on presenting data with minimal wording.
 
     The tweet should:
     - Present only clear, factual data (e.g., daily data volumes, production figures, energy consumption, or efficiency ratings)
