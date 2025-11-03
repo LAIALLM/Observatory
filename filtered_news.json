@@ -2603,5 +2603,12 @@
         "score": 0,
         "status": "skipped",
         "tweet": null
+    },
+    {
+        "link": null,
+        "date": "2025-11-03",
+        "status": "posted",
+        "tweet": "Amazon's AWS infrastructure processed 250 zettabytes of data in 2024, powering 40% of global cloud workloads.\n\n$AMZN",
+        "type": "infrastructure"
     }
 ]
