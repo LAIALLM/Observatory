@@ -2563,5 +2563,13 @@
         "score": 5,
         "status": "processed",
         "tweet": null
+    },
+    {
+        "link": null,
+        "date": "2025-11-09",
+        "status": "posted",
+        "tweet": "\ud83c\uddfa\ud83c\uddf8 New York: Second Avenue Subway Phase 2 budget \u2248$3.2B/km (2025).\n\ud83c\uddee\ud83c\uddf3 Delhi: Metro Phase 4 (65 km) budget \u2248$3.7B \u2192 \u2248$57M/km (2025).\n\n1 km of subway in New York costs ~56\u00d7 Delhi.",
+        "type": "statistical",
+        "category": "urban planning"
     }
 ]
