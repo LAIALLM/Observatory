@@ -2906,5 +2906,12 @@
         "tweet": "Summary: 2025 projection: biggest national high-speed rail networks by length (km); \ud83c\udde8\ud83c\uddf3 ~50,000, all others <5,000.\n\n1. \ud83c\udde8\ud83c\uddf3 China\n2. \ud83c\uddea\ud83c\uddf8 Spain\n3. \ud83c\uddef\ud83c\uddf5 Japan\n4. \ud83c\uddeb\ud83c\uddf7 France\n5. \ud83c\udde9\ud83c\uddea Germany",
         "type": "statistical",
         "category": "infrastructure"
+    },
+    {
+        "link": null,
+        "date": "2025-11-13",
+        "status": "posted",
+        "tweet": "Google's data centers in \ud83c\uddfa\ud83c\uddf8 Oregon consumed 1.2 TWh of renewable energy in Q1 2025, powering 15 million server racks at 99.99% uptime.\n\n$GOOGL",
+        "type": "infrastructure"
     }
 ]
