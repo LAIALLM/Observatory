@@ -3190,5 +3190,12 @@
         "status": "posted",
         "tweet": "Bitcoin's 2025 global mining infrastructure incurs $14 billion in annual maintenance and security costs, covering electricity and hardware to prevent 51% attacks.",
         "type": "crypto"
+    },
+    {
+        "link": null,
+        "date": "2025-11-14",
+        "status": "posted",
+        "tweet": "Alphabet's global data centers processed 18 exabytes of data daily in 2025, supporting cloud and AI operations.\n\n$GOOGL",
+        "type": "infrastructure"
     }
 ]
