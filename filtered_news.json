@@ -3086,5 +3086,15 @@
         "status": "posted",
         "tweet": "\ud83c\uddee\ud83c\uddf3 NEWS: Eight-lane Rs 20,000 crore Vadodara-Mumbai section of Delhi-Mumbai Expressway likely to be completed by next year",
         "type": "news"
+    },
+    {
+        "link": "https://news.google.com/rss/articles/CBMiigFBVV95cUxNaHBkREVLaFlTMkJnTDJ2cU1aSjcxbEs5OE5wODVISi1PdWhfTXpJS0pOMlRYd1UyRVQ4M09PRDlKM09VdHZHLWN2M2ZQY2lIZi1sdHVIVG1ENFJ2ZnU3S29IVVdQcWxwTnpZSS1aSUgwX1hleGI4NnBIWEEwV3ozcGlFY1p0V2xCZHc?oc=5",
+        "date": "2025-11-15",
+        "title": "We\u2019re not intermediaries. We\u2019re infrastructure. - Alliance magazine",
+        "summary": "<a href=\"https://news.google.com/rss/articles/CBMiigFBVV95cUxNaHBkREVLaFlTMkJnTDJ2cU1aSjcxbEs5OE5wODVISi1PdWhfTXpJS0pOMlRYd1UyRVQ4M09PRDlKM09VdHZHLWN2M2ZQY2lIZi1sdHVIVG1ENFJ2ZnU3S29IVVdQcWxwTnpZSS1aSUgwX1hleGI4NnBIWEEwV3ozcGlFY1p0V2xCZHc?oc=5\" target=\"_blank\">We\u2019re not intermediaries. We\u2019re infrastructure.</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Alliance magazine</font>",
+        "similarity_excluded": "Yes",
+        "score": 0,
+        "status": "skipped",
+        "tweet": null
     }
 ]
