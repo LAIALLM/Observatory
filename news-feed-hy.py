@@ -536,7 +536,12 @@ def count_replies_today(reply_log):
 def fetch_latest_tweets(user_id, max_results=5):
     """ Fetch the latest tweets from a specific user. (Limit: 1 request per 15 min) """
     try:
-        tweets = twitter_client.get_users_tweets(id=user_id, max_results=max_results, tweet_fields=["id", "text", "created_at"])
+        tweets = twitter_client.get_users_tweets(
+            id=user_id,
+            max_results=max_results,
+            tweet_fields=["id", "text", "created_at"],
+            exclude=["retweets", "replies"]
+        )
         return tweets.data if tweets.data else []
     except tweepy.errors.TweepyException as e:
         print(f"❌ Error fetching tweets for user {user_id}: {e}")
@@ -585,6 +590,10 @@ def reply_to_random_tweet():
     """ Randomly select a user, fetch their latest tweet, and reply. """
     if count_replies_today(load_reply_log()) >= REPLY_TWEETS_LIMIT:
         print(f"🚫 Reached daily reply limit ({REPLY_TWEETS_LIMIT}). Exiting.")
+        return
+
+    if not TARGET_ACCOUNTS:
+        print("⚠️ No TARGET_ACCOUNTS configured. Skipping reply run.")
         return
 
     # **Step 1: Randomly choose a user**
