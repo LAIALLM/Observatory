@@ -40,7 +40,8 @@ twitter_client = tweepy.Client(
 TARGET_ACCOUNTS = {
     "sama": "1605",        # Replace with actual user IDs
     "elonmusk": "44196397",    # Replace with actual user IDs
-    "stats_feed": "1335132884278108161"   # Replace with actual user IDs
+    "stats_feed": "1335132884278108161",   # Replace with actual user IDs
+    "balajis": "2178012643"
 }
 
 # =========================================================
