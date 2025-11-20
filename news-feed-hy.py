@@ -36,12 +36,12 @@ twitter_client = tweepy.Client(
     access_token_secret=TWITTER_ACCESS_SECRET
 )
 
-# **Accounts to Follow**
-# TARGET_ACCOUNTS = {
-#    "sama": "1605",        # Replace with actual user IDs
-#    "elonmusk": "44196397",    # Replace with actual user IDs
-#    "stats_feed": "1335132884278108161"   # Replace with actual user IDs
-#}
+# **Accounts to Follow** You can look up IDs with the X API or tools like tweeterid.com.
+TARGET_ACCOUNTS = {
+    "sama": "1605",        # Replace with actual user IDs
+    "elonmusk": "44196397",    # Replace with actual user IDs
+    "stats_feed": "1335132884278108161"   # Replace with actual user IDs
+}
 
 # =========================================================
 #                         RSS
