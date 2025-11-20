@@ -2527,5 +2527,12 @@
         "status": "posted",
         "tweet": "\ud83c\uddee\ud83c\uddf3 NEWS: Indores real estate set for unprecedented growth amid massive infrastructure push",
         "type": "news"
+    },
+    {
+        "link": null,
+        "date": "2025-11-20",
+        "status": "posted",
+        "tweet": "US \ud83c\uddfa\ud83c\uddf8 2025 energy regulations project $1.2B in added costs for Bitcoin mining infrastructure due to mandatory renewable sourcing and grid compliance.",
+        "type": "crypto"
     }
 ]
