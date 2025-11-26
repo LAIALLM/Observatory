@@ -73,24 +73,22 @@ RSS_FEEDS = [
 # =========================================================
 
 # Log file to track posted and filtered news
-LOG_FILE = "filtered_news.json"
+LOG_FILE = "parcely_news.json"
 RETENTION_DAYS = 10  # Remove news older than 10 days
 TWEET_THRESHOLD = 9 # Define score threshold for tweets
-REPLY_LOG_FILE = "replied_tweets.json"
+REPLY_LOG_FILE = "replied_parcely_tweets.json"
 
-# Random tweets probabilities
+# Random tweets probabilities (Parcely)
 RANDOM_NEWS = 0.2
-RANDOM_STATISTIC = 0.1
-RANDOM_INFRASTRUCTURE = 0.1
-RANDOM_CRYPTO = 0.2
-RANDOM_REPLY = 0.2 
-RANDOM_NONE = 0.2 
+RANDOM_STATISTIC = 0.2
+RANDOM_INFRASTRUCTURE = 0.2
+RANDOM_REPLY = 0.2
+RANDOM_NONE = 0.2
 
 # Daily tweet limits
-NEWS_TWEETS_LIMIT = 3  # Max news tweets per day
+NEWS_TWEETS_LIMIT = 2  # Max news tweets per day
 STAT_TWEETS_LIMIT = 1  # Max statistical tweets per day
 INFRA_TWEETS_LIMIT= 1
-CRYPTO_TWEETS_LIMIT= 1
 REPLY_TWEETS_LIMIT = 1
 
 # =========================================================
@@ -194,7 +192,10 @@ def save_processed_articles(processed):
 
 # Consolidated randomness function for post type
 def select_tweet_type():
-    return random.choices(["news", "statistical", "infrastructure", "crypto", "reply", "none"], [RANDOM_NEWS, RANDOM_STATISTIC, RANDOM_INFRASTRUCTURE, RANDOM_CRYPTO, RANDOM_REPLY, RANDOM_NONE])[0]
+    return random.choices(
+        ["news", "statistical", "infrastructure", "reply", "none"],
+        [RANDOM_NEWS, RANDOM_STATISTIC, RANDOM_INFRASTRUCTURE, RANDOM_REPLY, RANDOM_NONE]
+    )[0]
 
 # Count how many news tweets were posted today.
 def count_news_tweets_today(processed_articles):
@@ -210,11 +211,6 @@ def count_stat_tweets_today(processed_articles):
 def count_infra_tweets_today(processed_articles):
     today = datetime.utcnow().strftime("%Y-%m-%d")
     return sum(1 for article in processed_articles if article.get("date") == today and article.get("type") == "infrastructure")
-
-# Count how many crypto tweets were posted today.
-def count_crypto_tweets_today(processed_articles):
-    today = datetime.utcnow().strftime("%Y-%m-%d")
-    return sum(1 for article in processed_articles if article.get("date") == today and article.get("type") == "crypto")
 
 # =========================================================
 #                   NEWS FETCH + SCORING
