@@ -51,12 +51,13 @@ TARGET_ACCOUNTS = {
 # Google News + Industry-Specific RSS Feeds
 RSS_FEEDS = [
     
-    # Google News Feeds
-    "https://news.google.com/rss/search?q=construction+industry&hl=en-IN&gl=IN&ceid=IN:en",
-    "https://news.google.com/rss/search?q=infrastructure&hl=en-IN&gl=IN&ceid=IN:en",
-    "https://news.google.com/rss/search?q=urban+development&hl=en-IN&gl=IN&ceid=IN:en",
-    "https://news.google.com/rss/search?q=smart+city&hl=en-IN&gl=IN&ceid=IN:en",
-    "https://news.google.com/rss/search?q=new+city+urban+development&hl=en-IN&gl=IN&ceid=IN:en",
+    # Google News Feeds – WORLD / GLOBAL English edition
+    # Using hl=en-001 (English – World) and US edition as a neutral-ish global proxy
+    "https://news.google.com/rss/search?q=construction+industry&hl=en-001&gl=US&ceid=US:en",
+    "https://news.google.com/rss/search?q=infrastructure&hl=en-001&gl=US&ceid=US:en",
+    "https://news.google.com/rss/search?q=urban+development&hl=en-001&gl=US&ceid=US:en",
+    "https://news.google.com/rss/search?q=smart+city&hl=en-001&gl=US&ceid=US:en",
+    "https://news.google.com/rss/search?q=new+city+urban+development&hl=en-001&gl=US&ceid=US:en",
 
     # Industry-Specific Construction & Infrastructure News Feeds
     "https://www.constructiondive.com/feeds/news/",  # Construction Dive
