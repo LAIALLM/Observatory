@@ -67,5 +67,12 @@
         "status": "posted",
         "tweet": "\ud83c\uddf0\ud83c\uddf7 NEWS: Yongsan international business district breaks ground, sparking a rally in Seoul housing prices",
         "type": "news"
+    },
+    {
+        "link": null,
+        "date": "2025-11-27",
+        "status": "posted",
+        "tweet": "Bitcoin mining hardware costs hit $18 billion globally in 2024, projected to reach $22 billion in 2025 as ASICs upgrade for post-halving efficiency.",
+        "type": "crypto"
     }
 ]
