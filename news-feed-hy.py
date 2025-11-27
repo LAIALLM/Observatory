@@ -84,19 +84,19 @@ TWEET_THRESHOLD = 9 # Define score threshold for tweets
 REPLY_LOG_FILE = "replied_tweets.json"
 
 # Random tweets probabilities
-RANDOM_NEWS = 0
-RANDOM_STATISTIC = 0
-RANDOM_INFRASTRUCTURE = 0
-RANDOM_CRYPTO = 0
-RANDOM_REPLY = 1
-RANDOM_NONE = 0
+RANDOM_NEWS = 0.2
+RANDOM_STATISTIC = 0.1
+RANDOM_INFRASTRUCTURE = 0.1
+RANDOM_CRYPTO = 0.2
+RANDOM_REPLY = 0.2 
+RANDOM_NONE = 0.2
 
 # Daily tweet limits
 NEWS_TWEETS_LIMIT = 3  # Max news tweets per day
 STAT_TWEETS_LIMIT = 1  # Max statistical tweets per day
 INFRA_TWEETS_LIMIT= 1
 CRYPTO_TWEETS_LIMIT= 1
-REPLY_TWEETS_LIMIT = 1
+REPLY_TWEETS_LIMIT = 2
 
 # =========================================================
 #                        HELPERS
