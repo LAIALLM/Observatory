@@ -84,12 +84,12 @@ TWEET_THRESHOLD = 9 # Define score threshold for tweets
 REPLY_LOG_FILE = "replied_tweets.json"
 
 # Random tweets probabilities
-RANDOM_NEWS = 0.2
-RANDOM_STATISTIC = 0.1
-RANDOM_INFRASTRUCTURE = 0.1
-RANDOM_CRYPTO = 0.2
-RANDOM_REPLY = 0.2 
-RANDOM_NONE = 0.2
+RANDOM_NEWS = 0
+RANDOM_STATISTIC = 0
+RANDOM_INFRASTRUCTURE = 0
+RANDOM_CRYPTO = 0
+RANDOM_REPLY = 1
+RANDOM_NONE = 0
 
 # Daily tweet limits
 NEWS_TWEETS_LIMIT = 3  # Max news tweets per day
@@ -644,7 +644,7 @@ def reply_to_random_tweet():
     # **Step 5: Post the reply**
     try:
         twitter_client.create_tweet(
-            text=f"@{username} {reply_text}",
+            text=reply_text,  # Removed the @{username} prefix
             in_reply_to_tweet_id=tweet_id
         )
         print(f"✅ Replied to @{username}: {reply_text}")
