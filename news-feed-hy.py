@@ -222,10 +222,10 @@ def count_crypto_tweets_today(processed_articles):
     return sum(1 for article in processed_articles if article.get("date") == today and article.get("type") == "crypto")
 
 # Count how many reply tweets were posted today.
-def count_replies_today():
-    reply_log = load_reply_log()
+def count_replies_today(reply_log):
     today = datetime.utcnow().strftime("%Y-%m-%d")
     return sum(1 for entry in reply_log.values() if entry["date"] == today)
+
 
 # =========================================================
 #                   NEWS FETCH + SCORING
