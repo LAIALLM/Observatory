@@ -27,6 +27,11 @@ jobs:
 
       - name: 📦 Install Dependencies
         run: pip install --upgrade requests tweepy openai feedparser
+        
+      - name: 📄 Initialize Log Files
+        run: |
+          if [ ! -f filtered_news.json ]; then echo '[]' > filtered_news.json; fi
+          if [ ! -f replied_tweets.json ]; then echo '{}' > replied_tweets.json; fi
 
       - name: 🚀 Run Script
         env:
