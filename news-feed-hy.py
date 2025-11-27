@@ -537,8 +537,13 @@ def load_reply_log():
 
 def save_reply_log(log_data):
     """ Save replied tweets to prevent duplicate replies. """
-    with open(REPLY_LOG_FILE, "w") as file:
-        json.dump(log_data, file, indent=4)
+    print("💾 Writing to replied_tweets.json...")
+    try:
+        with open(REPLY_LOG_FILE, "w") as file:
+            json.dump(log_data, file, indent=4)
+        print("✅ Successfully wrote to replied_tweets.json!")
+    except Exception as e:
+        print(f"❌ Error writing to replied_tweets.json: {e}")
 
 def count_replies_today(reply_log):
     """ Count today's replies to ensure we stay under the daily limit. """
