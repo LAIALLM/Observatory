@@ -29,12 +29,15 @@ XAI_MODEL = "grok-4-fast-reasoning"        # Replaces Grok-2-1212
 # =========================================================
 
 # Authenticate Twitter API (Using API v2)
+bearer_client = tweepy.Client(bearer_token=os.getenv("TWITTER_BEARER_TOKEN"))  # For reads (OAuth 2.0 app-only)
+
+# Authenticate Twitter API (Using API v2)
 twitter_client = tweepy.Client(
     consumer_key=TWITTER_API_KEY,
     consumer_secret=TWITTER_SECRET,
     access_token=TWITTER_ACCESS_TOKEN,
     access_token_secret=TWITTER_ACCESS_SECRET
-)
+)   # For writes (OAuth 1.0a user context)
 
 # **Accounts to Follow** You can look up IDs with the X API or tools like tweeterid.com. https://twiteridfinder.com/
 TARGET_ACCOUNTS = {
@@ -544,7 +547,7 @@ def count_replies_today(reply_log):
 def fetch_latest_tweets(user_id, max_results=5):
     """ Fetch the latest tweets from a specific user. (Limit: 1 request per 15 min) """
     try:
-        tweets = twitter_client.get_users_tweets(
+        tweets = bearer_client.get_users_tweets(  # Use Bearer for reads
             id=user_id,
             max_results=max_results,
             tweet_fields=["id", "text", "created_at"],
