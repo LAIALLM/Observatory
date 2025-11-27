@@ -48,6 +48,9 @@ jobs:
         run: |
           git config --global user.email "github-actions@github.com"
           git config --global user.name "GitHub Actions"
-          git add filtered_news.json replied_tweets.json || true  # Ignore if missing
-          git diff --quiet && echo "No changes to commit" || (git commit -m "Update filtered_news.json & replied_tweets.json [Automated]" && git push origin main)
-
+      
+          git add filtered_news.json replied_tweets.json || true  # stage files
+      
+          # Check if there is anything staged
+          git diff --cached --quiet && echo "No changes to commit" || \
+            (git commit -m "Update filtered_news.json & replied_tweets.json [Automated]" && git push origin main)
