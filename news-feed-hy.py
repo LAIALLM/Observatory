@@ -30,7 +30,9 @@ XAI_MODEL = "grok-4-fast-reasoning"        # Replaces Grok-2-1212
 # =========================================================
 
 # Authenticate Twitter API (Using API v2)
-bearer_client = tweepy.Client(bearer_token=os.getenv("TWITTER_BEARER_TOKEN"))  # For reads (OAuth 2.0 app-only)
+bearer_client = tweepy.Client(
+    bearer_token=TWITTER_BEARER_TOKEN
+)  # For reads (OAuth 2.0 app-only)
 
 # Authenticate Twitter API (Using API v2)
 twitter_client = tweepy.Client(
@@ -79,9 +81,9 @@ RSS_FEEDS = [
 
 # Log file to track posted and filtered news
 LOG_FILE = "filtered_news.json"
+REPLY_LOG_FILE = "replied_tweets.json"
 RETENTION_DAYS = 10  # Remove news older than 10 days
 TWEET_THRESHOLD = 9 # Define score threshold for tweets
-REPLY_LOG_FILE = "replied_tweets.json"
 
 # Random tweets probabilities
 RANDOM_NEWS = 0.2
@@ -179,23 +181,6 @@ def save_processed_articles(processed):
         print(f"❌ Error writing to JSON: {e}")
         return  # Stop execution if writing fails
 
-    # Ensure GitHub Actions commits & pushes changes
-    if os.getenv("GITHUB_ACTIONS"):
-        print("🔄 Committing changes to GitHub...")
-        os.system("git config --global user.email 'github-actions@github.com'")
-        os.system("git config --global user.name 'GitHub Actions'")
-        os.system("git add filtered_news.json")
-        commit_result = os.system("git commit -m 'Update filtered_news.json [Automated]'")
-        
-        if commit_result != 0:
-            print("⚠️ No changes to commit. Skipping push.")
-            return
-
-        push_result = os.system("git push origin main")
-        if push_result != 0:
-            print("❌ Push failed, check GitHub Actions permissions.")
-        else:
-            print("✅ Changes committed to GitHub.")
 
 # Consolidated randomness function for post type
 def select_tweet_type():
@@ -221,10 +206,6 @@ def count_crypto_tweets_today(processed_articles):
     today = datetime.utcnow().strftime("%Y-%m-%d")
     return sum(1 for article in processed_articles if article.get("date") == today and article.get("type") == "crypto")
 
-# Count how many reply tweets were posted today.
-def count_replies_today(reply_log):
-    today = datetime.utcnow().strftime("%Y-%m-%d")
-    return sum(1 for entry in reply_log.values() if entry["date"] == today)
 
 
 # =========================================================
@@ -546,7 +527,6 @@ def save_reply_log(log_data):
         print(f"❌ Error writing to replied_tweets.json: {e}")
 
 def count_replies_today(reply_log):
-    """ Count today's replies to ensure we stay under the daily limit. """
     today = datetime.utcnow().strftime("%Y-%m-%d")
     return sum(1 for entry in reply_log.values() if entry["date"] == today)
 
