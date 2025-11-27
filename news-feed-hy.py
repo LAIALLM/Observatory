@@ -217,6 +217,12 @@ def count_crypto_tweets_today(processed_articles):
     today = datetime.utcnow().strftime("%Y-%m-%d")
     return sum(1 for article in processed_articles if article.get("date") == today and article.get("type") == "crypto")
 
+# Count how many reply tweets were posted today.
+def count_replies_today():
+    reply_log = load_reply_log()
+    today = datetime.utcnow().strftime("%Y-%m-%d")
+    return sum(1 for entry in reply_log.values() if entry["date"] == today)
+
 # =========================================================
 #                   NEWS FETCH + SCORING
 # =========================================================
@@ -710,14 +716,6 @@ if __name__ == "__main__":
         print(f"🚫 Reached daily reply tweet limit ({REPLY_TWEETS_LIMIT}). Exiting to save resources.")
         exit(0)
 
-    # Reply tweet
-    elif tweet_type == "reply":
-        if today_reply_count >= REPLY_TWEETS_LIMIT:
-            print(f"🚫 Reached daily reply limit ({REPLY_TWEETS_LIMIT}). Exiting.")
-        else:
-            reply_to_random_tweet()  # ✅ Reply function executes
-        exit(0)  # ✅ Ensure the script stops after replying
-
     # Tweet types
     if tweet_type == "news":
         latest_news = get_latest_news()
@@ -858,6 +856,8 @@ if __name__ == "__main__":
                     "type": "crypto"
                 })    
 
+    elif tweet_type == "reply":
+        reply_to_random_tweet()
 
     else:
         print("🤖 No tweet posted in this run to simulate human-like activity.")
