@@ -544,15 +544,6 @@ def fetch_latest_tweets(user_id, max_results=5):
         print(f"❌ Error fetching tweets for user {user_id}: {e}")
         return []
 
-def pick_most_recent_tweet(all_tweets, reply_log):
-    """ Select the most recent new tweet that hasn't been replied to yet. """
-    new_tweets = [tweet for tweet in all_tweets if str(tweet.id) not in reply_log]
-    
-    if not new_tweets:
-        print("🔍 No new tweets available to reply to.")
-        return None
-
-    return new_tweets[0]  # Pick the most recent tweet
 
 def generate_grok_reply(tweet_text, username):
     """ Use Grok-2-1212 to generate a smart, relevant reply based on the tweet. """
@@ -585,8 +576,11 @@ def generate_grok_reply(tweet_text, username):
     return response.choices[0].message.content.strip()
 
 def reply_to_random_tweet():
-    """ Randomly select a user, fetch their latest tweet, and reply. """
-    if count_replies_today(load_reply_log()) >= REPLY_TWEETS_LIMIT:
+    """ Randomly select a user, fetch their latest tweet, and reply once per tweet. """
+    reply_log = load_reply_log()
+
+    # Daily limit check (using already loaded log)
+    if count_replies_today(reply_log) >= REPLY_TWEETS_LIMIT:
         print(f"🚫 Reached daily reply limit ({REPLY_TWEETS_LIMIT}). Exiting.")
         return
 
@@ -606,12 +600,18 @@ def reply_to_random_tweet():
         print(f"🔍 No tweets found for @{user_to_fetch}.")
         return
 
-    # **Step 3: Pick the most recent tweet**
-    reply_log = load_reply_log()
-    selected_tweet = pick_most_recent_tweet(all_tweets, reply_log)
-    if not selected_tweet:
+    # Build set of tweet IDs we've already replied to
+    replied_ids = set(reply_log.keys())
+
+    # **Step 3: Filter out tweets we've already replied to**
+    new_tweets = [t for t in all_tweets if str(t.id) not in replied_ids]
+
+    if not new_tweets:
+        print(f"🔁 All recent tweets from @{user_to_fetch} already replied to. Skipping this run.")
         return
 
+    # Pick the most recent new tweet
+    selected_tweet = new_tweets[0]
     tweet_id = selected_tweet.id
     tweet_text = selected_tweet.text
     username = user_to_fetch  # Using stored username
@@ -625,16 +625,18 @@ def reply_to_random_tweet():
     # **Step 5: Post the reply**
     try:
         twitter_client.create_tweet(
-            text=reply_text,  # Removed the @{username} prefix
+            text=reply_text,  # No @{username} prefix to keep it natural
             in_reply_to_tweet_id=tweet_id
         )
         print(f"✅ Replied to @{username}: {reply_text}")
 
-        # **Step 6: Log replied tweet**
+        # **Step 6: Log replied tweet (now with full texts)**
         reply_log[str(tweet_id)] = {
             "date": datetime.utcnow().strftime("%Y-%m-%d"),
             "username": username,
-            "tweet_id": tweet_id
+            "tweet_id": tweet_id,
+            "source_text": tweet_text,
+            "reply_text": reply_text
         }
         save_reply_log(reply_log)
 
