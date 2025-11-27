@@ -583,6 +583,7 @@ def generate_grok_reply(tweet_text, username):
     - Ensure the response is **engaging, contextually relevant, and under 280 characters.**
     - The reply should **enhance the conversation** by providing a valuable insight related to the tweet's topic.
     - **Maintain a professional yet conversational tone.**
+    - **DO NOT mention or @ the username to keep it natural.**
     - **DO NOT use hashtags, emojis, or generic phrases.**
     - If no suitable statistic is available, provide a **thoughtful industry insight, preferably related to one of @{username}'s companies.**
 
