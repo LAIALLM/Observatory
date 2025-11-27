@@ -38,9 +38,9 @@ jobs:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
         run: python news-feed-hy.py  # Runs your bot script
 
-      - name: 🔄 Commit and Push Updates (filtered_news.json)
+      - name: 🔄 Commit and Push Updates (filtered_news.json & replied_tweets.json)
         run: |
           git config --global user.email "github-actions@github.com"
           git config --global user.name "GitHub Actions"
-          git add filtered_news.json
-          git diff --quiet && echo "No changes to commit" || (git commit -m "Update filtered_news.json [Automated]" && git push origin main)
+          git add filtered_news.json replied_tweets.json
+          git diff --quiet && echo "No changes to commit" || (git commit -m "Update filtered_news.json & replied_tweets.json [Automated]" && git push origin main)
