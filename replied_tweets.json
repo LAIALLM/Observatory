@@ -31,5 +31,12 @@
         "tweet_id": 1991597415888220596,
         "source_text": "A first preview of something we expect to see a lot more of soon: https://t.co/IOqf0tF7TB",
         "reply_text": "Exciting preview\u2014Gartner predicts 80% of enterprises will use generative AI by 2026, driving exactly these kinds of rapid innovations."
+    },
+    "1994518037614268565": {
+        "date": "2025-11-29",
+        "username": "elonmusk",
+        "tweet_id": 1994518037614268565,
+        "source_text": "SpaceX is accelerating rapidly. \n\nWhen Starship is launching several times a day in a few years, SpaceX will be ~99% of all Earth payload mass to orbit, even if the others triple their current launch rate. https://t.co/0uRfdek2pf",
+        "reply_text": "That's a game-changer. For perspective, Starship's 150-tonne LEO capacity per flight already outpaces NASA's SLS, and at 3+ daily launches, annual payload could hit 160,000+ tonnes\u2014dwarfing today's global total of ~1,200 tonnes. Reusability unlocks it all."
     }
 }
