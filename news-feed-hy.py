@@ -360,7 +360,7 @@ def generate_statistical_tweet(selected_category):
         3: """Generate a ranked list of the top 5 or, if space permits, top 10, ensuring the tweet is under 280 characters.
     
 Format:
-<One sentence overview of the ranking outcome>
+<Very short overview of the metric description>
 
 1. City/Country
 2. City/Country
@@ -458,7 +458,7 @@ CRYPTO_TWEET_FORMATS = {
     3: """Generate a ranked list ensuring the tweet is under 280 characters.
     
 Format:
-<One sentence overview of the ranking outcome>
+<Very short overview of the metric description>
 
 1. Item
 2. Item
