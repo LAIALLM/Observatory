@@ -537,13 +537,13 @@ def count_replies_today(reply_log):
 def fetch_latest_tweets(user_id, max_results=REPLY_FETCH_LIMIT):
     """Fetch the latest tweets from a specific user."""
     try:
-        resp = bearer_client.get_users_tweets(
+        tweets = bearer_client.get_users_tweets(
             id=user_id,
             max_results=max_results,
             tweet_fields=["id", "text", "created_at"],
             exclude=["retweets", "replies"],
         )
-        return resp.data or []
+        return tweets.data if tweets.data else []
     except tweepy.errors.TweepyException as e:
         print(f"❌ Error fetching tweets for user {user_id}: {e}")
         return []
