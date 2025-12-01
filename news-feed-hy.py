@@ -51,6 +51,9 @@ TARGET_ACCOUNTS = {
     "balajis": "2178012643"
 }
 
+# How many recent tweets we READ per reply run
+REPLY_FETCH_LIMIT = 1  # keep at 1 on Free tier to save reads
+
 # =========================================================
 #                         RSS
 # =========================================================
@@ -99,7 +102,7 @@ NEWS_TWEETS_LIMIT = 3  # Max news tweets per day
 STAT_TWEETS_LIMIT = 1  # Max statistical tweets per day
 INFRA_TWEETS_LIMIT= 1
 CRYPTO_TWEETS_LIMIT= 1
-REPLY_TWEETS_LIMIT = 1
+REPLY_TWEETS_LIMIT = 2
 
 # =========================================================
 #                        HELPERS
@@ -531,16 +534,16 @@ def count_replies_today(reply_log):
     today = datetime.utcnow().strftime("%Y-%m-%d")
     return sum(1 for entry in reply_log.values() if entry["date"] == today)
 
-def fetch_latest_tweets(user_id, max_results=1):  # prior 5 but takes a lot of resources from free X API
-    """ Fetch the latest tweets from a specific user. (Limit: 1 request per 15 min) """
+def fetch_latest_tweets(user_id, max_results=REPLY_FETCH_LIMIT):
+    """Fetch the latest tweets from a specific user."""
     try:
-        tweets = bearer_client.get_users_tweets(  # Use Bearer for reads
+        resp = bearer_client.get_users_tweets(
             id=user_id,
             max_results=max_results,
             tweet_fields=["id", "text", "created_at"],
-            exclude=["retweets", "replies"]
+            exclude=["retweets", "replies"],
         )
-        return tweets.data if tweets.data else []
+        return resp.data or []
     except tweepy.errors.TweepyException as e:
         print(f"❌ Error fetching tweets for user {user_id}: {e}")
         return []
@@ -595,7 +598,7 @@ def reply_to_random_tweet():
     print(f"🔍 Fetching tweets from @{user_to_fetch}...")
 
     # **Step 2: Fetch their latest tweets**
-    all_tweets = fetch_latest_tweets(user_id, max_results=5)
+    all_tweets = fetch_latest_tweets(user_id)  # uses REPLY_FETCH_LIMIT
 
     if not all_tweets:
         print(f"🔍 No tweets found for @{user_to_fetch}.")
