@@ -1002,6 +1002,11 @@ def process_mention_replies():
         if tid in log or tweet.author_id == user_id:
             continue
 
+        # Blocks: crypto spam (50+ tags) + Grok/Claude/Gemini replies (2 tags) + any mass-tag nonsense
+        if len(re.findall(r'@\w+', tweet.text)) > 1:
+            print(f"Blocked mention with multiple @ tags ({tweet.text[:100]}...)")
+            continue
+
         reply_text = openai.OpenAI(api_key=XAI_API_KEY, base_url="https://api.x.ai/v1").chat.completions.create(
             model=XAI_MODEL,
             messages=[{
