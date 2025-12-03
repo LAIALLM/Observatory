@@ -1,4 +1,4 @@
-name: Auto-Post Construction News HYBRID
+name: LAIA Agent Construction and Infrastructures HYBRID
 
 on:
   schedule:
@@ -23,15 +23,22 @@ jobs:
       - name: 🏗️ Set Up Python
         uses: actions/setup-python@v4
         with:
-          python-version: "3.10"
+          python-version: "3.11"
 
       - name: 📦 Install Dependencies
-        run: pip install --upgrade requests tweepy openai feedparser
+        run: |
+          python -m pip install --upgrade pip
+          pip install --upgrade tweepy>=4.14.0 openai feedparser requests
         
       - name: 📄 Initialize Log Files
         run: |
-          if [ ! -f filtered_news.json ]; then echo '[]' > filtered_news.json; fi
-          if [ ! -f replied_tweets.json ]; then echo '{}' > replied_tweets.json; fi
+          [ -f filtered_news.json ]           || echo '[]'  > filtered_news.json
+          [ -f replied_tweets.json ]           || echo '{}' > replied_tweets.json
+          [ -f target_engagement_tweets.json ] || echo '{}' > target_engagement_tweets.json
+          [ -f mentions_reply_log.json ]       || echo '{}' > mentions_reply_log.json
+          [ -f last_mentions_check.txt ]       || echo "0"   > last_mentions_check.txt
+
+          echo "All log files initialized successfully"
 
       - name: 🚀 Run Script
         env:
@@ -49,13 +56,17 @@ jobs:
           git config --global user.email "github-actions@github.com"
           git config --global user.name "GitHub Actions"
 
-          # Stage both log files (if they exist)
-          git add filtered_news.json replied_tweets.json || true  # stage files
-      
-          # Check if there is anything staged
+          # Add ALL possible log files
+          git add filtered_news.json || true
+          git add replied_tweets.json || true
+          git add target_engagement_tweets.json || true
+          git add mentions_reply_log.json || true
+          git add last_mentions_check.txt || true
+
+          # Only commit if something changed
           if git diff --cached --quiet; then
             echo "No changes to commit"
           else
-            git commit -m "Update filtered_news.json & replied_tweets.json [Automated]"
+            git commit -m "Update logs: news, replies, and engagement tweets [Automated]"
             git push origin main
           fi
