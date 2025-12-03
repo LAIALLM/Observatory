@@ -44,15 +44,69 @@ twitter_client = tweepy.Client(
 
 # **Accounts to Follow** You can look up IDs with the X API or tools like tweeterid.com. https://twiteridfinder.com/
 TARGET_ACCOUNTS = {
-    "sama": "1605",        # Replace with actual user IDs
-    "elonmusk": "44196397",    # Replace with actual user IDs
-    "stats_feed": "1335132884278108161",   # Replace with actual user IDs
+    "sama": "1605",
+    "balajis": "2178012643",
+    "elonmusk": "44196397",   
+    "stats_feed": "1335132884278108161",
+    "PaulG": "183749519",        # Paulg688@hotmail.com
+    "pmarca": "5943622",   # Pmarca77@gmail.com
     "VitalikButerin": "295218901",
-    "balajis": "2178012643"
+    "a16z": "64844802", # AZ509@outlook.com
+    "naval": "745273" # Naval999@outlook.com
 }
 
 # How many recent tweets we READ per reply run
 REPLY_FETCH_LIMIT = 5  # 5 minimum enforced by X
+
+
+# =========================================================
+#                     STORAGE + LIMITS
+# =========================================================
+
+# Log files to track tweets and news
+LOG_FILE = "filtered_news.json"
+REPLY_LOG_FILE = "replied_tweets.json"
+TARGET_TWEETS_LOG = "target_engagement_tweets.json" 
+
+MENTIONS_REPLY_LOG = "mentions_reply_log.json"
+MENTIONS_RATE_LIMIT_FILE = "last_mentions_check.txt"     #limit for free tier
+
+RETENTION_DAYS = 10  # Remove news older than 10 days
+
+#SCORING
+NEWS_MIN_SCORE = 9   # Minimum score to tweet news
+REPLY_MIN_SCORE = 2   # Minimum score to reply to a target account tweet
+QUOTE_MIN_SCORE = 6   # 9–10 → Quote with AI comment
+REPOST_MIN_SCORE = 4   # 7–10 → Native repost
+LIKE_MIN_SCORE = 3   # 5–10 → Like (or everything if you want)
+
+# Random tweets probabilities 
+RANDOM_NEWS = 0.2
+RANDOM_STATISTIC = 0.1
+RANDOM_INFRASTRUCTURE = 0.1
+RANDOM_CRYPTO = 0.1
+RANDOM_REPLY = 0.2
+RANDOM_ENGAGEMENT = 0.2   
+RANDOM_NONE = 0.1   
+
+# Random engagement probabilities
+ENGAGEMENT_QUOTE_WEIGHT    = 0.5   # ← 85% chance to QUOTE (with AI comment)
+ENGAGEMENT_REPOST_WEIGHT  = 0.5   # ← 15% chance to native REPOST
+ENGAGEMENT_LIKE_WEIGHT    = 0
+
+# Daily tweet limits
+NEWS_TWEETS_LIMIT = 3  # Max news tweets per day
+STAT_TWEETS_LIMIT = 1  # Max statistical tweets per day
+INFRA_TWEETS_LIMIT= 1
+CRYPTO_TWEETS_LIMIT= 1
+REPLY_TWEETS_LIMIT = 1
+MENTIONS_REPLY_DAILY_LIMIT = 6
+
+# Daily limits for retweets/quotes (adjust as needed)
+DAILY_QUOTE_LIMIT = 1
+DAILY_REPOST_LIMIT = 2
+DAILY_LIKE_LIMIT = 0   # Very safe
+
 
 # =========================================================
 #                         RSS
@@ -78,31 +132,6 @@ RSS_FEEDS = [
     "https://www.urbantransportnews.com/feed",  # Urban Transport News
     "https://infrastructuremagazine.com.au/feed/",  # Infrastructure Intelligence
 ]
-
-# =========================================================
-#                     STORAGE + LIMITS
-# =========================================================
-
-# Log file to track posted and filtered news
-LOG_FILE = "filtered_news.json"
-REPLY_LOG_FILE = "replied_tweets.json"
-RETENTION_DAYS = 10  # Remove news older than 10 days
-TWEET_THRESHOLD = 9 # Define score threshold for tweets
-
-# Random tweets probabilities
-RANDOM_NEWS = 0.2
-RANDOM_STATISTIC = 0.1
-RANDOM_INFRASTRUCTURE = 0.1
-RANDOM_CRYPTO = 0.2
-RANDOM_REPLY = 0.2 
-RANDOM_NONE = 0.2
-
-# Daily tweet limits
-NEWS_TWEETS_LIMIT = 3  # Max news tweets per day
-STAT_TWEETS_LIMIT = 1  # Max statistical tweets per day
-INFRA_TWEETS_LIMIT= 1
-CRYPTO_TWEETS_LIMIT= 1
-REPLY_TWEETS_LIMIT = 1
 
 # =========================================================
 #                        HELPERS
@@ -134,7 +163,7 @@ def is_similar_news(new_title, new_summary, processed_articles, threshold=0.6, l
     # ✅ Fix: Ensure scores are valid numbers before filtering
     recent_articles = [article for article in processed_articles 
                        if isinstance(article.get("score", 0), (int, float)) 
-                       and article.get("score", 0) >= TWEET_THRESHOLD][-limit:]
+                       and article.get("score", 0) >= NEWS_MIN_SCORE][-limit:]
 
     for article in recent_articles:
         old_keywords = extract_key_terms(article.get("tweet", "")) | extract_key_terms(article.get("title", "")) | extract_key_terms(article.get("summary", ""))
@@ -184,11 +213,70 @@ def save_processed_articles(processed):
     except Exception as e:
         print(f"❌ Error writing to JSON: {e}")
         return  # Stop execution if writing fails
+        
+# HELPER FOR QUOTE REPOST / REPOST / LIKES
+def load_target_tweets():
+    if os.path.exists(TARGET_TWEETS_LOG):
+        try:
+            with open(TARGET_TWEETS_LOG, "r") as f:
+                return json.load(f)
+        except:
+            return {}
+    return {}
 
+def save_target_tweets(data):
+    with open(TARGET_TWEETS_LOG, "w") as f:
+        json.dump(data, f, indent=4)
+
+def cleanup_target_tweets():
+    data = load_target_tweets()
+    cutoff = (datetime.utcnow() - timedelta(days=RETENTION_DAYS)).strftime("%Y-%m-%d")
+    cleaned = {tid: entry for tid, entry in data.items() if entry.get("date", "0000-00-00") >= cutoff}
+    save_target_tweets(cleaned)
+    return cleaned
+
+# HELPER FOR REPLY MENTION
+def load_mentions_reply_log():
+    if os.path.exists(MENTIONS_REPLY_LOG):
+        try:
+            with open(MENTIONS_REPLY_LOG, "r") as f:
+                return json.load(f)
+        except:
+            return {}
+    return {}
+
+def save_mentions_reply_log(data):
+    try:
+        with open(MENTIONS_REPLY_LOG, "w") as f:
+            json.dump(data, f, indent=4)
+        print(f"Saved {MENTIONS_REPLY_LOG}")
+    except Exception as e:
+        print(f"Failed to save {MENTIONS_REPLY_LOG}: {e}")
+
+# Check if we can fetch mentions (Free tier: 1 request every 15 minutes)
+def can_check_mentions():
+    if not os.path.exists(MENTIONS_RATE_LIMIT_FILE):
+        print("DEBUG: No rate limit file exists, allowing check.")
+        return True
+    try:
+        last_check = float(open(MENTIONS_RATE_LIMIT_FILE).read().strip())
+        time_since = time.time() - last_check
+        print(f"DEBUG: Last check {time_since:.0f} seconds ago.")
+        return time_since >= 960  # Increased to 16 min for safety
+    except Exception as e:
+        print(f"DEBUG: Error reading rate limit file: {e}. Allowing check.")
+        return True
+
+def update_mentions_timestamp():
+    try:
+        with open(MENTIONS_RATE_LIMIT_FILE, "w") as f:
+            f.write(str(time.time()))
+    except Exception as e:
+        print(f"Failed to update mentions timestamp: {e}")
 
 # Consolidated randomness function for post type
 def select_tweet_type():
-    return random.choices(["news", "statistical", "infrastructure", "crypto", "reply", "none"], [RANDOM_NEWS, RANDOM_STATISTIC, RANDOM_INFRASTRUCTURE, RANDOM_CRYPTO, RANDOM_REPLY, RANDOM_NONE])[0]
+    return random.choices(["news", "statistical", "infrastructure", "crypto", "reply", "engagement", "none"], [RANDOM_NEWS, RANDOM_STATISTIC, RANDOM_INFRASTRUCTURE, RANDOM_CRYPTO, RANDOM_REPLY, RANDOM_ENGAGEMENT, RANDOM_NONE])[0]
 
 # Count how many news tweets were posted today.
 def count_news_tweets_today(processed_articles):
@@ -210,6 +298,15 @@ def count_crypto_tweets_today(processed_articles):
     today = datetime.utcnow().strftime("%Y-%m-%d")
     return sum(1 for article in processed_articles if article.get("date") == today and article.get("type") == "crypto")
 
+# Count how many crypto tweets were posted today.
+def count_engagement_action(data, action):
+    today = datetime.utcnow().strftime("%Y-%m-%d")
+    return sum(1 for entry in data.values() if entry.get("date") == today and entry.get("action") == action)
+
+# Count how many real @-mention replies we made today
+def count_mentions_replies_today(log):
+    today = datetime.utcnow().strftime("%Y-%m-%d")
+    return sum(1 for entry in log.values() if entry.get("date") == today)
 
 
 # =========================================================
@@ -390,12 +487,17 @@ Format:
     - **Use proper line breaks for readability.** If the tweet contains multiple paragraphs, insert a blank line between them.
     """
 
-    client = openai.OpenAI(api_key=OPENAI_API_KEY)
+    client = openai.OpenAI(
+        api_key=XAI_API_KEY,
+        base_url="https://api.x.ai/v1"
+    )
     response = client.chat.completions.create(
-        model=OPENAI_MODEL,
+        model=XAI_MODEL,
         messages=[{"role": "user", "content": prompt}]
     )
-    return response.choices[0].message.content.strip()
+
+    tweet = response.choices[0].message.content.strip()
+    return tweet[:280]  # safety: hard cap at 280 chars
 
 # =========================================================
 #      AI: INFRASTRUCTURE TWEET GENERATORS
@@ -535,19 +637,49 @@ def count_replies_today(reply_log):
     return sum(1 for entry in reply_log.values() if entry["date"] == today)
 
 def fetch_latest_tweets(user_id, max_results=REPLY_FETCH_LIMIT):
-    """Fetch the latest tweets from a specific user."""
     try:
         tweets = bearer_client.get_users_tweets(
             id=user_id,
             max_results=max_results,
-            tweet_fields=["id", "text", "created_at"],
-            exclude=["retweets", "replies"],
+            tweet_fields=["text", "created_at"],
+            exclude=["retweets", "replies"]
         )
-        return tweets.data if tweets.data else []
-    except tweepy.errors.TweepyException as e:
-        print(f"❌ Error fetching tweets for user {user_id}: {e}")
-        return []
+        if not tweets.data:
+            return []
 
+        log = load_target_tweets()
+        today = datetime.utcnow().strftime("%Y-%m-%d")
+        saved = 0
+
+        for tweet in tweets.data:
+            tid = str(tweet.id)
+            if tid in log:
+                continue  # already have it
+
+            # Score relevance immediately
+            score = classify_mention_relevance(tweet.text)
+            handle = next((k for k, v in TARGET_ACCOUNTS.items() if v == user_id), "unknown")
+
+            log[tid] = {
+                "tweet_id": tid,
+                "text": tweet.text,
+                "author_id": user_id,
+                "author_handle": handle,
+                "date": today,
+                "relevance_score": score,   # ← now 0–10 integer
+                "action": None
+            }
+            saved += 1
+
+        if saved > 0:
+            save_target_tweets(log)
+            print(f"Saved {saved} new tweets with relevance scores")
+
+        return tweets.data
+
+    except Exception as e:
+        print(f"Error fetching tweets: {e}")
+        return []
 
 def generate_grok_reply(tweet_text, username):
     """ Use Grok-2-1212 to generate a smart, relevant reply based on the tweet. """
@@ -564,21 +696,18 @@ def generate_grok_reply(tweet_text, username):
 
     **Tweet:** "{tweet_text}"
 
-    **Your Reply:**
+    Reply directly with only the final tweet text, nothing else:
     """
 
-    client = openai.OpenAI(
-        api_key=XAI_API_KEY,  # Using xAI API key
-        base_url="https://api.x.ai/v1"  # xAI endpoint
-    )
-
+    client = openai.OpenAI(api_key=XAI_API_KEY, base_url="https://api.x.ai/v1")
     response = client.chat.completions.create(
         model=XAI_MODEL,
-        messages=[{"role": "user", "content": prompt}]
+        messages=[{"role": "user", "content": prompt}],
+        temperature=0.7,
+        max_tokens=300
     )
-
     return response.choices[0].message.content.strip()
-
+    
 def reply_to_random_tweet():
     """ Randomly select a user, fetch their latest tweet, and reply once per tweet. """
     reply_log = load_reply_log()
@@ -614,10 +743,18 @@ def reply_to_random_tweet():
         print(f"🔁 All recent tweets from @{user_to_fetch} already replied to. Skipping this run.")
         return
 
-    # Pick the most recent new tweet
+    # # SMART FILTER: with a score over defined and pick the most recent new tweet
     selected_tweet = new_tweets[0]
-    tweet_id = selected_tweet.id
-    tweet_text = selected_tweet.text
+    tweet_id = selected_tweet.id                  # ← fixed
+    tweet_text = selected_tweet.text              # ← fixed
+
+    target_data = load_target_tweets()
+    score = target_data.get(str(tweet_id), {}).get("relevance_score", 0)
+
+    if score <= REPLY_MIN_SCORE:
+        print(f"Skipping reply → low relevance score {score}/10: \"{selected_tweet.text[:80]}...\"")
+        return
+        
     username = user_to_fetch  # Using stored username
 
     # **Step 4: Generate a Grok-powered reply**
@@ -640,12 +777,269 @@ def reply_to_random_tweet():
             "username": username,
             "tweet_id": tweet_id,
             "source_text": tweet_text,
-            "reply_text": reply_text
+            "reply_text": reply_text,
+            "relevance_score": score
         }
         save_reply_log(reply_log)
 
     except tweepy.errors.TweepyException as e:
         print(f"❌ Error posting reply: {e}")
+
+
+# =========================================================
+#             TARGET ENGAGEMENT (Quote/RT/Like)
+# =========================================================
+
+def classify_mention_relevance(text):
+    client = openai.OpenAI(api_key=XAI_API_KEY, base_url="https://api.x.ai/v1")
+    
+    prompt = f"""
+    Score 0–10 (integer only) for LAIA.org — an account obsessed with how frontier technology (especially AI, robotics, crypto, biotech) physically reshapes cities and infrastructure between 2025–2050. We want to build relationships with founders, VCs, and thinkers in the broader frontier-tech + physical-world stack.
+    
+    10 = Physical AI/Frontier-tech infra being built (superclusters, GW data centers, SMRs, robotics factories, vertiports, tokenized RWA, future construction)
+    9 = Big announced tech-infra projects (xAI Colossus, AI cities, chip fabs)
+    8 = Construction/energy/robotics tech clearly reshaping cities (humanoid deployment, autonomous excavators, fusion pilot plants, urban air mobility infrastructure)
+    7 = Tech ↔ infra bottleneck discussion (power, land, regulation)
+    6 = Data centers, nuclear/renewables, smart cities, urban mobility
+    5 = General AI/energy/robotics/construction news that could matter
+    4 = Adjacent VC/founder/tech chatter (scaling laws, startup theses)
+    3 = Light memes/hot takes from target accounts – still worth a reply
+    2 = Off-topic but not trash
+    0–1 = gm/gn, one-word, pure spam
+    
+    Tweet: \"{text}\"
+    Answer with only the number 0–10.
+    """
+
+    try:
+        resp = client.chat.completions.create(
+            model=XAI_MODEL,
+            messages=[{"role": "user", "content": prompt}],
+            max_tokens=5,
+            temperature=0.1
+        )
+        score_text = resp.choices[0].message.content.strip()
+        score = int(score_text)
+        return max(0, min(10, score))  # Clamp to 0–10
+    except:
+        return 0
+
+def generate_quote_comment(text):
+    client = openai.OpenAI(api_key=XAI_API_KEY, base_url="https://api.x.ai/v1")
+    
+    prompt = f"""
+    Write a sharp, professional quote tweet (max 180 chars) that adds a precise insight or data point to the original tweet.
+    
+    Rules:
+    - Generate a **concise, data-driven insight** that adds a relevant statistic or fact. 
+    - No hashtags, no @-mentions, no generic emojis (flags OK)
+    - Sound forward-looking and authoritative
+    - Never generic — always add a concrete angle or number when possible
+    
+    Original tweet: {text}
+    
+    Quote comment only:"""
+
+    try:
+        resp = client.chat.completions.create(
+            model=XAI_MODEL,
+            messages=[{"role": "user", "content": prompt}],
+            max_tokens=110,
+            temperature=0.8
+        )
+        comment = resp.choices[0].message.content.strip()
+        return comment[:180] if comment else None
+    except:
+        return None
+
+def process_mention_engagement():
+    data = cleanup_target_tweets()  # Auto-remove old tweets
+    if not data:
+        print("No target tweets in pool")
+        return
+
+    # Filter tweets that haven't been engaged with yet
+    available = [(tid, entry) for tid, entry in data.items() if entry.get("action") is None]
+    if not available:
+        print("All target tweets already engaged with")
+        return
+
+    # Random-within-random: pick action type
+    action = random.choices(
+        ["quote", "repost", "like"],
+        weights=[ENGAGEMENT_QUOTE_WEIGHT, ENGAGEMENT_REPOST_WEIGHT, ENGAGEMENT_LIKE_WEIGHT],
+        k=1
+    )[0]
+
+    print(f"Engagement mode: {action.upper()} → curating from target accounts")
+
+    processed = 0
+    random.shuffle(available)
+
+    for tid, entry in available:
+        text = entry["text"]
+        score = entry.get("relevance_score", 0)  # Use pre-scored value
+
+        # QUOTE:
+        if (action == "quote" and score >= QUOTE_MIN_SCORE and 
+            count_engagement_action(data, "quote") < DAILY_QUOTE_LIMIT):
+            comment = generate_quote_comment(text)
+            if comment and 15 < len(comment) < 200:
+                try:
+                    twitter_client.create_tweet(text=comment, quote_tweet_id=int(tid))
+                    
+                    # ←←← NOW SAVES THE ACTUAL QUOTE TEXT!
+                    data[tid]["action"] = "quote"
+                    data[tid]["date"] = datetime.utcnow().strftime("%Y-%m-%d")
+                    data[tid]["quote_text"] = comment.strip()   # ← THIS IS THE FIX!
+                    
+                    print(f"Quote-tweeted: {comment[:60]}...")
+                    processed += 1
+                    save_target_tweets(data)
+                    return  # One quote per run is enough
+                except Exception as e:
+                    print(f"Quote failed: {e}")
+
+        # REPOST: 7–10
+        elif (action == "repost" and score >= REPOST_MIN_SCORE and 
+              count_engagement_action(data, "repost") < DAILY_REPOST_LIMIT):
+            try:
+                twitter_client.retweet(tweet_id=int(tid))  # ← This always works
+                data[tid]["action"] = "repost"
+                data[tid]["date"] = datetime.utcnow().strftime("%Y-%m-%d")
+                print("Reposted from target account")
+                processed += 1
+                if processed >= 2:
+                    save_target_tweets(data)
+                    return
+            except Exception as e:
+                print(f"Repost failed: {e}")
+
+        # LIKE: 5–10 (or everything if like mode)
+        elif (action == "like" and score >= LIKE_MIN_SCORE and 
+              count_engagement_action(data, "like") < DAILY_LIKE_LIMIT):
+            try:
+                twitter_client.like(tweet_id=int(tid))
+                data[tid]["action"] = "like"
+                data[tid]["date"] = datetime.utcnow().strftime("%Y-%m-%d")
+                processed += 1
+            except Exception as e:
+                print(f"Like failed: {e}")
+
+        if processed >= 3:
+            break
+
+    save_target_tweets(data)
+    print(f"Engagement complete: {processed} actions")
+    
+
+# =========================================================
+#         REAL @-MENTION → ALWAYS REPLY (Separate & Guaranteed)
+# =========================================================
+
+MY_USER_ID = None
+
+def get_my_user_id():
+    global MY_USER_ID
+    if MY_USER_ID:
+        return MY_USER_ID
+    try:
+        MY_USER_ID = twitter_client.get_me().data.id
+        print(f"My user ID: {MY_USER_ID}")
+        return MY_USER_ID
+    except:
+        return None
+
+def process_mention_replies():
+    if not can_check_mentions():
+        print("Mentions check skipped (15-min rate limit)")
+        return
+
+    user_id = get_my_user_id()
+    if not user_id:
+        return
+
+    log = load_mentions_reply_log()
+    since_id = log.get('metadata', {}).get('last_mention_id')
+
+    update_mentions_timestamp()  # Commit before fetch
+
+    try:
+        resp = bearer_client.get_users_mentions(
+            id=user_id,
+            max_results=10,
+            tweet_fields=["author_id", "text"],
+            since_id=since_id
+        )
+        print(f"Fetched {len(resp.data or [])} mentions")
+    except tweepy.errors.TooManyRequests as e:
+        print(f"Rate limit hit (429): {e}. Waiting longer next time.")
+        return
+    except Exception as e:
+        print(f"Failed to fetch mentions: {e}")
+        return
+
+    mentions = resp.data or []
+    today = datetime.utcnow().strftime("%Y-%m-%d")
+
+    # Update metadata with max ID from this fetch (even if no replies)
+    if mentions:
+        new_max = max(int(tweet.id) for tweet in mentions)
+        current_max = since_id or 0
+        updated_max = max(current_max, new_max)
+        if 'metadata' not in log:
+            log['metadata'] = {}
+        log['metadata']['last_mention_id'] = updated_max
+        save_mentions_reply_log(log)  # Save updated max early
+
+    if count_mentions_replies_today(log) >= MENTIONS_REPLY_DAILY_LIMIT:  # ← now uses the correct one
+        print(f"Daily mention reply limit reached ({MENTIONS_REPLY_DAILY_LIMIT})")
+        return
+
+    replied = 0
+    for tweet in mentions:
+        tid = str(tweet.id)
+        if tid in log or tweet.author_id == user_id:
+            continue
+
+        reply_text = openai.OpenAI(api_key=XAI_API_KEY, base_url="https://api.x.ai/v1").chat.completions.create(
+            model=XAI_MODEL,
+            messages=[{
+                "role": "user",
+                "content": f"""
+        You are @YourHandle — a construction & next-gen infrastructure account.
+        
+        Someone just @-mentioned you with this:
+        
+        "{tweet.text}"
+        
+        Write a concise, natural, professional reply (max 240 chars).
+        - No hashtags, no @-mentions (X adds them automatically)
+        - No generic emojis (country flags OK)
+        - Sound helpful and slightly forward-looking
+        
+        Reply directly with only the final reply text, nothing else:
+        """
+            }],
+            temperature=0.7,
+            max_tokens=300
+        ).choices[0].message.content.strip()
+
+        if not reply_text or len(reply_text) > 280:
+            continue
+
+        try:
+            twitter_client.create_tweet(text=reply_text, in_reply_to_tweet_id=tweet.id)
+            log[tid] = {"date": today, "replied": True, "text": reply_text}
+            save_mentions_reply_log(log)
+            print(f"Replied to @-mention: {reply_text[:60]}...")
+            if count_mentions_replies_today(log) >= MENTIONS_REPLY_DAILY_LIMIT:
+                break
+        except Exception as e:
+            print(f"Mention reply failed: {e}")
+
+    if replied:
+        print(f"Completed {replied} mention replies")
 
 # =========================================================
 #                      POSTING
@@ -679,6 +1073,9 @@ def post_tweet(tweet):
 
 ############## Main execution starts here ##############
 if __name__ == "__main__":
+    print("Agent started — checking real @-mentions first...")
+    process_mention_replies()
+    
     print("🔍 Loading previously processed articles...")
     processed_articles = load_processed_articles()
     filtered_links = {article["link"] for article in processed_articles if "link" in article} if processed_articles else set()
@@ -768,7 +1165,7 @@ if __name__ == "__main__":
             }
 
             # ✅ Generate tweet only if score meets threshold
-            if score >= TWEET_THRESHOLD:
+            if score >= NEWS_MIN_SCORE:
                 article_entry["tweet"] = summarize_news(title, summary, source)
 
             processed_articles.append(article_entry)
@@ -783,7 +1180,7 @@ if __name__ == "__main__":
         new_entries = []
 
         for score, title, link, source, summary in top_articles:
-            if score >= TWEET_THRESHOLD:
+            if score >= NEWS_MIN_SCORE:
                 tweet = summarize_news(title, summary, source)
 
                 if post_tweet(tweet):
@@ -854,6 +1251,10 @@ if __name__ == "__main__":
 
     elif tweet_type == "reply":
         reply_to_random_tweet()
+
+    elif tweet_type == "engagement":
+        print("Engagement cycle — curating construction/infra mentions silently")
+        process_mention_engagement()
 
     else:
         print("🤖 No tweet posted in this run to simulate human-like activity.")
