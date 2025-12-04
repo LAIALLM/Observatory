@@ -1800,5 +1800,13 @@
         "status": "posted",
         "tweet": "Bitcoin mining data centers worldwide are projected to consume 160 TWh of electricity in 2025.\n\nThis exceeds \ud83c\uddf3\ud83c\uddf1 Netherlands' total annual electricity usage by 40 TWh.",
         "type": "crypto"
+    },
+    {
+        "link": null,
+        "date": "2025-12-04",
+        "status": "posted",
+        "tweet": "Global renewable energy capacity will exceed 4,000 GW by end of 2025,\n\nup 20% from 2023 levels and supplying 35% of worldwide electricity.",
+        "type": "statistical",
+        "category": "engineering projects"
     }
 ]
