@@ -42,6 +42,8 @@ twitter_client = tweepy.Client(
     access_token_secret=TWITTER_ACCESS_SECRET
 )   # For writes (OAuth 1.0a user context)
 
+MY_USERNAME = "laia_stem" 
+
 # **Accounts to Follow** You can look up IDs with the X API or tools like tweeterid.com. https://twiteridfinder.com/
 TARGET_ACCOUNTS = {
     "sama": "1605",
@@ -1003,10 +1005,14 @@ def process_mention_replies():
             continue
 
         # Blocks: crypto spam (50+ tags) + Grok/Claude/Gemini replies (2 tags) + any mass-tag nonsense
-        if len(re.findall(r'@\w+', tweet.text)) > 1:
-            print(f"Blocked mention with multiple @ tags ({tweet.text[:100]}...)")
+        mention_matches = re.findall(r'@\w+', tweet.text)
+        # Count only @-mentions that are NOT our own handle
+        external_mentions = [m for m in mention_matches if m.lower() != f"@{MY_USERNAME.lower()}"]
+        
+        if len(external_mentions) > 1:
+            print(f"Blocked spam mention with {len(external_mentions)} external @ tags: {tweet.text[:100]}...")
             continue
-
+            
         reply_text = openai.OpenAI(api_key=XAI_API_KEY, base_url="https://api.x.ai/v1").chat.completions.create(
             model=XAI_MODEL,
             messages=[{
