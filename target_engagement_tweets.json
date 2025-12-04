@@ -133,5 +133,32 @@
         "date": "2025-12-04",
         "relevance_score": 4,
         "action": null
+    },
+    "1996487086615257366": {
+        "tweet_id": "1996487086615257366",
+        "text": "Because they want to commit voting fraud https://t.co/PGr4ElnWkq",
+        "author_id": "44196397",
+        "author_handle": "elonmusk",
+        "date": "2025-12-04",
+        "relevance_score": 2,
+        "action": null
+    },
+    "1996484482514428311": {
+        "tweet_id": "1996484482514428311",
+        "text": "Cybertruck is an incredible vehicle. Our best ever from Tesla. https://t.co/tCCdIDShDh",
+        "author_id": "44196397",
+        "author_handle": "elonmusk",
+        "date": "2025-12-04",
+        "relevance_score": 5,
+        "action": null
+    },
+    "1996484189118660651": {
+        "tweet_id": "1996484189118660651",
+        "text": "Yes https://t.co/EjkSaaUrsU",
+        "author_id": "44196397",
+        "author_handle": "elonmusk",
+        "date": "2025-12-04",
+        "relevance_score": 1,
+        "action": null
     }
 }
