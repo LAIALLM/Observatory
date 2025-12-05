@@ -205,5 +205,32 @@
         "date": "2025-12-04",
         "relevance_score": 3,
         "action": null
+    },
+    "1996774822949671416": {
+        "tweet_id": "1996774822949671416",
+        "text": "The secret to investing is to invest in unstoppable people building inevitable things.",
+        "author_id": "745273",
+        "author_handle": "naval",
+        "date": "2025-12-05",
+        "relevance_score": 2,
+        "action": null
+    },
+    "1996684254705864939": {
+        "tweet_id": "1996684254705864939",
+        "text": "Full episode:\nhttps://t.co/PmwhF4WsoN",
+        "author_id": "745273",
+        "author_handle": "naval",
+        "date": "2025-12-05",
+        "relevance_score": 1,
+        "action": null
+    },
+    "1996684253334327660": {
+        "tweet_id": "1996684253334327660",
+        "text": "Good Products are Opinionated.\n\n\u201cEvery great founder I\u2019ve seen up close, or even from afar, is highly opinionated and they\u2019re almost dictatorial in how they run things.\n\nAlso, early-stage teams are opinionated. And the products they build are opinionated. Opinionated means they https://t.co/Z90THARBGR",
+        "author_id": "745273",
+        "author_handle": "naval",
+        "date": "2025-12-05",
+        "relevance_score": 4,
+        "action": null
     }
 }
