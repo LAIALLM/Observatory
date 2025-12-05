@@ -233,5 +233,50 @@
         "date": "2025-12-05",
         "relevance_score": 4,
         "action": null
+    },
+    "1996673089057533978": {
+        "tweet_id": "1996673089057533978",
+        "text": "Too many are interested in \u201ctech\u201d (by which they mean money) but they aren\u2019t interested in tech (by which I mean math).",
+        "author_id": "2178012643",
+        "author_handle": "balajis",
+        "date": "2025-12-05",
+        "relevance_score": 3,
+        "action": null
+    },
+    "1996672131506262424": {
+        "tweet_id": "1996672131506262424",
+        "text": "Fundamentals over founderitis.\n\nA few decades ago, the concept of becoming a tech founder wasn\u2019t even understood as something you could do. In the 80s and the early 90s, you saw businessmen on TV, but there was no well-understood playbook for starting a company. Kids were",
+        "author_id": "2178012643",
+        "author_handle": "balajis",
+        "date": "2025-12-05",
+        "relevance_score": 4,
+        "action": null
+    },
+    "1996662239978557775": {
+        "tweet_id": "1996662239978557775",
+        "text": "Just to calibrate, tech unicorn founders are much rarer than pro athletes. https://t.co/Fauk5QXhYA",
+        "author_id": "2178012643",
+        "author_handle": "balajis",
+        "date": "2025-12-05",
+        "relevance_score": 4,
+        "action": null
+    },
+    "1996631378608500916": {
+        "tweet_id": "1996631378608500916",
+        "text": "If frontier AI models plateau, then on-device inference and open source models could catch all the way up.\n\nGreat for consumers and developers. Amazing for getting intelligence too cheap to meter, for AI-enabled hardware, and for the garden of intelligent things.\n\nBut bad for https://t.co/QpgHdhuiFA https://t.co/hgkdWMRliP",
+        "author_id": "2178012643",
+        "author_handle": "balajis",
+        "date": "2025-12-05",
+        "relevance_score": 5,
+        "action": null
+    },
+    "1996458224925687858": {
+        "tweet_id": "1996458224925687858",
+        "text": "America absolutely did build an empire. I don\u2019t mean this in a negative way; it was by many measures the greatest empire of all time.\n\nAnd global military dominance is what allowed it to issue the reserve currency, and spread the political, technological, and economic ideas you https://t.co/FLHMjSGOsS https://t.co/KpynBVxYZ3",
+        "author_id": "2178012643",
+        "author_handle": "balajis",
+        "date": "2025-12-05",
+        "relevance_score": 2,
+        "action": null
     }
 }
