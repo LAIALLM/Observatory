@@ -266,9 +266,10 @@
         "text": "If frontier AI models plateau, then on-device inference and open source models could catch all the way up.\n\nGreat for consumers and developers. Amazing for getting intelligence too cheap to meter, for AI-enabled hardware, and for the garden of intelligent things.\n\nBut bad for https://t.co/QpgHdhuiFA https://t.co/hgkdWMRliP",
         "author_id": "2178012643",
         "author_handle": "balajis",
-        "date": "2025-12-05",
+        "date": "2025-12-06",
         "relevance_score": 5,
-        "action": null
+        "action": "quote",
+        "quote_text": "If frontier models plateau, open-source alternatives like Mistral 7B already match GPT-3.5 on 70% of benchmarks (per LMSYS Arena), enabling on-device deployment at 10x lower latenc"
     },
     "1996458224925687858": {
         "tweet_id": "1996458224925687858",
