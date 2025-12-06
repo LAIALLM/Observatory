@@ -82,5 +82,13 @@
         "source_text": "Too many are interested in \u201ctech\u201d (by which they mean money) but they aren\u2019t interested in tech (by which I mean math).",
         "reply_text": "Spot on. A 2023 IEEE report shows only 30% of tech grads have proficiency in linear algebra and calculus\u2014core to AI and crypto\u2014fueling a 40% skills gap in high-growth fields.",
         "relevance_score": 3
+    },
+    "1996997278893044045": {
+        "date": "2025-12-06",
+        "username": "VitalikButerin",
+        "tweet_id": 1996997278893044045,
+        "source_text": "The fact that we have political systems that do byzantine things like this instead of just charging a basic tax per litre of fuel to account for environmental costs (or even mileage * weight^4 for wear and tear) in a consistent way continues to frustrate me.\n\nWhen accounting for https://t.co/B0LjzADKAU",
+        "reply_text": "Spot on\u2014studies from the FHWA indicate heavy trucks (4% of vehicles) cause ~80% of road damage via axle loads^4, yet they cover only ~20% of costs through fuel taxes. A direct mileage-weight levy could equitably fund repairs and cut distortions.",
+        "relevance_score": 7
     }
 }
