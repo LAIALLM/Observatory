@@ -285,9 +285,10 @@
         "text": "The fact that we have political systems that do byzantine things like this instead of just charging a basic tax per litre of fuel to account for environmental costs (or even mileage * weight^4 for wear and tear) in a consistent way continues to frustrate me.\n\nWhen accounting for https://t.co/B0LjzADKAU",
         "author_id": "295218901",
         "author_handle": "VitalikButerin",
-        "date": "2025-12-06",
+        "date": "2025-12-07",
         "relevance_score": 7,
-        "action": null
+        "action": "quote",
+        "quote_text": "Heavy trucks inflict 10,000x the road damage of cars per the axle weight^4 law. Scaling to mileage-based fees could close the $256B US highway funding gap by 2030, per DOT projecti"
     },
     "1996954146604204363": {
         "tweet_id": "1996954146604204363",
