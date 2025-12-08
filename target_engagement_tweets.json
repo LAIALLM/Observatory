@@ -295,9 +295,9 @@
         "text": "My rough math based on average difficulty stats suggests that Bitcoin mining crossed the total 2**96 hashes milestone very recently?\n\nSeems like a good reason to insist on (close to) 128 bit security (ie. @drakefjustin was right) https://t.co/zrwtbdnan3",
         "author_id": "295218901",
         "author_handle": "VitalikButerin",
-        "date": "2025-12-06",
+        "date": "2025-12-08",
         "relevance_score": 4,
-        "action": null
+        "action": "repost"
     },
     "1996361287748538652": {
         "tweet_id": "1996361287748538652",
