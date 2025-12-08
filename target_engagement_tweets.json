@@ -370,5 +370,50 @@
         "date": "2025-12-07",
         "relevance_score": 4,
         "action": "repost"
+    },
+    "1997764101649670256": {
+        "tweet_id": "1997764101649670256",
+        "text": "Example: your code works, but it\u2019s unusable until a good UX is built.\n\nExample: your policy works, but it\u2019s unpopular unless it\u2019s explained properly.\n\nExample: your medicine works, but you need to give it a catchy name to get it prescribed.\n\nThese are really all the same problem. https://t.co/rlFrvKKgON",
+        "author_id": "2178012643",
+        "author_handle": "balajis",
+        "date": "2025-12-08",
+        "relevance_score": 2,
+        "action": null
+    },
+    "1997759211493888161": {
+        "tweet_id": "1997759211493888161",
+        "text": "The conventional wisdom is: substance over optics. And that is generally good advice. But sometimes optics is the substance.",
+        "author_id": "2178012643",
+        "author_handle": "balajis",
+        "date": "2025-12-08",
+        "relevance_score": 2,
+        "action": null
+    },
+    "1997324087556009995": {
+        "tweet_id": "1997324087556009995",
+        "text": "Fun times with @arifkazi_, Superteam, and the entire Solana ecosystem. https://t.co/IXWh7GQhsk",
+        "author_id": "2178012643",
+        "author_handle": "balajis",
+        "date": "2025-12-08",
+        "relevance_score": 2,
+        "action": null
+    },
+    "1997320973008429077": {
+        "tweet_id": "1997320973008429077",
+        "text": "Towards the Solana network state. https://t.co/C6L4UF95Zk",
+        "author_id": "2178012643",
+        "author_handle": "balajis",
+        "date": "2025-12-08",
+        "relevance_score": 4,
+        "action": null
+    },
+    "1996937609822740852": {
+        "tweet_id": "1996937609822740852",
+        "text": "I\u2019d argue the will to power is often misunderstood. It means power over oneself \u2014 self-discipline \u2014 not really power over others.\n\nAlso: Nietzscheanism is useful as a defense against Bolshevism. But that\u2019s aimed outside the tribe. Within the tribe you should be cooperative, not https://t.co/1Gisl6St0y",
+        "author_id": "2178012643",
+        "author_handle": "balajis",
+        "date": "2025-12-08",
+        "relevance_score": 2,
+        "action": null
     }
 }
