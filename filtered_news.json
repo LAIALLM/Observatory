@@ -2367,5 +2367,12 @@
         "score": 0,
         "status": "skipped",
         "tweet": null
+    },
+    {
+        "link": null,
+        "date": "2025-12-08",
+        "status": "posted",
+        "tweet": "Microsoft's Azure data centers in \ud83c\uddfa\ud83c\uddf8 Virginia consumed 2.5 TWh of energy in 2024, powering AI workloads with 98% renewable sources. $MSFT",
+        "type": "infrastructure"
     }
 ]
