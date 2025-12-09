@@ -304,9 +304,9 @@
         "text": "Always glad to see when people appreciate the protocol changes that add hard invariants, improving protocol security and future adaptability\n\n2021: EIP-2929 + 3529 (SLOAD gas cost increase, refunds nerfed)\n2024: SELFDESTRUCT nerf (Dencun)\n2025: 16,777,216 gas per tx limit\n\nAll of https://t.co/tPdaKZRCEm",
         "author_id": "295218901",
         "author_handle": "VitalikButerin",
-        "date": "2025-12-06",
+        "date": "2025-12-09",
         "relevance_score": 4,
-        "action": null
+        "action": "repost"
     },
     "1996342458234605895": {
         "tweet_id": "1996342458234605895",
