@@ -2348,5 +2348,12 @@
         "score": 0,
         "status": "skipped",
         "tweet": null
+    },
+    {
+        "link": null,
+        "date": "2025-12-10",
+        "status": "posted",
+        "tweet": "Bitcoin's annual mining electricity costs escalated from $0.5B in 2010 to a projected $16B in 2025, driven by hashrate growth from 1 EH/s to 700 EH/s.",
+        "type": "crypto"
     }
 ]
