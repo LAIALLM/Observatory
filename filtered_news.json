@@ -2464,5 +2464,13 @@
         "status": "posted",
         "tweet": "2025 hardware costs for blockchain mining/validating setups (mid-tier professional):\n\n1. Bitcoin ASIC farm (10 rigs): $450,000\n2. Solana validator cluster: $150,000\n3. Ethereum PoS node server: $25,000",
         "type": "crypto"
+    },
+    {
+        "link": null,
+        "date": "2025-12-12",
+        "status": "posted",
+        "tweet": "Global infrastructure market projected to reach $10.2 trillion in 2025, up 6% from 2024, driven by digital and green transitions.",
+        "type": "statistical",
+        "category": "infrastructure companies"
     }
 ]
