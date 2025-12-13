@@ -2258,5 +2258,13 @@
         "status": "posted",
         "tweet": "2025 blockchain infrastructure: TPS vs energy cost per tx (USD est.)\n\n1. Ethereum: 15 TPS | $0.00002/tx\n2. Solana: 1200 TPS | $0.00006/tx\n3. Bitcoin: 4 TPS | $45/tx",
         "type": "crypto"
+    },
+    {
+        "link": null,
+        "date": "2025-12-13",
+        "status": "posted",
+        "tweet": "\ud83c\uddee\ud83c\uddf3 Delhi's 2025 population: 33 million  \n\ud83c\uddef\ud83c\uddf5 Tokyo's: 36 million  \n\nDelhi grows 15% from 2020 levels; Tokyo declines 3%.",
+        "type": "statistical",
+        "category": "cities"
     }
 ]
