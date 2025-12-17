@@ -26,15 +26,6 @@
         "relevance_score": 4,
         "action": "repost"
     },
-    "1996672131506262424": {
-        "tweet_id": "1996672131506262424",
-        "text": "Fundamentals over founderitis.\n\nA few decades ago, the concept of becoming a tech founder wasn\u2019t even understood as something you could do. In the 80s and the early 90s, you saw businessmen on TV, but there was no well-understood playbook for starting a company. Kids were",
-        "author_id": "2178012643",
-        "author_handle": "balajis",
-        "date": "2025-12-06",
-        "relevance_score": 4,
-        "action": "repost"
-    },
     "1996662239978557775": {
         "tweet_id": "1996662239978557775",
         "text": "Just to calibrate, tech unicorn founders are much rarer than pro athletes. https://t.co/Fauk5QXhYA",
@@ -43,16 +34,6 @@
         "date": "2025-12-10",
         "relevance_score": 4,
         "action": "repost"
-    },
-    "1996631378608500916": {
-        "tweet_id": "1996631378608500916",
-        "text": "If frontier AI models plateau, then on-device inference and open source models could catch all the way up.\n\nGreat for consumers and developers. Amazing for getting intelligence too cheap to meter, for AI-enabled hardware, and for the garden of intelligent things.\n\nBut bad for https://t.co/QpgHdhuiFA https://t.co/hgkdWMRliP",
-        "author_id": "2178012643",
-        "author_handle": "balajis",
-        "date": "2025-12-06",
-        "relevance_score": 5,
-        "action": "quote",
-        "quote_text": "If frontier models plateau, open-source alternatives like Mistral 7B already match GPT-3.5 on 70% of benchmarks (per LMSYS Arena), enabling on-device deployment at 10x lower latenc"
     },
     "1996997278893044045": {
         "tweet_id": "1996997278893044045",
@@ -81,24 +62,6 @@
         "date": "2025-12-09",
         "relevance_score": 4,
         "action": "repost"
-    },
-    "1996342458234605895": {
-        "tweet_id": "1996342458234605895",
-        "text": "PeerDAS in Fusaka is significant because it literally is sharding.\n\nEthereum is coming to consensus on blocks without requiring any single node to see more than a tiny fraction of the data. And this is robust to 51% attacks - it's client-side probabilistic verification, not https://t.co/OK81xBteER",
-        "author_id": "295218901",
-        "author_handle": "VitalikButerin",
-        "date": "2025-12-06",
-        "relevance_score": 4,
-        "action": "repost"
-    },
-    "1996335948137926695": {
-        "tweet_id": "1996335948137926695",
-        "text": "fusaka",
-        "author_id": "295218901",
-        "author_handle": "VitalikButerin",
-        "date": "2025-12-06",
-        "relevance_score": 0,
-        "action": null
     },
     "1996992910630297933": {
         "tweet_id": "1996992910630297933",
