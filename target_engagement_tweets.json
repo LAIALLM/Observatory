@@ -88,5 +88,50 @@
         "date": "2025-12-08",
         "relevance_score": 2,
         "action": null
+    },
+    "2001562701458477539": {
+        "tweet_id": "2001562701458477539",
+        "text": "Great work by the @xAI team! https://t.co/6RjvZRN7DF",
+        "author_id": "44196397",
+        "author_handle": "elonmusk",
+        "date": "2025-12-18",
+        "relevance_score": 5,
+        "action": null
+    },
+    "2001542403292041377": {
+        "tweet_id": "2001542403292041377",
+        "text": "Great work by the SpaceX team! https://t.co/Q5e5fzt0s0",
+        "author_id": "44196397",
+        "author_handle": "elonmusk",
+        "date": "2025-12-18",
+        "relevance_score": 2,
+        "action": null
+    },
+    "2001529481677435100": {
+        "tweet_id": "2001529481677435100",
+        "text": "A great wrong was done https://t.co/uY3LTzDmDk",
+        "author_id": "44196397",
+        "author_handle": "elonmusk",
+        "date": "2025-12-18",
+        "relevance_score": 2,
+        "action": null
+    },
+    "2001525602860568801": {
+        "tweet_id": "2001525602860568801",
+        "text": "Grok https://t.co/4JP7DCibuF",
+        "author_id": "44196397",
+        "author_handle": "elonmusk",
+        "date": "2025-12-18",
+        "relevance_score": 1,
+        "action": null
+    },
+    "2001487269069517176": {
+        "tweet_id": "2001487269069517176",
+        "text": "Grok https://t.co/owovXx7Rtm",
+        "author_id": "44196397",
+        "author_handle": "elonmusk",
+        "date": "2025-12-18",
+        "relevance_score": 1,
+        "action": null
     }
 }
