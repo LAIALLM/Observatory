@@ -124,5 +124,50 @@
         "date": "2025-12-19",
         "relevance_score": 5,
         "action": "repost"
+    },
+    "1999366763608441199": {
+        "tweet_id": "1999366763608441199",
+        "text": "We live to reveal ourselves to ourselves.",
+        "author_id": "745273",
+        "author_handle": "naval",
+        "date": "2025-12-19",
+        "relevance_score": 2,
+        "action": null
+    },
+    "1998848130180329779": {
+        "tweet_id": "1998848130180329779",
+        "text": "Full episode: https://t.co/PmwhF4WsoN",
+        "author_id": "745273",
+        "author_handle": "naval",
+        "date": "2025-12-19",
+        "relevance_score": 1,
+        "action": null
+    },
+    "1998848128104239501": {
+        "tweet_id": "1998848128104239501",
+        "text": "Founders cannot outsource recruiting.\n\n\u201cRecruiting is the most important thing because you need creativity; you need motivated people. Ideally, the early people are all geniuses. They\u2019re self-managing, low-ego, hardworking, highly competent, builders, technical\u2014maybe one or two https://t.co/PvmBDHUNhH",
+        "author_id": "745273",
+        "author_handle": "naval",
+        "date": "2025-12-19",
+        "relevance_score": 4,
+        "action": null
+    },
+    "1998671506784547309": {
+        "tweet_id": "1998671506784547309",
+        "text": "What you create is an honest reflection of who you are.",
+        "author_id": "745273",
+        "author_handle": "naval",
+        "date": "2025-12-19",
+        "relevance_score": 2,
+        "action": null
+    },
+    "1998661932572881116": {
+        "tweet_id": "1998661932572881116",
+        "text": "Games are training for life, and not an end unto themselves.",
+        "author_id": "745273",
+        "author_handle": "naval",
+        "date": "2025-12-19",
+        "relevance_score": 2,
+        "action": null
     }
 }
