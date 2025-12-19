@@ -169,5 +169,50 @@
         "date": "2025-12-19",
         "relevance_score": 2,
         "action": null
+    },
+    "2001740588627169690": {
+        "tweet_id": "2001740588627169690",
+        "text": "Thinking Machines chief scientist John Schulman on what\u2019s changed in AI since 2015\u20132017:\n\n\u201cPreviously the people were a bit weirder.\u201d\n\n\u201cEngineering skill matters more now\u2026 as opposed to research, taste and the ability to do exploratory research.\u201d\n\n\u201cThere\u2019s so much low hanging https://t.co/mZxppDtPNy https://t.co/tkAjqwnjJu",
+        "author_id": "64844802",
+        "author_handle": "a16z",
+        "date": "2025-12-19",
+        "relevance_score": 4,
+        "action": null
+    },
+    "2001730512873013600": {
+        "tweet_id": "2001730512873013600",
+        "text": "Flock CEO Garrett Langley proposes using debt forgiveness to fix the law enforcement staff shortage in America:\n\n\u201c\u200aWhy not create a Teach for America for law enforcement?\u201d\n\n\u201c\u200aIf you've got student debt and you go serve in your community for two years... Great, we'll retire your https://t.co/aGE56MWDtj https://t.co/2avm8SvolX",
+        "author_id": "64844802",
+        "author_handle": "a16z",
+        "date": "2025-12-19",
+        "relevance_score": 2,
+        "action": null
+    },
+    "2001692898254082095": {
+        "tweet_id": "2001692898254082095",
+        "text": "Flock Safety CEO Garrett Langley on economic mobility and the American dream:\n\n\u201cIf you look at the core premise of America, it\u2019s economic mobility.\u201d\n\n\u201cYou have to have food... You have to have shelter... You have to be safe.\u201d\n\n\u201cIf you don\u2019t have a bedrock of safety in your life, https://t.co/K8DzxGFqsa https://t.co/2avm8SvolX",
+        "author_id": "64844802",
+        "author_handle": "a16z",
+        "date": "2025-12-19",
+        "relevance_score": 2,
+        "action": null
+    },
+    "2001674001895379219": {
+        "tweet_id": "2001674001895379219",
+        "text": "2025 was a big year for consumer launches from the major AI labs. In our State of Consumer AI 2025, a16z's Olivia Moore and Justine Moore break down the products that hit and missed this year \u2013 and what we should expect in 2026: https://t.co/oHzqVhWx9x https://t.co/2VGUYnniv1",
+        "author_id": "64844802",
+        "author_handle": "a16z",
+        "date": "2025-12-19",
+        "relevance_score": 4,
+        "action": null
+    },
+    "2001413422232281590": {
+        "tweet_id": "2001413422232281590",
+        "text": "In America, the average homicide clearance rate outside Las Vegas is &lt;50%.\n\nMurderers have a coin flip of getting away with it.\n\nUnderstaffed and inexperienced police forces are part of the cause. Increasing early retirement means we're losing top talent who pass expertise down. https://t.co/tIsxpqxdlw https://t.co/2avm8SvolX",
+        "author_id": "64844802",
+        "author_handle": "a16z",
+        "date": "2025-12-19",
+        "relevance_score": 2,
+        "action": null
     }
 }
