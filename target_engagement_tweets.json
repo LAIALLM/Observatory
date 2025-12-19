@@ -8,30 +8,12 @@
         "relevance_score": 4,
         "action": "repost"
     },
-    "1996331250626474000": {
-        "tweet_id": "1996331250626474000",
-        "text": "Ben Horowitz\u2019s father taught him the most valuable lesson of his life after he unfairly lost a relay race: \u201cLife isn\u2019t fair.\u201d\n\n\"I see young people wreck themselves so much because they have an expectation that something about life is gonna be fair.\u201d\n\n\u201cThe way you succeed is you https://t.co/j8gGbpCqLs https://t.co/WcyYB1gVZn",
-        "author_id": "64844802",
-        "author_handle": "a16z",
-        "date": "2025-12-08",
-        "relevance_score": 4,
-        "action": "repost"
-    },
     "1996662239978557775": {
         "tweet_id": "1996662239978557775",
         "text": "Just to calibrate, tech unicorn founders are much rarer than pro athletes. https://t.co/Fauk5QXhYA",
         "author_id": "2178012643",
         "author_handle": "balajis",
         "date": "2025-12-10",
-        "relevance_score": 4,
-        "action": "repost"
-    },
-    "1996954146604204363": {
-        "tweet_id": "1996954146604204363",
-        "text": "My rough math based on average difficulty stats suggests that Bitcoin mining crossed the total 2**96 hashes milestone very recently?\n\nSeems like a good reason to insist on (close to) 128 bit security (ie. @drakefjustin was right) https://t.co/zrwtbdnan3",
-        "author_id": "295218901",
-        "author_handle": "VitalikButerin",
-        "date": "2025-12-08",
         "relevance_score": 4,
         "action": "repost"
     },
@@ -44,33 +26,6 @@
         "relevance_score": 4,
         "action": "repost"
     },
-    "1997764101649670256": {
-        "tweet_id": "1997764101649670256",
-        "text": "Example: your code works, but it\u2019s unusable until a good UX is built.\n\nExample: your policy works, but it\u2019s unpopular unless it\u2019s explained properly.\n\nExample: your medicine works, but you need to give it a catchy name to get it prescribed.\n\nThese are really all the same problem. https://t.co/rlFrvKKgON",
-        "author_id": "2178012643",
-        "author_handle": "balajis",
-        "date": "2025-12-08",
-        "relevance_score": 2,
-        "action": null
-    },
-    "1997759211493888161": {
-        "tweet_id": "1997759211493888161",
-        "text": "The conventional wisdom is: substance over optics. And that is generally good advice. But sometimes optics is the substance.",
-        "author_id": "2178012643",
-        "author_handle": "balajis",
-        "date": "2025-12-08",
-        "relevance_score": 2,
-        "action": null
-    },
-    "1997324087556009995": {
-        "tweet_id": "1997324087556009995",
-        "text": "Fun times with @arifkazi_, Superteam, and the entire Solana ecosystem. https://t.co/IXWh7GQhsk",
-        "author_id": "2178012643",
-        "author_handle": "balajis",
-        "date": "2025-12-08",
-        "relevance_score": 2,
-        "action": null
-    },
     "1997320973008429077": {
         "tweet_id": "1997320973008429077",
         "text": "Towards the Solana network state. https://t.co/C6L4UF95Zk",
@@ -79,15 +34,6 @@
         "date": "2025-12-10",
         "relevance_score": 4,
         "action": "repost"
-    },
-    "1996937609822740852": {
-        "tweet_id": "1996937609822740852",
-        "text": "I\u2019d argue the will to power is often misunderstood. It means power over oneself \u2014 self-discipline \u2014 not really power over others.\n\nAlso: Nietzscheanism is useful as a defense against Bolshevism. But that\u2019s aimed outside the tribe. Within the tribe you should be cooperative, not https://t.co/1Gisl6St0y",
-        "author_id": "2178012643",
-        "author_handle": "balajis",
-        "date": "2025-12-08",
-        "relevance_score": 2,
-        "action": null
     },
     "2001562701458477539": {
         "tweet_id": "2001562701458477539",
@@ -175,8 +121,8 @@
         "text": "It\u2019s time to build American AI. https://t.co/rl6O8oT2DU",
         "author_id": "5943622",
         "author_handle": "pmarca",
-        "date": "2025-12-18",
+        "date": "2025-12-19",
         "relevance_score": 5,
-        "action": null
+        "action": "repost"
     }
 }
