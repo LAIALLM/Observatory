@@ -1,28 +1,10 @@
 {
-    "1996365158965551266": {
-        "tweet_id": "1996365158965551266",
-        "text": "Ben Horowitz on the standout skill required to be an exceptional CEO:\n\nDon't hesitate to make the hard decision when you see the truth.\n\n\u201cYou could be really, really smart, but if you wait too long before you pull the trigger, you\u2019re not smart anymore.\u201d\n\nThe real killer is the https://t.co/xnBETiNGwG https://t.co/WcyYB1gVZn",
-        "author_id": "64844802",
-        "author_handle": "a16z",
-        "date": "2025-12-09",
-        "relevance_score": 4,
-        "action": "repost"
-    },
     "1996662239978557775": {
         "tweet_id": "1996662239978557775",
         "text": "Just to calibrate, tech unicorn founders are much rarer than pro athletes. https://t.co/Fauk5QXhYA",
         "author_id": "2178012643",
         "author_handle": "balajis",
         "date": "2025-12-10",
-        "relevance_score": 4,
-        "action": "repost"
-    },
-    "1996361287748538652": {
-        "tweet_id": "1996361287748538652",
-        "text": "Always glad to see when people appreciate the protocol changes that add hard invariants, improving protocol security and future adaptability\n\n2021: EIP-2929 + 3529 (SLOAD gas cost increase, refunds nerfed)\n2024: SELFDESTRUCT nerf (Dencun)\n2025: 16,777,216 gas per tx limit\n\nAll of https://t.co/tPdaKZRCEm",
-        "author_id": "295218901",
-        "author_handle": "VitalikButerin",
-        "date": "2025-12-09",
         "relevance_score": 4,
         "action": "repost"
     },
@@ -231,7 +213,7 @@
         "author_handle": "sama",
         "date": "2025-12-20",
         "relevance_score": 5,
-        "action": null
+        "action": "repost"
     },
     "2001724830584901973": {
         "tweet_id": "2001724830584901973",
