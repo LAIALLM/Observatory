@@ -214,5 +214,50 @@
         "date": "2025-12-19",
         "relevance_score": 2,
         "action": null
+    },
+    "2001816114595270921": {
+        "tweet_id": "2001816114595270921",
+        "text": "Chain-of-thought monitorability:\n\nhttps://t.co/TdXv9l7iBp",
+        "author_id": "1605",
+        "author_handle": "sama",
+        "date": "2025-12-20",
+        "relevance_score": 4,
+        "action": null
+    },
+    "2001729046359556371": {
+        "tweet_id": "2001729046359556371",
+        "text": "Codex is getting extremely good and will rapidly improve. If you want to help make it 100x better next year, the team is hiring. Crazy adventure guaranteed; success probable.",
+        "author_id": "1605",
+        "author_handle": "sama",
+        "date": "2025-12-20",
+        "relevance_score": 5,
+        "action": null
+    },
+    "2001724830584901973": {
+        "tweet_id": "2001724830584901973",
+        "text": "We are beginning to explore trusted-access programs for defensive cybersecurity work.",
+        "author_id": "1605",
+        "author_handle": "sama",
+        "date": "2025-12-20",
+        "relevance_score": 2,
+        "action": null
+    },
+    "2001724828567400700": {
+        "tweet_id": "2001724828567400700",
+        "text": "Last week, a security researcher using our previous model found and disclosed a vulnerability in React that could lead to source code exposure.\n\nI believe these models will be a net win for cybersecurity, but we are in the 'real impact phase' as they improve. https://t.co/wzcEBslCWo",
+        "author_id": "1605",
+        "author_handle": "sama",
+        "date": "2025-12-20",
+        "relevance_score": 2,
+        "action": null
+    },
+    "2001724019188408352": {
+        "tweet_id": "2001724019188408352",
+        "text": "GPT-5.2-Codex launches today.\n\nIt is trained specifically for agentic coding and terminal use, and people at OpenAI have been having great success with it.",
+        "author_id": "1605",
+        "author_handle": "sama",
+        "date": "2025-12-20",
+        "relevance_score": 5,
+        "action": null
     }
 }
