@@ -242,5 +242,50 @@
         "relevance_score": 5,
         "action": "quote",
         "quote_text": "Early benchmarks reveal GPT-5.2-Codex achieves 35% faster autonomous task completion in terminal environments, poised to cut dev cycles by half."
+    },
+    "2002488410385301765": {
+        "tweet_id": "2002488410385301765",
+        "text": "A three-dive day is a good day.",
+        "author_id": "183749519",
+        "author_handle": "PaulG",
+        "date": "2025-12-21",
+        "relevance_score": 2,
+        "action": null
+    },
+    "2002331511190925800": {
+        "tweet_id": "2002331511190925800",
+        "text": "(At the time they didn't seem to, so I ignored them. But they turned out to be one of those things that start to work when you increase the scale by several orders of magnitude.)",
+        "author_id": "183749519",
+        "author_handle": "PaulG",
+        "date": "2025-12-21",
+        "relevance_score": 4,
+        "action": null
+    },
+    "2002328022658204145": {
+        "tweet_id": "2002328022658204145",
+        "text": "You could combine the first two into: Hard work is the magnitude of the vector and curiosity is the direction. I might not have gotten that immediately, but it would have stuck in my head till I did.",
+        "author_id": "183749519",
+        "author_handle": "PaulG",
+        "date": "2025-12-21",
+        "relevance_score": 2,
+        "action": null
+    },
+    "2002327716486603205": {
+        "tweet_id": "2002327716486603205",
+        "text": "If I could send my 18 year old self a message, it would have three parts:\n\n1. Prestige is often mistaken. Follow curiosity instead.\n\n2. There's no way to avoid hard work. It's not sufficient, but it is necessary.  \n\n3. Don't take your parents for granted.",
+        "author_id": "183749519",
+        "author_handle": "PaulG",
+        "date": "2025-12-21",
+        "relevance_score": 2,
+        "action": null
+    },
+    "2002322003727139316": {
+        "tweet_id": "2002322003727139316",
+        "text": "Neural nets work. https://t.co/uZ2XPyEcuE",
+        "author_id": "183749519",
+        "author_handle": "PaulG",
+        "date": "2025-12-21",
+        "relevance_score": 4,
+        "action": null
     }
 }
