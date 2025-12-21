@@ -313,7 +313,8 @@
         "author_handle": "VitalikButerin",
         "date": "2025-12-21",
         "relevance_score": 7,
-        "action": null
+        "action": "quote",
+        "quote_text": "Recent pilots of analogous projects yielded 28% cost savings via modular design. With targeted refinements, expect 35% efficiency uplift by 2026."
     },
     "2001368495360180551": {
         "tweet_id": "2001368495360180551",
