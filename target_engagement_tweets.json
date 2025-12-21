@@ -323,5 +323,41 @@
         "date": "2025-12-21",
         "relevance_score": 2,
         "action": null
+    },
+    "2002127267359777041": {
+        "tweet_id": "2002127267359777041",
+        "text": "Energy might not be the main bottleneck to AI:\n\nhttps://t.co/Zar8Sz2Eml https://t.co/NBQFrH0rj4",
+        "author_id": "64844802",
+        "author_handle": "a16z",
+        "date": "2025-12-21",
+        "relevance_score": 7,
+        "action": null
+    },
+    "2002106752725364886": {
+        "tweet_id": "2002106752725364886",
+        "text": "Flock Safety was instrumental in finding the suspect in the tragic murders we just saw at Brown and MIT.\n\nThat case is just one powerful instance of the incredible work Flock does to enable America's law enforcement to succeed.\n\nEarlier this week, he shared with us that Flock https://t.co/HJGllhPyI7 https://t.co/09vJ41Ciwj",
+        "author_id": "64844802",
+        "author_handle": "a16z",
+        "date": "2025-12-21",
+        "relevance_score": 2,
+        "action": null
+    },
+    "2002086724210733490": {
+        "tweet_id": "2002086724210733490",
+        "text": "San Fransiscans love starting big companies:\n\nhttps://t.co/Zar8Sz2Eml https://t.co/iNQ2vt3sZK",
+        "author_id": "64844802",
+        "author_handle": "a16z",
+        "date": "2025-12-21",
+        "relevance_score": 4,
+        "action": null
+    },
+    "2002071115426861137": {
+        "tweet_id": "2002071115426861137",
+        "text": "At fintech's peak, 25% of venture dollars went into the category. In the second half of 2022, that number dropped to almost zero. And now, fintech is building momentum again as AI makes new software solutions possible.\n\nPlaid CEO Zach Perret joined a16z's David Haber and Erik https://t.co/5UzzkV11o3",
+        "author_id": "64844802",
+        "author_handle": "a16z",
+        "date": "2025-12-21",
+        "relevance_score": 4,
+        "action": null
     }
 }
