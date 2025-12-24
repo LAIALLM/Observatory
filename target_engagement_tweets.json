@@ -330,9 +330,10 @@
         "text": "Energy might not be the main bottleneck to AI:\n\nhttps://t.co/Zar8Sz2Eml https://t.co/NBQFrH0rj4",
         "author_id": "64844802",
         "author_handle": "a16z",
-        "date": "2025-12-21",
+        "date": "2025-12-24",
         "relevance_score": 7,
-        "action": null
+        "action": "quote",
+        "quote_text": "AI's energy demands could hit 1,000 TWh/year by 2026, but neuromorphic chips promise 100x efficiency gains, redirecting bottlenecks to algorithmic innovation."
     },
     "2002106752725364886": {
         "tweet_id": "2002106752725364886",
