@@ -2264,5 +2264,12 @@
         "status": "posted",
         "tweet": "\ud83c\uddea\ud83c\uddec NEWS: Egyptian Countryside Development Company to extend power infrastructure across Western Minya",
         "type": "news"
+    },
+    {
+        "link": null,
+        "date": "2025-12-29",
+        "status": "posted",
+        "tweet": "Regulatory impacts on Bitcoin mining infrastructure costs in 2025 total $10B+ globally.\n\n1. \ud83c\udde8\ud83c\uddf3China ban relocation: $6B in new site builds.\n2. \ud83c\uddea\ud83c\uddfaEU carbon taxes: 25% energy cost surge.\n3. \ud83c\uddfa\ud83c\uddf8US efficiency rules: $1.5B compliance upgrades.",
+        "type": "crypto"
     }
 ]
