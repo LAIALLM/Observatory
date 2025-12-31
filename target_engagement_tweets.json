@@ -8,15 +8,6 @@
         "relevance_score": 4,
         "action": "repost"
     },
-    "1998848128104239501": {
-        "tweet_id": "1998848128104239501",
-        "text": "Founders cannot outsource recruiting.\n\n\u201cRecruiting is the most important thing because you need creativity; you need motivated people. Ideally, the early people are all geniuses. They\u2019re self-managing, low-ego, hardworking, highly competent, builders, technical\u2014maybe one or two https://t.co/PvmBDHUNhH",
-        "author_id": "745273",
-        "author_handle": "naval",
-        "date": "2025-12-20",
-        "relevance_score": 4,
-        "action": "repost"
-    },
     "2001740588627169690": {
         "tweet_id": "2001740588627169690",
         "text": "Thinking Machines chief scientist John Schulman on what\u2019s changed in AI since 2015\u20132017:\n\n\u201cPreviously the people were a bit weirder.\u201d\n\n\u201cEngineering skill matters more now\u2026 as opposed to research, taste and the ability to do exploratory research.\u201d\n\n\u201cThere\u2019s so much low hanging https://t.co/mZxppDtPNy https://t.co/tkAjqwnjJu",
@@ -43,43 +34,6 @@
         "date": "2025-12-22",
         "relevance_score": 4,
         "action": "repost"
-    },
-    "2001729046359556371": {
-        "tweet_id": "2001729046359556371",
-        "text": "Codex is getting extremely good and will rapidly improve. If you want to help make it 100x better next year, the team is hiring. Crazy adventure guaranteed; success probable.",
-        "author_id": "1605",
-        "author_handle": "sama",
-        "date": "2025-12-20",
-        "relevance_score": 5,
-        "action": "repost"
-    },
-    "2001724830584901973": {
-        "tweet_id": "2001724830584901973",
-        "text": "We are beginning to explore trusted-access programs for defensive cybersecurity work.",
-        "author_id": "1605",
-        "author_handle": "sama",
-        "date": "2025-12-20",
-        "relevance_score": 2,
-        "action": null
-    },
-    "2001724828567400700": {
-        "tweet_id": "2001724828567400700",
-        "text": "Last week, a security researcher using our previous model found and disclosed a vulnerability in React that could lead to source code exposure.\n\nI believe these models will be a net win for cybersecurity, but we are in the 'real impact phase' as they improve. https://t.co/wzcEBslCWo",
-        "author_id": "1605",
-        "author_handle": "sama",
-        "date": "2025-12-20",
-        "relevance_score": 2,
-        "action": null
-    },
-    "2001724019188408352": {
-        "tweet_id": "2001724019188408352",
-        "text": "GPT-5.2-Codex launches today.\n\nIt is trained specifically for agentic coding and terminal use, and people at OpenAI have been having great success with it.",
-        "author_id": "1605",
-        "author_handle": "sama",
-        "date": "2025-12-20",
-        "relevance_score": 5,
-        "action": "quote",
-        "quote_text": "Early benchmarks reveal GPT-5.2-Codex achieves 35% faster autonomous task completion in terminal environments, poised to cut dev cycles by half."
     },
     "2002488410385301765": {
         "tweet_id": "2002488410385301765",
