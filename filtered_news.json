@@ -2550,5 +2550,13 @@
         "status": "posted",
         "tweet": "Blockchain throughput (TPS) vs energy cost per tx (kWh, 2025 estimates)\n\n1. Solana: 2,000 TPS, 0.00015 kWh/tx\n2. Ethereum: 30 TPS, 0.002 kWh/tx\n3. Bitcoin: 7 TPS, 706 kWh/tx",
         "type": "crypto"
+    },
+    {
+        "link": null,
+        "date": "2025-12-31",
+        "status": "posted",
+        "tweet": "\ud83c\uddfa\ud83c\uddf8 US: $1.2T invested in infrastructure by 2030 under IIJA, creating 1.5M jobs.\n\n\ud83c\udde8\ud83c\uddf3 China: $1.8T projected for Belt and Road projects through 2025, spanning 150+ countries.",
+        "type": "statistical",
+        "category": "infrastructural projects"
     }
 ]
