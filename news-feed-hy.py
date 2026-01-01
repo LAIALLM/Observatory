@@ -21,7 +21,7 @@ TWITTER_BEARER_TOKEN = os.getenv("TWITTER_BEARER_TOKEN")
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 XAI_API_KEY = os.getenv("XAI_API_KEY")
 
-# --- Updated model definitions (October 2025) ---
+# --- Updated model definitions (October 2026) ---
 OPENAI_MODEL = "gpt-5"                     # Replaces GPT-4
 XAI_MODEL = "grok-4-fast-reasoning"        # Replaces Grok-2-1212
 
@@ -476,7 +476,7 @@ Format:
     selected_format = tweet_formats[selected_format_key]
     
     prompt = f"""
-    Assume the current year is 2025. Generate a concise, direct, factual, and impactful statistical tweet about {selected_category} that uses current data or realistic projections for 2025 and beyond. Avoid using outdated statistics from before 2023.
+    Assume the current year is 2026. Generate a concise, direct, factual, and impactful statistical tweet about {selected_category} that uses current data or realistic projections for 2026 and beyond. Avoid using outdated statistics from before 2023.
 
     {selected_format}
 
@@ -513,7 +513,7 @@ def generate_infrastructure_tweet():
     )
     
     prompt = """
-    Assume the current year is 2025. Write a concise social media post from an external perspective about a tech company that highlights a single key quantitative infrastructure metric. Focus strictly on presenting data with minimal wording.
+    Assume the current year is 2026. Write a concise social media post from an external perspective about a tech company that highlights a single key quantitative infrastructure metric. Focus strictly on presenting data with minimal wording.
 
     The tweet should:
     - Present only clear, factual data (e.g., daily data volumes, production figures, energy consumption, or efficiency ratings)
@@ -588,7 +588,7 @@ def generate_crypto_tweet():
 
     # Construct the dynamic prompt
     prompt = f"""
-    The current year is 2025. Generate a concise, direct, factual, and impactful statistical tweet about the infrastructural costs of running Bitcoin, Ethereum, or Solana. Focus specifically on: **{selected_category}**.
+    The current year is 2026. Generate a concise, direct, factual, and impactful statistical tweet about the infrastructural costs of running Bitcoin, Ethereum, or Solana. Focus specifically on: **{selected_category}**.
 
     {selected_format}
 
@@ -796,7 +796,7 @@ def classify_mention_relevance(text):
     client = openai.OpenAI(api_key=XAI_API_KEY, base_url="https://api.x.ai/v1")
     
     prompt = f"""
-    Score 0–10 (integer only) for LAIA.org — an account obsessed with how frontier technology (especially AI, robotics, crypto, biotech) physically reshapes cities and infrastructure between 2025–2050. We want to build relationships with founders, VCs, and thinkers in the broader frontier-tech + physical-world stack.
+    Score 0–10 (integer only) for LAIA.org — an account obsessed with how frontier technology (especially AI, robotics, crypto, biotech) physically reshapes cities and infrastructure between 2026–2050. We want to build relationships with founders, VCs, and thinkers in the broader frontier-tech + physical-world stack.
     
     10 = Physical AI/Frontier-tech infra being built (superclusters, GW data centers, SMRs, robotics factories, vertiports, tokenized RWA, future construction)
     9 = Big announced tech-infra projects (xAI Colossus, AI cities, chip fabs)
