@@ -2848,5 +2848,12 @@
         "score": 2,
         "status": "processed",
         "tweet": null
+    },
+    {
+        "link": null,
+        "date": "2026-01-01",
+        "status": "posted",
+        "tweet": "Bitcoin's projected 2026 electricity consumption: 180 TWh annually.\n\nThat's equivalent to \ud83c\udde6\ud83c\uddf7 Argentina's full yearly usage, powering a network that processes just 7 transactions per second.",
+        "type": "crypto"
     }
 ]
