@@ -2667,5 +2667,13 @@
         "score": 0,
         "status": "processed",
         "tweet": null
+    },
+    {
+        "link": null,
+        "date": "2026-01-02",
+        "status": "posted",
+        "tweet": "By 2030, 68% of the global population\u20146.8 billion people\u2014will live in urban areas, demanding resilient infrastructure to handle rising density and climate risks.",
+        "type": "statistical",
+        "category": "urban planning"
     }
 ]
