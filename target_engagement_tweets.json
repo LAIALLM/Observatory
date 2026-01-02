@@ -1,28 +1,10 @@
 {
-    "2000664375338873199": {
-        "tweet_id": "2000664375338873199",
-        "text": "It's time to build the US Tech Force. \ud83c\uddfa\ud83c\uddf8 https://t.co/a3zkwOUFal",
-        "author_id": "5943622",
-        "author_handle": "pmarca",
-        "date": "2025-12-22",
-        "relevance_score": 4,
-        "action": "repost"
-    },
     "2001674001895379219": {
         "tweet_id": "2001674001895379219",
         "text": "2025 was a big year for consumer launches from the major AI labs. In our State of Consumer AI 2025, a16z's Olivia Moore and Justine Moore break down the products that hit and missed this year \u2013 and what we should expect in 2026: https://t.co/oHzqVhWx9x https://t.co/2VGUYnniv1",
         "author_id": "64844802",
         "author_handle": "a16z",
         "date": "2025-12-26",
-        "relevance_score": 4,
-        "action": "repost"
-    },
-    "2001816114595270921": {
-        "tweet_id": "2001816114595270921",
-        "text": "Chain-of-thought monitorability:\n\nhttps://t.co/TdXv9l7iBp",
-        "author_id": "1605",
-        "author_handle": "sama",
-        "date": "2025-12-22",
         "relevance_score": 4,
         "action": "repost"
     },
@@ -90,43 +72,6 @@
         "relevance_score": 4,
         "action": "repost"
     },
-    "2001199603786686912": {
-        "tweet_id": "2001199603786686912",
-        "text": "Base is hosting physical popups around the world.\nAnd connecting them together. https://t.co/JfGArpUx2q",
-        "author_id": "2178012643",
-        "author_handle": "balajis",
-        "date": "2025-12-22",
-        "relevance_score": 5,
-        "action": "quote",
-        "quote_text": "Base's popup network could mirror NFT event booms, where physical activations drove 35% higher wallet conversions (Messari Q2 2023). This scales L2 accessibility for millions by 20"
-    },
-    "2003073803233247506": {
-        "tweet_id": "2003073803233247506",
-        "text": "Every winter Jessica and her friend play tennis against 16 yo and his friend. Yesterday she played the game of her life and just managed to win 7-5, and she is really delighted. This is a pair of large, athletic boys. She only managed to beat them through cleverness.",
-        "author_id": "183749519",
-        "author_handle": "PaulG",
-        "date": "2025-12-22",
-        "relevance_score": 2,
-        "action": null
-    },
-    "2003060015171809388": {
-        "tweet_id": "2003060015171809388",
-        "text": "This graph from @pablogguz_ of Spanish fiscal contributions by age demonstrates an important fact. The 40 and 50 year olds are carrying both their kids and their parents. And not just economically. This is why it's hard to be middle-aged. https://t.co/lMTTSzykP6",
-        "author_id": "183749519",
-        "author_handle": "PaulG",
-        "date": "2025-12-22",
-        "relevance_score": 2,
-        "action": null
-    },
-    "2002796578491469829": {
-        "tweet_id": "2002796578491469829",
-        "text": "It's reassuring to see a Democrat and a Republican working together. I'd rather see that than see either party prevail. https://t.co/cWw8O3iolc",
-        "author_id": "183749519",
-        "author_handle": "PaulG",
-        "date": "2025-12-22",
-        "relevance_score": 2,
-        "action": null
-    },
     "2003073987161788829": {
         "tweet_id": "2003073987161788829",
         "text": "To be clear: I will always be an Elon supporter, and of course Tesla pioneered modern EV technology, but the Chinese companies in this space are highly competent and not to be underestimated.\n\nBYD announced their charger earlier this year, in March: https://t.co/GS3zVqavJk https://t.co/dWAjIttIvB https://t.co/mRabITUS9D",
@@ -145,14 +90,5 @@
         "date": "2025-12-23",
         "relevance_score": 6,
         "action": "repost"
-    },
-    "2002183936777072789": {
-        "tweet_id": "2002183936777072789",
-        "text": "here is a little hint: \ud83c\udf81",
-        "author_id": "1605",
-        "author_handle": "sama",
-        "date": "2025-12-22",
-        "relevance_score": 1,
-        "action": null
     }
 }
