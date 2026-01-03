@@ -54,15 +54,6 @@
         "relevance_score": 4,
         "action": "repost"
     },
-    "2002663329727435042": {
-        "tweet_id": "2002663329727435042",
-        "text": "We may need to rebuild civilization from scratch. But where?\n\nBitcoin offers an answer: everywhere and nowhere. After all, it\u2019s a decentralized currency, knit together by the Internet. Both the mining datacenters and the Bitcoiners themselves are spread out all over the world. https://t.co/9JK4KFHvy5",
-        "author_id": "2178012643",
-        "author_handle": "balajis",
-        "date": "2025-12-23",
-        "relevance_score": 6,
-        "action": "repost"
-    },
     "2002661045379485983": {
         "tweet_id": "2002661045379485983",
         "text": "New season of the Network State podcast. https://t.co/xZLZH4dsik",
@@ -70,25 +61,6 @@
         "author_handle": "balajis",
         "date": "2025-12-25",
         "relevance_score": 4,
-        "action": "repost"
-    },
-    "2003073987161788829": {
-        "tweet_id": "2003073987161788829",
-        "text": "To be clear: I will always be an Elon supporter, and of course Tesla pioneered modern EV technology, but the Chinese companies in this space are highly competent and not to be underestimated.\n\nBYD announced their charger earlier this year, in March: https://t.co/GS3zVqavJk https://t.co/dWAjIttIvB https://t.co/mRabITUS9D",
-        "author_id": "2178012643",
-        "author_handle": "balajis",
-        "date": "2025-12-23",
-        "relevance_score": 6,
-        "action": "quote",
-        "quote_text": "BYD's edge sharpens: 3M+ NEVs sold in 2023, surpassing Tesla's 1.8M. Their 1,000V charger could cut 400km charge times to 5 mins, fueling 50% global EV share by 2030."
-    },
-    "2003072457473990710": {
-        "tweet_id": "2003072457473990710",
-        "text": "This is the EV flippening.\n\nElectric vehicles now fill up roughly as fast as gas. The new BYD chargers add 400km of range in just five minutes. https://t.co/bw6Yg4jElc",
-        "author_id": "2178012643",
-        "author_handle": "balajis",
-        "date": "2025-12-23",
-        "relevance_score": 6,
         "action": "repost"
     }
 }
