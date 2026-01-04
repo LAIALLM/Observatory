@@ -2834,5 +2834,25 @@
         "score": 0,
         "status": "processed",
         "tweet": null
+    },
+    {
+        "link": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxPUXg2NURlaDhtd0FuU254bXhhSWpXamRyS1h3d0JYUjVIcG1lYU56WFk2WGlBdG9aOFlac3dEUnF1akFLRDFyekliVHBVWlFhaTZ6VkxiR0VpOVVIX1pJUlVjTlpDcF9ZaWtIQk1yZVhPeDFETVJ6cnFjUnhzWWNVU096V1hCa1ZfWTRQQWtjZDRfMUk3UG84Tmg4ME5nTEZ3NXhoR3NQa2NsLW1BRFFrLXdQdjY0Ui1fRUtoTXFqdDJFYlkyelVweWtRc1IyS3lZNkU0dVF6dHczRnNtb1hnclhUQXJmdw?oc=5",
+        "date": "2026-01-04",
+        "title": "Frustration in Calgary over water infrastructure woes - MSN",
+        "summary": "<a href=\"https://news.google.com/rss/articles/CBMi5gFBVV95cUxPUXg2NURlaDhtd0FuU254bXhhSWpXamRyS1h3d0JYUjVIcG1lYU56WFk2WGlBdG9aOFlac3dEUnF1akFLRDFyekliVHBVWlFhaTZ6VkxiR0VpOVVIX1pJUlVjTlpDcF9ZaWtIQk1yZVhPeDFETVJ6cnFjUnhzWWNVU096V1hCa1ZfWTRQQWtjZDRfMUk3UG84Tmg4ME5nTEZ3NXhoR3NQa2NsLW1BRFFrLXdQdjY0Ui1fRUtoTXFqdDJFYlkyelVweWtRc1IyS3lZNkU0dVF6dHczRnNtb1hnclhUQXJmdw?oc=5\" target=\"_blank\">Frustration in Calgary over water infrastructure woes</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">MSN</font>",
+        "similarity_excluded": "Yes",
+        "score": 0,
+        "status": "skipped",
+        "tweet": null
+    },
+    {
+        "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxPcENlbDJnSFFSTlNKODNWcllYUUlyNXVQQ2l0VC1aMGs2MnNQdGRfYTNtYmU4cl82c250aTdjb0htbUpZajZKQVQwUllWSkpIYk54NklUekh1bjJDalN4czVTcW8tOUFNWXNHY0JlcnB5SGpDNWo3WVp3NDFOVzlPV0szdmVzVkxrVnBON1RBc1FYZ3c?oc=5",
+        "date": "2026-01-04",
+        "title": "Opinion: In the rubble, innovation becomes infrastructure - thevarsity.ca",
+        "summary": "<a href=\"https://news.google.com/rss/articles/CBMikwFBVV95cUxPcENlbDJnSFFSTlNKODNWcllYUUlyNXVQQ2l0VC1aMGs2MnNQdGRfYTNtYmU4cl82c250aTdjb0htbUpZajZKQVQwUllWSkpIYk54NklUekh1bjJDalN4czVTcW8tOUFNWXNHY0JlcnB5SGpDNWo3WVp3NDFOVzlPV0szdmVzVkxrVnBON1RBc1FYZ3c?oc=5\" target=\"_blank\">Opinion: In the rubble, innovation becomes infrastructure</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">thevarsity.ca</font>",
+        "similarity_excluded": "No",
+        "score": 0,
+        "status": "processed",
+        "tweet": null
     }
 ]
