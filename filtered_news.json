@@ -3142,5 +3142,35 @@
         "score": 8,
         "status": "processed",
         "tweet": null
+    },
+    {
+        "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxOaFF1dlBtWGxaTDBNaHhUaXN1VnVLZnRkWnotMUQ2WE9GeFdHRllWY1dHOU1Ia2toRGIxQ1QwbzJLa0N3cEJ6M2VOVHY0MHFUbF94R05NOEdENjVHbDB1QTI4ZHd6X0tMYlZ5RGNxWTJ5NFBUZlJNamxUc2FWandZTEF5TEhZaS1FNVlsNFhwUmE?oc=5",
+        "date": "2026-01-06",
+        "title": "Prefab and modular construction - Housing Industry Association | HIA",
+        "summary": "<a href=\"https://news.google.com/rss/articles/CBMikAFBVV95cUxOaFF1dlBtWGxaTDBNaHhUaXN1VnVLZnRkWnotMUQ2WE9GeFdHRllWY1dHOU1Ia2toRGIxQ1QwbzJLa0N3cEJ6M2VOVHY0MHFUbF94R05NOEdENjVHbDB1QTI4ZHd6X0tMYlZ5RGNxWTJ5NFBUZlJNamxUc2FWandZTEF5TEhZaS1FNVlsNFhwUmE?oc=5\" target=\"_blank\">Prefab and modular construction</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Housing Industry Association | HIA</font>",
+        "similarity_excluded": "Yes",
+        "score": 0,
+        "status": "skipped",
+        "tweet": null
+    },
+    {
+        "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOZDk5anBCaGVOUDNtUFhmTzJYUUg5QmdmSzYwbTRKdFlhWG5uOXc5aUstN09FRXdWSkIwSzd5NlJwNnJtMlRLREpxaFQzODdCR0x3SV92cEFRVXU4MkJNb2NRMS11MW1oR0pETTNTZGtrY214NUNzLUlMeno0eXVaSk5aekpGeHB0aXl2Y3N4NTJPYUF6Y2o2OA?oc=5",
+        "date": "2026-01-06",
+        "title": "Renovations begin at Paycor Stadium, with focus on infrastructure, accessibility - WLWT",
+        "summary": "<a href=\"https://news.google.com/rss/articles/CBMimAFBVV95cUxOZDk5anBCaGVOUDNtUFhmTzJYUUg5QmdmSzYwbTRKdFlhWG5uOXc5aUstN09FRXdWSkIwSzd5NlJwNnJtMlRLREpxaFQzODdCR0x3SV92cEFRVXU4MkJNb2NRMS11MW1oR0pETTNTZGtrY214NUNzLUlMeno0eXVaSk5aekpGeHB0aXl2Y3N4NTJPYUF6Y2o2OA?oc=5\" target=\"_blank\">Renovations begin at Paycor Stadium, with focus on infrastructure, accessibility</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">WLWT</font>",
+        "similarity_excluded": "Yes",
+        "score": 0,
+        "status": "skipped",
+        "tweet": null
+    },
+    {
+        "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTE1BejBsTmt5TkV4ZGNIU2xOdnE2YUJWTC1hMFNna2xZYWx0VGZNcVZTSmthRThMQy02SFM1MEdoZld5NXRQLWVnMWtFRDJqM2N4Y1dZV2Q1QWxWc215a2tQdGJBS3p3YWdrai1HekQyZDB2czIxdmROaFk2Y2xLRzg?oc=5",
+        "date": "2026-01-06",
+        "title": "City\u2019s water infrastructure upgrade up for national award - The Southland Tribune",
+        "summary": "<a href=\"https://news.google.com/rss/articles/CBMif0FVX3lxTE1BejBsTmt5TkV4ZGNIU2xOdnE2YUJWTC1hMFNna2xZYWx0VGZNcVZTSmthRThMQy02SFM1MEdoZld5NXRQLWVnMWtFRDJqM2N4Y1dZV2Q1QWxWc215a2tQdGJBS3p3YWdrai1HekQyZDB2czIxdmROaFk2Y2xLRzg?oc=5\" target=\"_blank\">City\u2019s water infrastructure upgrade up for national award</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">The Southland Tribune</font>",
+        "similarity_excluded": "No",
+        "score": 8,
+        "status": "processed",
+        "tweet": null
     }
 ]
