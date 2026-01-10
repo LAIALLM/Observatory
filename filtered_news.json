@@ -2844,5 +2844,12 @@
         "score": 0,
         "status": "processed",
         "tweet": null
+    },
+    {
+        "link": null,
+        "date": "2026-01-10",
+        "status": "posted",
+        "tweet": "Microsoft Azure infrastructure hit 2.5 zettabytes of total data processing capacity in 2026, powering 60% of enterprise cloud workloads globally.\n\n$MSFT",
+        "type": "infrastructure"
     }
 ]
