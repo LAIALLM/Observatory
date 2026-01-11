@@ -3125,5 +3125,15 @@
         "score": 4,
         "status": "processed",
         "tweet": null
+    },
+    {
+        "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxOc0NLV3gzMEVSSjQ3RS1qMHg0bUNEWjZYSElrWE52N21IalA5bHRDQW1NeDNUZWY0T3ZnWTlueDFsdzRGbDNOOEVIUTdBa2cxTWJaTzBHTVRqME9pa3VXZnFhejZMcWRTeHo4d3BQSDJkVFJ3QnI0RHVObnZoak5FRzNaOVhtaEVkcVJ5cTM0bzUyY1kyOEllY2dpaUFJZ09kcWZVTExLcENOSmM2ZjE1WENGZnY3d9IBvAFBVV95cUxQYWc1MjkwV05ZV3R5M2xTbG1GZFNNYjlRTnhnR3Y4WFNHVHZFbUZ0UzVwdHc2bWk3cG1Lakw3cG9UdWxCYjZpTVpoS1NPTkUyZFVvTHV4RjViWVAxMEotbUstT2puM0l6VDNjUFhsb1otSEdzUUxNSm1WUXBMTVpUSUJ1ek11SnZyRFVSN0l1bzl1TW9uVkhuWVZFVXJqa2E0ZEdsRUdmQ1F4eVBldHpQbjJNaERSOGRmYnJWUQ?oc=5",
+        "date": "2026-01-11",
+        "title": "Guidelines issued to prevent overpricing in infrastructure projects - Philstar.com",
+        "summary": "<a href=\"https://news.google.com/rss/articles/CBMitgFBVV95cUxOc0NLV3gzMEVSSjQ3RS1qMHg0bUNEWjZYSElrWE52N21IalA5bHRDQW1NeDNUZWY0T3ZnWTlueDFsdzRGbDNOOEVIUTdBa2cxTWJaTzBHTVRqME9pa3VXZnFhejZMcWRTeHo4d3BQSDJkVFJ3QnI0RHVObnZoak5FRzNaOVhtaEVkcVJ5cTM0bzUyY1kyOEllY2dpaUFJZ09kcWZVTExLcENOSmM2ZjE1WENGZnY3d9IBvAFBVV95cUxQYWc1MjkwV05ZV3R5M2xTbG1GZFNNYjlRTnhnR3Y4WFNHVHZFbUZ0UzVwdHc2bWk3cG1Lakw3cG9UdWxCYjZpTVpoS1NPTkUyZFVvTHV4RjViWVAxMEotbUstT2puM0l6VDNjUFhsb1otSEdzUUxNSm1WUXBMTVpUSUJ1ek11SnZyRFVSN0l1bzl1TW9uVkhuWVZFVXJqa2E0ZEdsRUdmQ1F4eVBldHpQbjJNaERSOGRmYnJWUQ?oc=5\" target=\"_blank\">Guidelines issued to prevent overpricing in infrastructure projects</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Philstar.com</font>",
+        "similarity_excluded": "Yes",
+        "score": 0,
+        "status": "skipped",
+        "tweet": null
     }
 ]
