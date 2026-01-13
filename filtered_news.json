@@ -3338,5 +3338,13 @@
         "score": 7,
         "status": "processed",
         "tweet": null
+    },
+    {
+        "link": null,
+        "date": "2026-01-13",
+        "status": "posted",
+        "tweet": "By 2026, global renewable energy engineering projects will add 500 GW of capacity annually, reaching 4,000 GW total and powering 32% of world electricity demand.",
+        "type": "statistical",
+        "category": "engineering projects"
     }
 ]
