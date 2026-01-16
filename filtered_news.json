@@ -3233,5 +3233,13 @@
         "status": "posted",
         "tweet": "Microsoft Azure infrastructure reached 3.2 million active servers globally in 2026, up 25% from 2025.\n\nPower efficiency: 1.15 PUE across data centers.\n\n$MSFT",
         "type": "infrastructure"
+    },
+    {
+        "link": null,
+        "date": "2026-01-16",
+        "status": "posted",
+        "tweet": "By 2026, \ud83c\udde8\ud83c\uddf3 China's high-speed rail network reaches 55,000 km operational.\n\n\ud83c\uddfa\ud83c\uddf8 US dedicated HSR lines: 0 km.",
+        "type": "statistical",
+        "category": "engineering projects"
     }
 ]
