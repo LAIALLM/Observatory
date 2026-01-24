@@ -2586,5 +2586,12 @@
         "score": 7,
         "status": "processed",
         "tweet": null
+    },
+    {
+        "link": null,
+        "date": "2026-01-24",
+        "status": "posted",
+        "tweet": "Bitcoin's network scalability infrastructure consumed 160 TWh of electricity in 2026, costing $12 billion globally to support secure transaction processing.",
+        "type": "crypto"
     }
 ]
