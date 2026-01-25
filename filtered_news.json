@@ -2371,5 +2371,15 @@
         "score": 6,
         "status": "processed",
         "tweet": null
+    },
+    {
+        "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTE5GTVJOZVJzbnpLSmh6M1lQTHB4cHFoMmZGejliWTlqYUduVUJEa05oMG9Dc21iWWJQaExCSGFjVjgzQUd4dWZrdVdVakdsVFNDWDlQSnVhcm5OMGFBWnh4OUx3eVFLTnd2SXoxWUFkNTBSclZwc1FmY184N2hxMUE?oc=5",
+        "date": "2026-01-25",
+        "title": "$5M NSF award to address outdated wastewater infrastructure - hawaii.edu",
+        "summary": "<a href=\"https://news.google.com/rss/articles/CBMif0FVX3lxTE5GTVJOZVJzbnpLSmh6M1lQTHB4cHFoMmZGejliWTlqYUduVUJEa05oMG9Dc21iWWJQaExCSGFjVjgzQUd4dWZrdVdVakdsVFNDWDlQSnVhcm5OMGFBWnh4OUx3eVFLTnd2SXoxWUFkNTBSclZwc1FmY184N2hxMUE?oc=5\" target=\"_blank\">$5M NSF award to address outdated wastewater infrastructure</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">hawaii.edu</font>",
+        "similarity_excluded": "No",
+        "score": 8,
+        "status": "processed",
+        "tweet": null
     }
 ]
