@@ -2238,5 +2238,12 @@
         "status": "posted",
         "tweet": "(\ud83c\uddf2\ud83c\uddfd) NEWS: Mexico seeks bank backing for major infrastructure projects next week",
         "type": "news"
+    },
+    {
+        "link": null,
+        "date": "2026-01-28",
+        "status": "posted",
+        "tweet": "Microsoft's Azure data centers in \ud83c\uddfa\ud83c\uddf8Washington state handled 2.5 EB of data daily in Q1 2026, a 40% YoY increase.\n\n$MSFT",
+        "type": "infrastructure"
     }
 ]
