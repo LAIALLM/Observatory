@@ -2797,5 +2797,15 @@
         "score": 3,
         "status": "processed",
         "tweet": null
+    },
+    {
+        "link": "https://news.google.com/rss/articles/CBMizwFBVV95cUxPam1KVW1RX0dzajhFNHgzNWJrZDh0eW4tSF9tOVZqd2RzZXF0Tld5dWF2WHR5cV93TkliU3oxUHFUWFN3LVRHanZrd0M0M1dueEZjbFJNa1R5M0VuVzAydXNFUk5rSFdRUHh6VERna2hSaTRPUFEyNXZ0cXZVTmpXRUVwbUl3RHFiS0F6MVRVVFlzaTZmeC1ya1BWaHNIc0owWHBrRll3M0o2UHNieF9zbHNod2VWVjZJVzM4amwzSGd4cWJ3NUdLUVYxZUF5d2M?oc=5",
+        "date": "2026-02-07",
+        "title": "New York's Radical Gambit: A Three-Year Freeze on Data Centers That Could Reshape the AI Infrastructure Race - WebProNews",
+        "summary": "<a href=\"https://news.google.com/rss/articles/CBMizwFBVV95cUxPam1KVW1RX0dzajhFNHgzNWJrZDh0eW4tSF9tOVZqd2RzZXF0Tld5dWF2WHR5cV93TkliU3oxUHFUWFN3LVRHanZrd0M0M1dueEZjbFJNa1R5M0VuVzAydXNFUk5rSFdRUHh6VERna2hSaTRPUFEyNXZ0cXZVTmpXRUVwbUl3RHFiS0F6MVRVVFlzaTZmeC1ya1BWaHNIc0owWHBrRll3M0o2UHNieF9zbHNod2VWVjZJVzM4amwzSGd4cWJ3NUdLUVYxZUF5d2M?oc=5\" target=\"_blank\">New York's Radical Gambit: A Three-Year Freeze on Data Centers That Could Reshape the AI Infrastructure Race</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">WebProNews</font>",
+        "similarity_excluded": "Yes",
+        "score": 0,
+        "status": "skipped",
+        "tweet": null
     }
 ]
