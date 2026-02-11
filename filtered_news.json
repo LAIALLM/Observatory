@@ -2344,5 +2344,12 @@
         "status": "posted",
         "tweet": "\ud83c\uddee\ud83c\uddf3 NEWS: 5868 PMAY units lined up for delivery at Suraksha Smart City, Vasai",
         "type": "news"
+    },
+    {
+        "link": null,
+        "date": "2026-02-11",
+        "status": "posted",
+        "tweet": "Bitcoin's PoW mining hardware costs $4,500 per ASIC unit in 2026, with network-wide capex exceeding $2B annually for upgrades.\n\nEthereum's PoS validator hardware: $1,200 per node, total network spend under $500M yearly.\n\nBTC's energy-intensive rigs drive 4x higher hardware outlay",
+        "type": "crypto"
     }
 ]
