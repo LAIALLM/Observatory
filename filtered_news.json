@@ -2639,5 +2639,12 @@
         "status": "posted",
         "tweet": "\ud83c\uddfa\ud83c\uddf8 NEWS: One Big Beautiful Bill Act fuels U.S. construction boom and manufacturing growth",
         "type": "news"
+    },
+    {
+        "link": null,
+        "date": "2026-02-22",
+        "status": "posted",
+        "tweet": "NVIDIA's \ud83c\uddfa\ud83c\uddf8 Santa Clara supercomputing cluster reached 2.5 exaFLOPS peak performance in Q3 2026, powering 500,000 AI training runs daily.\n\n$NVDA",
+        "type": "infrastructure"
     }
 ]
