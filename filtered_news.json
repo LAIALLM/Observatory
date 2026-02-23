@@ -2703,5 +2703,12 @@
         "score": 8,
         "status": "processed",
         "tweet": null
+    },
+    {
+        "link": null,
+        "date": "2026-02-23",
+        "status": "posted",
+        "tweet": "NVIDIA $NVDA data centers worldwide deployed 25 million AI GPUs in 2026.\n\nThis supports 15 zettabytes of annual compute processing, a 40% increase from 2025.",
+        "type": "infrastructure"
     }
 ]
