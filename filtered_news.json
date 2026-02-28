@@ -2969,5 +2969,12 @@
         "status": "posted",
         "tweet": "Bitcoin's PoW scalability demands 150 TWh of electricity yearly, costing $10B+ in infrastructure (2026 est.).\n\nEthereum's PoS scales with 0.5 TWh, under $50M annually\u201415,000x more efficient on energy costs.",
         "type": "crypto"
+    },
+    {
+        "link": null,
+        "date": "2026-02-28",
+        "status": "posted",
+        "tweet": "Alphabet's \ud83c\uddfa\ud83c\uddf8 data centers processed 18 exabytes daily in 2026, up 20% from 2025.\n\n$GOOGL",
+        "type": "infrastructure"
     }
 ]
