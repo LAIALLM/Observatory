@@ -3056,5 +3056,25 @@
         "score": 0,
         "status": "processed",
         "tweet": null
+    },
+    {
+        "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxONkNLYVBQVEVMOWFMN2x2M2EyOXpDMmxkbG1GU19ScXZkZzl0d0pQNm5jaEViSVRJU2RPWDctdGZEZkNfdWMta1h1TlBLd2k1Z0luZmNUUVE4MWZJbnNyWjNIUmNZNXRBRXUzc3JpMkVwdzhxYTU4Y0l6QmwwRVVqZW1rb1g4RkxOcFNRNDRuYXQ?oc=5",
+        "date": "2026-02-28",
+        "title": "Solaris Energy Infrastructure Q4 Earnings Call Highlights - Yahoo Finance",
+        "summary": "<a href=\"https://news.google.com/rss/articles/CBMikAFBVV95cUxONkNLYVBQVEVMOWFMN2x2M2EyOXpDMmxkbG1GU19ScXZkZzl0d0pQNm5jaEViSVRJU2RPWDctdGZEZkNfdWMta1h1TlBLd2k1Z0luZmNUUVE4MWZJbnNyWjNIUmNZNXRBRXUzc3JpMkVwdzhxYTU4Y0l6QmwwRVVqZW1rb1g4RkxOcFNRNDRuYXQ?oc=5\" target=\"_blank\">Solaris Energy Infrastructure Q4 Earnings Call Highlights</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Yahoo Finance</font>",
+        "similarity_excluded": "Yes",
+        "score": 0,
+        "status": "skipped",
+        "tweet": null
+    },
+    {
+        "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPV3p4R0d6eU9FMG1JNDNObDM5a0J4VWdkYmJsNDRGNmtldldqa3MtcUt6UGRWZExvTG9aZ1JZOVZycFMwV3ItVU9sbUtRUDFSZFZWTXNNV19uV2pDS24wTTF1b2xkcU94WkJmenFnWVZBZ3R0M0xnTDlqRHFxSUxQN3BkWXQ1VkVqQlJCUWYtRjVqX0czS0JZRWR1bHBfZndF?oc=5",
+        "date": "2026-02-28",
+        "title": "BizLink advances modular integration to boost data center interconnect growth - digitimes",
+        "summary": "<a href=\"https://news.google.com/rss/articles/CBMioAFBVV95cUxPV3p4R0d6eU9FMG1JNDNObDM5a0J4VWdkYmJsNDRGNmtldldqa3MtcUt6UGRWZExvTG9aZ1JZOVZycFMwV3ItVU9sbUtRUDFSZFZWTXNNV19uV2pDS24wTTF1b2xkcU94WkJmenFnWVZBZ3R0M0xnTDlqRHFxSUxQN3BkWXQ1VkVqQlJCUWYtRjVqX0czS0JZRWR1bHBfZndF?oc=5\" target=\"_blank\">BizLink advances modular integration to boost data center interconnect growth</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">digitimes</font>",
+        "similarity_excluded": "No",
+        "score": 8,
+        "status": "processed",
+        "tweet": null
     }
 ]
