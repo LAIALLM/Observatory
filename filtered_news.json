@@ -3480,5 +3480,12 @@
         "score": 0,
         "status": "processed",
         "tweet": null
+    },
+    {
+        "link": null,
+        "date": "2026-03-07",
+        "status": "posted",
+        "tweet": "Meta's global infrastructure processed 15 exabytes of data daily in 2026, up 40% from 2025.\n\n$ META",
+        "type": "infrastructure"
     }
 ]
