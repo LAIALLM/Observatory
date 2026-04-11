@@ -3569,5 +3569,12 @@
         "status": "posted",
         "tweet": "Google's \ud83c\uddfa\ud83c\uddf8 Oregon data centers processed 12 exabytes of data daily in 2026, up 25% from 2025.\n\n$GOOGL",
         "type": "infrastructure"
+    },
+    {
+        "link": null,
+        "date": "2026-04-11",
+        "status": "posted",
+        "tweet": "Bitcoin's 2026 proof-of-work security: $18B annual electricity for mining maintenance.\n\nEthereum's proof-of-stake: $120M in validator staking rewards for network security.\n\nBTC's energy costs 150x higher than ETH's efficient model.",
+        "type": "crypto"
     }
 ]
