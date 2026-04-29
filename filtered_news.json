@@ -2172,5 +2172,12 @@
         "status": "posted",
         "tweet": "\ud83c\udde8\ud83c\udde9 NEWS: World Bank approves $250M Kin la Belle program to tackle Kinshasas waste crisis and create jobs",
         "type": "news"
+    },
+    {
+        "link": null,
+        "date": "2026-04-29",
+        "status": "posted",
+        "tweet": "\ud83c\uddfa\ud83c\uddf8 hosts 45% of Bitcoin's hash rate in 2026, driving $6.2B annual energy costs at $0.08/kWh avg.\n\n\ud83c\uddfa\ud83c\uddf8 & \ud83c\udde9\ud83c\uddea hold 70% of Ethereum validators, with infra costs at $450M yearly\u201475% less energy-intensive than BTC mining.",
+        "type": "crypto"
     }
 ]
