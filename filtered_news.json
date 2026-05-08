@@ -2528,5 +2528,12 @@
         "status": "posted",
         "tweet": "\ud83c\uddfa\ud83c\uddf8 NEWS: Lambda secures $1B credit facility to build out gigawatt-scale AI infrastructure.",
         "type": "news"
+    },
+    {
+        "link": null,
+        "date": "2026-05-08",
+        "status": "posted",
+        "tweet": "Blockchain energy costs vs. transaction throughput (2026 est.): TPS per $1M annual infra spend.\n\n1. Solana: 40,000 TPS / $0.05M = 800B TPS per $1M\n2. Ethereum: 25 TPS / $0.2M = 125M TPS per $1M\n3. Bitcoin: 7 TPS / $6B = 1.2M TPS per $1M",
+        "type": "crypto"
     }
 ]
