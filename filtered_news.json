@@ -3338,5 +3338,12 @@
         "status": "posted",
         "tweet": "Microsoft $MSFT Azure sites in \ud83c\uddfa\ud83c\uddf8 United States consumed 14.7 TWh of electricity in 2025.",
         "type": "infrastructure"
+    },
+    {
+        "link": null,
+        "date": "2026-05-24",
+        "status": "posted",
+        "tweet": "2026 hardware costs per node\n1. Bitcoin: $9500 ASIC\n2. Solana: $6200 server\n3. Ethereum: $1800 PC",
+        "type": "crypto"
     }
 ]
