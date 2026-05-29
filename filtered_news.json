@@ -2103,5 +2103,12 @@
         "score": 0,
         "status": "processed",
         "tweet": null
+    },
+    {
+        "link": null,
+        "date": "2026-05-29",
+        "status": "posted",
+        "tweet": "Bitcoin mining infrastructure consumes 140 TWh of electricity in 2026. Ethereum and Solana staking combined require under 0.005 TWh, cutting energy costs by 99.99 percent.",
+        "type": "crypto"
     }
 ]
