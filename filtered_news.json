@@ -1968,5 +1968,12 @@
         "status": "posted",
         "tweet": "Bitcoin data centers are projected to consume 190 TWh in 2026, matching Sweden's total annual electricity use.",
         "type": "crypto"
+    },
+    {
+        "link": null,
+        "date": "2026-07-06",
+        "status": "posted",
+        "tweet": "Microsoft \ud83c\uddfa\ud83c\uddf8 data centers consumed 42 TWh electricity in 2025\n$MSFT",
+        "type": "infrastructure"
     }
 ]
