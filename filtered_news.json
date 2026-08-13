@@ -3160,5 +3160,12 @@
         "score": 4,
         "status": "processed",
         "tweet": null
+    },
+    {
+        "link": null,
+        "date": "2026-08-13",
+        "status": "posted",
+        "tweet": "Bitcoin ASIC hardware spend reached $2.1B in 2025.  \nSolana validator servers totaled $68M.",
+        "type": "crypto"
     }
 ]
