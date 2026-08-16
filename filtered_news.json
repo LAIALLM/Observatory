@@ -3683,5 +3683,15 @@
         "score": 0,
         "status": "processed",
         "tweet": null
+    },
+    {
+        "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPdDNVRkxLOGZqWW5mLXB1dmlRRGVRUFo4bWo1NlM1STRjMC1sQnpGRGRwMnNYakZCR2N2dGhTRnQtQWlvT1hWOWc3Q1hjMG9PS1BYWnFuM0lpTUNfalNwRzd5RVo1N2N3cTZUeG9ET3RucEs4bUkyU056aTBnMVFxSC1mZmZWQ3pPLURmYzE4WXhXR0JoNFJCSm9FakdKMjZIMG83ZGlMdHJyYXI5djhLb2ZzZW9mUVZJTmdHNFdR?oc=5",
+        "date": "2026-08-16",
+        "title": "Major Infrastructure Improvements Complete at Horsetooth, Carter Lake Reservoirs - North Forty News",
+        "summary": "<a href=\"https://news.google.com/rss/articles/CBMivgFBVV95cUxPdDNVRkxLOGZqWW5mLXB1dmlRRGVRUFo4bWo1NlM1STRjMC1sQnpGRGRwMnNYakZCR2N2dGhTRnQtQWlvT1hWOWc3Q1hjMG9PS1BYWnFuM0lpTUNfalNwRzd5RVo1N2N3cTZUeG9ET3RucEs4bUkyU056aTBnMVFxSC1mZmZWQ3pPLURmYzE4WXhXR0JoNFJCSm9FakdKMjZIMG83ZGlMdHJyYXI5djhLb2ZzZW9mUVZJTmdHNFdR?oc=5\" target=\"_blank\">Major Infrastructure Improvements Complete at Horsetooth, Carter Lake Reservoirs</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">North Forty News</font>",
+        "similarity_excluded": "No",
+        "score": 8,
+        "status": "processed",
+        "tweet": null
     }
 ]
