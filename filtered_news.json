@@ -1957,5 +1957,13 @@
         "score": 0,
         "status": "processed",
         "tweet": null
+    },
+    {
+        "link": null,
+        "date": "2026-08-31",
+        "status": "posted",
+        "tweet": "\ud83c\udde8\ud83c\uddf3 China high-speed rail reaches 52,000 km by 2026 compared to 11,000 km in \ud83c\uddea\ud83c\uddfa EU",
+        "type": "statistical",
+        "category": "engineering projects"
     }
 ]
