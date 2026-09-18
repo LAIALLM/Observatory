@@ -1145,5 +1145,13 @@
         "status": "posted",
         "tweet": "Bitcoin's cumulative ASIC hardware investment exceeds 60 billion dollars by 2026.",
         "type": "crypto"
+    },
+    {
+        "link": null,
+        "date": "2026-09-18",
+        "status": "posted",
+        "tweet": "\ud83c\uddf3\ud83c\uddf4 Norway reached 90% electric vehicle share of new car sales in 2026.",
+        "type": "statistical",
+        "category": "transportation"
     }
 ]
