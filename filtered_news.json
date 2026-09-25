@@ -1,21 +1,6 @@
 [
     {
         "link": null,
-        "date": "2026-09-15",
-        "status": "posted",
-        "tweet": "Energy cost per tx 2026\n1. Bitcoin 250 kWh\n2. Ethereum 0.05 kWh\n3. Solana 0.0003 kWh",
-        "type": "crypto"
-    },
-    {
-        "link": null,
-        "date": "2026-09-15",
-        "status": "posted",
-        "tweet": "By 2026 urban development firms will direct 70% of \ud83c\uddea\ud83c\uddfa EU infrastructure spending toward net-zero buildings.",
-        "type": "statistical",
-        "category": "urban development firms"
-    },
-    {
-        "link": null,
         "date": "2026-09-16",
         "status": "posted",
         "tweet": "2026 hardware costs per operator (USD):\n\n1. Bitcoin ASIC rig: 14000\n2. Solana validator server: 7500\n3. Ethereum staking node: 600",
@@ -1249,5 +1234,12 @@
         "score": 5,
         "status": "processed",
         "tweet": null
+    },
+    {
+        "link": null,
+        "date": "2026-09-25",
+        "status": "posted",
+        "tweet": "\ud83c\uddfa\ud83c\uddf8 Amazon Web Services data centers in \ud83c\uddfa\ud83c\uddf8 United States delivered 120 million server hours daily in 2025.\n$AMZN",
+        "type": "infrastructure"
     }
 ]
