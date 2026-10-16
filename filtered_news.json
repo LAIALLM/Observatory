@@ -387,5 +387,35 @@
         "status": "posted",
         "tweet": "\ud83c\udde9\ud83c\uddea Germany Azure infrastructure transferred 950 petabytes of data daily in 2025.\n$MSFT",
         "type": "infrastructure"
+    },
+    {
+        "link": "https://news.google.com/rss/articles/CBMijAFBVV95cUxNLU80QVJlWmg3emZGLUdXWkVCTWFTcjdEazltNjZ1YkpwdWxJR05tMTVhVDJvdXdQNFl6STUzc3hqeGtzbXQtUUowRnVSY0VCRnpocmpNQTBPSzU2RFJ6V3FLaGczaFR5RlprSW1sSlFPYlhyUGEwbGpOZ2dYU3NWWmcybTdwbU9FVnB6RA?oc=5",
+        "date": "2026-10-16",
+        "title": "Infrastructure Highlights from OCP Global Summit - HPCwire",
+        "summary": "<a href=\"https://news.google.com/rss/articles/CBMijAFBVV95cUxNLU80QVJlWmg3emZGLUdXWkVCTWFTcjdEazltNjZ1YkpwdWxJR05tMTVhVDJvdXdQNFl6STUzc3hqeGtzbXQtUUowRnVSY0VCRnpocmpNQTBPSzU2RFJ6V3FLaGczaFR5RlprSW1sSlFPYlhyUGEwbGpOZ2dYU3NWWmcybTdwbU9FVnB6RA?oc=5\" target=\"_blank\">Infrastructure Highlights from OCP Global Summit</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">HPCwire</font>",
+        "similarity_excluded": "No",
+        "score": 2,
+        "status": "processed",
+        "tweet": null
+    },
+    {
+        "link": "https://news.google.com/rss/articles/CBMi7wFBVV95cUxOLWFtbGtCel9zWG9DczNIVVB2bFZONHdEc2pMZzRyS01RR2IwWEJsc0dXSTFTN2ZEQjgwbExzZFo1eUtiLTR1eXdBRXVwMUV1LVlMY1B2QUFQRFl6OEZBdUJTYmNvN1dOWWNUR1JZWTBZVzhEZkNldDg1LXNfTWxXbHpEYmVMN3NncmtZMi1FNmpGY3JyR3Y2S2pZeklUSEFSY0hJZ1Y1MzNodXVsaFZiVHl0YzhCQURkWjBnamN1c0hQWllGMEo5LW5WYXd3N2VFQmdBWXFhdGNwNTRxRGwzNTNid3c1cHJZT01ZUDB6bw?oc=5",
+        "date": "2026-10-16",
+        "title": "Support bonds to improve quality of life, infrastructure - Santa Fe New Mexican",
+        "summary": "<a href=\"https://news.google.com/rss/articles/CBMi7wFBVV95cUxOLWFtbGtCel9zWG9DczNIVVB2bFZONHdEc2pMZzRyS01RR2IwWEJsc0dXSTFTN2ZEQjgwbExzZFo1eUtiLTR1eXdBRXVwMUV1LVlMY1B2QUFQRFl6OEZBdUJTYmNvN1dOWWNUR1JZWTBZVzhEZkNldDg1LXNfTWxXbHpEYmVMN3NncmtZMi1FNmpGY3JyR3Y2S2pZeklUSEFSY0hJZ1Y1MzNodXVsaFZiVHl0YzhCQURkWjBnamN1c0hQWllGMEo5LW5WYXd3N2VFQmdBWXFhdGNwNTRxRGwzNTNid3c1cHJZT01ZUDB6bw?oc=5\" target=\"_blank\">Support bonds to improve quality of life, infrastructure</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Santa Fe New Mexican</font>",
+        "similarity_excluded": "No",
+        "score": 0,
+        "status": "processed",
+        "tweet": null
+    },
+    {
+        "link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxOVGZhSUtxUlc3TGhHVXBmMzRqWFFySXEtWHFQZThDU2x1WnVpU2NWZ1o2cE83MThsb082S0x0VGJ4RHdwbW1aQU0xa1g4R0w3dzRMbE1rYnAwRF9pSEJhQjc1YUx3blJQNG9sV01QWHJOSkFTMm4zdFV6elpXVVYzX3dNckowdllGRmZ5SmZSUlFDbzNQaV9RSHlWNmpfZE1nMVd0aS1vbEFENGVrY3B4Q1hka2QyRy1xcXpzZi03VFl3VjRQc1NTTVp1NTc?oc=5",
+        "date": "2026-10-16",
+        "title": "Richmond's Urban Design Committee approves Shockoe Bottom removable bollards - WRLH",
+        "summary": "<a href=\"https://news.google.com/rss/articles/CBMizAFBVV95cUxOVGZhSUtxUlc3TGhHVXBmMzRqWFFySXEtWHFQZThDU2x1WnVpU2NWZ1o2cE83MThsb082S0x0VGJ4RHdwbW1aQU0xa1g4R0w3dzRMbE1rYnAwRF9pSEJhQjc1YUx3blJQNG9sV01QWHJOSkFTMm4zdFV6elpXVVYzX3dNckowdllGRmZ5SmZSUlFDbzNQaV9RSHlWNmpfZE1nMVd0aS1vbEFENGVrY3B4Q1hka2QyRy1xcXpzZi03VFl3VjRQc1NTTVp1NTc?oc=5\" target=\"_blank\">Richmond's Urban Design Committee approves Shockoe Bottom removable bollards</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">WRLH</font>",
+        "similarity_excluded": "No",
+        "score": 0,
+        "status": "processed",
+        "tweet": null
     }
 ]
