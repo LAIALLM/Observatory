@@ -879,5 +879,12 @@
         "score": 4,
         "status": "processed",
         "tweet": null
+    },
+    {
+        "link": null,
+        "date": "2026-10-29",
+        "status": "posted",
+        "tweet": "\ud83c\uddfa\ud83c\uddf8 Microsoft processed 4.5 exabytes of data daily across Azure data centers in 2025.\n$MSFT",
+        "type": "infrastructure"
     }
 ]
